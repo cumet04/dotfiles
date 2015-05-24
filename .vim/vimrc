@@ -1,0 +1,20 @@
+set number
+colorscheme molokai
+set t_Co=256
+syntax enable
+
+set clipboard=unnamedplus
+set nocompatible
+set expandtab
+set noswapfile
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+set autoindent
+set smartindent
+set textwidth=80
+set nowrap
+if exists('&colorcolumn')
+    set colorcolumn=+1
+endif
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
