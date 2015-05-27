@@ -12,4 +12,4 @@ PS1='\[\e[1;37m\][\u@\h \W]\$\[\e[0m\] '
 alias vi=vim
 alias emacs="emacs -nw"
 export TERM=xterm-256color
-export DOCKER_HOST="tcp://192.168.100.122:2375"
+# export DOCKER_HOST="tcp://192.168.100.122:2375"
