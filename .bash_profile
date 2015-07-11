@@ -2,7 +2,7 @@
 # ~/.bash_profile
 #
 
-export SVN_EDITOR=vi
+export SVN_EDITOR=emacs
 export TERM=xterm-256color
 
 # fcitx settings
