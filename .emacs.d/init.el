@@ -3,6 +3,15 @@
 (load-theme 'molokai t)
 (enable-theme 'molokai)
 
+;; font
+(set-face-attribute 'default nil
+        :family "Menlo" ;; font
+        :height 160)    ;; font size
+(set-fontset-font
+        nil 'japanese-jisx0208
+        (font-spec :family "Hiragino Kaku Gothic ProN")) ;; font
+        ;; (font-spec :family "Ricty")) ;; font
+
 ;; display line-number left side
 (require 'linum)
 (global-linum-mode)
@@ -13,8 +22,12 @@
 
 ;; hide menu bar
 (menu-bar-mode 0)
+(tool-bar-mode 0)
 
 (add-hook 'window-configuration-change-hook (lambda () (ruler-mode 1)))
+
+;; C-h -> backspace
+(define-key key-translation-map (kbd "C-h") (kbd "<DEL>"))
 
 ;; clipboard
 (if (string-match "linux" system-configuration)
