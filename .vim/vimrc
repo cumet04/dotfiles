@@ -3,7 +3,7 @@ colorscheme molokai
 set t_Co=256
 syntax enable
 
-set clipboard=unnamedplus
+set clipboard=unnamed
 set nocompatible
 set expandtab
 set noswapfile
@@ -17,4 +17,5 @@ set nowrap
 if exists('&colorcolumn')
     set colorcolumn=+1
 endif
-inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap {<Enter> {<Enter>}<ESC><S-o>
+set formatoptions=q
