@@ -463,6 +463,10 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 autorun = true
 autorunApps =
 {
+    "xset -b",
+    "xset r rate 250 30",
+    "xset m 4/3 m",
+    "ibus-daemon"
 }
 if autorun then
 	for app = 1, #autorunApps do
