@@ -153,13 +153,15 @@ mytasklist.buttons = awful.util.table.join(
                                               if client.focus then client.focus:raise() end
                                           end))
 
-batterywidget = wibox.widget.textbox()
-batterywidget:set_text(batteryInfo("BAT0"))
-batterywidget_timer = timer({timeout = 1})
-batterywidget_timer:connect_signal("timeout", function()
-batterywidget:set_text(batteryInfo("BAT0"))
-end)
-batterywidget_timer:start()
+if io.open("/sys/class/power_supply/BAT0", "r") ~= nil then
+    batterywidget = wibox.widget.textbox()
+    batterywidget:set_text(batteryInfo("BAT0"))
+    batterywidget_timer = timer({timeout = 1})
+    batterywidget_timer:connect_signal("timeout", function()
+    batterywidget:set_text(batteryInfo("BAT0"))
+    end)
+    batterywidget_timer:start()
+end
 
 for s = 1, screen.count() do
     -- batterywidget = wibox.widget.textbox()    
@@ -199,7 +201,9 @@ for s = 1, screen.count() do
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
-    right_layout:add(batterywidget)
+    if batterywidget ~= nil then
+        right_layout:add(batterywidget)
+    end
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
