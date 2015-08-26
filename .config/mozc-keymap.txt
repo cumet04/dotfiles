@@ -31,7 +31,6 @@ Conversion	Right	SegmentWidthExpand
 Composition	Right	MoveCursorRight
 Conversion	Shift Left	SegmentFocusLeft
 Conversion	Shift Right	SegmentFocusRight
-Precomposition	Shift Space	InsertAlternateSpace
 Conversion	Shift Tab	ConvertPrev
 Composition	Space	Convert
 Precomposition	Space	InsertSpace
@@ -40,6 +39,12 @@ Composition	Tab	PredictAndConvert
 Conversion	Tab	PredictAndConvert
 Conversion	Up	ConvertPrev
 Prediction	Up	ConvertPrev
+DirectInput	Shift Space	IMEOn
+Precomposition	Shift Space	CancelAndIMEOff
+Composition	Shift Space	CancelAndIMEOff
+Conversion	Shift Space	CancelAndIMEOff
+Suggestion	Shift Space	CancelAndIMEOff
+Prediction	Shift Space	CancelAndIMEOff
 Composition	Kanji	CancelAndIMEOff
 Composition	OFF	CancelAndIMEOff
 Composition	ON	IMEOn
