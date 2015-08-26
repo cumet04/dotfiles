@@ -4,6 +4,7 @@
 cwd=`dirname "${0}"`
 expr "${0}" : "/.*" > /dev/null || cwd=`(cd "${cwd}" && pwd)`
 
+rm "$HOME/.bashrc"
 ln -s "$cwd/.bashrc" "$HOME/"
 ln -s "$cwd/.gitconfig" "$HOME/"
 ln -s "$cwd/.gitignore" "$HOME/"
