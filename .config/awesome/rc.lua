@@ -460,12 +460,27 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
-autorun = true
-autorunApps =
-{
-}
-if autorun then
-	for app = 1, #autorunApps do
-		awful.util.spawn(autorunApps[app])
-	end
+
+function spawn_once(command, class, tag)
+    -- create move callback
+    local callback
+    callback = function(c)
+        if c.class == class then
+            awful.client.movetotag(tag, c)
+            client.remove_signal("manage", callback)
+        end
+    end
+
+    client.add_signal("manage", callback)
+    -- now check if not already running!
+    local findme = command
+    local firstspace = findme:find(" ")
+    if firstspace then
+        findme = findme:sub(0, firstspace-1)
+    end
+    -- finally run it
+    awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. command .. ")")
 end
+
+spawn_once("google-chrome", "Google-chrome", tags[1][1]);
+spawn_once("lxterminal", "Lxterminal", tags[1][2]);
