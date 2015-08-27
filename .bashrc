@@ -18,7 +18,4 @@ alias vim=vimx
 alias emacs="emacs -nw"
 export EDITOR=emacs
 export TERM=xterm-256color
-export GTK_IM_MODULE=ibus
-export QT_IM_MODULE=ibus
-export XMODIFIERS="@im=ibus"
 # export DOCKER_HOST="tcp://192.168.100.122:2375"
