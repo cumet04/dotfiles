@@ -11,10 +11,6 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-export GTK_IM_MODULE=ibus
-export QT_IM_MODULE=ibus
-export XMODIFIERS="@im=ibus"
-
 if which fcitx > /dev/null; then fcitx; fi &
 if which ibus-daemon > /dev/null; then ibus-daemon -drx; fi
 if which dropbox > /dev/null; then dropbox; fi &
