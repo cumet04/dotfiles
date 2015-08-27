@@ -6,6 +6,7 @@ syntax enable
 set clipboard=unnamed
 set nocompatible
 set expandtab
+set nobackup
 set noswapfile
 set shiftwidth=4
 set softtabstop=4
@@ -14,6 +15,7 @@ set autoindent
 set smartindent
 set textwidth=80
 set nowrap
+let loaded_matchparen = 1
 if exists('&colorcolumn')
     set colorcolumn=+1
 endif
