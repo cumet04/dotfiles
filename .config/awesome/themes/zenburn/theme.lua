@@ -8,7 +8,7 @@
 
 -- {{{ Main
 theme = {}
-theme.wallpaper = "~/.config/awesome/themes/zenburn/archlinux_wallpaper.png"
+theme.wallpaper = "~/.config/awesome/wallpaper/fedora-wallpaper1.jpg"
 -- }}}
 
 -- {{{ Styles
