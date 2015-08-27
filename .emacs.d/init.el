@@ -20,13 +20,14 @@
                           nil
                           'append)
         (add-to-list 'default-frame-alist '(font . "fontset-ricty"))
+        (tool-bar-mode 0)
     ))
 
 
 ;; disable auto-indent
 (electric-indent-mode -1)
 
-(tool-bar-mode 0)
+(menu-bar-mode 0)
 
 (add-hook 'window-configuration-change-hook (lambda () (ruler-mode 1)))
 
