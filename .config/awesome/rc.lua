@@ -465,6 +465,9 @@ function spawn_once(command, class, tag)
     -- create move callback
     local callback
     callback = function(c)
+        naughty.notify({ preset = naughty.config.presets.critical,
+                         title = "Oops, an error happened!",
+                         text = "test" })
         if c.class == class then
             awful.client.movetotag(tag, c)
             client.remove_signal("manage", callback)
@@ -482,5 +485,5 @@ function spawn_once(command, class, tag)
     awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. command .. ")")
 end
 
-spawn_once("google-chrome", "Google-chrome", tags[1][1]);
-spawn_once("lxterminal", "Lxterminal", tags[1][2]);
+-- spawn_once("google-chrome", "Google-chrome", tags[1][3]);
+-- spawn_once("lxterminal", "Lxterminal", tags[1][2]);
