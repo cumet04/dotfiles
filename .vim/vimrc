@@ -3,7 +3,12 @@ colorscheme molokai
 set t_Co=256
 syntax enable
 
-set clipboard+=unnamed
+if has('unix')
+    set clipboard=unnamedplus
+endif
+if has('mac')
+    set clipboard+=unnamed
+endif
 set nocompatible
 set expandtab
 set nobackup
