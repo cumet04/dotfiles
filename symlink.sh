@@ -14,5 +14,6 @@ ln -s "$cwd/.vim" "$HOME/"
 ln -s "$cwd/.emacs.d" "$HOME/"
 ln -s "$cwd/.fonts" "$HOME/"
 ln -s "$cwd/.config/awesome" "$HOME/.config/"
+ln -s "$cwd/.config/powerline-shell.py" "$HOME/.config/"
 
 fc-cache -fv
