@@ -20,6 +20,7 @@ set autoindent
 set smartindent
 set textwidth=80
 set nowrap
+autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
 
 set cursorline
 highlight clear CursorLine
