@@ -21,6 +21,7 @@ alias ls='ls --color=auto'
 alias vi=vimx
 alias vim=vimx
 alias emacs="emacs -nw"
+alias lock="xscreensaver-command -lock"
 export EDITOR=emacs
 export TERM=xterm-256color
 export GTK_IM_MODULE=ibus
