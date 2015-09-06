@@ -1,0 +1,8 @@
+[Unit]
+Description=ympd; mpd web client daemon
+
+[Service]
+ExecStart=/usr/local/bin/ympd -w 9092
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,15 @@
+[Unit]
+Description=Music Player Daemon
+After=network.target sound.target
+
+[Service]
+ExecStart=/usr/bin/mpd --no-daemon /home/medalhkr/.config/mpd/mpd.conf
+Restart=always
+RestartSec=10
+
+# allow MPD to use real-time priority 50
+LimitRTPRIO=50
+LimitRTTIME=-1
+
+[Install]
+WantedBy=default.target
