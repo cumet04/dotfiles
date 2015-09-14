@@ -6,6 +6,7 @@ expr "${0}" : "/.*" > /dev/null || cwd=`(cd "${cwd}" && pwd)`
 
 rm "$HOME/.bashrc"
 ln -s "$cwd/.bashrc" "$HOME/"
+ln -s "$cwd/.inputrc" "$HOME/"
 ln -s "$cwd/.xprofile" "$HOME/"
 ln -s "$cwd/.gitconfig" "$HOME/"
 ln -s "$cwd/.gitignore" "$HOME/"
