@@ -8,6 +8,7 @@ if has('unix')
 endif
 if has('mac')
     set clipboard+=unnamed
+    set backspace=indent,eol,start
 endif
 set nocompatible
 set expandtab
