@@ -11,15 +11,22 @@ fi
 
 function _update_ps1() {
     PS1="$(~/.config/powerline-shell.py --cwd-mode dironly $? 2> /dev/null)"
+    share_history
+}
+function share_history {  # 以下の内容を関数として定義
+    history -a  # .bash_historyに前回コマンドを1行追記
 }
 if [ "$TERM" != "linux" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+    shopt -u histappend
 fi
 
 alias ls='ls --color=auto'
 
-alias vi=vimx
-alias vim=vimx
+if which vimx > /dev/null; then
+   alias vi=vimx
+   alias vim=vimx
+fi
 alias emacs="emacs -nw"
 alias lock="xscreensaver-command -lock"
 export EDITOR=emacs

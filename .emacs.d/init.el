@@ -3,6 +3,9 @@
 (load-theme 'molokai t)
 (enable-theme 'molokai)
 
+(setq make-backup-files nil)
+(setq auto-save-default nil)
+
 ;; display line-number left side
 (require 'linum)
 (global-linum-mode)
@@ -10,17 +13,27 @@
 
 ;; for window system
 (if window-system 
-    (progn
-        (set-frame-parameter nil 'alpha 95)
-        ;; Ricty フォントの利用
-        (create-fontset-from-ascii-font "Ricty-18:weight=normal:slant=normal" nil "ricty")
-        (set-fontset-font "fontset-ricty"
-                          'unicode
-                          (font-spec :family "Ricty" :size 18)
-                          nil
-                          'append)
-        (add-to-list 'default-frame-alist '(font . "fontset-ricty"))
-        (tool-bar-mode 0)
+    (prog
+      (set-frame-parameter nil 'alpha 95)
+      (tool-bar-mode 0)
+      (if (string-match "apple-darwin" system-configuration)
+        (progn
+          (create-fontset-from-ascii-font "Ricty-18:weight=normal:slant=normal" nil "ricty")
+          (set-fontset-font "fontset-ricty"
+                            'unicode
+                            (font-spec :family "Ricty" :size 18)
+                            nil
+                            'append)
+          (add-to-list 'default-frame-alist '(font . "fontset-ricty"))))
+      (if (string-match "mingw" system-configuration)
+        (progn
+          (create-fontset-from-ascii-font "Myrica M-18:weight=normal:slant=normal" nil "myrica")
+          (set-fontset-font "fontset-myrica"
+                            'unicode
+                            (font-spec :family "Myrica M" :size 18)
+                            nil
+                            'append)
+          (add-to-list 'default-frame-alist '(font . "fontset-myrica"))))
     ))
 
 
