@@ -21,13 +21,18 @@ if [ "$TERM" != "linux" ]; then
     shopt -u histappend
 fi
 
+if [ "$(uname)" == 'Darwin' ]; then
+	PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+	MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+    alias emacs="/Applications/7.\ Emacs.app/Contents/MacOS/Emacs -nw"
+fi
+
 alias ls='ls --color=auto'
 
 if which vimx > /dev/null; then
    alias vi=vimx
    alias vim=vimx
 fi
-alias emacs="emacs -nw"
 alias lock="xscreensaver-command -lock"
 export EDITOR=emacs
 export TERM=xterm-256color
