@@ -13,7 +13,7 @@
 
 ;; for window system
 (if window-system 
-    (prog
+    (progn
       (set-frame-parameter nil 'alpha 95)
       (tool-bar-mode 0)
       (if (string-match "apple-darwin" system-configuration)
