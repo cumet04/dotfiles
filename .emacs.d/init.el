@@ -1,3 +1,5 @@
+(add-to-list 'load-path "~/.emacs.d/plugins")
+
 ;; color-theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'molokai t)
@@ -10,6 +12,11 @@
 (require 'linum)
 (global-linum-mode)
 (setq linum-format "%3d ")
+
+;; for edit with emacs; chrome extension
+;; (add-to-list 'network-coding-system-alist '(9292 utf-8 . utf-8))
+(require 'edit-server)
+(edit-server-start)
 
 ;; for window system
 (if window-system 
@@ -27,13 +34,13 @@
           (add-to-list 'default-frame-alist '(font . "fontset-ricty"))))
       (if (string-match "mingw" system-configuration)
         (progn
-          (create-fontset-from-ascii-font "Myrica M-18:weight=normal:slant=normal" nil "myrica")
-          (set-fontset-font "fontset-myrica"
+          (create-fontset-from-ascii-font "Noto Sans Mono CJK JP Regular-16:weight=normal:slant=normal" nil "noto")
+          (set-fontset-font "fontset-noto"
                             'unicode
-                            (font-spec :family "Myrica M" :size 18)
+                            (font-spec :family "Noto Sans Mono CJK JP Regular" :size 18)
                             nil
                             'append)
-          (add-to-list 'default-frame-alist '(font . "fontset-myrica"))))
+          (add-to-list 'default-frame-alist '(font . "fontset-noto"))))
     ))
 
 
