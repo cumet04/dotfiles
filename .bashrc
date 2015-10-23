@@ -24,7 +24,7 @@ fi
 if [ "$(uname)" == 'Darwin' ]; then
 	PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 	MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-    # alias emacs="/Applications/7.\ Emacs.app/Contents/MacOS/Emacs -nw"
+    # alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 fi
 
 alias ls='ls --color=auto'
