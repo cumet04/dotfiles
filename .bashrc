@@ -29,7 +29,7 @@ fi
 
 alias ls='ls --color=auto'
 
-if which vimx > /dev/null; then
+if which vimx &> /dev/null; then
    alias vi=vimx
    alias vim=vimx
 fi
