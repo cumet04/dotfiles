@@ -33,7 +33,6 @@ if which vimx &> /dev/null; then
    alias vi=vimx
    alias vim=vimx
 fi
-alias lock="xscreensaver-command -lock"
 export EDITOR=emacs
 export TERM=xterm-256color
 export GTK_IM_MODULE=ibus
