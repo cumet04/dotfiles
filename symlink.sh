@@ -17,6 +17,7 @@ ln -s "$cwd/.fonts" "$HOME/"
 mkdir "$HOME/.config"
 ln -s "$cwd/.config/awesome" "$HOME/.config/"
 ln -s "$cwd/.config/xfce4" "$HOME/.config/"
+ln -s "$cwd/.config/ranger" "$HOME/.config/"
 ln -s "$cwd/.config/powerline-shell.py" "$HOME/.config/"
 
 fc-cache -fv
