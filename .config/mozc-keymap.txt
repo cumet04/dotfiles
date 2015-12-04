@@ -45,6 +45,11 @@ Composition	Shift Space	CancelAndIMEOff
 Conversion	Shift Space	CancelAndIMEOff
 Suggestion	Shift Space	CancelAndIMEOff
 Prediction	Shift Space	CancelAndIMEOff
+Precomposition	Escape	CancelAndIMEOff
+Composition	Escape	CancelAndIMEOff
+Conversion	Escape	CancelAndIMEOff
+Suggestion	Escape	CancelAndIMEOff
+Prediction	Escape	CancelAndIMEOff
 Composition	Kanji	CancelAndIMEOff
 Composition	OFF	CancelAndIMEOff
 Composition	ON	IMEOn
