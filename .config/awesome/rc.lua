@@ -485,5 +485,5 @@ function spawn_once(command, class, tag)
     awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. command .. ")")
 end
 
--- spawn_once("google-chrome", "Google-chrome", tags[1][3]);
+spawn_once("chromium", "Google-chrome", tags[1][3]);
 -- spawn_once("lxterminal", "Lxterminal", tags[1][2]);
