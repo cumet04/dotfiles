@@ -21,3 +21,4 @@ xset r rate 250 30
 xset m 4/3 4
 xmodmap ~/.config/xmodmap
 # xscreensaver -no-splash &
+syndaemon -t -k -i 1 -d
