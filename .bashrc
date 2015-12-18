@@ -33,9 +33,17 @@ if which vimx &> /dev/null; then
    alias vi=vimx
    alias vim=vimx
 fi
-export EDITOR=emacs
+if which nvim &> /dev/null; then
+   #alias vi=nvim
+   #alias vim=nvim
+   :
+fi
+export EDITOR=vim
 export TERM=xterm-256color
+export GOPATH=$HOME/.go
+export PATH="$PATH:$GOPATH/bin"
 export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
 export XMODIFIERS="@im=ibus"
+export XDG_CONFIG_HOME=$HOME/.config
 # export DOCKER_HOST="tcp://192.168.100.122:2375"
