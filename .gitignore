@@ -2,3 +2,4 @@
 .vim/.netrwhist
 default.target.wants
 .DS_Store
+.idea/
