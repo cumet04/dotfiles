@@ -11,9 +11,6 @@ fi
 
 function _update_ps1() {
     PS1="$(~/.config/powerline-shell.py --cwd-mode dironly $? 2> /dev/null)"
-    share_history
-}
-function share_history {  # 以下の内容を関数として定義
     history -a  # .bash_historyに前回コマンドを1行追記
 }
 if [ "$TERM" != "linux" ]; then
@@ -28,22 +25,17 @@ if [ "$(uname)" == 'Darwin' ]; then
 fi
 
 alias ls='ls --color=auto'
+alias cp='cp -i'
+alias mv='mv -i'
+alias tmux='tmux;history -r'
 
-if which vimx &> /dev/null; then
-   alias vi=vimx
-   alias vim=vimx
-fi
-if which nvim &> /dev/null; then
-   #alias vi=nvim
-   #alias vim=nvim
-   :
-fi
+export HISTSIZE=10000
+export HISTFILESIZE=20000
 export EDITOR=vim
 export TERM=xterm-256color
 export GOPATH=$HOME/.go
 export PATH="$PATH:$GOPATH/bin"
-export GTK_IM_MODULE=ibus
-export QT_IM_MODULE=ibus
-export XMODIFIERS="@im=ibus"
+# export GTK_IM_MODULE=ibus
+# export QT_IM_MODULE=ibus
+# export XMODIFIERS="@im=ibus"
 export XDG_CONFIG_HOME=$HOME/.config
-# export DOCKER_HOST="tcp://192.168.100.122:2375"
