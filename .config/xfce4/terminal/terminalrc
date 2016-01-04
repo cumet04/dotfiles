@@ -18,4 +18,5 @@ MiscTabPosition=GTK_POS_TOP
 MiscHighlightUrls=TRUE
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 FontAllowBold=FALSE
+BackgroundDarkness=0.800000
 
