@@ -28,6 +28,7 @@ alias ls='ls --color=auto'
 alias cp='cp -i'
 alias mv='mv -i'
 alias tmux='tmux;history -r'
+alias vim='nvim'
 
 export HISTSIZE=10000
 export HISTFILESIZE=20000
