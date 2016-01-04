@@ -12,7 +12,6 @@ if has('mac')
     set backspace=indent,eol,start
     let $PYTHONPATH='/Users/medalhkr/Library/Python/3.5/lib/python/site-packages'
 endif
-set nocompatible
 set expandtab
 set nobackup
 set noswapfile
