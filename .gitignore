@@ -1,5 +1,5 @@
 .emacs.d/auto-save-list
-.vim/.netrwhist
+.netrwhist
 default.target.wants
 .DS_Store
 .idea/
