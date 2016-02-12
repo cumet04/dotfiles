@@ -8,6 +8,12 @@ function batteryInfo(adapter)
   local fcur = io.open("/sys/class/power_supply/"..adapter.."/charge_now")  
   local fcap = io.open("/sys/class/power_supply/"..adapter.."/charge_full")
   local fsta = io.open("/sys/class/power_supply/"..adapter.."/status")
+  if fcur == nil then
+      fcur = io.open("/sys/class/power_supply/"..adapter.."/energy_now")
+  end
+  if fcap == nil then
+      fcap = io.open("/sys/class/power_supply/"..adapter.."/energy_full")
+  end
   local cur = fcur:read()
   local cap = fcap:read()
   local sta = fsta:read()
