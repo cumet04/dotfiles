@@ -22,6 +22,7 @@ set autoindent
 set smartindent
 set textwidth=80
 set nowrap
+set ambiwidth=double " 全角文字表示バグを治す
 autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
 
 set cursorline
