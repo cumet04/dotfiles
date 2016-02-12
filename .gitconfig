@@ -2,4 +2,4 @@
 	email = medalhkr@gmail.com
 	name = medalhkr
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.config/gitignore_global

@@ -1,6 +1,4 @@
 .emacs.d/auto-save-list
 .netrwhist
 default.target.wants
-.DS_Store
-.idea/
-node_modules/
+.config/ranger/history
