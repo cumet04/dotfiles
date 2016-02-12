@@ -32,11 +32,15 @@ alias vim='nvim'
 
 export HISTSIZE=10000
 export HISTFILESIZE=20000
-export EDITOR=vim
+export EDITOR=nvim
+export VTE_CJK_WIDTH=auto
 export TERM=xterm-256color
+
 export GOPATH=$HOME/.go
 export PATH="$PATH:$GOPATH/bin"
-# export GTK_IM_MODULE=ibus
-# export QT_IM_MODULE=ibus
-# export XMODIFIERS="@im=ibus"
 export XDG_CONFIG_HOME=$HOME/.config
+
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"
+
