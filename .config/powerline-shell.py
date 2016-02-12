@@ -1,5 +1,13 @@
 #!/usr/bin/env python2.7
 # -*- coding: utf-8 -*-
+
+# Copyright (c) 2014 Shrey Banga and contributors
+# Released under the MIT license
+# https://github.com/milkbikis/powerline-shell/blob/master/LICENSE
+#
+# There are some changes in the code by INOMOTO Hikaru, 2015
+
+
 from __future__ import print_function
 
 import argparse
