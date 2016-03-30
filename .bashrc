@@ -16,13 +16,25 @@ function _update_ps1() {
 if [ "$TERM" != "linux" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
     shopt -u histappend
+    export GOROOT="/usr/lib/go/"
 fi
 
 if [ "$(uname)" == 'Darwin' ]; then
 	PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 	MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
     # alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
+    export GOROOT="/usr/local/go/"
 fi
+
+if [ -e "$HOME/.config/pyenv" ]; then
+    export PATH="$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH"
+    if [[ ! $PYENV_ROOT ]]; then
+        export PYENV_ROOT="$HOME/.config/pyenv"
+        eval "$(pyenv init -)"
+    fi
+fi
+source $HOME'/.config/google-cloud-sdk/path.bash.inc'
+source $HOME'/.config/google-cloud-sdk/completion.bash.inc'
 
 alias ls='ls --color=auto'
 alias cp='cp -i'
@@ -36,7 +48,7 @@ export EDITOR=nvim
 export VTE_CJK_WIDTH=auto
 export TERM=xterm-256color
 
-export GOPATH=$HOME/.go
+export GOPATH="$HOME/.config/go:$HOME/Documents"
 export PATH="$PATH:$GOPATH/bin"
 export XDG_CONFIG_HOME=$HOME/.config
 
@@ -44,3 +56,4 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 
+source $HOME'/.alias_local'
