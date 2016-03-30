@@ -1,0 +1,23 @@
+<application>
+  <component name="DimensionService">
+    <location key="FileChooserDialogImpl.0.0.1920.1080" x="769" y="231" />
+    <location key="WELCOME_SCREEN.0.0.1920.1080" x="962" y="230" />
+    <location key="#Browse_Repositories.0.0.1920.1080" x="552" y="223" />
+    <location key="SettingsEditor.0.0.1920.1080" x="487" y="258" />
+    <location key="com.intellij.ide.util.TipDialog.0.0.1920.1080" x="673" y="370" />
+    <location key="new project wizard.0.0.1920.1080" x="592" y="184" />
+    <location key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor.0.0.1920.1080" x="552" y="223" />
+    <location key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog.0.0.1920.1080" x="792" y="444" />
+    <location key="#Go_Libraries.0.0.1920.1080" x="764" y="227" />
+    <location key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.1920.1080" x="422" y="208" />
+    <location key="#com.intellij.ide.actions.ChooseComponentsToExportDialog.0.0.1920.1080" x="705" y="440" />
+    <size key="FileChooserDialogImpl.0.0.1920.1080" width="466" height="463" />
+    <size key="new project wizard.0.0.1920.1080" width="789" height="711" />
+    <size key="#Go_Libraries.0.0.1920.1080" width="400" height="656" />
+    <size key="GridCell.Tab.0.left.0.0.1920.1080" width="1874" height="290" />
+    <size key="GridCell.Tab.0.center.0.0.1920.1080" width="1874" height="290" />
+    <size key="GridCell.Tab.0.right.0.0.1920.1080" width="1874" height="290" />
+    <size key="GridCell.Tab.0.bottom.0.0.1920.1080" width="1874" height="290" />
+    <size key="SettingsEditor.0.0.1920.1080" width="1022" height="661" />
+  </component>
+</application>

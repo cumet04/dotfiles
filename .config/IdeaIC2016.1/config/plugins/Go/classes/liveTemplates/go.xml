@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+  ~ Copyright 2013-2015 Sergey Ignatov, Alexander Zolotov, Florin Patan
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<templateSet group="Go">
+  <template description='Import declaration' name='imp' toReformat='true' toShortenFQNames='true'
+            value='import (&#10;	"$END$"&#10;)&#10;'>
+    <context>
+      <option name='GO_FILE' value='true'/>
+    </context>
+  </template>
+  <template description='Package declaration' name='p' toReformat='true' toShortenFQNames='true'
+            value='package $NAME$'>
+    <variable alwaysStopAt='true' defaultValue='' expression='complete()' name='NAME'/>
+    <context>
+      <option name='GO_FILE' value='true'/>
+    </context>
+  </template>
+  <template description='Constant declaration' name='con' toReformat='true' toShortenFQNames='true' value='const $NAME$ $TYPE$ = $VALUE$'>
+    <variable alwaysStopAt='true' defaultValue='&quot;name&quot;' expression='' name='NAME'/>
+    <variable alwaysStopAt='true' defaultValue='' expression='complete()' name='TYPE'/>
+    <variable alwaysStopAt='true' defaultValue='' expression='complete()' name='VALUE'/>
+    <context>
+      <option name='GO_FILE' value='true'/>
+      <option name='GO_BLOCK' value='true'/>
+    </context>
+  </template>
+  <template description='Iota constant declaration' name='iota' toReformat='true' toShortenFQNames='true'
+            value='const $NAME$ $TYPE$ = iota'>
+    <variable alwaysStopAt='true' defaultValue='&quot;name&quot;' expression='' name='NAME'/>
+    <variable alwaysStopAt='true' defaultValue='' expression='complete()' name='TYPE'/>
+    <context>
+      <option name='GO_FILE' value='true'/>
+      <option name='GO_BLOCK' value='true'/>
+    </context>
+  </template>
+
+  <!--STATEMENTS-->
+  <template description='For loop' name='for' toReformat='true' toShortenFQNames='true'
+            value='for $VAR0$; $VAR1$; $VAR2$ {&#10;	$END$&#10;}'>
+    <variable alwaysStopAt='true' defaultValue='&quot;&quot;' expression='' name='VAR0'/>
+    <variable alwaysStopAt='true' defaultValue='&quot;&quot;' expression='' name='VAR1'/>
+    <variable alwaysStopAt='true' defaultValue='&quot;&quot;' expression='' name='VAR2'/>
+    <context>
+      <option name='GO_BLOCK' value='true'/>
+    </context>
+  </template>
+  <template description='For range loop' name='forr' toReformat='true' toShortenFQNames='true'
+            value='for $KEY$, $VALUE$ := range $COLLECTION$ {&#10;	$END$&#10;}'>
+    <variable alwaysStopAt='true' defaultValue='&quot;collection&quot;' expression='' name='COLLECTION'/>
+    <variable alwaysStopAt='true' defaultValue='&quot;value&quot;' expression='' name='VALUE'/>
+    <variable alwaysStopAt='true' defaultValue='&quot;key&quot;' expression='' name='KEY'/>
+    <context>
+      <option name='GO_BLOCK' value='true'/>
+    </context>
+  </template>
+  <template description='Interface or struct' name='type' toReformat='true' toShortenFQNames='true'
+            value='type $NAME$ $TYPE$ {&#10;	$END$&#10;}'>
+    <variable alwaysStopAt='true' defaultValue='&quot;name&quot;' expression='' name='NAME'/>
+    <variable alwaysStopAt='true' defaultValue='' expression='complete' name='TYPE'/>
+    <context>
+      <option name='GO_FILE' value='true'/>
+      <option name='GO_BLOCK' value='true'/>
+    </context>
+  </template>
+  <template description='printf' name='printf' toReformat='true' toShortenFQNames='true'
+            value='fmt.Printf("$END$",$VAR$)'>
+    <variable alwaysStopAt='true' defaultValue='' expression='complete()' name='VAR'/>
+    <context>
+      <option name='GO_BLOCK' value='true'/>
+    </context>
+  </template>
+  <template description='If error' name='err' toReformat='true' toShortenFQNames='true'
+            value='if err != nil {&#10;	$END$&#10;}'>
+    <context>
+      <option name='GO_BLOCK' value='true'/>
+    </context>
+  </template>
+  <template description='`xml:""`' name='xml' toReformat='true' toShortenFQNames='true'
+            value='`xml:"$END$"`'>
+    <context>
+      <option name='GO' value='true'/>
+    </context>
+  </template>
+  <template description='`json:""`' name='json' toReformat='true' toShortenFQNames='true'
+            value='`json:"$END$"`'>
+    <context>
+      <option name='GO' value='true'/>
+    </context>
+  </template>
+
+  <!--FUNCTIONS-->
+  <template description='Main function' name='main' toReformat='true' toShortenFQNames='true'
+            value='func main() {&#10;	$END$&#10;}'>
+    <context>
+      <option name='GO_FILE' value='true'/>
+    </context>
+  </template>
+  <template description='Init function' name='init' toReformat='true' toShortenFQNames='true'
+            value='func init() {&#10;	$END$&#10;}'>
+    <context>
+      <option name='GO_FILE' value='true'/>
+    </context>
+  </template>
+  <template description='Method' name='meth' toReformat='true' toShortenFQNames='true'
+            value='func ($RECEIVER$ $TYPE_1$) $NAME$($PARAMS$) $TYPE_2$ {   &#10;	$END$&#10;}'>
+    <variable alwaysStopAt='true' defaultValue='&quot;receiver&quot;' expression='' name='RECEIVER'/>
+    <variable alwaysStopAt='true' defaultValue='' expression='complete()' name='TYPE_1'/>
+    <variable alwaysStopAt='true' defaultValue='&quot;name&quot;' expression='' name='NAME'/>
+    <variable alwaysStopAt='true' defaultValue='&quot;params&quot;' expression='' name='PARAMS'/>
+    <variable alwaysStopAt='true' defaultValue='' expression='complete()' name='TYPE_2'/>
+    <context>
+      <option name='GO_FILE' value='true'/>
+    </context>
+  </template>
+  <template description='Test' name='test' toReformat='true' toShortenFQNames='true'
+            value='func Test$NAME$(t *testing.T) {&#10;	$END$&#10;}'>
+    <variable alwaysStopAt='true' defaultValue='&quot;Name&quot;' expression='' name='NAME'/>
+    <context>
+      <option name='GO_FILE' value='true'/>
+    </context>
+  </template>
+  <template description='Benchmark' name='bench' toReformat='true' toShortenFQNames='true'
+            value='func Benchmark$NAME$(b *testing.B) {&#10;	for i := 0; i &lt; b.N; i++ {&#10;	$END$&#10;	}&#10;}'>
+    <variable alwaysStopAt='true' defaultValue='&quot;Name&quot;' expression='' name='NAME'/>
+    <context>
+      <option name='GO_FILE' value='true'/>
+    </context>
+  </template>
+
+  <!--TYPES AND VARIABLES-->
+  <template description='Map type' name='map' toReformat='true' toShortenFQNames='true'
+            value='map[$KEY_TYPE$]$VALUE_TYPE$'>
+    <variable alwaysStopAt='true' defaultValue='' expression='complete()' name='KEY_TYPE'/>
+    <variable alwaysStopAt='true' defaultValue='' expression='complete()' name='VALUE_TYPE'/>
+    <context>
+      <option name='GO_TYPE' value='true'/>
+    </context>
+  </template>
+  <template description='Variable declaration :=' name=':' toReformat='true' toShortenFQNames='true'
+            value='$NAME$ := $VALUE$'>
+    <variable alwaysStopAt='true' defaultValue='&quot;name&quot;' expression='' name='NAME'/>
+    <variable alwaysStopAt='true' defaultValue='' expression='complete()' name='VALUE'/>
+    <context>
+      <option name='GO_BLOCK' value='true'/>
+    </context>
+  </template>
+</templateSet>

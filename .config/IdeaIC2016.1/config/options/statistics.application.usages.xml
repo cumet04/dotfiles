@@ -1,0 +1,48 @@
+<application>
+  <component name="StatisticsApplicationUsages">
+    <group name="module type">
+      <project id="gofx" values="GO_MODULE" collectionTime="1459233976525" />
+      <project id="troops-java" values="JAVA_MODULE" collectionTime="1458708545582" />
+      <project id="SensingTroops" values="PYTHON_MODULE" collectionTime="1458652884005" />
+      <project id="troops_py" values="PYTHON_MODULE" collectionTime="1458908456559" />
+    </group>
+    <group name="vcs">
+      <project id="gofx" values="Git" collectionTime="1459233976524" />
+      <project id="SensingTroops" values="Git" collectionTime="1458652884004" />
+    </group>
+    <group name="run-configuration-type-temp">
+      <project id="gofx" values="GoRunFileConfiguration,GoApplicationRunConfiguration" collectionTime="1459233976526" />
+      <project id="troops_py" values="PythonConfigurationType" collectionTime="1458908456559" />
+    </group>
+    <group name="file-type">
+      <project id="gofx" values="Go,IDEA_MODULE,PLAIN_TEXT,YAML" collectionTime="1459233976545" />
+      <project id="troops-java" values="IDEA_MODULE" collectionTime="1458708545694" />
+      <project id="SensingTroops" values="HTML,Python" collectionTime="1458652884016" />
+      <project id="troops_py" values="IDEA_MODULE,Python" collectionTime="1458908456640" />
+    </group>
+    <group name="Git">
+      <project id="gofx" values="data.remote.branches.count.1,config.update.type.BRANCH_DEFAULT,config.warn.about.crlf.enabled,data.local.branches.count.1,config.ssh.enabled,data.remotes.in.project.1,config.cherry-pick.autocommit.disabled,config.push.autoupdate.disabled,config.warn.about.detached.enabled,config.repo.sync.NOT_DECIDED,config.push.update.all.roots.enabled,config.save.policy.STASH,config.force.push.enabled" collectionTime="1459233976565" />
+      <project id="troops-java" values="config.push.update.all.roots.enabled,config.cherry-pick.autocommit.disabled,config.save.policy.STASH,config.force.push.enabled,config.warn.about.detached.enabled,config.push.autoupdate.disabled,config.update.type.BRANCH_DEFAULT,config.ssh.enabled,config.warn.about.crlf.enabled,config.repo.sync.NOT_DECIDED" collectionTime="1458708545700" />
+      <project id="SensingTroops" values="config.push.autoupdate.disabled,config.warn.about.detached.enabled,config.warn.about.crlf.enabled,config.push.update.all.roots.enabled,config.update.type.BRANCH_DEFAULT,data.remote.branches.count.2+,config.ssh.enabled,config.cherry-pick.autocommit.disabled,config.force.push.enabled,config.save.policy.STASH,data.remotes.in.project.1,data.local.branches.count.2+,config.repo.sync.NOT_DECIDED" collectionTime="1458652884027" />
+      <project id="troops_py" values="config.push.update.all.roots.enabled,config.save.policy.STASH,config.warn.about.detached.enabled,config.repo.sync.NOT_DECIDED,config.push.autoupdate.disabled,config.cherry-pick.autocommit.disabled,config.update.type.BRANCH_DEFAULT,config.force.push.enabled,config.warn.about.crlf.enabled,config.ssh.enabled" collectionTime="1458908456660" />
+    </group>
+    <group name="language-level">
+      <project id="gofx" values="JDK_1_3" collectionTime="1459233976562" />
+      <project id="troops-java" values="JDK_1_8" collectionTime="1458708545698" />
+      <project id="SensingTroops" values="JDK_1_3" collectionTime="1458652884024" />
+      <project id="troops_py" values="JDK_1_3" collectionTime="1458908456658" />
+    </group>
+  </component>
+  <component name="UsageTrigger">
+    <counts>
+      <entry feature="execute.GoApplicationRunConfiguration.Run" count="32" />
+      <entry feature="execute.GoRunFileConfiguration.Run" count="13" />
+      <entry feature="ide.settings.Appearance" count="3" />
+      <entry feature="ide.settings.Colors_&amp;_Fonts" count="3" />
+      <entry feature="ide.settings.Go" count="1" />
+      <entry feature="ide.settings.Plugins" count="2" />
+      <entry feature="ideaapp.started" count="21" />
+      <entry feature="welcome.screen.WelcomeScreen.OpenProject" count="1" />
+    </counts>
+  </component>
+</application>

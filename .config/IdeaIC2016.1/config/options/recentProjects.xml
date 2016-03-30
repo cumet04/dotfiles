@@ -1,0 +1,67 @@
+<application>
+  <component name="RecentProjectsManager">
+    <option name="recentPaths">
+      <list>
+        <option value="$USER_HOME$/Documents/gofx" />
+        <option value="$USER_HOME$/Documents/troops_py" />
+        <option value="$USER_HOME$/Documents/troops-java" />
+        <option value="$USER_HOME$/Documents/SensingTroops" />
+      </list>
+    </option>
+    <option name="openPaths">
+      <list>
+        <option value="$USER_HOME$/Documents/gofx" />
+      </list>
+    </option>
+    <option name="lastPath" value="$USER_HOME$/Documents/gofx" />
+    <option name="additionalInfo">
+      <map>
+        <entry key="$USER_HOME$/Documents/SensingTroops">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IC-145.258" />
+              <option name="productionCode" value="IC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1458652771861" />
+              <option name="buildTimestamp" value="1458140400000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Documents/gofx">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IC-145.258" />
+              <option name="productionCode" value="IC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1459233702599" />
+              <option name="buildTimestamp" value="1458140400000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Documents/troops-java">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IC-145.258" />
+              <option name="productionCode" value="IC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1458708519236" />
+              <option name="buildTimestamp" value="1458140400000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Documents/troops_py">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IC-145.258" />
+              <option name="productionCode" value="IC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1458908433339" />
+              <option name="buildTimestamp" value="1458140400000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="lastProjectLocation" value="$USER_HOME$/Documents" />
+  </component>
+</application>
