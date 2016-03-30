@@ -2,3 +2,6 @@
 .idea/
 __pycache__/
 node_modules/
+*wiki.git/
+venv/
+*.iml
