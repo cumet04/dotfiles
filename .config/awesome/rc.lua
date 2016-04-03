@@ -58,6 +58,7 @@ local layouts =
 {
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
+    awful.layout.suit.tile.top,
     awful.layout.suit.floating,
     awful.layout.suit.max,
 }
@@ -466,16 +467,13 @@ function spawn_once(command, class, tag)
     -- create move callback
     local callback
     callback = function(c)
-        naughty.notify({ preset = naughty.config.presets.critical,
-                         title = "Oops, an error happened!",
-                         text = "test" })
         if c.class == class then
             awful.client.movetotag(tag, c)
-            client.remove_signal("manage", callback)
+            client.disconnect_signal("manage", callback)
         end
     end
 
-    client.add_signal("manage", callback)
+    client.connect_signal("manage", callback)
     -- now check if not already running!
     local findme = command
     local firstspace = findme:find(" ")
@@ -486,5 +484,5 @@ function spawn_once(command, class, tag)
     awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. command .. ")")
 end
 
-spawn_once("chromium", "Google-chrome", tags[1][3]);
--- spawn_once("lxterminal", "Lxterminal", tags[1][2]);
+spawn_once("chromium", "chromium", tags[1][1]);
+spawn_once(terminal, "Xfce4-terminal", tags[1][2]);
