@@ -5,3 +5,4 @@ node_modules/
 *wiki.git/
 venv/
 *.iml
+.alias_local

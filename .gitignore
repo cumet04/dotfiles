@@ -2,3 +2,4 @@
 .netrwhist
 default.target.wants
 .config/ranger/history
+.config/ranger/bookmarks
