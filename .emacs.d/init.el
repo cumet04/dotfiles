@@ -13,39 +13,8 @@
 (global-linum-mode)
 (setq linum-format "%3d ")
 
-;; for edit with emacs; chrome extension
-;; (add-to-list 'network-coding-system-alist '(9292 utf-8 . utf-8))
-(require 'edit-server)
-(edit-server-start)
-
-;; for window system
-(if window-system 
-    (progn
-      (set-frame-parameter nil 'alpha 95)
-      (tool-bar-mode 0)
-      (if (string-match "apple-darwin" system-configuration)
-        (progn
-          (create-fontset-from-ascii-font "Ricty-18:weight=normal:slant=normal" nil "ricty")
-          (set-fontset-font "fontset-ricty"
-                            'unicode
-                            (font-spec :family "Ricty" :size 18)
-                            nil
-                            'append)
-          (add-to-list 'default-frame-alist '(font . "fontset-ricty"))))
-      (if (string-match "mingw" system-configuration)
-        (progn
-          (create-fontset-from-ascii-font "Noto Sans Mono CJK JP Regular-16:weight=normal:slant=normal" nil "noto")
-          (set-fontset-font "fontset-noto"
-                            'unicode
-                            (font-spec :family "Noto Sans Mono CJK JP Regular" :size 18)
-                            nil
-                            'append)
-          (add-to-list 'default-frame-alist '(font . "fontset-noto"))))
-    ))
-
-
 ;; disable auto-indent
-(electric-indent-mode -1)
+;(electric-indent-mode -1)
 
 (menu-bar-mode 0)
 
