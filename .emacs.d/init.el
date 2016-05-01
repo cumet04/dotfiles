@@ -5,9 +5,6 @@
 (load-theme 'molokai t)
 (enable-theme 'molokai)
 
-(setq make-backup-files nil)
-(setq auto-save-default nil)
-
 ;; display line-number left side
 (require 'linum)
 (global-linum-mode)
@@ -17,6 +14,9 @@
 (autoload 'markdown-mode "markdown-mode"
    "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+(setq make-backup-files nil)
+(setq auto-save-default nil)
 
 ;; disable auto-indent
 ;(electric-indent-mode -1)
