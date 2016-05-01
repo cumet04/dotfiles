@@ -3,3 +3,4 @@
 	name = medalhkr
 [core]
 	excludesfile = ~/.config/gitignore_global
+	editor = emacs
