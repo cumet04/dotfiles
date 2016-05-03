@@ -1,11 +1,14 @@
-autoload -U compinit promptinit
 autoload -U colors && colors
-autoload -U history-search-end
-compinit
-promptinit
 
-# This will set the default prompt to the walters theme
-prompt walters
+## vcs-prompt
+autoload -Uz vcs_info
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "[%F{green}%u%c%b%f]"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+precmd () { vcs_info }
+RPROMPT='${vcs_info_msg_0_} '$RPROMPT
 
 # prompt
 function _set_prompt_color() {
@@ -14,16 +17,23 @@ function _set_prompt_color() {
     local COLOR_END="%{[0m%}"
     PROMPT="${COLOR_BG}%c ${COLOR_END}>"
 }
-PROMPT="%U%F{cyan}%c >%u %f"
+PROMPT="%U%F{cyan}%c%u%f"'${vcs_info_msg_0_}'" > "
 RPROMPT='%F{green}%~%f'
 setopt prompt_subst
 
+
+# completion
+autoload -U compinit promptinit
+compinit
+promptinit
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'  # Tab補完時に大文字/小文字無視
 
 # word chars
 export WORDCHARS=$(echo $WORDCHARS | sed "s/\///")
 export WORDCHARS=$(echo $WORDCHARS | sed "s/_//")
 
 # history
+autoload -U history-search-end
 export HISTFILE=${HOME}/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=100000
@@ -108,3 +118,6 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/null
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/null
 
+
+# launch tmux
+[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
