@@ -2,6 +2,9 @@ status	key	command
 Composition	Backspace	Backspace
 Conversion	Backspace	Cancel
 Precomposition	Backspace	Revert
+Composition	Ctrl h	Backspace
+Conversion	Ctrl h	Cancel
+Precomposition	Ctrl h	Revert
 Composition	Ctrl Left	MoveCursorToBeginning
 Conversion	Ctrl Left	SegmentFocusFirst
 Composition	Ctrl Right	MoveCursorToEnd
