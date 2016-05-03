@@ -17,6 +17,7 @@
 
 (setq make-backup-files nil)
 (setq auto-save-default nil)
+(setq create-lockfiles nil)
 
 ;; disable auto-indent
 ;(electric-indent-mode -1)
