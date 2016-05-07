@@ -1,0 +1,65 @@
+status	key	command
+DirectInput	Shift Space	IMEOn
+DirectInput	Hankaku/Zenkaku	IMEOn
+Composition	Backspace	Backspace
+Composition	Ctrl h	Backspace
+Conversion	Backspace	Cancel
+Conversion	Ctrl h	Cancel
+Precomposition	Shift Space	CancelAndIMEOff
+Composition	Shift Space	CancelAndIMEOff
+Conversion	Shift Space	CancelAndIMEOff
+Suggestion	Shift Space	CancelAndIMEOff
+Prediction	Shift Space	CancelAndIMEOff
+Precomposition	Escape	CancelAndIMEOff
+Composition	Escape	CancelAndIMEOff
+Conversion	Escape	CancelAndIMEOff
+Suggestion	Escape	CancelAndIMEOff
+Prediction	Escape	CancelAndIMEOff
+Precomposition	Henkan	CancelAndIMEOff
+Composition	Henkan	CancelAndIMEOff
+Conversion	Henkan	CancelAndIMEOff
+Suggestion	Henkan	CancelAndIMEOff
+Prediction	Henkan	CancelAndIMEOff
+Precomposition	Backspace	Revert
+Precomposition	Ctrl h	Revert
+Composition	Enter	Commit
+Conversion	Enter	Commit
+Conversion	Down	CommitOnlyFirstSegment
+Composition	Space	Convert
+Composition	F9	ConvertToFullAlphanumeric
+Conversion	F9	ConvertToFullAlphanumeric
+Composition	F7	ConvertToFullKatakana
+Conversion	F7	ConvertToFullKatakana
+Composition	F8	ConvertToHalfWidth
+Conversion	F8	ConvertToHalfWidth
+Composition	F10	ConvertToHalfAlphanumeric
+Conversion	F10	ConvertToHalfAlphanumeric
+Composition	F6	ConvertToHiragana
+Conversion	F6	ConvertToHiragana
+Composition	F2	ConvertWithoutHistory
+Composition	Hankaku/Zenkaku	IMEOff
+Conversion	Hankaku/Zenkaku	IMEOff
+Precomposition	Hankaku/Zenkaku	IMEOff
+Composition	Delete	Delete
+Conversion	Ctrl Shift Right	SegmentWidthExpand
+Conversion	Right	SegmentWidthExpand
+Precomposition	Space	InsertSpace
+Composition	Left	MoveCursorLeft
+Composition	Right	MoveCursorRight
+Composition	Ctrl Left	MoveCursorToBeginning
+Composition	Ctrl Right	MoveCursorToEnd
+Conversion	Shift Left	SegmentFocusLeft
+Conversion	Shift Right	SegmentFocusRight
+Conversion	Ctrl Left	SegmentFocusFirst
+Conversion	Ctrl Right	SegmentFocusLast
+Suggestion	Down	PredictAndConvert
+Composition	Tab	PredictAndConvert
+Conversion	Tab	PredictAndConvert
+Prediction	Down	ConvertNext
+Conversion	Space	ConvertNext
+Conversion	Shift Tab	ConvertPrev
+Conversion	Up	ConvertPrev
+Prediction	Up	ConvertPrev
+Conversion	Ctrl Shift Left	SegmentWidthShrink
+Conversion	Left	SegmentWidthShrink
+DirectInput	Hiragana	IMEOn
