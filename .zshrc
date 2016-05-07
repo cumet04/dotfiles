@@ -30,6 +30,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'  # Tab補完時に大�
 
 # word chars
 export WORDCHARS=$(echo $WORDCHARS | sed "s/\///")
+export WORDCHARS=$(echo $WORDCHARS | sed "s/\.//")
 export WORDCHARS=$(echo $WORDCHARS | sed "s/_//")
 
 # history
@@ -52,9 +53,9 @@ bindkey '^]'   vi-find-next-char
 bindkey '^[^]' vi-find-prev-char
 
 # git root
-function cdgit() {
-    cd $(git rev-parse --show-toplevel)
-}
+# function cdgit() {
+    # cd $(git rev-parse --show-toplevel)
+# }
 
 # peco incremental-search
 function peco-select-history() {
@@ -102,8 +103,9 @@ alias ls='ls --color=auto'
 alias ll='ls -alh'
 alias cp='cp -i'
 alias mv='mv -i'
-alias tmux='tmux;fc -R'
-alias vim='nvim'
+which nvim > /dev/null && alias vim='nvim'
+which colordiff > /dev/null && alias diff='colordiff -u'
+alias cdgit='cd $(git rev-parse --show-toplevel)'
 test -e $HOME/.alias_local && source $HOME/.alias_local
 
 
