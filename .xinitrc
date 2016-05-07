@@ -11,15 +11,9 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-if which fcitx &> /dev/null; then fcitx; fi &
-if [ -e $HOME/btsync/btsync ]; then $HOME/btsync/btsync; fi
-if which ibus-daemon &> /dev/null; then ibus-daemon -drx; fi
-if which dropbox &> /dev/null; then dropbox; fi &
-
 xset -b
 xset r rate 250 30
 xset m 4/3 4
-xmodmap ~/.config/xmodmap
 # xscreensaver -no-splash &
 syndaemon -t -k -i 1 -d
 
