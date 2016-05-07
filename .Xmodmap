@@ -1,6 +1,7 @@
-!
 ! CapsLockをCtrlに変更
-!
 remove Lock = Caps_Lock
 keysym Caps_Lock = Control_L
 add Control = Control_L
+
+! (RealForceJP) スペースの左のキーにSuperを割当
+keycode 102 = Super_L
