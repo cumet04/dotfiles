@@ -35,7 +35,7 @@ export WORDCHARS=$(echo $WORDCHARS | sed "s/_//")
 
 # history
 autoload -U history-search-end
-export HISTFILE=${HOME}/.zsh_history
+export HISTFILE=.config/zsh/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=100000
 setopt extended_history
@@ -121,5 +121,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/null
 
 
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
 # launch tmux
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
