@@ -42,7 +42,7 @@ end
 beautiful.init(awful.util.getdir("config") .. "/themes/zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "xfce4-terminal"
+terminal = "terminator"
 editor = os.getenv("EDITOR") or "vi"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -485,4 +485,4 @@ function spawn_once(command, class, tag)
 end
 
 spawn_once("chromium", "chromium", tags[1][1]);
-spawn_once(terminal, "Xfce4-terminal", tags[1][2]);
+spawn_once(terminal, "terminator", tags[1][2]);
