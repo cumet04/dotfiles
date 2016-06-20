@@ -16,3 +16,10 @@ add Control = Control_L
 
 ! Muhenkan (left of space) -> Super
 keycode 102 = Super_L
+
+! E/J -> ESC
+keycode 49 = Escape
+
+! Shift_R -> Muhenkan
+remove Shift = Shift_R
+keycode 62 = Muhenkan
