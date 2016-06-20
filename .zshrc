@@ -35,7 +35,7 @@ export WORDCHARS=$(echo $WORDCHARS | sed "s/_//")
 
 # history
 autoload -U history-search-end
-export HISTFILE=.config/zsh/.zsh_history
+export HISTFILE=$HOME/.config/zsh/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=100000
 setopt extended_history
@@ -51,11 +51,6 @@ bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 bindkey '^]'   vi-find-next-char
 bindkey '^[^]' vi-find-prev-char
-
-# git root
-# function cdgit() {
-    # cd $(git rev-parse --show-toplevel)
-# }
 
 # peco incremental-search
 function peco-select-history() {
@@ -73,27 +68,27 @@ export VTE_CJK_WIDTH=auto
 export TERM=xterm-256color
 export GOPATH="$HOME/.config/go:$HOME/Documents"
 export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:$HOME/.gem/ruby/2.3.0/bin"
 export XDG_CONFIG_HOME=$HOME/.config
+
+# *-virtual-env
+export PYENV_ROOT=/usr/local/var/pyenv
+export PATH="$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH"
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# if ! echo $PATH | grep nvm > /dev/null; then source /usr/local/var/nvm/nvm.sh; fi
 
 case ${OSTYPE} in
 darwin*)
 	export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 	export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
     export GOROOT="/usr/local/opt/go/libexec"
-
-    export PYENV_ROOT=/usr/local/var/pyenv
-    if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
     ;;
 linux*)
     export GOROOT="/usr/lib/go/"
     export GTK_IM_MODULE=fcitx
     export QT_IM_MODULE=fcitx
     export XMODIFIERS="@im=fcitx"
-    if [ -e "$HOME/.config/pyenv" ]; then
-        export PYENV_ROOT="$HOME/.config/pyenv"
-        export PATH="$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH"
-        if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-    fi
     ;;
 esac
 
@@ -109,10 +104,10 @@ alias cdgit='cd $(git rev-parse --show-toplevel)'
 test -e $HOME/.alias_local && source $HOME/.alias_local
 
 
-if [ -e "$HOME/.config/google-cloud-sdk" ]; then
-    source $HOME'/.config/google-cloud-sdk/path.zsh.inc'
-    source $HOME'/.config/google-cloud-sdk/completion.zsh.inc'
-fi
+# if [ -e "$HOME/.config/google-cloud-sdk" ]; then
+#     source $HOME'/.config/google-cloud-sdk/path.zsh.inc'
+#     source $HOME'/.config/google-cloud-sdk/completion.zsh.inc'
+# fi
 
 # load syntax-highlighting
 # エラーを潰していて本当は良くない（if [ -e ... ]したほうがいい）が...
@@ -122,5 +117,3 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/nu
 
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
-# launch tmux
-[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux

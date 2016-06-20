@@ -11,10 +11,11 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
+if which fcitx &> /dev/null; then fcitx; fi &
+if which xscreensaver &> /dev/null; then xscreensaver -no-splash; fi &
+syndaemon -t -k -i 1 -d
 xset -b
 xset r rate 250 30
 xset m 4/3 4
-# xscreensaver -no-splash &
-syndaemon -t -k -i 1 -d
 
 exec awesome

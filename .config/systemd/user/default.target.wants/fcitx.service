@@ -1,9 +1,0 @@
-[Unit]
-Description=fcitx service
- 
-[Service]
-ExecStart=/usr/bin/fcitx -D
-Environment=GTK_IM_MODULE=fcitx XMODIFIERS="@im=fcitx" QT_IM_MODULE=fcitx
-
-[Install]
-WantedBy=default.target
