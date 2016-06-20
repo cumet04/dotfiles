@@ -1,25 +1,20 @@
 status	key	command
-DirectInput	Shift Space	IMEOn
 DirectInput	Hankaku/Zenkaku	IMEOn
+DirectInput	Shift Space	IMEOn
 Composition	Backspace	Backspace
 Composition	Ctrl h	Backspace
 Conversion	Backspace	Cancel
 Conversion	Ctrl h	Cancel
-Precomposition	Shift Space	CancelAndIMEOff
-Composition	Shift Space	CancelAndIMEOff
-Conversion	Shift Space	CancelAndIMEOff
-Suggestion	Shift Space	CancelAndIMEOff
-Prediction	Shift Space	CancelAndIMEOff
 Precomposition	Escape	CancelAndIMEOff
 Composition	Escape	CancelAndIMEOff
 Conversion	Escape	CancelAndIMEOff
 Suggestion	Escape	CancelAndIMEOff
 Prediction	Escape	CancelAndIMEOff
-Precomposition	Henkan	CancelAndIMEOff
-Composition	Henkan	CancelAndIMEOff
-Conversion	Henkan	CancelAndIMEOff
-Suggestion	Henkan	CancelAndIMEOff
-Prediction	Henkan	CancelAndIMEOff
+Precomposition	Shift Space	CancelAndIMEOff
+Composition	Shift Space	CancelAndIMEOff
+Conversion	Shift Space	CancelAndIMEOff
+Suggestion	Shift Space	CancelAndIMEOff
+Prediction	Shift Space	CancelAndIMEOff
 Precomposition	Backspace	Revert
 Precomposition	Ctrl h	Revert
 Composition	Enter	Commit
@@ -62,4 +57,4 @@ Conversion	Up	ConvertPrev
 Prediction	Up	ConvertPrev
 Conversion	Ctrl Shift Left	SegmentWidthShrink
 Conversion	Left	SegmentWidthShrink
-DirectInput	Hiragana	IMEOn
+DirectInput	Muhenkan	IMEOn
