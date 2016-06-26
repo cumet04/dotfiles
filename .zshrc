@@ -64,12 +64,16 @@ bindkey '^r' peco-select-history
 
 # export
 export EDITOR=nvim
+export SVN_EDITOR=emacs
 export VTE_CJK_WIDTH=auto
 export TERM=xterm-256color
 export GOPATH="$HOME/.config/go:$HOME/Documents"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$HOME/.gem/ruby/2.3.0/bin"
 export XDG_CONFIG_HOME=$HOME/.config
+export PATH="$PATH:/usr/local/texlive/2016/bin/x86_64-linux"
+export MANPATH="$MANPATH:/usr/local/texlive/2016/texmf-dist/doc/man"
+export INFOPATH="$INFOPATH:/usr/local/texlive/2016/texmf-dist/doc/info"
 
 # *-virtual-env
 export PYENV_ROOT=/usr/local/var/pyenv
