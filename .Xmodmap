@@ -17,6 +17,9 @@ add Control = Control_L
 ! Muhenkan (left of space) -> Super
 keycode 102 = Super_L
 
+! Henkan_Mode -> Enter
+keycode 100 = Return
+
 ! E/J -> ESC
 keycode 49 = Escape
 
