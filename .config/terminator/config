@@ -6,8 +6,9 @@
   title_font = Ricty 11
   title_use_system_font = False
 [keybindings]
+  broadcast_all = None
   broadcast_group = None
-  broadcast_off = <Primary>g
+  broadcast_off = None
   close_term = None
   close_window = None
   cycle_next = None
@@ -44,8 +45,8 @@
   rotate_cw = None
   scaled_zoom = None
   search = None
-  split_horiz = <Primary>underscore
-  split_vert = <Primary>bar
+  split_horiz = <Primary><Alt>minus
+  split_vert = <Primary><Alt>slash
   switch_to_tab_1 = <Primary>1
   switch_to_tab_10 = <Primary>0
   switch_to_tab_2 = <Primary>2
