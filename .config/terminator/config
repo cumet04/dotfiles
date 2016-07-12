@@ -1,5 +1,4 @@
 [global_config]
-  focus = mouse
   inactive_color_offset = 0.75
   suppress_multiple_term_dialog = True
   tab_position = bottom
