@@ -20,7 +20,8 @@
 (setq create-lockfiles nil)
 
 ;; disable auto-indent
-;(electric-indent-mode -1)
+;; (add-hook 'Latex-mode-hook '(lambda () (electric-indent-local-mode -1)))
+(electric-indent-mode -1)
 
 (menu-bar-mode 0)
 
