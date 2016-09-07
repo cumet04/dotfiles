@@ -9,7 +9,7 @@
 -- {{{ Main
 theme = {}
 -- theme.wallpaper = "~/.config/awesome/wallpaper/fedora-wallpaper1.jpg"
-theme.wallpaper = "~/.config/awesome/wallpaper/archlinux_wallpaper.png"
+theme.wallpaper = "~/.config/archlogo.png"
 -- }}}
 
 -- {{{ Styles
