@@ -71,24 +71,31 @@ export GOPATH="$HOME/.config/go:$HOME/Documents"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$HOME/.gem/ruby/2.3.0/bin"
 export XDG_CONFIG_HOME=$HOME/.config
-export PATH="$PATH:/usr/local/texlive/2016/bin/x86_64-linux"
 export MANPATH="$MANPATH:/usr/local/texlive/2016/texmf-dist/doc/man"
 export INFOPATH="$INFOPATH:/usr/local/texlive/2016/texmf-dist/doc/info"
 
 # *-virtual-env
-export PYENV_ROOT=/usr/local/var/pyenv
-export PATH="$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH"
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv > /dev/null; then
+    export PYENV_ROOT=/usr/local/var/pyenv
+    eval "$(pyenv init -)"
+fi
+if which rbenv > /dev/null; then
+    export RBENV_ROOT=/usr/local/var/rbenv
+    eval "$(rbenv init -)"
+fi
+
 
 # if ! echo $PATH | grep nvm > /dev/null; then source /usr/local/var/nvm/nvm.sh; fi
 
 case ${OSTYPE} in
 darwin*)
-	export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-	export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+    export PATH="$PATH:/usr/local/texlive/2016/bin/x86_64-darwin"
+    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
     export GOROOT="/usr/local/opt/go/libexec"
     ;;
 linux*)
+    export PATH="$PATH:/usr/local/texlive/2016/bin/x86_64-linux"
     export GOROOT="/usr/lib/go/"
     export GTK_IM_MODULE=fcitx
     export QT_IM_MODULE=fcitx
@@ -102,6 +109,7 @@ alias ls='ls --color=auto'
 alias ll='ls -alh'
 alias cp='cp -i'
 alias mv='mv -i'
+alias cd..='cd ..'
 which nvim > /dev/null && alias vim='nvim'
 which colordiff > /dev/null && alias diff='colordiff -u'
 alias cdgit='cd $(git rev-parse --show-toplevel)'
