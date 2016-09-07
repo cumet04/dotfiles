@@ -25,6 +25,12 @@ set nowrap
 set ambiwidth=double " 全角文字表示バグを治す
 autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
 
+" spell check
+set spell
+set spelllang=en,cjk
+hi clear SpellBad
+hi SpellBad cterm=underline
+
 set cursorline
 highlight clear CursorLine
 
