@@ -5,19 +5,15 @@ cwd=`dirname "${0}"`
 expr "${0}" : "/.*" > /dev/null || cwd=`(cd "${cwd}" && pwd)`
 
 rm "$HOME/.bashrc"
-ln -s "$cwd/.bashrc" "$HOME/"
-ln -s "$cwd/.inputrc" "$HOME/"
+ln -s "$cwd/.zshrc" "$HOME/"
 ln -s "$cwd/.xinitrc" "$HOME/"
 ln -s "$cwd/.gitconfig" "$HOME/"
 ln -s "$cwd/.tmux.conf" "$HOME/"
+ln -s "$cwd/.ideavimrc" "$HOME/"
 ln -s "$cwd/.emacs.d" "$HOME/"
 mkdir "$HOME/.config"
-ln -s "$cwd/.config/IdeaIC2016.1" "$HOME/.config/"
 ln -s "$cwd/.config/nvim" "$HOME/.config/"
 ln -s "$cwd/.config/awesome" "$HOME/.config/"
-ln -s "$cwd/.config/xfce4" "$HOME/.config/"
-ln -s "$cwd/.config/ranger" "$HOME/.config/"
-ln -s "$cwd/.config/powerline-shell.py" "$HOME/.config/"
 ln -s "$cwd/.config/gitignore_global" "$HOME/.config/"
 
 sudo ln -s /etc/fonts/conf.avail/10-unhinted.conf /etc/fonts/conf.d/
