@@ -67,14 +67,14 @@ export EDITOR=nvim
 export SVN_EDITOR=emacs
 export VTE_CJK_WIDTH=auto
 export TERM=xterm-256color
-export GOPATH="$HOME/.config/go:$HOME/Documents"
+export GOPATH="$HOME/.config/go:$HOME/Documents/golang"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$HOME/.gem/ruby/2.3.0/bin"
 export XDG_CONFIG_HOME=$HOME/.config
 export MANPATH="$MANPATH:/usr/local/texlive/2016/texmf-dist/doc/man"
 export INFOPATH="$INFOPATH:/usr/local/texlive/2016/texmf-dist/doc/info"
 
-# *-virtual-env
+# *env
 if which pyenv > /dev/null; then
     export PYENV_ROOT=/usr/local/var/pyenv
     eval "$(pyenv init -)"
