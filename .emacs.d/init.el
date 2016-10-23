@@ -26,6 +26,10 @@
 (setq auto-save-default nil)
 (setq create-lockfiles nil)
 
+;; default init display
+(setq inhibit-startup-screen t)
+(setq initial-scratch-message "")
+
 ;; disable auto-indent
 ;; (add-hook 'Latex-mode-hook '(lambda () (electric-indent-local-mode -1)))
 (electric-indent-mode -1)
