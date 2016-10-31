@@ -52,12 +52,30 @@ bindkey "^N" history-beginning-search-forward-end
 bindkey '^]'   vi-find-next-char
 bindkey '^[^]' vi-find-prev-char
 
-# peco incremental-search
+# cdr
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+zstyle ':chpwd:*' recent-dirs-max 5000
+zstyle ':chpwd:*' recent-dirs-default yes
+zstyle ':chpwd:*' recent-dirs-file $HOME/.config/zsh/.chpwd-recent-dirs
+zstyle ':completion:*' recent-dirs-insert both
+
+# peco cdr
+function peco-cdr () {
+    local selected_dir=$(cdr -l | awk '{ print $2 }' | peco)
+    if [ -n "$selected_dir" ]; then
+        BUFFER="cd ${selected_dir}"
+        zle accept-line
+    fi
+}
+zle -N peco-cdr
+bindkey '^o' peco-cdr
+
+# peco command history
 function peco-select-history() {
     local tac=$(which tac && echo "tac" || echo "tail -r")
     BUFFER=$(\history -n 1 | eval $tac | peco --query "$LBUFFER")
     CURSOR=$#BUFFER
-    # zle clear-screen
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
