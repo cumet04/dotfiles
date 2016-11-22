@@ -251,6 +251,11 @@ globalkeys = awful.util.table.join(
         end),
     awful.key({ modkey,           }, "w", function () mymainmenu:show() end),
 
+    -- hardware manipulation
+    awful.key({ modkey, "Shift"}, "F10", function () awful.util.spawn("amixer -q -D pulse sset Master toggle") end),
+    awful.key({ modkey, "Shift"}, "F11", function () awful.util.spawn("amixer -q -D pulse sset Master 5%-") end),
+    awful.key({ modkey, "Shift"}, "F12", function () awful.util.spawn("amixer -q -D pulse sset Master 5%+") end),
+
     -- Layout manipulation
     awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/Downloads/ 2>/dev/null'") end),
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end),
