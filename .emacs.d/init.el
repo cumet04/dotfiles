@@ -7,6 +7,13 @@
 
 (add-to-list 'load-path "~/.emacs.d/plugins")
 
+;; font setting
+(if (display-graphic-p) 
+    (progn
+        (set-face-attribute 'default nil :family "Ricty Diminished" :height 140)
+        (set-fontset-font t 'japanese-jisx0208 (font-spec :family "Ricty Diminished"))
+))
+
 ;; color-theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'molokai t)
@@ -35,6 +42,7 @@
 (electric-indent-mode -1)
 
 (menu-bar-mode 0)
+(tool-bar-mode 0)
 
 (add-hook 'window-configuration-change-hook (lambda () (ruler-mode 1)))
 

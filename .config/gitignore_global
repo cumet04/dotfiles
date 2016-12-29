@@ -8,3 +8,4 @@ node_modules/
 venv/
 *.iml
 .alias_local
+.pylintrc

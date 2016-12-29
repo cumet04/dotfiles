@@ -492,4 +492,4 @@ end
 
 spawn_once("chromium", "Chromium", tags[1][1]);
 spawn_once(terminal, "Terminator", tags[1][2]);
-spawn_once("firefox", "Firefox", tags[1][5]);
+-- spawn_once("firefox", "Firefox", tags[1][5]);
