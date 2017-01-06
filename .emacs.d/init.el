@@ -10,7 +10,7 @@
 ;; font setting
 (if (display-graphic-p) 
     (progn
-        (set-face-attribute 'default nil :family "Ricty Diminished" :height 140)
+        (set-face-attribute 'default nil :family "Ricty Diminished" :height 180)
         (set-fontset-font t 'japanese-jisx0208 (font-spec :family "Ricty Diminished"))
 ))
 
