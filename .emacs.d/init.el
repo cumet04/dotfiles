@@ -32,6 +32,8 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq create-lockfiles nil)
+(if (display-graphic-p)
+    (setq confirm-kill-emacs 'y-or-n-p))
 
 ;; default init display
 (setq inhibit-startup-screen t)
