@@ -17,6 +17,9 @@ ln -s "$cwd/.config/nvim" "$HOME/.config/"
 ln -s "$cwd/.config/awesome" "$HOME/.config/"
 ln -s "$cwd/.config/gitignore_global" "$HOME/.config/"
 
+cp /usr/share/inkscape/keys/adobe-illustrator-cs2.xml $HOME/.config/inkscape/keys/default.xml
+# cp /Applications/Inkscape.app/Contents/Resources/share/inkscape/keys/adobe-illustrator-cs2.xml $HOME/.config/inkscape/keys/default.xml
+
 sudo ln -s /etc/fonts/conf.avail/10-unhinted.conf /etc/fonts/conf.d/
 sudo ln -s /etc/fonts/conf.avail/70-no-bitmaps /etc/fonts/conf.d/
 sudo -k
