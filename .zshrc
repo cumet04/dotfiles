@@ -127,11 +127,16 @@ alias ls='ls --color=auto'
 alias ll='ls -alh'
 alias cp='cp -i'
 alias mv='mv -i'
+alias emacs='emacsclient -t -a ""'
 alias cd..='cd ..'
 which nvim > /dev/null && alias vim='nvim'
 which colordiff > /dev/null && alias diff='colordiff -u'
 alias cdgit='cd $(git rev-parse --show-toplevel)'
 test -e $HOME/.alias_local && source $HOME/.alias_local
+
+function memo() {
+    emacs "$HOME/etc/memo/$(date +%Y%m%d-%H%M%S)_$1"
+}
 
 
 # if [ -e "$HOME/.config/google-cloud-sdk" ]; then
