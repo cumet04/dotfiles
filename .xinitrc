@@ -16,7 +16,7 @@ if which xscreensaver &> /dev/null; then xscreensaver -no-splash; fi &
 syndaemon -t -k -i 1 -d
 xset -b
 xset r rate 200 40
-xinput --set-prop "Logitech M570" "Device Accel Constant Deceleration" 2
+xinput --set-prop "Logitech M570" "libinput Accel Speed" -0.8
 xset m 3 4
 
 exec awesome
