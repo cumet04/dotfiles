@@ -81,8 +81,9 @@ zle -N peco-select-history
 bindkey '^r' peco-select-history
 
 # export
+export LC_CTYPE=ja_JP.UTF-8
 export EDITOR=nvim
-export SVN_EDITOR=emacs
+export SVN_EDITOR='emacsclient -t -a ""'
 export VTE_CJK_WIDTH=auto
 export TERM=xterm-256color
 export GOPATH="$HOME/.config/go"
@@ -137,6 +138,7 @@ test -e $HOME/.alias_local && source $HOME/.alias_local
 function memo() {
     emacs "$HOME/etc/memo/$(date +%Y%m%d-%H%M%S)_$1"
 }
+
 
 
 # if [ -e "$HOME/.config/google-cloud-sdk" ]; then

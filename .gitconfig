@@ -3,7 +3,7 @@
 	name = medalhkr
 [core]
 	excludesfile = ~/.config/gitignore_global
-	editor = emacs
+	editor = "emacsclient -t"
 [pager]
 	log = diff-highlight | less
 	show = diff-highlight | less
