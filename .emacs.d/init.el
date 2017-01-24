@@ -76,3 +76,6 @@
         (setq interprogram-cut-function 'paste-to-osx)
         (setq interprogram-paste-function 'copy-from-osx)
     ))
+(custom-set-faces
+    ;; LaTeXパッケージのフォント調整
+    '(font-latex-sectioning-5-face ((t (:foreground "yellow")))))
