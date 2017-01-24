@@ -2,7 +2,7 @@
   inactive_color_offset = 0.75
   suppress_multiple_term_dialog = True
   tab_position = bottom
-  title_font = Ricty 11
+  title_font = Noto Sans CJK JP 12
   title_use_system_font = False
 [keybindings]
   broadcast_all = None

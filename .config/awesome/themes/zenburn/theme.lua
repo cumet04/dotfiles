@@ -13,7 +13,7 @@ theme.wallpaper = "~/.config/archlogo.png"
 -- }}}
 
 -- {{{ Styles
-theme.font      = "sans 10"
+theme.font      = "Noto Sans CJK JP 12"
 
 -- {{{ Colors
 theme.fg_normal  = "#DCDCCC"
