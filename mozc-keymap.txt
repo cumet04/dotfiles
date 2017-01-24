@@ -10,6 +10,11 @@ Composition	Escape	CancelAndIMEOff
 Conversion	Escape	CancelAndIMEOff
 Suggestion	Escape	CancelAndIMEOff
 Prediction	Escape	CancelAndIMEOff
+Precomposition	Ctrl g	CancelAndIMEOff
+Composition	Ctrl g	CancelAndIMEOff
+Conversion	Ctrl g	CancelAndIMEOff
+Suggestion	Ctrl g	CancelAndIMEOff
+Prediction	Ctrl g	CancelAndIMEOff
 Precomposition	Shift Space	CancelAndIMEOff
 Composition	Shift Space	CancelAndIMEOff
 Conversion	Shift Space	CancelAndIMEOff
