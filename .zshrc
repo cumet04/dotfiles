@@ -42,6 +42,7 @@ setopt extended_history
 setopt inc_append_history
 setopt hist_ignore_dups
 setopt hist_ignore_space
+setopt hist_save_no_dups
 
 # key bindings
 bindkey -e  # readline相当の部分をemacsバインドに
@@ -134,10 +135,6 @@ which nvim > /dev/null && alias vim='nvim'
 which colordiff > /dev/null && alias diff='colordiff -u'
 alias cdgit='cd $(git rev-parse --show-toplevel)'
 test -e $HOME/.alias_local && source $HOME/.alias_local
-
-function memo() {
-    emacs "$HOME/etc/memo/$(date +%Y%m%d-%H%M%S)_$1"
-}
 
 
 
