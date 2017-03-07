@@ -14,12 +14,12 @@
   cycle_prev = None
   edit_window_title = None
   full_screen = None
-  go_down = <Alt>j
-  go_left = <Alt>h
-  go_next = None
-  go_prev = None
-  go_right = <Alt>l
-  go_up = <Alt>k
+  go_down = None
+  go_left = None
+  go_next = <Alt>k
+  go_prev = <Alt>j
+  go_right = None
+  go_up = None
   group_all = None
   group_tab = None
   help = None
@@ -76,8 +76,7 @@
 [profiles]
   [[default]]
     allow_bold = False
-    background_darkness = 0.79
-    background_image = None
+    background_darkness = 0.8
     background_type = transparent
     cursor_blink = False
     cursor_color = "#aaaaaa"
