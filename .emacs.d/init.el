@@ -5,47 +5,36 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+;; markdown-mode
 (add-to-list 'load-path "~/.emacs.d/plugins")
-
-;; font setting
-(if (display-graphic-p) 
-    (progn
-        (set-face-attribute 'default nil :family "Ricty Diminished" :height 180)
-        (set-fontset-font t 'japanese-jisx0208 (font-spec :family "Ricty Diminished"))
-))
+(autoload 'markdown-mode "markdown-mode"
+   "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
 ;; color-theme
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(load-theme 'molokai t)
-(enable-theme 'molokai)
+(load-theme 'tango-dark t)
 
 ;; display line-number left side
 (require 'linum)
 (global-linum-mode)
 (setq linum-format "%3d ")
 
-;; markdown-mode
-(autoload 'markdown-mode "markdown-mode"
-   "Major mode for editing Markdown files" t)
-(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-
+;; disable garbage
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq create-lockfiles nil)
-(if (display-graphic-p)
-    (setq confirm-kill-emacs 'y-or-n-p))
+
+;; disable UI
+(menu-bar-mode 0)
+(tool-bar-mode 0)
 
 ;; default init display
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message "")
 
-;; disable auto-indent
-;; (add-hook 'Latex-mode-hook '(lambda () (electric-indent-local-mode -1)))
 (electric-indent-mode -1)
 
-(menu-bar-mode 0)
-(tool-bar-mode 0)
-
+;; show ruler
 (add-hook 'window-configuration-change-hook (lambda () (ruler-mode 1)))
 
 ;; C-h -> backspace
@@ -63,7 +52,6 @@
                     (process-send-string proc text)
                     (process-send-eof proc)))
         )))
-
 (if (string-match "apple-darwin" system-configuration)
     (progn
         (defun copy-from-osx ()
@@ -76,6 +64,3 @@
         (setq interprogram-cut-function 'paste-to-osx)
         (setq interprogram-paste-function 'copy-from-osx)
     ))
-(custom-set-faces
-    ;; LaTeXパッケージのフォント調整
-    '(font-latex-sectioning-5-face ((t (:foreground "yellow")))))
