@@ -1,28 +1,2 @@
-!!! emacs
-keycode 33 = p P Up
-keycode 57 = n N Down
-keycode 56 = b B Left
-keycode 41 = f F Right
-keycode 38 = a A Home
-keycode 26 = e E End
-keycode 40 = d D Delete
-keycode 43 = h H BackSpace
-! Ctrl_L -> Mod3 (emacs-ctrl), CapsLock -> Ctrl_L
-remove Control = Control_L
-remove Lock = Caps_Lock
-keycode 37 = Mode_switch
-keysym Caps_Lock = Control_L
-add Control = Control_L
-
-! Muhenkan (left of space) -> Super
-keycode 102 = Super_L
-
-! Henkan_Mode -> Enter
-keycode 100 = Return
-
-! E/J -> ESC
-keycode 49 = Escape
-
-! Shift_R -> Muhenkan
 remove Shift = Shift_R
 keycode 62 = Muhenkan
