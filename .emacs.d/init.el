@@ -26,7 +26,7 @@
 
 ;; disable UI
 (menu-bar-mode 0)
-(tool-bar-mode 0)
+;(tool-bar-mode 0)
 
 ;; default init display
 (setq inhibit-startup-screen t)
