@@ -5,17 +5,24 @@ cwd=`dirname "${0}"`
 expr "${0}" : "/.*" > /dev/null || cwd=`(cd "${cwd}" && pwd)`
 
 rm "$HOME/.bashrc"
-ln -s "$cwd/.zshrc" "$HOME/"
-ln -s "$cwd/.xinitrc" "$HOME/"
-ln -s "$cwd/.gitconfig" "$HOME/"
-ln -s "$cwd/.tmux.conf" "$HOME/"
-ln -s "$cwd/.ideavimrc" "$HOME/"
-ln -s "$cwd/.emacs.d" "$HOME/"
-ln -s "$cwd/.subversion" "$HOME/"
+for target in $(echo "
+    .emacs.d
+    .gitconfig
+    .gtkrc-2.0
+    .ideavimrc
+    .xinitrc
+    .Xmodmap
+    .zshrc
+");do ln -s "$cwd/$target" "$HOME/"
+
 mkdir "$HOME/.config"
-ln -s "$cwd/.config/nvim" "$HOME/.config/"
-ln -s "$cwd/.config/awesome" "$HOME/.config/"
-ln -s "$cwd/.config/gitignore_global" "$HOME/.config/"
+for target in $(echo "
+    awesome
+    gitignore_global
+    nvim
+    systemd
+    terminator
+");do ln -s "$cwd.config/$target" "$HOME/.config"
 
 cp /usr/share/inkscape/keys/adobe-illustrator-cs2.xml $HOME/.config/inkscape/keys/default.xml
 # cp /Applications/Inkscape.app/Contents/Resources/share/inkscape/keys/adobe-illustrator-cs2.xml $HOME/.config/inkscape/keys/default.xml
