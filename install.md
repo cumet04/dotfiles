@@ -17,6 +17,7 @@ packages
 ```
 alsa-utils
 android-tools
+avahi
 awesome
 bluez
 bluez-firmware
@@ -58,6 +59,7 @@ nodejs
 noto-fonts
 noto-fonts-cjk
 npm
+nss-mdns
 ntfs-3g
 nvidia
 openssh
