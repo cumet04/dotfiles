@@ -161,34 +161,34 @@ sudo true
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install caskroom/cask/brew-cask
 brew install $(echo "
-zsh
-emacs
-coreutils
-go
-homebrew/dupes/rsync
-git
-svn
-neovim/neovim/neovim
-peco
-pyenv
-rbenv
-imagemagick
-android-platform-tools
-tree
-the_silver_searcher
+    zsh
+    emacs
+    coreutils
+    go
+    homebrew/dupes/rsync
+    git
+    svn
+    neovim/neovim/neovim
+    peco
+    pyenv
+    rbenv
+    imagemagick
+    android-platform-tools
+    tree
+    the_silver_searcher
 ")
 
 brew cask install $(echo "
-google-chrome
-google-japanese-ime
-vlc
-iterm2
-resilio-sync
-gimp
-visual-studio-code
-xquartz
-inkscape
-docker
+    google-chrome
+    google-japanese-ime
+    vlc
+    iterm2
+    resilio-sync
+    gimp
+    visual-studio-code
+    xquartz
+    inkscape
+    docker
 ")
 ```
 
