@@ -1,96 +1,22 @@
 ArchLinux
 ================================================================================
+* mozc
+* font
 
-auraのインストール
+pacstrap
 ------------------------------------------------------------
-```
-curl -OL https://aur.archlinux.org/cgit/aur.git/snapshot/aura-bin.tar.gz
-tar xvf aura-bin.tar.gz
-cd aura-bin
-makepkg -sri
-```
+`pacstrap /mnt base`
 
+時短のためbaseだけに留める
 
-packages
+arch-chroot
 ------------------------------------------------------------
-### official repository
-```
-alsa-utils
-android-tools
-avahi
-awesome
-bluez
-bluez-firmware
-bluez-utils
-chromium
-colordiff
-dmidecode
-dnsmasq
-docker
-docker-compose
-dosfstools
-efibootmgr
-emacs-nox
-evince
-fcitx
-fcitx-configtool
-fcitx-im
-fcitx-mozc
-geeqie
-gimp
-git
-go
-gptfdisk
-grep
-gzip
-inkscape
-intel-ucode
-jdk8-openjdk
-jq
-libreoffice-fresh
-mariadb-clients
-maven
-mesa
-mongodb
-mongodb-tools
-nano
-neovim
-nodejs
-noto-fonts
-noto-fonts-cjk
-npm
-nss-mdns
-ntfs-3g
-nvidia
-openssh
-pavucontrol
-perl
-poppler-data
-pulseaudio
-pulseaudio-alsa
-pulseaudio-bluetooth
-python-pip
-rsync
-ruby
-samba
-terminator
-tmux
-tree
-ufw
-unrar
-unzip
-vlc
-wine
-winetricks
-xclip
-xorg-server
-xorg-server-utils
-xorg-xinit
-zip
-zsh-syntax-highlighting
-```
+* multilib
 
-以下必要に応じて
+
+initial script
+------------------------------------------------------------
+choose:
 ```
 xf86-video-intel
 xf86-video-nouveau
@@ -98,20 +24,129 @@ xf86-video-ati
 nvidia
 ```
 
-### AUR
 ```
-aura-bin
-btsync
-chromium-pepper-flash
-peco
-pyenv
-rbenv
-ruby-build
-silver-searcher-git
-visual-studio-code
+# install packages
+pacman -Syu $(echo "
+    base-devel
+    alsa-utils
+    android-tools
+    avahi
+    awesome
+    bluez
+    bluez-firmware
+    bluez-utils
+    chromium
+    colordiff
+    dmidecode
+    dnsmasq
+    docker
+    docker-compose
+    dosfstools
+    efibootmgr
+    emacs-nox
+    evince
+    fcitx
+    fcitx-configtool
+    fcitx-im
+    fcitx-mozc
+    geeqie
+    gimp
+    git
+    go
+    gptfdisk
+    grep
+    gzip
+    inkscape
+    intel-ucode
+    jdk8-openjdk
+    jq
+    libreoffice-fresh
+    mariadb-clients
+    maven
+    mesa
+    mongodb
+    mongodb-tools
+    nano
+    neovim
+    nodejs
+    noto-fonts
+    noto-fonts-cjk
+    npm
+    nss-mdns
+    ntfs-3g
+    nvidia
+    openssh
+    pavucontrol
+    perl
+    poppler-data
+    pulseaudio
+    pulseaudio-alsa
+    pulseaudio-bluetooth
+    python-pip
+    rsync
+    ruby
+    samba
+    terminator
+    tmux
+    tree
+    ufw
+    unrar
+    unzip
+    vlc
+    wine
+    winetricks
+    xclip
+    xorg-server
+    xorg-server-utils
+    xorg-xinit
+    zip
+    zsh-syntax-highlighting
+")
+
+# add user
+useradd -m -g users medalhkr -s /usr/bin/zsh
+
+# install aura
+curl -OL https://aur.archlinux.org/cgit/aur.git/snapshot/aura-bin.tar.gz
+tar xvf aura-bin.tar.gz
+cd aura-bin
+sudo -u medalhkr makepkg -sr
+pacman -U aura-bin*pkg.tar.xz
+
+# install AUR packages
+yes | aura -A $(echo "
+    peco
+    pyenv
+    pepper-flash
+    rbenv
+    ruby-build
+    silver-searcher-git
+    visual-studio-code
+")
 ```
 
+initial script (after login)
+------------------------------------------------------------
+```
+# setup *env
 
+# setup golang env
+go get -u -v $(echo "
+    github.com/nsf/gocode
+    github.com/rogpeppe/godef
+    github.com/zmb3/gogetdoc
+    github.com/golang/lint/golint
+    github.com/lukehoban/go-outline
+    sourcegraph.com/sqs/goreturns
+    golang.org/x/tools/cmd/godoc
+    golang.org/x/tools/cmd/gorename
+    github.com/tpng/gopkgs
+    github.com/newhook/go-symbols
+    golang.org/x/tools/cmd/guru
+    github.com/cweill/gotests/...
+    github.com/derekparker/delve/cmd/dlv
+")
+```
 
 Mac
 ================================================================================
