@@ -128,7 +128,9 @@ yes | aura -A $(echo "
 initial script (after login)
 ------------------------------------------------------------
 ```
-# setup *env
+# install latest python 2/3 stable
+pyenv install $(pyenv install --list | grep -e "^\s*2[\.0-9]*$" | tail -n 1)
+pyenv install $(pyenv install --list | grep -e "^\s*3[\.0-9]*$" | tail -n 1)
 
 # setup golang env
 go get -u -v $(echo "
