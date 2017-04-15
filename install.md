@@ -131,6 +131,9 @@ initial script (after login)
 # install latest python 2/3 stable
 pyenv install $(pyenv install --list | grep -e "^\s*2[\.0-9]*$" | tail -n 1)
 pyenv install $(pyenv install --list | grep -e "^\s*3[\.0-9]*$" | tail -n 1)
+pyenv global $(pyenv versions | grep -e "^\s*3") $(pyenv versions | grep -e "^\s*2") 
+
+pip install pylint
 
 # setup golang env
 go get -u -v $(echo "
@@ -196,7 +199,7 @@ brew cask install $(echo "
 ------------------------------------------------------------
 ```
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true
-ln -s /usr/local/Cellar/git/2.11.0/share/git-core/contrib/diff-highlight/diff-highlight /usr/local/bin
+ln -s /usr/local/Cellar/git/*/share/git-core/contrib/diff-highlight/diff-highlight /usr/local/bin
 sudo echo '/usr/local/bin/zsh' >> /etc/shells && chsh -s /usr/local/bin/zsh
 ```
 
