@@ -88,6 +88,7 @@ export SVN_EDITOR='emacsclient -t -a ""'
 export VTE_CJK_WIDTH=auto
 export TERM=xterm-256color
 export GOPATH="$HOME/.config/go"
+export GOBIN="$GOPATH/bin"
 export PATH="$PATH:$HOME/.config/go/bin"
 export PATH="$PATH:$HOME/.gem/ruby/2.3.0/bin"
 export XDG_CONFIG_HOME=$HOME/.config
