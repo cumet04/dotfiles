@@ -161,11 +161,11 @@ sudo true
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install caskroom/cask/brew-cask
 brew install $(echo "
-    zsh
     emacs
     coreutils
+    hub
     go
-    homebrew/dupes/rsync
+    rsync
     git
     svn
     neovim/neovim/neovim
@@ -173,9 +173,9 @@ brew install $(echo "
     pyenv
     rbenv
     imagemagick
-    android-platform-tools
     tree
     the_silver_searcher
+    zsh-syntax-highlighting
 ")
 
 brew cask install $(echo "
@@ -183,12 +183,13 @@ brew cask install $(echo "
     google-japanese-ime
     vlc
     iterm2
-    resilio-sync
     gimp
     visual-studio-code
     xquartz
     inkscape
     docker
+    atom
+    slack
 ")
 ```
 
@@ -196,8 +197,6 @@ brew cask install $(echo "
 ------------------------------------------------------------
 ```
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true
-ln -s /usr/local/Cellar/git/2.11.0/share/git-core/contrib/diff-highlight/diff-highlight /usr/local/bin
-sudo echo '/usr/local/bin/zsh' >> /etc/shells && chsh -s /usr/local/bin/zsh
 ```
 
 その他設定など
