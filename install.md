@@ -163,6 +163,7 @@ packages
 sudo true
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install caskroom/cask/brew-cask
+brew tap caskroom/fonts
 brew install $(echo "
     emacs
     coreutils
@@ -179,8 +180,12 @@ brew install $(echo "
     tree
     the_silver_searcher
     zsh-syntax-highlighting
+    nmap
+    mysql
+    postgresql
+    watch
+    lftp
 ")
-
 brew cask install $(echo "
     google-chrome
     google-japanese-ime
@@ -193,6 +198,9 @@ brew cask install $(echo "
     docker
     atom
     slack
+    istat-menus
+    amethyst
+    font-source-han-code-jp
 ")
 ```
 
