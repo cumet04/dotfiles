@@ -170,6 +170,7 @@ brew install $(echo "
     hub
     go
     rsync
+    tig
     git
     svn
     neovim/neovim/neovim
@@ -188,6 +189,7 @@ brew install $(echo "
 ")
 brew cask install $(echo "
     google-chrome
+    google-drive
     google-japanese-ime
     vlc
     iterm2
@@ -196,7 +198,6 @@ brew cask install $(echo "
     xquartz
     inkscape
     docker
-    atom
     slack
     istat-menus
     amethyst
@@ -213,13 +214,13 @@ ln -s /usr/local/Cellar/git/*/share/git-core/contrib/diff-highlight/diff-highlig
 
 その他設定など
 --------------------------------------------------
+* ログインシェルの変更
 * 自動スリープの停止; 省エネ設定
-* Ricty Diminishedを設定
-  - webから落とす
 * GIMP, Inkscapeの初期起動
   - 初回起動はフォント検索で非常に時間がかかるため
 * rbenv, pyenvの設定
   - install, global
+* command-英かな
 
 
 ### キーボード
