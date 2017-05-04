@@ -109,6 +109,7 @@ go get -u -v $(echo "
     golang.org/x/tools/cmd/guru
     github.com/cweill/gotests/...
     github.com/derekparker/delve/cmd/dlv
+    github.com/fatih/gomodifytags
     github.com/mattn/memo
 ")
 ```
