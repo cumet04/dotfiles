@@ -1,0 +1,22 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.fontSize": 15,
+    "editor.fontFamily": "SourceHanCodeJP-Light",
+    "editor.renderIndentGuides": true,
+    "vim.useSystemClipboard": true,
+    "editor.rulers": [
+        80, 100
+    ],
+    "python.formatting.formatOnSave": true,
+    "sync.gist": "ec4d9758f3ea87398e17bf2088f04b47",
+    "sync.lastUpload": "2017-03-11T14:52:26.167Z",
+    "sync.autoDownload": false,
+    "sync.autoUpload": false,
+    "sync.lastDownload": "",
+    "sync.version": 261,
+    "sync.showSummary": true,
+    "sync.forceDownload": false,
+    "sync.anonymousGist": false,
+    "sync.host": "",
+    "sync.pathPrefix": ""
+}
