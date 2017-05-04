@@ -155,3 +155,16 @@ alias cdgit='cd $(git rev-parse --show-toplevel)'
 
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
+# alert not-sync dotfiles repo
+# 遅いので保留
+# function check-dotfiles() {
+#     local _pwd=$PWD
+#     cd $HOME/etc/dotfiles
+#     git status --short
+#     git log @{u}..HEAD --oneline
+#     cd $_pwd
+# }
+# check-dotfiles
+# unset -f check-dotfiles
