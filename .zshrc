@@ -89,11 +89,12 @@ export VTE_CJK_WIDTH=auto
 export TERM=xterm-256color
 export GOPATH="$HOME/.config/go"
 export GOBIN="$GOPATH/bin"
-export PATH="$PATH:$HOME/.config/go/bin"
+export GOROOT="/usr/local/opt/go/libexec"
+export PATH="$PATH:$GOBIN"
 export PATH="$PATH:$HOME/.gem/ruby/2.3.0/bin"
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export XDG_CONFIG_HOME=$HOME/.config
-export MANPATH="$MANPATH:/usr/local/texlive/2016/texmf-dist/doc/man"
-export INFOPATH="$INFOPATH:/usr/local/texlive/2016/texmf-dist/doc/info"
 
 # *env
 if which pyenv > /dev/null; then
@@ -104,26 +105,6 @@ if which rbenv > /dev/null; then
     export RBENV_ROOT=/usr/local/var/rbenv
     eval "$(rbenv init -)"
 fi
-
-
-# if ! echo $PATH | grep nvm > /dev/null; then source /usr/local/var/nvm/nvm.sh; fi
-
-case ${OSTYPE} in
-darwin*)
-    export PATH="$PATH:/usr/local/texlive/2016/bin/x86_64-darwin"
-    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-    export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-    export GOROOT="/usr/local/opt/go/libexec"
-    ;;
-linux*)
-    export PATH="$PATH:/usr/local/texlive/2016/bin/x86_64-linux"
-    export GOROOT="/usr/lib/go/"
-    export GTK_IM_MODULE=fcitx
-    export QT_IM_MODULE=fcitx
-    export XMODIFIERS="@im=fcitx"
-    ;;
-esac
-
 
 # alias
 alias ls='ls --color=auto'
@@ -136,20 +117,6 @@ alias git='hub'
 which nvim > /dev/null && alias vim='nvim'
 which colordiff > /dev/null && alias diff='colordiff -u'
 alias cdgit='cd $(git rev-parse --show-toplevel)'
-test -e $HOME/.alias_local && source $HOME/.alias_local
 
 
-
-# if [ -e "$HOME/.config/google-cloud-sdk" ]; then
-#     source $HOME'/.config/google-cloud-sdk/path.zsh.inc'
-#     source $HOME'/.config/google-cloud-sdk/completion.zsh.inc'
-# fi
-
-# load syntax-highlighting
-# エラーを潰していて本当は良くない（if [ -e ... ]したほうがいい）が...
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/null
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/null
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/null
-
-
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
