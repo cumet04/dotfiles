@@ -99,11 +99,46 @@ export XDG_CONFIG_HOME=$HOME/.config
 # *env
 if which pyenv > /dev/null; then
     export PYENV_ROOT=/usr/local/var/pyenv
-    eval "$(pyenv init -)"
+    # 以下、"pyenv init - --no-rehash"の出力と同一
+    # 直書きのが実行が早い
+    export PATH="/usr/local/var/pyenv/shims:${PATH}"
+    export PYENV_SHELL=zsh
+    source '/usr/local/Cellar/pyenv/1.0.10/libexec/../completions/pyenv.zsh'
+    pyenv() {
+      local command
+      command="$1"
+      if [ "$#" -gt 0 ]; then
+        shift
+      fi
+
+      case "$command" in
+      rehash|shell)
+        eval "$(pyenv "sh-$command" "$@")";;
+      *)
+        command pyenv "$command" "$@";;
+      esac
+    }
 fi
 if which rbenv > /dev/null; then
     export RBENV_ROOT=/usr/local/var/rbenv
-    eval "$(rbenv init -)"
+    # pyenvと同様
+    export PATH="/usr/local/var/rbenv/shims:${PATH}"
+    export RBENV_SHELL=zsh
+    source '/usr/local/Cellar/rbenv/1.1.0/libexec/../completions/rbenv.zsh'
+    rbenv() {
+      local command
+      command="$1"
+      if [ "$#" -gt 0 ]; then
+        shift
+      fi
+
+      case "$command" in
+      rehash|shell)
+        eval "$(rbenv "sh-$command" "$@")";;
+      *)
+        command rbenv "$command" "$@";;
+      esac
+    }
 fi
 
 # alias
