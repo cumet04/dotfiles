@@ -10,44 +10,44 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew install caskroom/cask/brew-cask
 brew tap caskroom/fonts
 brew install $(echo "
-    emacs
     coreutils
-    hub
-    go
-    rsync
-    tig
+    emacs
     git
-    svn
+    go
+    hub
+    imagemagick
+    lftp
+    mysql
     neovim/neovim/neovim
+    nmap
     peco
+    postgresql
     pyenv
     rbenv
-    imagemagick
-    tree
+    rsync
+    svn
     the_silver_searcher
-    zsh-syntax-highlighting
-    nmap
-    mysql
-    postgresql
+    tig
+    tree
     watch
-    lftp
+    zsh-syntax-highlighting
 ")
 brew cask install $(echo "
+    amethyst
+    docker
+    font-source-han-code-jp
+    gimp
     google-chrome
     google-drive
     google-japanese-ime
-    vlc
-    iterm2
-    gimp
-    visual-studio-code
-    xquartz
     inkscape
-    docker
-    slack
     istat-menus
-    amethyst
-    font-source-han-code-jp
+    iterm2
     noti
+    slack
+    visual-studio-code
+    vlc
+    xquartz
 ")
 ```
 
@@ -96,20 +96,20 @@ pip install pylint
 
 # setup golang env
 go get -u -v $(echo "
-    github.com/nsf/gocode
-    github.com/rogpeppe/godef
-    github.com/zmb3/gogetdoc
-    github.com/golang/lint/golint
-    github.com/lukehoban/go-outline
-    sourcegraph.com/sqs/goreturns
-    golang.org/x/tools/cmd/godoc
-    golang.org/x/tools/cmd/gorename
-    github.com/tpng/gopkgs
-    github.com/newhook/go-symbols
-    golang.org/x/tools/cmd/guru
     github.com/cweill/gotests/...
     github.com/derekparker/delve/cmd/dlv
     github.com/fatih/gomodifytags
+    github.com/golang/lint/golint
+    github.com/lukehoban/go-outline
     github.com/mattn/memo
+    github.com/newhook/go-symbols
+    github.com/nsf/gocode
+    github.com/rogpeppe/godef
+    github.com/tpng/gopkgs
+    github.com/zmb3/gogetdoc
+    golang.org/x/tools/cmd/godoc
+    golang.org/x/tools/cmd/gorename
+    golang.org/x/tools/cmd/guru
+    sourcegraph.com/sqs/goreturns
 ")
 ```
