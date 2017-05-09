@@ -10,3 +10,6 @@
 	diff = diff-highlight | less
 [diff]
 	compactionHeuristic = true
+[alias]
+    d = diff
+    s = status

@@ -16,6 +16,7 @@ brew install $(echo "
     go
     hub
     imagemagick
+    jq
     lftp
     mysql
     neovim/neovim/neovim

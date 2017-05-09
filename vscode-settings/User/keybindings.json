@@ -1,1 +1,10 @@
 // Empty
+[{
+    "key": "cmd+[",
+    "command": "workbench.action.focusPreviousGroup",
+    "when": "editorTextFocus"
+},{
+    "key": "cmd+]",
+    "command": "workbench.action.focusNextGroup",
+    "when": "editorTextFocus"
+}]
