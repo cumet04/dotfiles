@@ -3,15 +3,8 @@ colorscheme molokai
 set t_Co=256
 syntax enable
 
-if has('unix')
-    set clipboard+=unnamedplus
-    let $PYTHONPATH='/usr/lib/python3.5/site-packages'
-endif
-if has('mac')
-    set clipboard+=unnamed
-    set backspace=indent,eol,start
-    let $PYTHONPATH='/Users/medalhkr/Library/Python/3.5/lib/python/site-packages'
-endif
+set clipboard+=unnamed
+set backspace=indent,eol,start
 set expandtab
 set nobackup
 set noswapfile
@@ -22,8 +15,7 @@ set autoindent
 set smartindent
 set textwidth=80
 set nowrap
-set ambiwidth=double " 全角文字表示バグを治す
-autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
+" set ambiwidth=double " 全角文字表示バグを治す
 
 " spell check
 set spell

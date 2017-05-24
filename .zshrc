@@ -83,7 +83,7 @@ bindkey '^r' peco-select-history
 
 # export
 export LC_CTYPE=ja_JP.UTF-8
-export EDITOR=nvim
+export EDITOR=vim
 export SVN_EDITOR='emacsclient -t -a ""'
 export VTE_CJK_WIDTH=auto
 export TERM=xterm-256color
@@ -149,7 +149,6 @@ alias mv='mv -i'
 alias emacs='emacsclient -t -a ""'
 alias cd..='cd ..'
 alias git='hub'
-which nvim > /dev/null && alias vim='nvim'
 which colordiff > /dev/null && alias diff='colordiff -u'
 alias cdgit='cd $(git rev-parse --show-toplevel)'
 
