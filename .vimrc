@@ -3,7 +3,8 @@ colorscheme molokai
 set t_Co=256
 syntax enable
 
-set clipboard+=unnamed
+" set clipboard+=unnamed
+set clipboard=unnamed
 set backspace=indent,eol,start
 set expandtab
 set nobackup
