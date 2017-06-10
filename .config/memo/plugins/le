@@ -1,0 +1,5 @@
+#!/bin/bash
+selected=$(memo list --format "{{.File}}:{{.Title}}" | column -t -s ":" | peco)
+test -z "$selected" && exit 0
+
+memo e $(echo "$selected" | cut -d':' -f1)
