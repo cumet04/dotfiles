@@ -192,8 +192,10 @@ fi
 # alias
 alias ls='ls --color=auto'
 alias ll='ls -alh'
+alias lt='ls -alht'
 alias cp='cp -i'
 alias mv='mv -i'
+alias sjis='iconv -f cp932'
 alias emacs='emacsclient -t -a ""'
 alias cd..='cd ..'
 alias git='hub'
