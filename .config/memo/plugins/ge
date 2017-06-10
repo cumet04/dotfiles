@@ -1,4 +1,10 @@
 #!/bin/bash
+
+if [ $1 = "-usage" ]; then
+    echo "grep memo and edit one from the result"
+    exit 0
+fi
+
 test -z "$1" && echo "memo: pattern required" && exit 1
 
 selected=$(memo g $1 | sed "s/\([^:]*:[^:]*\):\(.*\)/\1	| \2/g" | sed "s|.*/\([^:]*:\)|\1|g" | column -t -s "	" | peco)
