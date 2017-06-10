@@ -10,6 +10,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew install caskroom/cask/brew-cask
 brew tap caskroom/fonts
 brew install $(echo "
+    colordiff
     coreutils
     emacs
     git
@@ -19,7 +20,6 @@ brew install $(echo "
     jq
     lftp
     mysql
-    neovim/neovim/neovim
     nmap
     peco
     postgresql
@@ -30,13 +30,15 @@ brew install $(echo "
     the_silver_searcher
     tig
     tree
+    vim
     watch
     zsh-syntax-highlighting
 ")
 brew cask install $(echo "
     amethyst
     docker
-    font-source-han-code-jp
+    franz
+    font-ricty-diminished
     gimp
     google-chrome
     google-drive
@@ -44,8 +46,6 @@ brew cask install $(echo "
     inkscape
     istat-menus
     iterm2
-    noti
-    slack
     visual-studio-code
     vlc
     xquartz
