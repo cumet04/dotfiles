@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $1 = "-usage" ]; then
+if [ "$1" = "-usage" ]; then
     echo "list memo and edit one from the list"
     exit 0
 fi
