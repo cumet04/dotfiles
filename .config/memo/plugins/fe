@@ -7,7 +7,7 @@ fi
 
 selected=$(memo list | grep "$1")
 
-if [ $(echo $selected | wc -l) -ne 1 ]; then
+if [ $(echo "$selected" | wc -l) -ne 1 ]; then
     selected=$(memo list | grep "$1" | peco)
 fi
 
