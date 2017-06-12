@@ -200,7 +200,7 @@ alias emacs='emacsclient -t -a ""'
 alias cd..='cd ..'
 alias git='hub'
 which colordiff > /dev/null && alias diff='colordiff -u'
-alias cdgit='cd $(git rev-parse --show-toplevel)'
+alias cdgit='cd "$(git rev-parse --show-toplevel)"'
 
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
