@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $1 = "-usage" ]; then
+if [ "$1" = "-usage" ]; then
     echo "memo edit with prefilter"
     exit 0
 fi
