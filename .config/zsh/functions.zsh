@@ -14,10 +14,10 @@ function peco_select_history() {
 }
 
 function sshgrep() {
-    nums=$(grep -n "Host .*$1" $HOME/.ssh/config | cut -d":" -f 1)
+    local nums=$(grep -n "Host .*$1" $HOME/.ssh/config | cut -d":" -f 1)
     {
     for num in $(echo $nums);do
-        last=$(($num + 10))
+        local last=$(($num + 10))
         for n in $(seq $num $last);do
             # output line $n, and if the line is empty then break loop
             sed -n "${n}p" $HOME/.ssh/config | grep "..*" >&1 || break
@@ -72,3 +72,7 @@ function colored_ssh() {
     \ssh $@
     set_term_bgcolor 0 0 0
 }
+function _colored_ssh() {
+    _values '' $(grep "^Host " $HOME/.ssh/config | cut -d" " -f 2)
+}
+ compdef _colored_ssh colored_ssh

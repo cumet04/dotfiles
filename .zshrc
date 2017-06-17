@@ -23,12 +23,18 @@ PROMPT="%U%F{cyan}%c%u%f"'${vcs_info_msg_0_}'" > "
 RPROMPT='%F{green}%~%f'
 setopt prompt_subst
 
-# load custom functions
-source $ZSH_HOME/functions.zsh
 
 # completion
 autoload -U compinit promptinit
+compinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'  # Tab補完時に大文字/小文字無視
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*' format '%B%d%b'
+zstyle ':completion:*:warnings' format 'No matches for: %d'
+zstyle ':completion:*' group-name ''
+
+# load custom functions
+source $ZSH_HOME/functions.zsh
 
 # word chars
 export WORDCHARS=$(echo $WORDCHARS | sed "s/\///")
@@ -64,12 +70,12 @@ zstyle ':chpwd:*' recent-dirs-file $ZSH_HOME/.chpwd-recent-dirs
 zstyle ':completion:*' recent-dirs-insert both
 
 # peco cdr
-zle -N peco-cdr
-bindkey '^o' peco-cdr
+zle -N peco_cdr
+bindkey '^o' peco_cdr
 
 # peco command history
-zle -N peco-select-history
-bindkey '^r' peco-select-history
+zle -N peco_select_history
+bindkey '^r' peco_select_history
 
 
 # export
@@ -142,7 +148,7 @@ alias ll='ls -alh'
 alias lt='ls -alht'
 alias cp='cp -i'
 alias mv='mv -i'
-alias ssh='_colored_ssh'
+alias ssh='colored_ssh'
 alias sjis='iconv -f cp932'
 alias emacs='emacsclient -t -a ""'
 alias cd..='cd ..'
