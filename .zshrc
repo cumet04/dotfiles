@@ -1,4 +1,6 @@
 autoload -U colors && colors
+export XDG_CONFIG_HOME=$HOME/.config
+ZSH_HOME=$XDG_CONFIG_HOME/zsh
 
 ## vcs-prompt
 autoload -Uz vcs_info
@@ -21,11 +23,11 @@ PROMPT="%U%F{cyan}%c%u%f"'${vcs_info_msg_0_}'" > "
 RPROMPT='%F{green}%~%f'
 setopt prompt_subst
 
+# load custom functions
+source $ZSH_HOME/functions.zsh
 
 # completion
 autoload -U compinit promptinit
-compinit
-promptinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'  # Tab補完時に大文字/小文字無視
 
 # word chars
@@ -35,7 +37,7 @@ export WORDCHARS=$(echo $WORDCHARS | sed "s/_//")
 
 # history
 autoload -U history-search-end
-export HISTFILE=$HOME/.config/zsh/.zsh_history
+export HISTFILE=$ZSH_HOME/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=100000
 setopt extended_history
@@ -58,76 +60,17 @@ autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
 zstyle ':chpwd:*' recent-dirs-max 5000
 zstyle ':chpwd:*' recent-dirs-default yes
-zstyle ':chpwd:*' recent-dirs-file $HOME/.config/zsh/.chpwd-recent-dirs
+zstyle ':chpwd:*' recent-dirs-file $ZSH_HOME/.chpwd-recent-dirs
 zstyle ':completion:*' recent-dirs-insert both
 
 # peco cdr
-function peco-cdr () {
-    local selected_dir=$(cdr -l | awk '{ print $2 }' | peco)
-    if [ -n "$selected_dir" ]; then
-        BUFFER="cd ${selected_dir}"
-        zle accept-line
-    fi
-}
 zle -N peco-cdr
 bindkey '^o' peco-cdr
 
 # peco command history
-function peco-select-history() {
-    local tac=$(which tac && echo "tac" || echo "tail -r")
-    BUFFER=$(\history -n 1 | eval $tac | peco --query "$LBUFFER")
-    CURSOR=$#BUFFER
-}
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
-# ssh bgcolor
-function set_term_bgcolor() {
-  local R=${1}*65535/255
-  local G=${2}*65535/255
-  local B=${3}*65535/255
-
-  /usr/bin/osascript <<EOF
-  tell application "iTerm2"
-    tell current session of current window
-      set background color to {$R, $G, $B}
-    end tell
-  end tell
-EOF
-}
-
-function _colored_ssh() {
-    local host=""
-    for i in $(seq $# -1 1)
-    do
-        if echo $@[$i] | grep -v "^-" > /dev/null; then
-            host=$@[$i]
-            break
-        fi
-    done
-
-    local label=$(grep "^Host ${host} " $HOME/.ssh/config | sed "s/[^#]*# *//g")
-    test -z $label && echo $host | grep "192\.168\.*" > /dev/null && label="local"
-
-    case $label in
-    "production")
-        set_term_bgcolor 64 0 0
-        ;;
-    "testing" | "internal")
-        set_term_bgcolor 32 0 48
-        ;;
-    "local")
-        set_term_bgcolor 0 0 0
-        ;;
-    *)
-        set_term_bgcolor 32 32 0
-        ;;
-    esac
-
-    \ssh $@
-    set_term_bgcolor 0 0 0
-}
-alias ssh='_colored_ssh'
 
 # export
 export LC_CTYPE=ja_JP.UTF-8
@@ -142,7 +85,6 @@ export PATH="$PATH:$GOBIN"
 export PATH="$PATH:$HOME/.gem/ruby/2.3.0/bin"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-export XDG_CONFIG_HOME=$HOME/.config
 
 # *env
 if which pyenv > /dev/null; then
@@ -190,15 +132,22 @@ if which rbenv > /dev/null; then
 fi
 
 # alias
+function cdls() {
+    \cd $1
+    ls
+}
+alias cd=cdls
 alias ls='ls --color=auto'
 alias ll='ls -alh'
 alias lt='ls -alht'
 alias cp='cp -i'
 alias mv='mv -i'
+alias ssh='_colored_ssh'
 alias sjis='iconv -f cp932'
 alias emacs='emacsclient -t -a ""'
 alias cd..='cd ..'
 alias git='hub'
+alias tmp='memo tmp'
 which colordiff > /dev/null && alias diff='colordiff -u'
 alias cdgit='cd "$(git rev-parse --show-toplevel)"'
 
