@@ -41,3 +41,15 @@ hi IndentGuidesOdd  ctermbg=233
 hi IndentGuidesEven ctermbg=234
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_guide_size=1
+
+
+function! HandleURI()
+  let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;:]*')
+  echo s:uri
+  if s:uri != ""
+    exec "!open \"" . s:uri . "\""
+  else
+    echo "No URI found in line."
+  endif
+endfunction
+map <Leader>w :call HandleURI()<CR>
