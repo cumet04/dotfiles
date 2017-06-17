@@ -1,5 +1,5 @@
 
-function peco-cdr () {
+function peco_cdr () {
     local selected_dir=$(cdr -l | awk '{ print $2 }' | peco)
     if [ -n "$selected_dir" ]; then
         BUFFER="cd ${selected_dir}"
@@ -7,7 +7,7 @@ function peco-cdr () {
     fi
 }
 
-function peco-select-history() {
+function peco_select_history() {
     local tac=$(which tac && echo "tac" || echo "tail -r")
     BUFFER=$(\history -n 1 | eval $tac | peco --query "$LBUFFER")
     CURSOR=$#BUFFER
@@ -41,7 +41,7 @@ function set_term_bgcolor() {
 EOF
 }
 
-function _colored_ssh() {
+function colored_ssh() {
     local host=""
     for i in $(seq $# -1 1)
     do
