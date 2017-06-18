@@ -36,6 +36,7 @@ brew install $(echo "
 ")
 brew cask install $(echo "
     amethyst
+    cmd-eikana
     docker
     franz
     font-ricty-diminished
