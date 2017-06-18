@@ -139,8 +139,7 @@ fi
 
 # alias
 function cdls() {
-    \cd $1
-    ls
+    \cd $1 && ls --color=auto
 }
 alias cd=cdls
 alias ls='ls --color=auto'
