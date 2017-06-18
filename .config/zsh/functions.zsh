@@ -78,18 +78,25 @@ function _colored_ssh() {
 compdef _colored_ssh colored_ssh
 
 
-readonly PASSWORD_FILE="$HOME/etc/pass.list"
+readonly PASSWORD_FILE="$HOME/etc/pass.encrypted"
 function pass() {
-    local raw=$(cat "$PASSWORD_FILE" | grep -v "^#" | sed "s/://" | column -t -s " " | peco --query "$1")
-    test -z $raw && echo "No line selected" && return 0;
+    local raw=$(openssl aes-256-cbc -d -in "$PASSWORD_FILE" -pass file:"$HOME/.ssh/id_rsa")
+    local selected=$(echo "$raw" | grep -v "^#" | sed "s/://" | column -t -s " " | peco --query "$1")
+    test -z $selected && echo "No line selected" && return 0;
 
-    echo $raw | cut -d" " -f1
+    echo $selected | cut -d" " -f1
 
-    local body=$(echo $raw | sed "s/^[^ ]* *//")
+    local body=$(echo $selected | sed "s/^[^ ]* *//")
     echo $body | grep " " | cut -d" " -f1
     echo $body | sed "s/^[^ ]* *//" | pbcopy
 }
 function passedit() {
-    # TODO: encrypt
-    vim "$PASSWORD_FILE"
+    local tmpfile=$(mktemp)
+    trap 'rm -f $tmpfile' 0 SIGHUP SIGINT SIGTERM
+
+    openssl aes-256-cbc -d -in "$PASSWORD_FILE" -out $tmpfile -pass file:"$HOME/.ssh/id_rsa"
+    vim $tmpfile
+    openssl aes-256-cbc -e -in $tmpfile -out "$PASSWORD_FILE" -pass file:"$HOME/.ssh/id_rsa"
+
+    rm -f $tmpfile
 }
