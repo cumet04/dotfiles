@@ -75,4 +75,21 @@ function colored_ssh() {
 function _colored_ssh() {
     _values '' $(grep "^Host " $HOME/.ssh/config | cut -d" " -f 2)
 }
- compdef _colored_ssh colored_ssh
+compdef _colored_ssh colored_ssh
+
+
+readonly PASSWORD_FILE="$HOME/etc/pass.list"
+function pass() {
+    local raw=$(cat "$PASSWORD_FILE" | grep -v "^#" | sed "s/://" | column -t -s " " | peco --query "$1")
+    test -z $raw && echo "No line selected" && return 0;
+
+    echo $raw | cut -d" " -f1
+
+    local body=$(echo $raw | sed "s/^[^ ]* *//")
+    echo $body | grep " " | cut -d" " -f1
+    echo $body | sed "s/^[^ ]* *//" | pbcopy
+}
+function passedit() {
+    # TODO: encrypt
+    vim "$PASSWORD_FILE"
+}
