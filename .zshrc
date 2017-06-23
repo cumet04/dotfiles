@@ -90,6 +90,7 @@ export GOROOT="/usr/local/opt/go/libexec"
 export PATH="$PATH:$GOBIN"
 export PATH="$PATH:$HOME/.gem/ruby/2.3.0/bin"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="$HOME/.nodebrew/current/bin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # *env

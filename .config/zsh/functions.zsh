@@ -17,6 +17,7 @@ function sshgrep() {
     local nums=$(grep -n "Host .*$1" $HOME/.ssh/config | cut -d":" -f 1)
     {
     for num in $(echo $nums);do
+        echo -n "$num: "
         local last=$(($num + 10))
         for n in $(seq $num $last);do
             # output line $n, and if the line is empty then break loop
@@ -72,10 +73,10 @@ function colored_ssh() {
     \ssh $@
     set_term_bgcolor 0 0 0
 }
-function _colored_ssh() {
-    _values '' $(grep "^Host " $HOME/.ssh/config | cut -d" " -f 2)
-}
-compdef _colored_ssh colored_ssh
+# function _colored_ssh() {
+#     _values '' $(grep "^Host " $HOME/.ssh/config | cut -d" " -f 2)
+# }
+# compdef _colored_ssh colored_ssh
 
 
 function __password_filename() {
@@ -91,7 +92,8 @@ function pass() {
 
     local body=$(echo $selected | sed "s/^[^ ]* *//")
     echo $body | grep " " | cut -d" " -f1
-    echo $body | sed "s/^[^ ]* *//" | pbcopy
+    local pass=$(echo $body | sed "s/^[^ ]* ?//")
+    echo -n $pass | tee >(pbcopy)
 }
 function passedit() {
     local passfile=$(__password_filename)

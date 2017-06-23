@@ -12,6 +12,7 @@ brew tap caskroom/fonts
 brew install $(echo "
     colordiff
     coreutils
+    delve
     emacs
     git
     go
@@ -26,20 +27,23 @@ brew install $(echo "
     pyenv
     rbenv
     rsync
-    svn
+    sqlite
+    subversion
     the_silver_searcher
     tig
     tree
+    unrar
     vim
     watch
     zsh-syntax-highlighting
 ")
 brew cask install $(echo "
     amethyst
+    clipy
     cmd-eikana
     docker
-    franz
     font-ricty-diminished
+    franz
     gimp
     google-chrome
     google-drive
@@ -52,6 +56,11 @@ brew cask install $(echo "
     xquartz
 ")
 ```
+
+手動インストールパッケージ
+--------------------------------------------------
+* LINE
+* Todoist
 
 初期設定コマンド
 ------------------------------------------------------------
@@ -68,7 +77,6 @@ ln -s /usr/local/Cellar/git/*/share/git-core/contrib/diff-highlight/diff-highlig
   - 初回起動はフォント検索で非常に時間がかかるため
 * rbenv, pyenvの設定
   - install, global
-* command-英かな
 
 
 ### キーボード
@@ -76,14 +84,6 @@ ln -s /usr/local/Cellar/git/*/share/git-core/contrib/diff-highlight/diff-highlig
 * Functionキーの動作
 * 各種ショートカットキー無効化
 
-
-### iTerm2
-* metaキーをoptionに割り当てる
-  - Preferences > Profiles > Keys > Left option > +Esc
-  - Preferences > Profiles > Keys > Right option > +Esc
-* Ctrl + Enterでタブ増やす
-* フォント
-* カラースキーム
 
 
 initial script (after login)
