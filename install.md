@@ -77,6 +77,7 @@ ln -s /usr/local/Cellar/git/*/share/git-core/contrib/diff-highlight/diff-highlig
   - 初回起動はフォント検索で非常に時間がかかるため
 * rbenv, pyenvの設定
   - install, global
+* iTermのIBeam.tiff
 
 
 ### キーボード

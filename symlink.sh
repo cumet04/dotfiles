@@ -20,6 +20,7 @@ for target in $(echo "
 
 mkdir $HOME/.config/zsh
 ln -sf "$cwd/.config/zsh/functions.zsh" .config/zsh/
+ln -sf "$cwd/.config/zsh/evals.zsh" .config/zsh/
 mkdir -p $HOME/.config/inkscape/keys
 
 cp /Applications/Inkscape.app/Contents/Resources/share/inkscape/keys/adobe-illustrator-cs2.xml $HOME/.config/inkscape/keys/default.xml
