@@ -1,6 +1,11 @@
-[user]
-	email = medalhkr@gmail.com
-	name = medalhkr
+### for $HOME/.gitconfig
+# [user]
+#     name = {name}
+#     email = {email}
+# [include]
+#     path = ~/.config/gitconfig_body
+###
+
 [core]
 	excludesfile = ~/.config/gitignore_global
 	editor = "nano"
@@ -13,3 +18,6 @@
 [alias]
     d = diff
     s = status
+    difw = diff --word-diff
+    difc = diff --cached
+    difwc = diff --word-diff --cached
