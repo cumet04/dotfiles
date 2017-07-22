@@ -91,6 +91,7 @@ export PATH="$PATH:$GOBIN"
 export PATH="$PATH:$HOME/.gem/ruby/2.3.0/bin"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="$HOME/.nodebrew/current/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 source $ZSH_HOME/evals.zsh
@@ -110,7 +111,11 @@ alias sjis='iconv -f cp932'
 alias emacs='emacsclient -t -a ""'
 alias cd..='cd ..'
 alias git='hub'
-alias tmp='memo tmp'
+alias mn='memo new'
+alias me='memo le'
+alias mg='memo grep'
+alias mt='memo tmp'
+alias mc='memo cat'
 which colordiff > /dev/null && alias diff='colordiff -u'
 alias cdgit='cd "$(git rev-parse --show-toplevel)"'
 
