@@ -1,4 +1,7 @@
 
+# ==============================================================================
+# peco
+# ==============================================================================
 function peco_cdr () {
     local selected_dir=$(cdr -l | awk '{ print $2 }' | peco)
     if [ -n "$selected_dir" ]; then
@@ -8,11 +11,13 @@ function peco_cdr () {
 }
 
 function peco_select_history() {
-    local tac=$(which tac && echo "tac" || echo "tail -r")
-    BUFFER=$(\history -n 1 | eval $tac | peco --query "$LBUFFER")
+    BUFFER=$(\history -n 1 | tac | peco --query "$LBUFFER")
     CURSOR=$#BUFFER
 }
 
+# ==============================================================================
+# ssh
+# ==============================================================================
 function sshgrep() {
     local nums=$(grep -n "Host .*$1" $HOME/.ssh/config | cut -d":" -f 1)
     {
@@ -52,21 +57,24 @@ function colored_ssh() {
         fi
     done
 
-    local label=$(grep "^Host ${host} " $HOME/.ssh/config | sed "s/[^#]*# *//g")
+    local label=$(grep "^Host \(\S* \)*${host} " $HOME/.ssh/config | sed "s/[^#]*# *//g")
     test -z $label && echo $host | grep "192\.168\.*" > /dev/null && label="local"
 
     case $label in
     "production")
         set_term_bgcolor 64 0 0
         ;;
-    "testing" | "internal")
+    "internal")
         set_term_bgcolor 32 0 48
+        ;;
+    "testing")
+        set_term_bgcolor 32 32 0
         ;;
     "local")
         set_term_bgcolor 0 0 0
         ;;
     *)
-        set_term_bgcolor 32 32 0
+        set_term_bgcolor 80 80 64
         ;;
     esac
 
@@ -79,6 +87,9 @@ function colored_ssh() {
 # compdef _colored_ssh colored_ssh
 
 
+# ==============================================================================
+# password
+# ==============================================================================
 function __password_filename() {
     echo "$HOME/etc/pass.$(hostname | cut -d"." -f1).encrypted"
 }
