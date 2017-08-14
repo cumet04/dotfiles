@@ -91,7 +91,7 @@ function colored_ssh() {
 # password
 # ==============================================================================
 function __password_filename() {
-    echo "$HOME/etc/pass.$(hostname | cut -d"." -f1).encrypted"
+    echo "$HOME/workdir/.shared/pass.$(hostname | cut -d"." -f1).encrypted"
 }
 function pass() {
     local passfile=$(__password_filename)
