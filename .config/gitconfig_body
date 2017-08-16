@@ -18,6 +18,7 @@
 [alias]
     d = diff
     s = status
+    co = checkout
     difw = diff --word-diff
     difc = diff --cached
     difwc = diff --word-diff --cached
