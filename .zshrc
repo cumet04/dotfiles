@@ -117,7 +117,7 @@ alias mg='memo grep'
 alias mt='memo tmp'
 alias mc='memo cat'
 which colordiff > /dev/null && alias diff='colordiff -u'
-alias cdgit='cd "$(git rev-parse --show-toplevel)"'
+alias cdg='cd "$(git rev-parse --show-toplevel)"'
 
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
