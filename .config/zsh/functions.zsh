@@ -1,5 +1,25 @@
 
 # ==============================================================================
+# vim-history
+# ==============================================================================
+function __vim_append() {
+    if [ -e "$@" ]; then
+        local path="$@"
+        if [[ ! $path =~ ^/ ]]; then
+            path=${PWD}/${path}
+        fi
+        echo $path >> ${ZSH_HOME}/.vim_history
+    fi
+    vim $@
+}
+function vime() {
+    local selected=$(cat ${ZSH_HOME}/.vim_history | peco)
+    test -z "$selected" && exit 0
+    vim "$selected"
+}
+
+
+# ==============================================================================
 # peco
 # ==============================================================================
 function peco_cdr () {
@@ -91,7 +111,7 @@ function colored_ssh() {
 # password
 # ==============================================================================
 function __password_filename() {
-    echo "$HOME/etc/pass.$(hostname | cut -d"." -f1).encrypted"
+    echo "$HOME/workdir/.shared/pass.$(hostname | cut -d"." -f1).encrypted"
 }
 function pass() {
     local passfile=$(__password_filename)
@@ -116,4 +136,16 @@ function passedit() {
     openssl aes-256-cbc -e -in $tmpfile -out "$passfile" -pass file:"$HOME/.ssh/id_rsa"
 
     rm -f $tmpfile
+}
+
+
+# ==============================================================================
+# mac-tmpfs
+# ==============================================================================
+function mktmpfs() {
+    local giga=2
+    local mydev=$(hdiutil attach -nomount ram://$(($giga * 1024 * 1024 * 2)))
+    newfs_hfs $mydev
+    sudo mkdir /Volumes/tmpfs
+    sudo mount -t hfs $mydev /Volumes/tmpfs
 }

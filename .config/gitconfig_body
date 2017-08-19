@@ -10,9 +10,9 @@
 	excludesfile = ~/.config/gitignore_global
 	editor = "nano"
 [pager]
-	log = diff-highlight | less
-	show = diff-highlight | less
-	diff = diff-highlight | less
+	log = diff-highlight | less -x4
+	show = diff-highlight | less -x4
+	diff = diff-highlight | less -x4
 [diff]
 	compactionHeuristic = true
 [alias]

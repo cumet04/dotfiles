@@ -9,3 +9,4 @@ venv/
 *.iml
 .alias_local
 .pylintrc
+*.db

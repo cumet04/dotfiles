@@ -12,8 +12,7 @@ brew tap caskroom/fonts
 brew install $(echo "
     colordiff
     coreutils
-    delve
-    emacs
+    go-delve/delve/delve
     git
     go
     hub
@@ -38,6 +37,7 @@ brew install $(echo "
     zsh-syntax-highlighting
 ")
 brew cask install $(echo "
+    xquartz
     amethyst
     clipy
     cmd-eikana
@@ -53,7 +53,6 @@ brew cask install $(echo "
     iterm2
     visual-studio-code
     vlc
-    xquartz
 ")
 ```
 
@@ -67,6 +66,7 @@ brew cask install $(echo "
 ```
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 ln -s /usr/local/Cellar/git/*/share/git-core/contrib/diff-highlight/diff-highlight /usr/local/bin
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 ```
 
 その他設定など
