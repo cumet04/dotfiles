@@ -23,3 +23,5 @@
     difc = diff --cached
     difwc = diff --word-diff --cached
     difcw = diff --word-diff --cached
+[url "git@bitbucket.org:"]
+	insteadOf = https://bitbucket.org/
