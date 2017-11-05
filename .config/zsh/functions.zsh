@@ -143,9 +143,10 @@ function passedit() {
 # mac-tmpfs
 # ==============================================================================
 function mktmpfs() {
+# hdiutilの出力がそのまま$mydevになるが、hdiutilの行とnewfs_hfsを分けると何故か失敗する
     local giga=2
-    local mydev=$(hdiutil attach -nomount ram://$(($giga * 1024 * 1024 * 2)))
-    newfs_hfs $mydev
-    sudo mkdir /Volumes/tmpfs
-    sudo mount -t hfs $mydev /Volumes/tmpfs
+    local out=$(newfs_hfs $(hdiutil attach -nomount ram://$(($giga * 1024 * 1024 * 2))))
+    local mydev=$(echo $out | cut -d' ' -f 2 | tr -d 'r')
+    sudo mkdir /Volumes/tmpfs 2>/dev/null
+    sudo mount -t hfs "$mydev" /Volumes/tmpfs
 }
