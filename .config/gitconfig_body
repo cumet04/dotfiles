@@ -25,3 +25,5 @@
     difcw = diff --word-diff --cached
 [url "git@bitbucket.org:"]
 	insteadOf = https://bitbucket.org/
+[ghq]
+	root = /opt/var/ghq

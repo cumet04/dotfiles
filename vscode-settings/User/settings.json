@@ -1,6 +1,6 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "editor.fontSize": 18,
+    "editor.fontSize": 16,
     "editor.fontFamily": "RictyDiminished-Regular",
     "editor.renderIndentGuides": true,
     "editor.minimap.enabled": false,
@@ -9,7 +9,16 @@
     ],
     "python.formatting.formatOnSave": true,
     "window.zoomLevel": 0,
-    "vim.disableAnnoyingNeovimMessage": true,
     "vim.useSystemClipboard": true,
-    "workbench.welcome.enabled": false
+    "tslint.autoFixOnSave": true,
+    "extensions.ignoreRecommendations": false,
+    "stylelint.enable": true,
+    "css.validate": false,
+    "scss.validate": false,
+    "files.insertFinalNewline": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "gitlens.blame.line.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "search.useIgnoreFilesByDefault": true,
+    "search.useIgnoreFiles": true
 }

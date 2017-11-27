@@ -35,6 +35,15 @@ function peco_select_history() {
     CURSOR=$#BUFFER
 }
 
+# https://qiita.com/itkrt2y/items/0671d1f48e66f21241e2#%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E3%81%B8%E3%81%AE%E7%A7%BB%E5%8B%95--cd-ghq-rootghq-list--peco
+function peco_ghq_look () {
+    local selected=$(ghq list | peco)
+    if [ -n "$selected" ]; then
+        cd $(ghq root)/$selected
+        zle accept-line
+    fi
+}
+
 # ==============================================================================
 # ssh
 # ==============================================================================
@@ -46,7 +55,7 @@ function sshgrep() {
         local last=$(($num + 10))
         for n in $(seq $num $last);do
             # output line $n, and if the line is empty then break loop
-            sed -n "${n}p" $HOME/.ssh/config | grep "..*" >&1 || break
+            sed -n "${n}p" $HOME/.ssh/config | grep "..*" >&1 || {echo "" ; break}
         done
     done
     # buffering stdout
@@ -123,7 +132,7 @@ function pass() {
 
     local body=$(echo $selected | sed "s/^[^ ]* *//")
     echo $body | grep " " | cut -d" " -f1
-    local pass=$(echo $body | sed "s/^[^ ]* ?//")
+    local pass=$(echo $body | rev | cut -d" " -f1 | rev) # revcutは遅いのでもうちょいなんとか
     echo -n $pass | tee >(pbcopy)
 }
 function passedit() {
@@ -132,7 +141,7 @@ function passedit() {
     trap 'rm -f $tmpfile' 0 SIGHUP SIGINT SIGTERM
 
     openssl aes-256-cbc -d -in "$passfile" -out $tmpfile -pass file:"$HOME/.ssh/id_rsa"
-    vim $tmpfile
+    nvim $tmpfile
     openssl aes-256-cbc -e -in $tmpfile -out "$passfile" -pass file:"$HOME/.ssh/id_rsa"
 
     rm -f $tmpfile
@@ -148,4 +157,11 @@ function mktmpfs() {
     newfs_hfs $mydev
     sudo mkdir /Volumes/tmpfs
     sudo mount -t hfs $mydev /Volumes/tmpfs
+}
+
+# ==============================================================================
+# git
+# ==============================================================================
+function oroget() {
+    ghq get -p oRojp/$@
 }
