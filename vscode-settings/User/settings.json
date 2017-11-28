@@ -20,5 +20,16 @@
     "gitlens.blame.line.enabled": false,
     "gitlens.codeLens.enabled": false,
     "search.useIgnoreFilesByDefault": true,
-    "search.useIgnoreFiles": true
+    "search.useIgnoreFiles": true,
+    "workbench.panel.location": "bottom",
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressUpdateNotice": false,
+        "suppressWelcomeNotice": true
+    }
 }
