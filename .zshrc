@@ -77,6 +77,9 @@ bindkey '^o' peco_cdr
 zle -N peco_select_history
 bindkey '^r' peco_select_history
 
+# peco command history
+zle -N peco_cd_ghq
+bindkey '^g' peco_cd_ghq
 
 # export
 export LC_CTYPE=ja_JP.UTF-8
@@ -84,9 +87,8 @@ export EDITOR=vim
 export SVN_EDITOR='emacsclient -t -a ""'
 export VTE_CJK_WIDTH=auto
 export TERM=xterm-256color
-export GOPATH="$HOME/.config/go"
-export GOBIN="$GOPATH/bin"
-export GOROOT="/usr/local/opt/go/libexec"
+export GOPATH="/opt/var/go:/opt/var/ghq"
+export GOBIN="/opt/var/go/bin"
 export PATH="$PATH:$GOBIN"
 export PATH="$PATH:$HOME/.gem/ruby/2.3.0/bin"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
@@ -106,6 +108,7 @@ alias ll='ls -alh'
 alias lt='ls -alht'
 alias cp='cp -i'
 alias mv='mv -i'
+alias vim='nvim'
 alias ssh='colored_ssh'
 alias sjis='iconv -f cp932'
 alias emacs='emacsclient -t -a ""'
@@ -120,7 +123,8 @@ which colordiff > /dev/null && alias diff='colordiff -u'
 alias cdg='cd "$(git rev-parse --show-toplevel)"'
 
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 # alert not-sync dotfiles repo

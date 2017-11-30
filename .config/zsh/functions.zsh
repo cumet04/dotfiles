@@ -35,6 +35,13 @@ function peco_select_history() {
     CURSOR=$#BUFFER
 }
 
+function peco_cd_ghq() {
+    local selected_dir=$(ghq list | peco)
+    if [ -n "$selected_dir" ]; then
+        cd $(ghq root)/"$selected_dir"
+        zle accept-line
+    fi
+}
 # ==============================================================================
 # ssh
 # ==============================================================================

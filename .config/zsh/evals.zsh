@@ -2,7 +2,7 @@
 # コマンドの実行結果を直接.zshrcに展開したほうが実行が速い
 
 # pyenv; eval $(pyenv init - -no-rehash)
-if which pyenv > /dev/null; then
+if which pyenv 2> /dev/null; then
     export PYENV_ROOT=/usr/local/var/pyenv
     export PATH="/usr/local/var/pyenv/shims:${PATH}"
     export PYENV_SHELL=zsh
@@ -24,7 +24,7 @@ if which pyenv > /dev/null; then
 fi
 
 # rbenv; eval $(rbenv init - -no-rehash)
-if which rbenv > /dev/null; then
+if which rbenv 2> /dev/null; then
     export RBENV_ROOT=/usr/local/var/rbenv
     # pyenvと同様
     export PATH="/usr/local/var/rbenv/shims:${PATH}"
@@ -47,10 +47,10 @@ if which rbenv > /dev/null; then
 fi
 
 # direnv; eval $(direnv hook zsh)
-_direnv_hook() {
-  eval "$(direnv export zsh)";
-}
-typeset -ag precmd_functions;
-if [[ -z ${precmd_functions[(r)_direnv_hook]} ]]; then
-  precmd_functions+=_direnv_hook;
-fi
+# _direnv_hook() {
+#   eval "$(direnv export zsh)";
+# }
+# typeset -ag precmd_functions;
+# if [[ -z ${precmd_functions[(r)_direnv_hook]} ]]; then
+#   precmd_functions+=_direnv_hook;
+# fi
