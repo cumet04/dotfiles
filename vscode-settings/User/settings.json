@@ -1,7 +1,7 @@
 // Place your settings in this file to overwrite the default settings
 {
     "editor.fontSize": 16,
-    "editor.fontFamily": "RictyDiminished-Regular",
+    "editor.fontFamily": "RictyDiminished-Regular, 'Ricty Diminished'",
     "editor.renderIndentGuides": true,
     "editor.minimap.enabled": false,
     "editor.rulers": [
