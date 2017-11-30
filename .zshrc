@@ -73,6 +73,9 @@ zstyle ':completion:*' recent-dirs-insert both
 zle -N peco_cdr
 bindkey '^o' peco_cdr
 
+zle -N peco_ghq_look 
+bindkey '^g' peco_ghq_look 
+
 # peco command history
 zle -N peco_select_history
 bindkey '^r' peco_select_history
@@ -83,18 +86,18 @@ bindkey '^g' peco_cd_ghq
 
 # export
 export LC_CTYPE=ja_JP.UTF-8
-export EDITOR=vim
-export SVN_EDITOR='emacsclient -t -a ""'
+export EDITOR=nano
+export SVN_EDITOR=nano
 export VTE_CJK_WIDTH=auto
 export TERM=xterm-256color
 export GOPATH="/opt/var/go:/opt/var/ghq"
 export GOBIN="/opt/var/go/bin"
-export PATH="$PATH:$GOBIN"
-export PATH="$PATH:$HOME/.gem/ruby/2.3.0/bin"
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export PATH="$HOME/.nodebrew/current/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
+export GOPATH="/opt/var/go"
+export VAGRANT_HOME="/opt/var/vagrant.d"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export PATH="$PATH:$GOBIN"
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 source $ZSH_HOME/evals.zsh
 
@@ -111,7 +114,6 @@ alias mv='mv -i'
 alias vim='nvim'
 alias ssh='colored_ssh'
 alias sjis='iconv -f cp932'
-alias emacs='emacsclient -t -a ""'
 alias cd..='cd ..'
 alias git='hub'
 alias mn='memo new'
