@@ -73,16 +73,13 @@ zstyle ':completion:*' recent-dirs-insert both
 zle -N peco_cdr
 bindkey '^o' peco_cdr
 
-zle -N peco_ghq_look 
-bindkey '^g' peco_ghq_look 
-
 # peco command history
 zle -N peco_select_history
 bindkey '^r' peco_select_history
 
 # peco command history
-zle -N peco_cd_ghq
-bindkey '^g' peco_cd_ghq
+zle -N peco_ghq_look
+bindkey '^g' peco_ghq_look
 
 # export
 export LC_CTYPE=ja_JP.UTF-8
