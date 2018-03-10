@@ -2,13 +2,13 @@
 # コマンドの実行結果を直接.zshrcに展開したほうが実行が速い
 
 export RBENV_ROOT="/opt/rbenv"
-# rbenv; eval $(rbenv init - -no-rehash)
+# rbenv; eval $(rbenv init - --no-rehash)
 export PATH="/opt/rbenv/shims:${PATH}"
 export RBENV_SHELL=zsh
 source '/opt/rbenv/libexec/../completions/rbenv.zsh'
 rbenv() {
   local command
-  command="$1"
+  command="${1:-}"
   if [ "$#" -gt 0 ]; then
     shift
   fi
@@ -41,6 +41,24 @@ nodenv() {
     command nodenv "$command" "$@";;
   esac
 }
+
+# export EXENV_ROOT="/opt/exenv"
+# # exenv; eval $(exenv init - -no-rehash)
+# export PATH="/opt/exenv/shims:${PATH}"
+# source "/opt/exenv/libexec/../completions/exenv.zsh"
+# exenv() {
+#   local command="$1"
+#   if [ "$#" -gt 0 ]; then
+#     shift
+#   fi
+# 
+#   case "$command" in
+#   shell)
+#     eval `exenv "sh-$command" "$@"`;;
+#   *)
+#     command exenv "$command" "$@";;
+#   esac
+# }
 
 # direnv; eval $(direnv hook zsh)
 # _direnv_hook() {

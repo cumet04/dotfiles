@@ -1,5 +1,5 @@
 memodir = "~/.config/memo/_posts"
-editor = "vim"
+editor = "nvim"
 column = 20
 selectcmd = "peco"
 grepcmd = "ag ${PATTERN} ${FILES}"

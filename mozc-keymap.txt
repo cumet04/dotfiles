@@ -10,18 +10,11 @@ Suggestion	Ctrl g	CancelAndIMEOff
 Composition	Ctrl h	Backspace
 Conversion	Ctrl h	Cancel
 Precomposition	Ctrl h	Revert
-Composition	Ctrl Left	MoveCursorToBeginning
-Conversion	Ctrl Left	SegmentFocusFirst
-Composition	Ctrl Right	MoveCursorToEnd
-Conversion	Ctrl Right	SegmentFocusLast
-Conversion	Ctrl Shift Left	SegmentWidthShrink
-Conversion	Ctrl Shift Right	SegmentWidthExpand
-Composition	Delete	Delete
 Conversion	Down	CommitOnlyFirstSegment
-Prediction	Down	ConvertNext
 Suggestion	Down	PredictAndConvert
-Composition	Enter	Commit
-Conversion	Enter	Commit
+Prediction	Down	ConvertNext
+Conversion	Enter	IMEOff
+Composition	Enter	IMEOff
 Composition	Escape	CancelAndIMEOff
 Conversion	Escape	CancelAndIMEOff
 Precomposition	Escape	CancelAndIMEOff
@@ -29,7 +22,6 @@ Prediction	Escape	CancelAndIMEOff
 Suggestion	Escape	CancelAndIMEOff
 Composition	F10	ConvertToHalfAlphanumeric
 Conversion	F10	ConvertToHalfAlphanumeric
-Composition	F2	ConvertWithoutHistory
 Composition	F6	ConvertToHiragana
 Conversion	F6	ConvertToHiragana
 Composition	F7	ConvertToFullKatakana
@@ -39,23 +31,11 @@ Conversion	F8	ConvertToHalfWidth
 Composition	F9	ConvertToFullAlphanumeric
 Conversion	F9	ConvertToFullAlphanumeric
 Composition	Left	MoveCursorLeft
-Conversion	Left	SegmentWidthShrink
 DirectInput	Muhenkan	IMEOn
 Composition	Right	MoveCursorRight
-Conversion	Right	SegmentWidthExpand
-Conversion	Shift Left	SegmentFocusLeft
-Conversion	Shift Right	SegmentFocusRight
 Composition	Shift Space	CancelAndIMEOff
-Conversion	Shift Space	CancelAndIMEOff
-Precomposition	Shift Space	CancelAndIMEOff
-Prediction	Shift Space	CancelAndIMEOff
-Suggestion	Shift Space	CancelAndIMEOff
-DirectInput	Shift Space	IMEOn
 Conversion	Shift Tab	ConvertPrev
-Composition	Space	Convert
-Conversion	Space	ConvertNext
-Precomposition	Space	InsertSpace
+Prediction	Shift Tab	ConvertPrev
 Composition	Tab	PredictAndConvert
 Conversion	Tab	PredictAndConvert
-Conversion	Up	ConvertPrev
-Prediction	Up	ConvertPrev
+Precomposition	Enter	IMEOff

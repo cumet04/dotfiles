@@ -93,7 +93,8 @@ export GOPATH="/opt/var/go"
 export VAGRANT_HOME="/opt/var/vagrant.d"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export PATH="$PATH:$GOBIN"
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="/opt/bin:$PATH"
+# export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 source $ZSH_HOME/evals.zsh
@@ -121,9 +122,7 @@ alias mc='memo cat'
 which colordiff > /dev/null && alias diff='colordiff -u'
 alias cdg='cd "$(git rev-parse --show-toplevel)"'
 
-
-# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 # alert not-sync dotfiles repo
