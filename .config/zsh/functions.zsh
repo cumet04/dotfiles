@@ -44,6 +44,13 @@ function peco_ghq_look () {
     fi
 }
 
+function peco_ghq_browse () {
+    local selected=$(ghq list | peco)
+    if [ -n "$selected" ]; then
+        open "https://$selected"
+    fi
+}
+
 # ==============================================================================
 # ssh
 # ==============================================================================
@@ -93,7 +100,7 @@ function colored_ssh() {
     "production")
         set_term_bgcolor 64 0 0
         ;;
-    "internal")
+    "internal" | "preopen")
         set_term_bgcolor 32 0 48
         ;;
     "testing")

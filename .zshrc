@@ -94,7 +94,7 @@ export VAGRANT_HOME="/opt/var/vagrant.d"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export PATH="$PATH:$GOBIN"
 export PATH="/opt/bin:$PATH"
-# export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="/usr/local/opt/python@2/bin:$PATH"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 source $ZSH_HOME/evals.zsh
@@ -119,6 +119,8 @@ alias me='memo le'
 alias mg='memo grep'
 alias mt='memo tmp'
 alias mc='memo cat'
+alias mente='memo maintenance'
+alias github='peco_ghq_browse'
 which colordiff > /dev/null && alias diff='colordiff -u'
 alias cdg='cd "$(git rev-parse --show-toplevel)"'
 
