@@ -26,7 +26,6 @@ setopt prompt_subst
 
 # completion
 autoload -U compinit promptinit
-compinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'  # Tab補完時に大文字/小文字無視
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' format '%B%d%b'
@@ -61,17 +60,18 @@ bindkey "^N" history-beginning-search-forward-end
 bindkey '^]'   vi-find-next-char
 bindkey '^[^]' vi-find-prev-char
 
+### cdlsが遅くなるので一旦無効化
 # cdr
-autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
-add-zsh-hook chpwd chpwd_recent_dirs
-zstyle ':chpwd:*' recent-dirs-max 5000
-zstyle ':chpwd:*' recent-dirs-default yes
-zstyle ':chpwd:*' recent-dirs-file $ZSH_HOME/.chpwd-recent-dirs
-zstyle ':completion:*' recent-dirs-insert both
+# autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+# add-zsh-hook chpwd chpwd_recent_dirs
+# zstyle ':chpwd:*' recent-dirs-max 5000
+# zstyle ':chpwd:*' recent-dirs-default yes
+# zstyle ':chpwd:*' recent-dirs-file $ZSH_HOME/.chpwd-recent-dirs
+# zstyle ':completion:*' recent-dirs-insert both
 
 # peco cdr
-zle -N peco_cdr
-bindkey '^o' peco_cdr
+# zle -N peco_cdr
+# bindkey '^o' peco_cdr
 
 # peco command history
 zle -N peco_select_history
@@ -97,12 +97,7 @@ export PATH="/opt/bin:$PATH"
 export PATH="/usr/local/opt/python@2/bin:$PATH"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
-source $ZSH_HOME/evals.zsh
-
 # alias
-function cdls() {
-    \cd $1 && ls --color=auto
-}
 alias cd=cdls
 alias ls='ls --color=auto'
 alias ll='ls -alh'
