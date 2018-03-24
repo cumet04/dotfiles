@@ -186,16 +186,19 @@ function oroget() {
 # ==============================================================================
 function rbenv() {
     unset -f rbenv
+    export RBENV_ROOT="/opt/rbenv"
     eval "$(rbenv init - --no-rehash)"
     rbenv "$@"
 }
 function nodenv() {
     unset -f nodenv
+    export NODENV_ROOT="/opt/nodenv"
     eval "$(nodenv init - --no-rehash)"
     nodenv "$@"
 }
 function pyenv() {
     unset -f pyenv
+    export PYENV_ROOT="/opt/pyenv"
     eval "$(pyenv init - --no-rehash)"
     pyenv "$@"
 }

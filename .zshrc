@@ -1,3 +1,5 @@
+#zmodload zsh/zprof && zprof
+
 autoload -U colors && colors
 export XDG_CONFIG_HOME=$HOME/.config
 ZSH_HOME=$XDG_CONFIG_HOME/zsh
@@ -119,7 +121,7 @@ alias github='peco_ghq_browse'
 which colordiff > /dev/null && alias diff='colordiff -u'
 alias cdg='cd "$(git rev-parse --show-toplevel)"'
 
-source /opt/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 
 # alert not-sync dotfiles repo
@@ -133,3 +135,7 @@ source /opt/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # }
 # check-dotfiles
 # unset -f check-dotfiles
+
+if (which zprof > /dev/null 2>&1) ;then
+  zprof
+fi
