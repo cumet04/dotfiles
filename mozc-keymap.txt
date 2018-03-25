@@ -13,8 +13,6 @@ Precomposition	Ctrl h	Revert
 Conversion	Down	CommitOnlyFirstSegment
 Suggestion	Down	PredictAndConvert
 Prediction	Down	ConvertNext
-Conversion	Enter	IMEOff
-Composition	Enter	IMEOff
 Composition	Escape	CancelAndIMEOff
 Conversion	Escape	CancelAndIMEOff
 Precomposition	Escape	CancelAndIMEOff
@@ -31,11 +29,14 @@ Conversion	F8	ConvertToHalfWidth
 Composition	F9	ConvertToFullAlphanumeric
 Conversion	F9	ConvertToFullAlphanumeric
 Composition	Left	MoveCursorLeft
-DirectInput	Muhenkan	IMEOn
 Composition	Right	MoveCursorRight
 Composition	Shift Space	CancelAndIMEOff
 Conversion	Shift Tab	ConvertPrev
 Prediction	Shift Tab	ConvertPrev
-Composition	Tab	PredictAndConvert
-Conversion	Tab	PredictAndConvert
-Precomposition	Enter	IMEOff
+Composition	Space	PredictAndConvert
+Conversion	Space	PredictAndConvert
+Composition	Enter	Commit
+Conversion	Enter	Commit
+Suggestion	Enter	Commit
+Prediction	Enter	Commit
+DirectInput	Muhenkan	IMEOn
