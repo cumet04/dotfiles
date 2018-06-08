@@ -202,3 +202,25 @@ function pyenv() {
     eval "$(pyenv init - --no-rehash)"
     pyenv "$@"
 }
+
+
+# ==============================================================================
+# tweet
+# ==============================================================================
+function tweet() {
+    local tmpfile=$(mktemp)
+    trap 'rm -f $tmpfile' 0 SIGHUP SIGINT SIGTERM
+    $EDITOR $tmpfile
+    if [ -s $tmpfile ]; then
+        twty -ff $tmpfile
+    fi
+
+    rm -f $tmpfile
+}
+
+# ==============================================================================
+# whois-country
+# ==============================================================================
+function whoisc() {
+    whois $1 | grep country | uniq
+}
