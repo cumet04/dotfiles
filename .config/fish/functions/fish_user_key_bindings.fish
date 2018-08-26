@@ -5,4 +5,7 @@ function fish_user_key_bindings
         bind -M insert \cg '__ghq_crtl_g'
     end
     ### ghq ###
+
+    bind \cr 'commandline (history | peco --layout=bottom-up --on-cancel error | sed "s/^[^ ]* [^ ]* //");commandline -f repaint'
+    bind \co walk
 end

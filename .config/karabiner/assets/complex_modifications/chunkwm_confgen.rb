@@ -6,6 +6,16 @@ def conf
     {
         title: 'chunkwm key bindings',
         rules: [
+            rule("focus application", 
+                hotkey_for_command(
+                    [ mod1 ], "t",
+                    "open /Applications/iTerm.app"
+                ),
+                hotkey_for_command(
+                    [ mod1 ], "b",
+                    "open '/Applications/Google Chrome.app'"
+                ),
+            ),
             rule("move window", 
                 hotkey_for_command(
                     [ mod1, mod2 ], "close_bracket", 
