@@ -1,7 +1,7 @@
 // Place your settings in this file to overwrite the default settings
 {
     "editor.fontSize": 16,
-    "editor.fontFamily": "RictyDiminished-Regular, 'Ricty Diminished'",
+    "editor.fontFamily": "Cica",
     "editor.renderIndentGuides": true,
     "editor.minimap.enabled": false,
     "editor.rulers": [
@@ -40,5 +40,12 @@
     },
     "gitlens.currentLine.enabled": false,
     "gitlens.hovers.currentLine.enabled": false,
-    "gitlens.keymap": "alternate"
+    "gitlens.keymap": "alternate",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.sideBar.location": "left",
+    "python.formatting.provider": "yapf",
+    "python.formatting.yapfArgs": [
+        "--style",
+        "{ based_on_style: google, column_limit: 99 }",
+    ]
 }
