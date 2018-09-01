@@ -36,7 +36,7 @@ puts "On #{p[:branch]}#{status_view}, " +
     if p[:staged] + p[:changed] + p[:untracked] == 0
         "workspace is clear"
     else
-        (p[:staged] == 0 ?    "no staged, "    : fgc("#{p[:staged]} staged", 40)) + ", " +
-        (p[:changed] == 0 ?   "no changed, "   : fgc("#{p[:changed]} changed", 124)) + ", " +
+        (p[:staged] == 0 ?    "no staged, "    : fgc("#{p[:staged]} staged", 40) + ", ") +
+        (p[:changed] == 0 ?   "no changed, "   : fgc("#{p[:changed]} changed", 124) + ", ") +
         (p[:untracked] == 0 ? "no untracked, " : fgc("#{p[:untracked]} untracked", 88))
     end
