@@ -1,5 +1,5 @@
 function fish_prompt
-    set powerline_color brblue
+    set powerline_color brgreen
     set text_color black
 
     set_color -b $powerline_color

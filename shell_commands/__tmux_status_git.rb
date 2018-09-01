@@ -5,7 +5,7 @@ branch_params = raw[0][3..-1].split(/\.\.\.| /, 3)
 
 # TODO: rebase, conflict, ...
 
-params = {
+p = {
     staged: raw.select{ |line| /^[MADRC]/ === line }.count,
     changed: raw.select{ |line| /^\ [MADRC]/ === line }.count,
     untracked: raw.select{ |line| /^\?/ === line }.count,
@@ -21,26 +21,22 @@ params = {
         end
 }
 
-def num_filter(num)
-    num == 0 ? 'no' : num.to_s
+def fgc(text, color)
+    "#[fg=colour#{color}]#{text}#[default]"
 end
 
-view = params.dup.tap { |p|
-    p[:staged] = num_filter(p[:staged])
-    p[:changed] = num_filter(p[:changed])
-    p[:untracked] = num_filter(p[:untracked])
-    p[:status] =
-        if p[:status].nil?; '(local)'
-        elsif p[:status] == 0; ''
-        elsif p[:status].positive?; "#{0x2B06.chr('UTF-8')} #{p[:status].to_s}"
-        elsif p[:status].negative?; "#{0x2B07.chr('UTF-8')} #{(-p[:status]).to_s}"
-        end
-}
+status_view =
+    if p[:status].nil?; '(local)'
+    elsif p[:status] == 0; ''
+    elsif p[:status].positive?; fgc("#{0x2B06.chr('UTF-8')} #{p[:status].to_s}", 21)
+    elsif p[:status].negative?; fgc("#{0x2B07.chr('UTF-8')} #{(-p[:status]).to_s}", 21)
+    end
 
-puts sprintf(
-    if [params[:staged], params[:changed], params[:untracked]] == [0, 0, 0]
-        "On %s%s, workspace is clear"
+puts "On #{p[:branch]}#{status_view}, " +
+    if p[:staged] + p[:changed] + p[:untracked] == 0
+        "workspace is clear"
     else
-        "On %s%s, %s staged, %s changed, %s untracked"
-    end,
-    view[:branch], view[:status], view[:staged], view[:changed], view[:untracked])
+        (p[:staged] == 0 ?    "no staged, "    : fgc("#{p[:staged]} staged", 40)) + ", " +
+        (p[:changed] == 0 ?   "no changed, "   : fgc("#{p[:changed]} changed", 124)) + ", " +
+        (p[:untracked] == 0 ? "no untracked, " : fgc("#{p[:untracked]} untracked", 88))
+    end
