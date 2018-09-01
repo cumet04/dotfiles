@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 output = []
-output.push("set -gx ANYENV_ROOT /opt/bin/anyenv/")
+output.push("set -gx ANYENV_ROOT /opt/anyenv/")
 
 `anyenv init - --no-rehash fish`.split("\n").each do |line|
     line.match(/set -x PATH \$PATH "(.*)"/) do |md|
