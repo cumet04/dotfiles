@@ -1,7 +1,9 @@
 #!/bin/sh
 
-ICON_HOUSE=$(printf '\xF0\x9F\x8F\xA0')
-ICON_GITHUB=$(printf '\xEf\x90\x88')
+#ICON_HOUSE=$(printf '\xF0\x9F\x8F\xA0')
+#ICON_GITHUB=$(printf '\xEf\x90\x88')
+ICON_HOUSE=$(printf '$HOME')
+ICON_GITHUB=$(printf '$GHQ')
 
 pwd | \
   sed "s|$HOME|$ICON_HOUSE|" | \
