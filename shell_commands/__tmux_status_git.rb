@@ -16,7 +16,7 @@ p = {
         elsif branch_params[2].nil?
             0
         else
-            branch_params[2].include?('ahead') ? 1 : -1 *
+            (branch_params[2].include?('ahead') ? 1 : -1) *
             branch_params[2][1..-2].sub(/[^\d]*/, '').to_i
         end
 }
