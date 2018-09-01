@@ -8,4 +8,5 @@ function fish_user_key_bindings
 
     bind \cr 'commandline (history | peco --layout=bottom-up --on-cancel error | sed "s/^[^ ]* [^ ]* //");commandline -f repaint'
     bind \co walk
+    bind \cs 'tig status;commandline -f repaint'
 end
