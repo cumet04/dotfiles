@@ -1,3 +1,5 @@
 .emacs.d/auto-save-list
 .netrwhist
 .config/memo/_*
+vscode-settings/User/workspaceStorage
+.config/fish/fishd.*
