@@ -54,3 +54,9 @@ function rbenv
     command rbenv "$command" $argv
   end
 end
+
+# direnv
+
+function __direnv_export_eval --on-event fish_prompt;
+	eval ("/usr/local/bin/direnv" export fish);
+end

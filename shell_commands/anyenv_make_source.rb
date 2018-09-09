@@ -15,6 +15,12 @@ output.push("set -gx ANYENV_ROOT /opt/anyenv/")
     output.push(line)
 end
 
+output.push("")
+output.push("# direnv")
+`direnv hook fish`.split("\n").each do |line|
+    output.push(line)
+end
+
 File.open("#{ENV['HOME']}/.config/fish/conf.d/load_anyenv.fish", "w") do |f|
     output.each do |line|
         f.puts(line)
