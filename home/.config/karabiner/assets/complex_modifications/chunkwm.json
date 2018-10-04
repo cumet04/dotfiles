@@ -1,0 +1,356 @@
+{
+  "title": "chunkwm key bindings",
+  "rules": [
+    {
+      "description": "focus application",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "t",
+            "modifiers": {
+              "mandatory": [
+                "left_control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open /Applications/iTerm.app"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "b",
+            "modifiers": {
+              "mandatory": [
+                "left_control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open '/Applications/Google Chrome.app'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "move window",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "close_bracket",
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "/usr/local/bin/chunkc tiling::window --swap next"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "open_bracket",
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "/usr/local/bin/chunkc tiling::window --swap prev"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "1",
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "/usr/local/bin/chunkc tiling::window --send-to-desktop 1"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "2",
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "/usr/local/bin/chunkc tiling::window --send-to-desktop 2"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "3",
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "/usr/local/bin/chunkc tiling::window --send-to-desktop 3"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "4",
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "/usr/local/bin/chunkc tiling::window --send-to-desktop 4"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "5",
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "/usr/local/bin/chunkc tiling::window --send-to-desktop 5"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "6",
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "/usr/local/bin/chunkc tiling::window --send-to-desktop 6"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "7",
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "/usr/local/bin/chunkc tiling::window --send-to-desktop 7"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "8",
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "/usr/local/bin/chunkc tiling::window --send-to-desktop 8"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "9",
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "/usr/local/bin/chunkc tiling::window --send-to-desktop 9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "focus window",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "close_bracket",
+            "modifiers": {
+              "mandatory": [
+                "left_control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "/usr/local/bin/chunkc tiling::window --focus next"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "open_bracket",
+            "modifiers": {
+              "mandatory": [
+                "left_control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "/usr/local/bin/chunkc tiling::window --focus prev"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "resize",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "h",
+            "modifiers": {
+              "mandatory": [
+                "left_control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "/usr/local/bin/chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge west"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "l",
+            "modifiers": {
+              "mandatory": [
+                "left_control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "/usr/local/bin/chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge east"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "k",
+            "modifiers": {
+              "mandatory": [
+                "left_control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "/usr/local/bin/chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge north"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "j",
+            "modifiers": {
+              "mandatory": [
+                "left_control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "/usr/local/bin/chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge south"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f",
+            "modifiers": {
+              "mandatory": [
+                "left_control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "/usr/local/bin/chunkc tiling::window --toggle fullscreen"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

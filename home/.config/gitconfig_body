@@ -27,3 +27,4 @@
 	insteadOf = https://bitbucket.org/
 [ghq]
     root = /opt/var/ghq
+    root = /opt/var/go

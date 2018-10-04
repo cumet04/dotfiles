@@ -1,0 +1,96 @@
+- hosts: all
+  user: medalhkr
+  tasks:
+    - name: homebrew taps
+      homebrew_tap:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - crisidev/homebrew-chunkwm
+    - name: install packages
+      homebrew:
+        name: "{{ item.name }}"
+        state: "{{ item.state | default('present') }}"
+        install_options: "{{ item.install_options | default('latest') }}"
+      with_items:
+        - { name: ansible }
+        - { name: colordiff }
+        - { name: coreutils }
+        - { name: direnv }
+        - { name: fish }
+        - { name: fzf }
+        - { name: git }
+        - { name: golang }
+        - { name: gopass }
+        - { name: imagemagick }
+        - { name: jq }
+        - { name: lftp }
+        - { name: mysql }
+        - { name: nano }
+        - { name: neovim }
+        - { name: nmap }
+        - { name: peco }
+        - { name: sqlite }
+        - { name: subversion }
+        - { name: the_platinum_searcher }
+        - { name: tig }
+        - { name: tmux }
+        - { name: tree }
+        - { name: tree }
+        - { name: unrar }
+        - { name: watch }
+    - name: install cask packages
+      homebrew_cask:
+        name: "{{ item.name }}"
+        state: "{{ item.state | default('present') }}"
+      environment:
+        HOMEBREW_CASK_OPTS: "--appdir=/Applications"
+      with_items:
+        - { name: docker }
+        - { name: virtualbox }
+        - { name: visual-studio-code }
+        - { name: clipy }
+        - { name: iterm2 }
+        - { name: google-chrome }
+        - { name: google-japanese-ime }
+        - { name: karabiner-elements }
+        - { name: chunkwm }
+        # google-drive
+
+    - name: disable DS_Store
+      osx_defaults:
+        domain: com.apple.desktopservices
+        key: DSDontWriteNetworkStores
+        type: bool
+        value: true
+        state: present
+
+    - osx_defaults:
+        domain: com.microsoft.VSCode
+        key: ApplePressAndHoldEnabled
+        type: bool
+        value: false
+        state: present
+
+    - include: tasks/dotfiles.yaml
+    - include: tasks/anyenv.yaml
+
+    #- name: get latest Cica release
+    #  uri:
+    #    url: https://api.github.com/repos/miiton/Cica/releases/latest
+    #    return_content: true
+    #  register: cica_json_response
+    #- name: get latest Cica
+    #  unarchive:
+    #    # TODO: not work on mac
+    #    src: "{{ cica_json_response.json.assets[0].browser_download_url }}"
+    #    dest: ~/Downloads
+    #    remote_src: yes
+
+    #- name: put diff-highlight
+    #  become: true
+    #  file:
+    #    # TODO: for mac
+    #    src: /usr/share/git-core/contrib/diff-highlight
+    #    dest: /usr/local/bin/diff-highlight
+    #    state: link
