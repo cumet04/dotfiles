@@ -1,0 +1,38 @@
+- name: setup direcrories
+  become: true
+  file:
+    path: '{{ item }}'
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: staff
+  with_items:
+    - /opt/var/ghq
+    - /opt/var/go/bin
+    - /opt/anyenv
+    - /opt/bin
+- name: git clone dotfiles
+  git:
+    repo: ssh://git@github.com/medalhkr/dotfiles.git
+    dest: /opt/var/ghq/github.com/medalhkr/dotfiles
+    version: 2018
+    update: no
+    accept_hostkey: yes
+- name: put shortcut for dotfiles
+  file:
+    src: /opt/var/ghq/github.com/medalhkr/dotfiles
+    dest: "{{ ansible_env.HOME }}/.dotfiles"
+    state: link
+- name: install dotfiles symlinks
+  file:
+    src: "{{ ansible_env.HOME }}/.dotfiles/home/{{ item }}"
+    dest: "/Users/{{ ansible_user }}/{{ item }}"
+    state: link
+  with_items:
+    - .config
+    - .gitconfig
+    - .tigrc
+- name: symlink shell_commands
+  file:
+    src: "{{ ansible_env.HOME }}/.dotfiles/shell_commands"
+    dest: /opt/bin/shell_commands
+    state: link
