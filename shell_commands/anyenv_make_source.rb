@@ -1,9 +1,11 @@
 #!/usr/bin/env ruby
 
-output = []
-output.push("set -gx ANYENV_ROOT /opt/anyenv/")
+anyenv_root = "/opt/anyenv"
 
-`anyenv init - --no-rehash fish`.split("\n").each do |line|
+output = []
+output.push("set -gx ANYENV_ROOT #{anyenv_root}")
+
+`env ANYENV_ROOT=#{anyenv_root} anyenv init - --no-rehash fish`.split("\n").each do |line|
     line.match(/set -x PATH \$PATH "(.*)"/) do |md|
         line = "__add_userpath #{md[1]}"
     end
