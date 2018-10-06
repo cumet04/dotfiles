@@ -16,7 +16,7 @@
           },
           "to": [
             {
-              "shell_command": "open /Applications/iTerm.app"
+              "shell_command": "open '/Applications/iTerm.app'"
             }
           ]
         },
@@ -33,6 +33,22 @@
           "to": [
             {
               "shell_command": "open '/Applications/Google Chrome.app'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "c",
+            "modifiers": {
+              "mandatory": [
+                "left_control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open '/Applications/Visual Studio Code.app'"
             }
           ]
         }

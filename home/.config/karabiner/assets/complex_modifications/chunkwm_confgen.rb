@@ -30,8 +30,9 @@ chunk_tile = "/usr/local/bin/chunkc tiling::window"
 
 puts JSON.pretty_generate({title: 'chunkwm key bindings', rules: [
     rule("focus application",
-        hotkey_for_command( [ mod1 ], "t", "open /Applications/iTerm.app"),
+        hotkey_for_command( [ mod1 ], "t", "open '/Applications/iTerm.app'"),
         hotkey_for_command( [ mod1 ], "b", "open '/Applications/Google Chrome.app'"),
+        hotkey_for_command( [ mod1 ], "c", "open '/Applications/Visual Studio Code.app'"),
     ),
     rule("move window",
         hotkey_for_command( [ mod1, mod2 ], "close_bracket", "#{chunk_tile} --swap next"),

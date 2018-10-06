@@ -1,5 +1,5 @@
 home/.config/memo/_*
-vscode-settings/User/workspaceStorage
 home/.config/fish/fishd.*
 home/.config/fish/conf.d/load_anyenv.fish
+playbook/entry.retry
 .vagrant
