@@ -59,6 +59,8 @@
         - { name: chunkwm }
         # google-drive
 
+    # TODO: install vscode extensions
+
     - name: disable DS_Store
       osx_defaults:
         domain: com.apple.desktopservices

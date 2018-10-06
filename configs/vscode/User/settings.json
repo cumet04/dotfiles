@@ -47,5 +47,6 @@
     "python.formatting.yapfArgs": [
         "--style",
         "{ based_on_style: google, column_limit: 99 }",
-    ]
+    ],
+    "explorer.confirmDragAndDrop": false
 }
