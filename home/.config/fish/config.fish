@@ -11,7 +11,6 @@ alias cdg="cd (git rev-parse --show-toplevel)"
 alias ssh='colored_ssh'
 alias tmux='tmux -f ~/.config/tmux.conf'
 
-set -U GHQ_SELECTOR peco
 set -Ux GOPATH /opt/var/go
 
 test -z "$TMUX"; and tmux

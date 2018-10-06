@@ -19,6 +19,7 @@
         - { name: direnv }
         - { name: fish }
         - { name: fzf }
+        - { name: ghq }
         - { name: git }
         - { name: golang }
         - { name: gopass }

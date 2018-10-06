@@ -12,7 +12,7 @@ function _walk_select
         # TODO: Enterで確定＆returnにしたい
         set selected (\
             ls -a1 --color=always |\
-            fzf --ansi --tac\
+            fzf --ansi --tac --no-sort\
                 --bind 'tab:accept'\
                 --preview "$preview_command"
         )
