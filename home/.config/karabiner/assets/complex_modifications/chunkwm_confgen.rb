@@ -25,7 +25,7 @@ def hotkey_for_command(mod, key, command)
 end
 
 mod1 = [ "left_control" ]
-mod2 = [ "left_control", "right_option" ]
+mod2 = [ "right_command" ]
 chunk_tile = "/usr/local/bin/chunkc tiling::window"
 
 puts JSON.pretty_generate({title: 'chunkwm key bindings', rules: [
