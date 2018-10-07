@@ -63,6 +63,6 @@
 - name: install latest nodejs
   shell: |
     export NODENV_ROOT=/opt/anyenv/envs/nodenv
-    export NODE_VERSION=$($NODENV_ROOT/bin/nodenv install -l | grep "^\s*[0-9].*[0-9]$" | tail -n 1)
+    export NODE_VERSION=$($NODENV_ROOT/bin/nodenv install -l | grep "^\s*1[02468].*[0-9]$" | tail -n 1)
     $NODENV_ROOT/bin/nodenv install $NODE_VERSION
     $NODENV_ROOT/bin/nodenv global $NODE_VERSION
