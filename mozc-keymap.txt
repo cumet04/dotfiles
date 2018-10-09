@@ -10,9 +10,18 @@ Suggestion	Ctrl g	CancelAndIMEOff
 Composition	Ctrl h	Backspace
 Conversion	Ctrl h	Cancel
 Precomposition	Ctrl h	Revert
+Composition	Ctrl Left	MoveCursorToBeginning
+Conversion	Ctrl Left	SegmentFocusFirst
+Composition	Ctrl Right	MoveCursorToEnd
+Conversion	Ctrl Right	SegmentFocusLast
+Conversion	Ctrl Shift Left	SegmentWidthShrink
+Conversion	Ctrl Shift Right	SegmentWidthExpand
+Composition	Delete	Delete
 Conversion	Down	CommitOnlyFirstSegment
-Suggestion	Down	PredictAndConvert
 Prediction	Down	ConvertNext
+Suggestion	Down	PredictAndConvert
+Composition	Enter	Commit
+Conversion	Enter	Commit
 Composition	Escape	CancelAndIMEOff
 Conversion	Escape	CancelAndIMEOff
 Precomposition	Escape	CancelAndIMEOff
@@ -20,6 +29,7 @@ Prediction	Escape	CancelAndIMEOff
 Suggestion	Escape	CancelAndIMEOff
 Composition	F10	ConvertToHalfAlphanumeric
 Conversion	F10	ConvertToHalfAlphanumeric
+Composition	F2	ConvertWithoutHistory
 Composition	F6	ConvertToHiragana
 Conversion	F6	ConvertToHiragana
 Composition	F7	ConvertToFullKatakana
@@ -29,14 +39,23 @@ Conversion	F8	ConvertToHalfWidth
 Composition	F9	ConvertToFullAlphanumeric
 Conversion	F9	ConvertToFullAlphanumeric
 Composition	Left	MoveCursorLeft
+Conversion	Left	SegmentWidthShrink
 Composition	Right	MoveCursorRight
+Conversion	Right	SegmentWidthExpand
+Conversion	Shift Left	SegmentFocusLeft
+Conversion	Shift Right	SegmentFocusRight
 Composition	Shift Space	CancelAndIMEOff
+Conversion	Shift Space	CancelAndIMEOff
+Precomposition	Shift Space	CancelAndIMEOff
+Prediction	Shift Space	CancelAndIMEOff
+Suggestion	Shift Space	CancelAndIMEOff
 Conversion	Shift Tab	ConvertPrev
-Prediction	Shift Tab	ConvertPrev
-Composition	Space	PredictAndConvert
-Conversion	Space	PredictAndConvert
-Composition	Enter	Commit
-Conversion	Enter	Commit
-Suggestion	Enter	Commit
-Prediction	Enter	Commit
+Composition	Space	Convert
+Conversion	Space	ConvertNext
+Precomposition	Space	InsertSpace
+Composition	Tab	PredictAndConvert
+Conversion	Tab	PredictAndConvert
+Conversion	Up	ConvertPrev
+Prediction	Up	ConvertPrev
 DirectInput	Muhenkan	IMEOn
+DirectInput	Shift Space	IMEOn

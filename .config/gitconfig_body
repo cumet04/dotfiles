@@ -18,6 +18,7 @@
 [alias]
     d = diff
     s = status
+    br = browse
     co = checkout
     difw = diff --word-diff
     difc = diff --cached
@@ -27,3 +28,4 @@
 	insteadOf = https://bitbucket.org/
 [ghq]
     root = /opt/var/ghq
+    root = /opt/var/go/src

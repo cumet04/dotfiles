@@ -25,7 +25,6 @@ PROMPT="%U%F{cyan}%c%u%f"'${vcs_info_msg_0_}'" > "
 RPROMPT='%F{green}%~%f'
 setopt prompt_subst
 
-
 # completion
 autoload -U compinit promptinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'  # Tab補完時に大文字/小文字無視
@@ -85,8 +84,8 @@ bindkey '^g' peco_ghq_look
 
 # export
 export LC_CTYPE=ja_JP.UTF-8
-export EDITOR=nano
-export SVN_EDITOR=nano
+export EDITOR=emacs
+export SVN_EDITOR=emacs
 export VTE_CJK_WIDTH=auto
 export TERM=xterm-256color
 export GOPATH="/opt/var/go:/opt/var/ghq"
@@ -116,10 +115,14 @@ alias me='memo le'
 alias mg='memo grep'
 alias mt='memo tmp'
 alias mc='memo cat'
+alias agr='ag -G "\.rb" --ignore-dir "db" --ignore-dir "spec"'
 alias mente='memo maintenance'
 alias github='peco_ghq_browse'
 which colordiff > /dev/null && alias diff='colordiff -u'
 alias cdg='cd "$(git rev-parse --show-toplevel)"'
+alias url_decode="python -c 'import sys;sys.stdout.write(sys.stdin.read())'"
+
+eval "$(direnv hook zsh)"
 
 source /opt/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
