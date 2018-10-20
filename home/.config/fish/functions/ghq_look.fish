@@ -1,7 +1,10 @@
 function ghq_look
     set selected (ghq list | peco --on-cancel error)
-    if test $status -eq 0
-        builtin cd (ghq root)/$selected
-        commandline -f execute
+    test $status -eq 0; or return $status;
+
+    for root in (ghq root --all)
+        set target $root/$selected
+        test -d $target; and builtin cd $target
     end
+    commandline -f execute
 end
