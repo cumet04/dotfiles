@@ -1,10 +1,17 @@
 // Empty
-[{
-    "key": "cmd+[",
-    "command": "workbench.action.focusPreviousGroup",
-    "when": "editorTextFocus"
-},{
-    "key": "cmd+]",
-    "command": "workbench.action.focusNextGroup",
-    "when": "editorTextFocus"
-}]
+[
+    {
+        "key": "cmd+[",
+        "command": "workbench.action.focusPreviousGroup",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+]",
+        "command": "workbench.action.focusNextGroup",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+2",
+        "command": "workbench.action.terminal.focus"
+    }
+]
