@@ -3,6 +3,6 @@
 ICON_HOUSE=$(printf '\xF0\x9F\x8F\xA0')
 ICON_GITHUB=$(printf '\xEf\x90\x88')
 
-pwd | \
-  sed "s|$HOME|$ICON_HOUSE|" | \
+echo "${1:-$(pwd)}" | \
+  sed "s|$HOME|$ICON_HOUSE |" | \
   sed "s|/opt/var/ghq/github.com|${ICON_GITHUB} |"
