@@ -11,5 +11,5 @@ while true; do
 
    /opt/bin/shell_commands/__tmux_status_pwd "$path"
    echo "--------------------"
-   /usr/local/bin/gls -1 --color "$path"
+   /usr/local/bin/gls -a1 --color "$path"
 done
