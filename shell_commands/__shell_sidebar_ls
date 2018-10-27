@@ -6,6 +6,7 @@ echo $HOME > $PIPE &
 
 while true; do
    path="$(cat $PIPE)"
+   test -z "$path" && continue
    clear
 
    /opt/bin/shell_commands/__tmux_status_pwd "$path"
