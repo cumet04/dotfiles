@@ -12,5 +12,6 @@ alias ssh='colored_ssh'
 alias tmux='tmux -f ~/.config/tmux.conf'
 
 set -Ux GOPATH /opt/var/go
+set -Ux EDITOR nano
 
 test -z "$TMUX"; and tmux
