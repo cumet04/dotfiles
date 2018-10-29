@@ -1,0 +1,15 @@
+#!/bin/sh
+
+PIPE=/tmp/.shell_sidebar_ls.pipe
+mkfifo $PIPE
+echo $HOME > $PIPE &
+
+while true; do
+   path="$(cat $PIPE)"
+   test -z "$path" && continue
+   clear
+
+   /opt/bin/shell_commands/__tmux_status_pwd "$path"
+   echo "--------------------"
+   /usr/local/bin/gls -a1 --color "$path"
+done
