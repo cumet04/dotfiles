@@ -3,7 +3,12 @@ colorscheme molokai
 set t_Co=256
 syntax enable
 
-set clipboard+=unnamedplus
+" speed hack
+let g:clipboard = {'copy': {'+': 'pbcopy', '*': 'pbcopy'}, 'paste': {'+': 'pbpaste', '*': 'pbpaste'}, 'name': 'pbcopy', 'cache_enabled': 0} " hack for mac; refs https://github.com/neovim/neovim/issues/8631
+let g:ruby_path = "/opt/anyenv/envs/rbenv/shims/ruby"
+"let g:ruby_default_path = "/opt/anyenv/envs/rbenv/shims/ruby"
+
+set clipboard=unnamedplus
 set backspace=indent,eol,start
 set expandtab
 set nobackup
