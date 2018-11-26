@@ -7,11 +7,16 @@ alias lt='ls -alht'
 alias cp='cp -i'
 alias mv='mv -i'
 alias vim='nvim'
+alias pt='pt --hidden'
 alias cdg="cd (git rev-parse --show-toplevel)"
 alias ssh='colored_ssh'
 alias tmux='tmux -f ~/.config/tmux.conf'
 
 set -Ux GOPATH /opt/var/go
 set -Ux EDITOR nano
+
+# TODO: たぶんmac側でやったほうがいい
+set -Ux LANG en_US.UTF-8
+set -Ux LC_ALL en_US.UTF-8
 
 test -z "$TMUX"; and tmux
