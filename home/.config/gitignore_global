@@ -10,7 +10,6 @@ venv/
 .alias_local
 .pylintrc
 *.db
-.python-version
 better_errors_for_vscode.rb
 *.local
 yarn-error.log
