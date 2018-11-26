@@ -1,5 +1,6 @@
-set -U fish_user_paths
-__add_userpath /usr/local/opt/coreutils/libexec/gnubin
-__add_userpath /opt/bin
-__add_userpath /opt/bin/shell_commands
-__add_userpath $GOPATH/bin
+set -x PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
+set -x PATH /usr/local/opt/mysql@5.7/bin $PATH
+set -x PATH /usr/local/opt/gettext/bin $PATH
+set -x PATH /opt/bin $PATH
+set -x PATH /opt/bin/shell_commands $PATH
+set -x PATH $GOPATH/bin $PATH

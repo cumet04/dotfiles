@@ -6,14 +6,6 @@ output = []
 output.push("set -gx ANYENV_ROOT #{anyenv_root}")
 
 `env ANYENV_ROOT=#{anyenv_root} anyenv init - --no-rehash fish`.split("\n").each do |line|
-    line.match(/set -x PATH \$PATH "(.*)"/) do |md|
-        line = "__add_userpath #{md[1]}"
-    end
-
-    line.match(/set -gx PATH '(.*)'/) do |md|
-        line = "__add_userpath #{md[1]}"
-    end
-
     line.match(/^source(.*)/) do |md|
         line = "#source#{md[1]}"
     end
