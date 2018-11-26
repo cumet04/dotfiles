@@ -14,6 +14,10 @@ output.push("set -gx ANYENV_ROOT #{anyenv_root}")
         line = "__add_userpath #{md[1]}"
     end
 
+    line.match(/^source(.*)/) do |md|
+        line = "#source#{md[1]}"
+    end
+
     output.push(line)
 end
 
