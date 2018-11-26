@@ -10,7 +10,7 @@
             "key_code": "t",
             "modifiers": {
               "mandatory": [
-                "left_control"
+                "left_option"
               ]
             }
           },
@@ -26,7 +26,7 @@
             "key_code": "b",
             "modifiers": {
               "mandatory": [
-                "left_control"
+                "left_option"
               ]
             }
           },
@@ -42,13 +42,29 @@
             "key_code": "c",
             "modifiers": {
               "mandatory": [
-                "left_control"
+                "left_option"
               ]
             }
           },
           "to": [
             {
               "shell_command": "open '/Applications/Visual Studio Code.app'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "p",
+            "modifiers": {
+              "mandatory": [
+                "left_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open '/Applications/Bitwarden.app'"
             }
           ]
         }
@@ -244,7 +260,7 @@
             "key_code": "close_bracket",
             "modifiers": {
               "mandatory": [
-                "left_control"
+                "left_option"
               ]
             }
           },
@@ -260,7 +276,7 @@
             "key_code": "open_bracket",
             "modifiers": {
               "mandatory": [
-                "left_control"
+                "left_option"
               ]
             }
           },
@@ -281,7 +297,7 @@
             "key_code": "h",
             "modifiers": {
               "mandatory": [
-                "left_control"
+                "left_option"
               ]
             }
           },
@@ -297,7 +313,7 @@
             "key_code": "l",
             "modifiers": {
               "mandatory": [
-                "left_control"
+                "left_option"
               ]
             }
           },
@@ -313,7 +329,7 @@
             "key_code": "k",
             "modifiers": {
               "mandatory": [
-                "left_control"
+                "left_option"
               ]
             }
           },
@@ -329,7 +345,7 @@
             "key_code": "j",
             "modifiers": {
               "mandatory": [
-                "left_control"
+                "left_option"
               ]
             }
           },
@@ -345,13 +361,34 @@
             "key_code": "f",
             "modifiers": {
               "mandatory": [
-                "left_control"
+                "left_option"
               ]
             }
           },
           "to": [
             {
               "shell_command": "/usr/local/bin/chunkc tiling::window --toggle fullscreen"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "focus monitor",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "quote",
+            "modifiers": {
+              "mandatory": [
+                "left_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "/usr/local/bin/chunkc tiling::monitor -f next"
             }
           ]
         }

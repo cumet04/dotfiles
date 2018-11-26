@@ -24,15 +24,17 @@ def hotkey_for_command(mod, key, command)
     }
 end
 
-mod1 = [ "left_control" ]
+mod1 = [ "left_option" ]
 mod2 = [ "right_command" ]
 chunk_tile = "/usr/local/bin/chunkc tiling::window"
+chunk_monitor = "/usr/local/bin/chunkc tiling::monitor"
 
 puts JSON.pretty_generate({title: 'chunkwm key bindings', rules: [
     rule("focus application",
-        hotkey_for_command( mod1, "t", "open '/Applications/iTerm.app'"),
-        hotkey_for_command( mod1, "b", "open '/Applications/Google Chrome.app'"),
-        hotkey_for_command( mod1, "c", "open '/Applications/Visual Studio Code.app'"),
+        hotkey_for_command( mod1, "t", "open '/Applications/iTerm.app'"),              # terminal
+        hotkey_for_command( mod1, "b", "open '/Applications/Google Chrome.app'"),      # browser
+        hotkey_for_command( mod1, "c", "open '/Applications/Visual Studio Code.app'"), # coding
+        hotkey_for_command( mod1, "p", "open '/Applications/Bitwarden.app'"),          # password
     ),
     rule("move window",
         hotkey_for_command( mod2, "close_bracket", "#{chunk_tile} --swap next"),
@@ -51,5 +53,8 @@ puts JSON.pretty_generate({title: 'chunkwm key bindings', rules: [
         hotkey_for_command( mod1, "k", "#{chunk_tile} --use-temporary-ratio 0.05 --adjust-window-edge north"),
         hotkey_for_command( mod1, "j", "#{chunk_tile} --use-temporary-ratio 0.05 --adjust-window-edge south"),
         hotkey_for_command( mod1, "f", "#{chunk_tile} --toggle fullscreen"),
+    ),
+    rule("focus monitor",
+        hotkey_for_command( mod1, "quote", "#{chunk_monitor} -f next"),
     ),
 ]})
