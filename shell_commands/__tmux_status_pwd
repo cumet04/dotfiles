@@ -7,4 +7,5 @@ ICON_GITHUB=$(printf '\xEf\x90\x88 ')
 echo "${1:-$(pwd)}" | \
   sed "s|$HOME|$ICON_HOUSE|" | \
   sed "s|/opt/var/ghq/github.com|${ICON_GITHUB}|" | \
+  sed "s|/opt/var/ghq/ghe.oro-g2d.com|${ICON_GITHUB}|" | \
   sed "s|/opt/var/go/src/github.com|${ICON_GITHUB}|"
