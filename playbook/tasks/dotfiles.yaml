@@ -6,20 +6,20 @@
     owner: "{{ ansible_user }}"
     group: staff
   with_items:
-    - /opt/var/ghq
+    - /opt/var/ghq/src
     - /opt/var/go/bin
     - /opt/anyenv
     - /opt/bin
 - name: git clone dotfiles
   git:
     repo: ssh://git@github.com/medalhkr/dotfiles.git
-    dest: /opt/var/ghq/github.com/medalhkr/dotfiles
+    dest: /opt/var/ghq/src/github.com/medalhkr/dotfiles
     version: master
     update: no
     accept_hostkey: yes
 - name: put shortcut for dotfiles
   file:
-    src: /opt/var/ghq/github.com/medalhkr/dotfiles
+    src: /opt/var/ghq/src/github.com/medalhkr/dotfiles
     dest: "{{ ansible_env.HOME }}/.dotfiles"
     state: link
 - name: install dotfiles symlinks
