@@ -12,11 +12,7 @@ alias cdg="cd (git rev-parse --show-toplevel)"
 alias ssh='colored_ssh'
 alias tmux='tmux -f ~/.config/tmux.conf'
 
-set -Ux GOPATH /opt/var/go
-set -Ux EDITOR nano
-
-# TODO: たぶんmac側でやったほうがいい
-set -Ux LANG en_US.UTF-8
-set -Ux LC_ALL en_US.UTF-8
+set -x GOPATH /opt/var/go:/opt/var/ghq
+set -x EDITOR nano
 
 test -z "$TMUX"; and tmux
