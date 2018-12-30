@@ -41,6 +41,7 @@
         - { name: tree }
         - { name: unrar }
         - { name: watch }
+        - { name: yarn, install_options: without-node }
     - name: install cask packages
       homebrew_cask:
         name: "{{ item.name }}"
@@ -53,11 +54,19 @@
         - { name: visual-studio-code }
         - { name: clipy }
         - { name: iterm2 }
+        - { name: google-backup-and-sync }
         - { name: google-chrome }
+        - { name: google-cloud-sdk }
         - { name: google-japanese-ime }
         - { name: karabiner-elements }
         - { name: chunkwm }
         # google-drive
+    - name: install yarn globals
+      yarn:
+        name: "{{ item.name }}"
+        global: "{{ item.global | default('yes') }}"
+      with_items:
+        - { name: "@vue/cli" }
 
     # TODO: install vscode extensions
 
