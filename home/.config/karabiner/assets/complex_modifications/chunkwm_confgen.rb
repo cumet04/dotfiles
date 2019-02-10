@@ -24,8 +24,7 @@ def hotkey_for_command(mod, key, command)
     }
 end
 
-mod1 = [ "left_option" ]
-mod2 = [ "right_command" ]
+mod1 = [ "left_control" ]
 chunk_tile = "/usr/local/bin/chunkc tiling::window"
 chunk_monitor = "/usr/local/bin/chunkc tiling::monitor"
 
@@ -37,24 +36,18 @@ puts JSON.pretty_generate({title: 'chunkwm key bindings', rules: [
         hotkey_for_command( mod1, "p", "open '/Applications/Bitwarden.app'"),          # password
     ),
     rule("move window",
-        hotkey_for_command( mod2, "close_bracket", "#{chunk_tile} --swap next"),
-        hotkey_for_command( mod2, "open_bracket", "#{chunk_tile} --swap prev"),
+        hotkey_for_command( mod1, "close_bracket", "#{chunk_tile} --swap next"),
+        hotkey_for_command( mod1, "open_bracket", "#{chunk_tile} --swap prev"),
         *( (1..9).map(&:to_s).map{ |i|
-            hotkey_for_command( mod2, i, "#{chunk_tile} --send-to-desktop #{i}")
+            hotkey_for_command( mod1, i, "#{chunk_tile} --send-to-desktop #{i}")
         } )
-    ),
-    rule("focus window",
-        hotkey_for_command( mod1, "close_bracket", "#{chunk_tile} --focus next"),
-        hotkey_for_command( mod1, "open_bracket", "#{chunk_tile} --focus prev"),
     ),
     rule("resize",
         hotkey_for_command( mod1, "h", "#{chunk_tile} --use-temporary-ratio 0.05 --adjust-window-edge west"),
         hotkey_for_command( mod1, "l", "#{chunk_tile} --use-temporary-ratio 0.05 --adjust-window-edge east"),
         hotkey_for_command( mod1, "k", "#{chunk_tile} --use-temporary-ratio 0.05 --adjust-window-edge north"),
         hotkey_for_command( mod1, "j", "#{chunk_tile} --use-temporary-ratio 0.05 --adjust-window-edge south"),
-        hotkey_for_command( mod1, "f", "#{chunk_tile} --toggle fullscreen"),
-    ),
-    rule("focus monitor",
-        hotkey_for_command( mod1, "quote", "#{chunk_monitor} -f next"),
+        hotkey_for_command( mod1, "return_or_enter", "#{chunk_tile} --toggle fullscreen"),
+        hotkey_for_command( mod1, "f", "#{chunk_tile} --toggle parent"),
     ),
 ]})

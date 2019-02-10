@@ -10,7 +10,7 @@
             "key_code": "t",
             "modifiers": {
               "mandatory": [
-                "left_option"
+                "left_control"
               ]
             }
           },
@@ -26,7 +26,7 @@
             "key_code": "b",
             "modifiers": {
               "mandatory": [
-                "left_option"
+                "left_control"
               ]
             }
           },
@@ -42,7 +42,7 @@
             "key_code": "c",
             "modifiers": {
               "mandatory": [
-                "left_option"
+                "left_control"
               ]
             }
           },
@@ -58,7 +58,7 @@
             "key_code": "p",
             "modifiers": {
               "mandatory": [
-                "left_option"
+                "left_control"
               ]
             }
           },
@@ -79,7 +79,7 @@
             "key_code": "close_bracket",
             "modifiers": {
               "mandatory": [
-                "right_command"
+                "left_control"
               ]
             }
           },
@@ -95,7 +95,7 @@
             "key_code": "open_bracket",
             "modifiers": {
               "mandatory": [
-                "right_command"
+                "left_control"
               ]
             }
           },
@@ -111,7 +111,7 @@
             "key_code": "1",
             "modifiers": {
               "mandatory": [
-                "right_command"
+                "left_control"
               ]
             }
           },
@@ -127,7 +127,7 @@
             "key_code": "2",
             "modifiers": {
               "mandatory": [
-                "right_command"
+                "left_control"
               ]
             }
           },
@@ -143,7 +143,7 @@
             "key_code": "3",
             "modifiers": {
               "mandatory": [
-                "right_command"
+                "left_control"
               ]
             }
           },
@@ -159,7 +159,7 @@
             "key_code": "4",
             "modifiers": {
               "mandatory": [
-                "right_command"
+                "left_control"
               ]
             }
           },
@@ -175,7 +175,7 @@
             "key_code": "5",
             "modifiers": {
               "mandatory": [
-                "right_command"
+                "left_control"
               ]
             }
           },
@@ -191,7 +191,7 @@
             "key_code": "6",
             "modifiers": {
               "mandatory": [
-                "right_command"
+                "left_control"
               ]
             }
           },
@@ -207,7 +207,7 @@
             "key_code": "7",
             "modifiers": {
               "mandatory": [
-                "right_command"
+                "left_control"
               ]
             }
           },
@@ -223,7 +223,7 @@
             "key_code": "8",
             "modifiers": {
               "mandatory": [
-                "right_command"
+                "left_control"
               ]
             }
           },
@@ -239,50 +239,13 @@
             "key_code": "9",
             "modifiers": {
               "mandatory": [
-                "right_command"
+                "left_control"
               ]
             }
           },
           "to": [
             {
               "shell_command": "/usr/local/bin/chunkc tiling::window --send-to-desktop 9"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "focus window",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "close_bracket",
-            "modifiers": {
-              "mandatory": [
-                "left_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "/usr/local/bin/chunkc tiling::window --focus next"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "open_bracket",
-            "modifiers": {
-              "mandatory": [
-                "left_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "/usr/local/bin/chunkc tiling::window --focus prev"
             }
           ]
         }
@@ -297,7 +260,7 @@
             "key_code": "h",
             "modifiers": {
               "mandatory": [
-                "left_option"
+                "left_control"
               ]
             }
           },
@@ -313,7 +276,7 @@
             "key_code": "l",
             "modifiers": {
               "mandatory": [
-                "left_option"
+                "left_control"
               ]
             }
           },
@@ -329,7 +292,7 @@
             "key_code": "k",
             "modifiers": {
               "mandatory": [
-                "left_option"
+                "left_control"
               ]
             }
           },
@@ -345,7 +308,7 @@
             "key_code": "j",
             "modifiers": {
               "mandatory": [
-                "left_option"
+                "left_control"
               ]
             }
           },
@@ -358,10 +321,10 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "f",
+            "key_code": "return_or_enter",
             "modifiers": {
               "mandatory": [
-                "left_option"
+                "left_control"
               ]
             }
           },
@@ -370,25 +333,20 @@
               "shell_command": "/usr/local/bin/chunkc tiling::window --toggle fullscreen"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "focus monitor",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "from": {
-            "key_code": "quote",
+            "key_code": "f",
             "modifiers": {
               "mandatory": [
-                "left_option"
+                "left_control"
               ]
             }
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/chunkc tiling::monitor -f next"
+              "shell_command": "/usr/local/bin/chunkc tiling::window --toggle parent"
             }
           ]
         }
