@@ -29,13 +29,7 @@
     "search.useIgnoreFiles": true,
     "workbench.panel.location": "bottom",
     "gitlens.advanced.messages": {
-        "suppressCommitHasNoPreviousCommitWarning": false,
-        "suppressCommitNotFoundWarning": false,
-        "suppressFileNotUnderSourceControlWarning": false,
-        "suppressGitVersionWarning": false,
-        "suppressLineUncommittedWarning": false,
-        "suppressNoRepositoryWarning": false,
-        "suppressUpdateNotice": false,
+        "suppressShowKeyBindingsNotice": true,
         "suppressWelcomeNotice": true
     },
     "gitlens.currentLine.enabled": false,
@@ -48,5 +42,9 @@
         "--style",
         "{ based_on_style: google, column_limit: 99 }",
     ],
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "terminal.integrated.fontSize": 18,
+    "terminal.integrated.fontFamily": "Cica",
+    "terminal.integrated.macOptionIsMeta": true,
+    "javascript.format.enable": false
 }
