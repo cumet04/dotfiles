@@ -2,6 +2,7 @@ home/.config/memo/_*
 home/.config/fish/fishd.*
 home/.config/fish/conf.d/load_anyenv.fish
 home/.config/nvim/.netrwhist
+home/.config/nvim/preview
 home/.config/direnv/allow
 home/.config/gcloud
 playbook/entry.retry

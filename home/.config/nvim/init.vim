@@ -46,6 +46,8 @@ hi IndentGuidesEven ctermbg=234
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_guide_size=1
 
+let g:qiita_vim_private = v:true
+let g:previm_open_cmd = 'open -a Google\ Chrome'
 
 function! HandleURI()
   let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;:]*')
