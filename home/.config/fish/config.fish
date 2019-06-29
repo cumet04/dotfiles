@@ -13,6 +13,8 @@ alias ssh='colored_ssh'
 alias tmux='tmux -f ~/.config/tmux.conf'
 
 set -x GOPATH /opt/var/go:/opt/var/ghq
-set -x EDITOR nano
+set -x EDITOR nvim
+set -x PIPENV_VENV_IN_PROJECT true
+set -x ANSIBLE_RETRY_FILES_ENABLED false
 
 test -z "$TMUX"; and tmux

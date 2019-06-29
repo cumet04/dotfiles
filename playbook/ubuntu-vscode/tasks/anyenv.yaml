@@ -1,0 +1,68 @@
+---
+- name: install rbenv dep packages (optional, but recommended)
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - openssl
+    - libyaml
+    - libffi
+- name: install pyenv dep packages (optional, but recommended)
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - openssl
+    - readline
+    - sqlite3
+    - xz
+    - zlib
+- name: use brew's openssl
+  become: true
+  # TODO: use ansible way
+  # TODO: reloading shell is required
+  shell: "ln -sf $(brew --prefix openssl)/bin/openssl /usr/local/bin/openssl"
+- name: setup anyenv
+  git:
+    # original (riywo's) anyenv seems to not be maintened
+    repo: https://github.com/ndxbn/anyenv.git
+    dest: /opt/anyenv
+    update: no
+    accept_hostkey: yes
+- name: symlink anyenv
+  become: true
+  file:
+    src: /opt/anyenv/bin/anyenv
+    dest: /usr/local/bin/anyenv
+    state: link
+- name: run anyenv install
+  shell: |
+    export ANYENV_ROOT=/opt/anyenv
+    test -e /opt/anyenv/envs/rbenv/bin/rbenv || anyenv install rbenv
+    test -e /opt/anyenv/envs/pyenv/bin/pyenv || anyenv install pyenv
+    test -e /opt/anyenv/envs/nodenv/bin/nodenv || anyenv install nodenv
+- name: install latest ruby
+  shell: |
+    export RBENV_ROOT=/opt/anyenv/envs/rbenv
+    export RUBY_VERSION=$($RBENV_ROOT/bin/rbenv install -l | grep "^\s*2[0-9\.]*$" | tail -n 1)
+    $RBENV_ROOT/bin/rbenv install $RUBY_VERSION
+    $RBENV_ROOT/bin/rbenv global $RUBY_VERSION
+- name: install latest python2
+  shell: |
+    export PYENV_ROOT=/opt/anyenv/envs/pyenv
+    export PYTHON2_VERSION=$($PYENV_ROOT/bin/pyenv install -l | grep "^\s*2[0-9\.]*$" | tail -n 1)
+    $PYENV_ROOT/bin/pyenv install $PYTHON2_VERSION
+    $PYENV_ROOT/bin/pyenv global $PYTHON2_VERSION
+- name: install latest python3
+  shell: |
+    export PYENV_ROOT=/opt/anyenv/envs/pyenv
+    export PYTHON3_VERSION=$($PYENV_ROOT/bin/pyenv install -l | grep "^\s*3.*[0-9]$" | tail -n 1)
+    # tmp hack; refs https://github.com/pyenv/pyenv/issues/1184
+    CONFIGURE_OPTS="--with-openssl=$(brew --prefix openssl)" \
+    $PYENV_ROOT/bin/pyenv install $PYTHON3_VERSION
+- name: install latest nodejs
+  shell: |
+    export NODENV_ROOT=/opt/anyenv/envs/nodenv
+    export NODE_VERSION=$($NODENV_ROOT/bin/nodenv install -l | grep "^\s*1[02468].*[0-9]$" | tail -n 1)
+    $NODENV_ROOT/bin/nodenv install $NODE_VERSION
+    $NODENV_ROOT/bin/nodenv global $NODE_VERSION

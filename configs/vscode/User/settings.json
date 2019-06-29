@@ -1,52 +1,55 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "editor.fontSize": 16,
-    "editor.fontFamily": "Cica",
-    "editor.renderIndentGuides": true,
-    "editor.minimap.enabled": false,
-    "editor.rulers": [
-        80,
-        100
-    ],
-    "editor.formatOnSave": true,
-    "python.formatting.formatOnSave": false,
-    "window.zoomLevel": 0,
-    "vim.useSystemClipboard": true,
-    "vim.handleKeys": {
-        "<C-d>": true,
-        "<C-u>": true
-    },
-    "tslint.autoFixOnSave": true,
-    "extensions.ignoreRecommendations": false,
-    "stylelint.enable": true,
-    "css.validate": false,
-    "scss.validate": false,
-    "files.insertFinalNewline": true,
-    "workbench.startupEditor": "newUntitledFile",
-    "gitlens.blame.line.enabled": false,
-    "gitlens.codeLens.enabled": false,
-    "search.useIgnoreFilesByDefault": true,
-    "search.useIgnoreFiles": true,
-    "workbench.panel.location": "bottom",
-    "gitlens.advanced.messages": {
-        "suppressCommitHasNoPreviousCommitWarning": false,
-        "suppressCommitNotFoundWarning": false,
-        "suppressFileNotUnderSourceControlWarning": false,
-        "suppressGitVersionWarning": false,
-        "suppressLineUncommittedWarning": false,
-        "suppressNoRepositoryWarning": false,
-        "suppressUpdateNotice": false,
-        "suppressWelcomeNotice": true
-    },
-    "gitlens.currentLine.enabled": false,
-    "gitlens.hovers.currentLine.enabled": false,
-    "gitlens.keymap": "alternate",
-    "workbench.iconTheme": "vscode-icons",
-    "workbench.sideBar.location": "left",
-    "python.formatting.provider": "yapf",
-    "python.formatting.yapfArgs": [
-        "--style",
-        "{ based_on_style: google, column_limit: 99 }",
-    ],
-    "explorer.confirmDragAndDrop": false
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false
+  },
+  "css.validate": false,
+  "editor.fontFamily": "Cica",
+  "editor.fontSize": 16,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.renderIndentGuides": true,
+  "editor.rulers": [80, 100],
+  "explorer.confirmDragAndDrop": false,
+  "extensions.ignoreRecommendations": false,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "git.autofetch": true,
+  "gitlens.advanced.messages": {
+    "suppressCommitHasNoPreviousCommitWarning": false,
+    "suppressCommitNotFoundWarning": false,
+    "suppressFileNotUnderSourceControlWarning": false,
+    "suppressGitVersionWarning": false,
+    "suppressLineUncommittedWarning": false,
+    "suppressNoRepositoryWarning": false,
+    "suppressUpdateNotice": false,
+    "suppressWelcomeNotice": true
+  },
+  "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.enabled": false,
+  "gitlens.keymap": "alternate",
+  "go.useLanguageServer": true,
+  "go.vetOnSave": "workspace",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "scss.validate": false,
+  "search.useIgnoreFiles": true,
+  "terminal.integrated.fontSize": 18,
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-u>": true
+  },
+  "vim.useSystemClipboard": true,
+  "window.zoomLevel": 0,
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.sideBar.location": "left",
+  "workbench.startupEditor": "newUntitledFile",
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": [
+    "--line-length",
+    "100"
+  ],
+  "python.formatting.blackPath": "/opt/anyenv/envs/pyenv/shims/black",
+  "ruby.useLanguageServer": true,
+  "python.linting.pylintEnabled": false
 }

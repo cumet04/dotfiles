@@ -1,0 +1,4 @@
+- hosts: all
+  user: vagrant
+  tasks:
+    - include: tasks/code-server.yaml

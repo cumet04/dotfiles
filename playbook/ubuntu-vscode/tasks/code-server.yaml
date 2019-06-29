@@ -1,0 +1,45 @@
+---
+- name: install code-server dep packages
+  become: yes
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+    # from https://github.com/codercom/code-server/blob/master/Dockerfile
+  loop:
+    - openssl
+    - net-tools
+    - git
+    - locales
+
+- name: install jq (for github api)
+  become: yes
+  apt:
+    name: "jq"
+    state: present
+    update_cache: yes
+
+- name: check latest code-server release
+  shell: |
+    curl https://api.github.com/repos/codercom/code-server/releases/latest 2> /dev/null |
+      jq -r '.assets[].name' |
+      grep 'linux-x64' |
+      sed 's|.tar.gz$||'
+  register: code_server_release_name
+  changed_when: False
+
+- name: check current code-server
+  stat:
+    path: "/usr/local/bin/{{ code_server_release_name.stdout }}"
+  register: code_server_release
+
+- name: get latest code-server
+  become: yes
+  shell:
+    cd /usr/local/bin;
+    curl https://api.github.com/repos/codercom/code-server/releases/latest 2> /dev/null |
+      jq -r '.assets[] | select(.name | test("{{ code_server_release_name.stdout }}")) | .browser_download_url' |
+      xargs curl -L |
+      tar xz > "{{ code_server_release_name.stdout }}";
+    ln -sfn "{{ code_server_release_name.stdout }}/code-server" code-server
+  when: not code_server_release.stat.exists

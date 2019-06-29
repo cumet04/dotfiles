@@ -24,7 +24,7 @@ def hotkey_for_command(mod, key, command)
     }
 end
 
-mod1 = [ "left_control" ]
+mod1 = [ "left_option" ]
 chunk_tile = "/usr/local/bin/chunkc tiling::window"
 chunk_monitor = "/usr/local/bin/chunkc tiling::monitor"
 

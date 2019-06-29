@@ -1,0 +1,47 @@
+- name: setup direcrories
+  become: true
+  file:
+    path: '{{ item }}'
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: staff
+  with_items:
+    - /opt/var/ghq/src
+    - /opt/var/go/bin
+    - /opt/anyenv
+    - /opt/bin
+- name: git clone dotfiles
+  git:
+    repo: ssh://git@github.com/medalhkr/dotfiles.git
+    dest: /opt/var/ghq/src/github.com/medalhkr/dotfiles
+    version: master
+    update: no
+    accept_hostkey: yes
+- name: put shortcut for dotfiles
+  file:
+    src: /opt/var/ghq/src/github.com/medalhkr/dotfiles
+    dest: "{{ ansible_env.HOME }}/.dotfiles"
+    state: link
+- name: install dotfiles symlinks
+  file:
+    src: "{{ ansible_env.HOME }}/.dotfiles/home/{{ item }}"
+    dest: "{{ ansible_env.HOME }}/{{ item }}"
+    state: link
+  with_items:
+    - .config
+    - .gitconfig
+    - .tigrc
+- name: symlink shell_commands
+  file:
+    src: "{{ ansible_env.HOME }}/.dotfiles/shell_commands"
+    dest: /opt/bin/shell_commands
+    state: link
+- name: symlink vscode settings
+  # MEMO: only mac
+  file:
+    src: "{{ ansible_env.HOME }}/.dotfiles/configs/vscode/User/{{ item }}"
+    dest: "{{ ansible_env.HOME }}/Library/Application Support/Code/User/{{ item }}"
+    state: link
+  with_items:
+    - keybindings.json
+    - settings.json
