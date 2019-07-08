@@ -1,109 +1,46 @@
 - hosts: all
   user: medalhkr
   tasks:
-    - name: homebrew taps
-      homebrew_tap:
-        name: "{{ item }}"
+    - name: apt add repositories
+      become: true
+      apt_repository:
+        repo: "{{ item }}"
         state: present
-      with_items:
-        - crisidev/homebrew-chunkwm
+      loop:
+        - ppa:fish-shell/release-3
+        - ppa:neovim-ppa/stable
+    - name: apt-get update
+      become: true
+      apt:
+        update_cache: true
     - name: install packages
-      homebrew:
-        name: "{{ item.name }}"
-        state: "{{ item.state | default('present') }}"
-        install_options: "{{ item.install_options | default('latest') }}"
-      with_items:
-        - { name: ansible }
-        - { name: colordiff }
-        - { name: coreutils }
-        - { name: direnv }
-        - { name: fish }
-        - { name: fzf }
-        - { name: ghq }
-        - { name: git }
-        - { name: golang }
-        - { name: gopass }
-        - { name: imagemagick }
-        - { name: jq }
-        - { name: lftp }
-        - { name: mysql }
-        - { name: nano }
-        - { name: neovim }
-        - { name: nmap }
-        - { name: peco }
-        - { name: ruby }
-        - { name: sqlite }
-        - { name: subversion }
-        - { name: the_platinum_searcher }
-        - { name: tig }
-        - { name: tmux }
-        - { name: tree }
-        - { name: tree }
-        - { name: unrar }
-        - { name: watch }
-        - { name: yarn, install_options: without-node }
-    - name: install cask packages
-      homebrew_cask:
-        name: "{{ item.name }}"
-        state: "{{ item.state | default('present') }}"
-      environment:
-        HOMEBREW_CASK_OPTS: "--appdir=/Applications"
-      with_items:
-        - { name: docker }
-        - { name: virtualbox }
-        - { name: visual-studio-code }
-        - { name: clipy }
-        - { name: iterm2 }
-        - { name: google-backup-and-sync }
-        - { name: google-chrome }
-        - { name: google-cloud-sdk }
-        - { name: google-japanese-ime }
-        - { name: karabiner-elements }
-        - { name: chunkwm }
-        # google-drive
-    - name: install yarn globals
-      yarn:
-        name: "{{ item.name }}"
-        global: "{{ item.global | default('yes') }}"
-      with_items:
-        - { name: "@vue/cli" }
+      become: true
+      apt:
+        name: "{{ item }}"
+        state: latest
+      loop:
+        - ansible
+        - direnv
+        - fish
+        - git
+        - golang
+        - imagemagick
+        - jq
+        - neovim
+        - nodejs
+        - peco
+        - python
+        - python3
+        - ruby
+        - tig
+        - tmux
+        - tree
 
-    # TODO: install vscode extensions
-
-    - name: disable DS_Store
-      osx_defaults:
-        domain: com.apple.desktopservices
-        key: DSDontWriteNetworkStores
-        type: bool
-        value: true
-        state: present
-
-    - osx_defaults:
-        domain: com.microsoft.VSCode
-        key: ApplePressAndHoldEnabled
-        type: bool
-        value: false
-        state: present
-
-    - include: tasks/dotfiles.yaml
-    - include: tasks/anyenv.yaml
-
-    #- name: get latest Cica release
-    #  uri:
-    #    url: https://api.github.com/repos/miiton/Cica/releases/latest
-    #    return_content: true
-    #  register: cica_json_response
-    #- name: get latest Cica
-    #  unarchive:
-    #    # TODO: not work on mac
-    #    src: "{{ cica_json_response.json.assets[0].browser_download_url }}"
-    #    dest: ~/Downloads
-    #    remote_src: yes
-
-    #- name: put diff-highlight
-    #  become: true
-    #  file:
-    #    # TODO: for mac
-    #    src: /usr/share/git-core/contrib/diff-highlight
-    #    dest: /usr/local/bin/diff-highlight
-    #    state: link
+- hosts: all
+  user: medalhkr
+  tasks:
+    - name: Gather the apt package facts
+      package_facts:
+        manager: auto
+    - name: Print the package facts to a file
+      local_action: copy content={{ ansible_facts.packages | to_yaml }} dest=packages.yaml
