@@ -1,22 +1,24 @@
 - hosts: all
   user: medalhkr
+  become: true
   tasks:
+    - name: use japan apt mirror
+      replace:
+        path: /etc/apt/sources.list
+        regexp: 'http://archive.ubuntu.com/ubuntu'
+        replace: 'http://linux.yz.yamagata-u.ac.jp/ubuntu/'
+        backup: yes
     - name: apt add repositories
-      become: true
       apt_repository:
         repo: "{{ item }}"
         state: present
       loop:
         - ppa:fish-shell/release-3
         - ppa:neovim-ppa/stable
-    - name: apt-get update
-      become: true
-      apt:
-        update_cache: true
     - name: install packages
-      become: true
       apt:
         name: "{{ item }}"
+        update_cache: true
         state: latest
       loop:
         - ansible
@@ -35,6 +37,22 @@
         - tig
         - tmux
         - tree
+    - name: check diff-highlight
+      stat:
+        path: /opt/bin/diff-highlight
+      register: diff_highlight
+    - name: make diff-highlight
+      shell: |
+        cd /usr/share/doc/git/contrib/diff-highlight/
+        make
+        chmod +x diff-highlight
+        ln -s /usr/share/doc/git/contrib/diff-highlight/diff-highlight /opt/bin/
+      when: not diff_highlight.exists
+
+- hosts: all
+  user: medalhkr
+  tasks:
+    - include: dotfiles.yaml
 
 - hosts: all
   user: medalhkr
@@ -43,4 +61,4 @@
       package_facts:
         manager: auto
     - name: Print the package facts to a file
-      local_action: copy content={{ ansible_facts.packages | to_yaml }} dest=packages.yaml
+      local_action: copy content={{ ansible_facts.packages | to_yaml }} dest=packages
