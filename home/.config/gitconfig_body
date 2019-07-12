@@ -1,11 +1,3 @@
-### for $HOME/.gitconfig
-# [user]
-#     name = {name}
-#     email = {email}
-# [include]
-#     path = ~/.config/gitconfig_body
-###
-
 [core]
 	excludesfile = ~/.config/gitignore_global
 	editor = "nano"
@@ -27,4 +19,3 @@
 	insteadOf = https://bitbucket.org/
 [ghq]
     root = /opt/var/ghq/src
-    root = /opt/var/go/src
