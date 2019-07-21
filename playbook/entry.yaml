@@ -15,17 +15,25 @@
       loop:
         - ppa:fish-shell/release-3
         - ppa:neovim-ppa/stable
+        - ppa:longsleep/golang-backports
+    - name: apt add nodejs repository
+      shell: |
+        curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
+        echo 'deb https://deb.nodesource.com/node_10.x bionic main' > /etc/apt/sources.list.d/nodesource.list
+        echo 'deb-src https://deb.nodesource.com/node_10.x bionic main' >> /etc/apt/sources.list.d/nodesource.list
+    - name: apt-get update
+      apt:
+        update_cache: true
     - name: install packages
       apt:
         name: "{{ item }}"
-        update_cache: true
         state: latest
       loop:
         - ansible
         - direnv
         - fish
         - git
-        - golang
+        - golang-go
         - imagemagick
         - jq
         - neovim
@@ -37,22 +45,13 @@
         - tig
         - tmux
         - tree
-    - name: check diff-highlight
-      stat:
-        path: /opt/bin/diff-highlight
-      register: diff_highlight
-    - name: make diff-highlight
-      shell: |
-        cd /usr/share/doc/git/contrib/diff-highlight/
-        make
-        chmod +x diff-highlight
-        ln -s /usr/share/doc/git/contrib/diff-highlight/diff-highlight /opt/bin/
-      when: not diff_highlight.exists
 
 - hosts: all
   user: medalhkr
   tasks:
+    - include: diff-highlight.yaml
     - include: dotfiles.yaml
+    - include: go-commands.yaml
 
 - hosts: all
   user: medalhkr

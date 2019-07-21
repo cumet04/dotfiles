@@ -4,12 +4,14 @@ sudo visudo
 ```
 
 ```
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew install ansible
-curl -OL https://github.com/medalhkr/dotfiles/archive/master.zip
-unzip master.zip
+sudo apt-get update
+sudo apt-get install ansible
+curl -L https://github.com/cumet/dotfiles/archive/master.zip -o dotfiles.zip
+unzip dotfiles.zip
 cd dotfiles-master/playbook
 ansible-playbook -i localhost, -c local --ask-become-pass entry.yaml
+
+chsh
 ```
 
 ```

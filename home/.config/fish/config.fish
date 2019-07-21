@@ -1,5 +1,7 @@
 set fish_greeting
 
+umask 022
+
 alias history "history --show-time='%Y-%m-%d %T '"
 alias ls='ls --color=auto'
 alias ll='ls -alh'
@@ -18,7 +20,9 @@ set -x PATH /opt/bin $PATH
 set -x PATH /opt/bin/shell_commands $PATH
 set -x PATH /opt/var/go/bin $PATH
 
-set -x GOPATH /opt/var/go:/opt/var/ghq
 set -x EDITOR nano
+set -x GOPATH /opt/var/go:/opt/var/ghq
+set -x GO111MODULE on
+set -x ANSIBLE_RETRY_FILES_ENABLED false
 
 test -z "$TMUX"; and tmux

@@ -32,8 +32,12 @@ let loaded_matchparen = 1
 if exists('&colorcolumn')
     set colorcolumn=+1
 endif
+
 inoremap {<Enter> {<Enter>}<ESC><S-o>
 set formatoptions=q
+
+" fix windows paste
+inoremap <CR><LF> <Enter>
 
 hi IndentGuidesOdd  ctermbg=233
 hi IndentGuidesEven ctermbg=234

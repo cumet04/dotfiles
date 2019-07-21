@@ -2,7 +2,8 @@
 
 cd $1
 if git rev-parse --is-inside-work-tree >/dev/null 2>&1 ; then
-    printf '\xEf\x90\x88 '
+    #printf '\xEf\x90\x88 '
+    echo -n ''
     basename $(git rev-parse --show-toplevel)
 # else if ssh
 else

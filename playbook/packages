@@ -258,14 +258,22 @@ golang-1.10-race-detector-runtime:
 - {arch: amd64, name: golang-1.10-race-detector-runtime, source: apt, version: 0.0+svn285455-0ubuntu1}
 golang-1.10-src:
 - {arch: amd64, name: golang-1.10-src, source: apt, version: 1.10.4-2ubuntu1~18.04.1}
+golang-1.11-go:
+- {arch: amd64, name: golang-1.11-go, source: apt, version: 1.11.5+ppa-0ubuntu1~ppa1~ubuntu18.04.1}
+golang-1.11-src:
+- {arch: amd64, name: golang-1.11-src, source: apt, version: 1.11.5+ppa-0ubuntu1~ppa1~ubuntu18.04.1}
+golang-1.12-go:
+- {arch: amd64, name: golang-1.12-go, source: apt, version: 1.12.7-1longsleep2+xenial}
+golang-1.12-src:
+- {arch: amd64, name: golang-1.12-src, source: apt, version: 1.12.7-1longsleep2+xenial}
 golang-doc:
 - {arch: all, name: golang-doc, source: apt, version: '2:1.10~4ubuntu1'}
 golang-go:
-- {arch: amd64, name: golang-go, source: apt, version: '2:1.10~4ubuntu1'}
+- {arch: amd64, name: golang-go, source: apt, version: '2:1.12~1longsleep1+xenial'}
 golang-race-detector-runtime:
 - {arch: amd64, name: golang-race-detector-runtime, source: apt, version: '2:1.10~4ubuntu1'}
 golang-src:
-- {arch: amd64, name: golang-src, source: apt, version: '2:1.10~4ubuntu1'}
+- {arch: amd64, name: golang-src, source: apt, version: '2:1.12~1longsleep1+xenial'}
 gpg:
 - {arch: amd64, name: gpg, source: apt, version: 2.2.4-1ubuntu1.2}
 gpg-agent:
@@ -1275,7 +1283,7 @@ nfs-common:
 nfs-kernel-server:
 - {arch: amd64, name: nfs-kernel-server, source: apt, version: '1:1.3.4-2.1ubuntu5.2'}
 nodejs:
-- {arch: amd64, name: nodejs, source: apt, version: 8.10.0~dfsg-2ubuntu0.4}
+- {arch: amd64, name: nodejs, source: apt, version: 10.16.0-1nodesource1}
 nodejs-doc:
 - {arch: all, name: nodejs-doc, source: apt, version: 8.10.0~dfsg-2ubuntu0.4}
 nplan:

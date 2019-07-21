@@ -1,0 +1,57 @@
+{
+    "globals" : 
+    {
+        "alwaysShowTabs" : false,
+        "defaultProfile" : "{2c4de342-38b7-51cf-b940-2309a097f518}",
+        "initialCols" : 120,
+        "initialRows" : 30,
+        "keybindings" : null,
+        "requestedTheme" : "system",
+        "showTabsInTitlebar" : true,
+        "showTerminalTitleInTitlebar" : true
+    },
+    "profiles" : 
+    [
+        {
+            "acrylicOpacity" : 0.5,
+            "closeOnExit" : true,
+            "colorScheme" : "Argonaut",
+            "commandline" : "ubuntu",
+            "cursorColor" : "#FFFFFF",
+            "cursorShape" : "bar",
+            "fontFace" : "Cica",
+            "fontSize" : 14,
+            "guid" : "{2c4de342-38b7-51cf-b940-2309a097f518}",
+            "historySize" : 9001,
+            "icon" : "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
+            "name" : "Ubuntu",
+            "padding" : "4, 0, -11, -3",
+            "snapOnInput" : true,
+            "useAcrylic" : false
+        }
+    ],
+    "schemes" : 
+    [
+        {
+            "background" : "#0E1019",
+            "black" : "#232323",
+            "blue" : "#008DF8",
+            "brightBlack" : "#444444",
+            "brightBlue" : "#0092FF",
+            "brightCyan" : "#67FFF0",
+            "brightGreen" : "#ABE15B",
+            "brightPurple" : "#9A5FEB",
+            "brightRed" : "#FF2740",
+            "brightWhite" : "#FFFFFF",
+            "brightYellow" : "#FFD242",
+            "cyan" : "#00D8EB",
+            "foreground" : "#FFFAF4",
+            "green" : "#8CE10B",
+            "name" : "Argonaut",
+            "purple" : "#6D43A6",
+            "red" : "#FF000F",
+            "white" : "#FFFFFF",
+            "yellow" : "#FFB900"
+        }
+    ]
+}

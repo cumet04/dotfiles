@@ -34,3 +34,7 @@
     src: "{{ ansible_env.HOME }}/.dotfiles/shell_commands"
     dest: /opt/bin/shell_commands
     state: link
+- name: ignore gitconfig change
+  shell: |
+    cd /opt/var/ghq/src/github.com/cumet04/dotfiles
+    git update-index --skip-worktree home/.gitconfig
