@@ -5,7 +5,7 @@ BRANCH=${BRANCH:-master}
 mkdir /tmp/dotfiles-install; cd /tmp/dotfiles-install
 
 sudo apt-get update
-env DEBIAN_FRONTEND=noninteractive sudo apt-get install -y ansible unzip
+sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y ansible unzip
 curl -L https://github.com/cumet04/dotfiles/archive/$BRANCH.zip -o dotfiles.zip
 unzip dotfiles.zip
 cd dotfiles-$BRANCH/playbook
