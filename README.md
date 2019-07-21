@@ -3,20 +3,12 @@ wsl
 ```
 sudo visudo
 > Defaults timestamp_timeout = 20
-```
 
-```
-sudo apt-get update
-sudo apt-get install ansible
-curl -L https://github.com/cumet/dotfiles/archive/master.zip -o dotfiles.zip
-unzip dotfiles.zip
-cd dotfiles-master/playbook
-ansible-playbook -i localhost, -c local --ask-become-pass entry.yaml
+vim ~/.ssh/id_rsa
+chmod 600 ~/.ssh/id_rsa
+sudo true
+curl -s https://raw.githubusercontent.com/cumet04/dotfiles/master/install.sh | bash
 
-chsh
-```
-
-```
 sudo visudo
 > (remove timeout)
 ```

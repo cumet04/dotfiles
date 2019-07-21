@@ -49,8 +49,8 @@
 - hosts: all
   user: medalhkr
   tasks:
-    - include: diff-highlight.yaml
     - include: dotfiles.yaml
+    - include: diff-highlight.yaml
     - include: go-commands.yaml
 
 - hosts: all
