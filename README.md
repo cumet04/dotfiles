@@ -4,9 +4,11 @@ wsl
 sudo visudo
 > Defaults timestamp_timeout = 20
 
+mkdir -m 700 ~/.ssh
 vim ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
 sudo true
+
 curl -s https://raw.githubusercontent.com/cumet04/dotfiles/master/install.sh | bash
 
 sudo visudo

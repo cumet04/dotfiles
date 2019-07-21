@@ -12,7 +12,7 @@
   git:
     repo: ssh://git@github.com/cumet04/dotfiles.git
     dest: /opt/var/ghq/src/github.com/cumet04/dotfiles
-    version: master
+    version: "{{ ansible_env.BRANCH | default('master') }}"
     update: no
     accept_hostkey: yes
 - name: put shortcut for dotfiles

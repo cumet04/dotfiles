@@ -11,4 +11,4 @@ unzip dotfiles.zip
 cd dotfiles-$BRANCH/playbook
 ansible-playbook -i localhost, -c local entry.yaml
 
-chsh -s $(which fish) medalhkr
+sudo chsh -s $(which fish) medalhkr
