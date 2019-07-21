@@ -7,7 +7,7 @@ acpid:
 adduser:
 - {arch: all, name: adduser, source: apt, version: 3.116ubuntu1}
 ansible:
-- {arch: all, name: ansible, source: apt, version: 2.5.1+dfsg-1}
+- {arch: all, name: ansible, source: apt, version: 2.5.1+dfsg-1ubuntu0.1}
 apparmor:
 - {arch: amd64, name: apparmor, source: apt, version: 2.12-4ubuntu5.1}
 apport:
@@ -15,15 +15,11 @@ apport:
 apport-symptoms:
 - {arch: all, name: apport-symptoms, source: apt, version: '0.20'}
 apt:
-- {arch: amd64, name: apt, source: apt, version: 1.6.11}
+- {arch: amd64, name: apt, source: apt, version: 1.6.10}
 apt-utils:
-- {arch: amd64, name: apt-utils, source: apt, version: 1.6.11}
+- {arch: amd64, name: apt-utils, source: apt, version: 1.6.10}
 at:
 - {arch: amd64, name: at, source: apt, version: 3.1.20-3.1ubuntu2}
-attr:
-- {arch: amd64, name: attr, source: apt, version: '1:2.4.47-2build1'}
-augeas-lenses:
-- {arch: all, name: augeas-lenses, source: apt, version: 1.10.1-2}
 base-files:
 - {arch: amd64, name: base-files, source: apt, version: 10.1ubuntu2.4}
 base-passwd:
@@ -37,19 +33,15 @@ bc:
 bcache-tools:
 - {arch: amd64, name: bcache-tools, source: apt, version: 1.0.8-2build1}
 bind9-host:
-- {arch: amd64, name: bind9-host, source: apt, version: '1:9.11.3+dfsg-1ubuntu1.8'}
+- {arch: amd64, name: bind9-host, source: apt, version: '1:9.11.3+dfsg-1ubuntu1.7'}
 binutils:
 - {arch: amd64, name: binutils, source: apt, version: 2.30-21ubuntu1~18.04.2}
 binutils-common:
 - {arch: amd64, name: binutils-common, source: apt, version: 2.30-21ubuntu1~18.04.2}
 binutils-x86-64-linux-gnu:
 - {arch: amd64, name: binutils-x86-64-linux-gnu, source: apt, version: 2.30-21ubuntu1~18.04.2}
-bridge-utils:
-- {arch: amd64, name: bridge-utils, source: apt, version: 1.5-15ubuntu1}
 bsdmainutils:
 - {arch: amd64, name: bsdmainutils, source: apt, version: 11.1.2ubuntu1}
-bsdtar:
-- {arch: all, name: bsdtar, source: apt, version: 3.2.2-3.1ubuntu0.3}
 bsdutils:
 - {arch: amd64, name: bsdutils, source: apt, version: '1:2.31.1-0.4ubuntu3.3'}
 btrfs-progs:
@@ -65,15 +57,13 @@ busybox-static:
 byobu:
 - {arch: all, name: byobu, source: apt, version: 5.125-0ubuntu1}
 bzip2:
-- {arch: amd64, name: bzip2, source: apt, version: 1.0.6-8.1ubuntu0.2}
+- {arch: amd64, name: bzip2, source: apt, version: 1.0.6-8.1}
 ca-certificates:
 - {arch: all, name: ca-certificates, source: apt, version: '20180409'}
-cgroupfs-mount:
-- {arch: all, name: cgroupfs-mount, source: apt, version: '1.4'}
 cloud-guest-utils:
 - {arch: all, name: cloud-guest-utils, source: apt, version: 0.30-0ubuntu5}
 cloud-init:
-- {arch: all, name: cloud-init, source: apt, version: 19.1-1-gbaa47854-0ubuntu1~18.04.1}
+- {arch: all, name: cloud-init, source: apt, version: 18.5-45-g3554ffe8-0ubuntu1~18.04.1}
 cloud-initramfs-copymods:
 - {arch: all, name: cloud-initramfs-copymods, source: apt, version: 0.40ubuntu1.1}
 cloud-initramfs-dyn-netconf:
@@ -86,8 +76,6 @@ console-setup:
 - {arch: all, name: console-setup, source: apt, version: 1.178ubuntu2.9}
 console-setup-linux:
 - {arch: all, name: console-setup-linux, source: apt, version: 1.178ubuntu2.9}
-containerd:
-- {arch: amd64, name: containerd, source: apt, version: 1.2.6-0ubuntu1~18.04.1}
 coreutils:
 - {arch: amd64, name: coreutils, source: apt, version: 8.28-1ubuntu1}
 cpio:
@@ -96,8 +84,6 @@ cpp:
 - {arch: amd64, name: cpp, source: apt, version: '4:7.4.0-1ubuntu2.3'}
 cpp-7:
 - {arch: amd64, name: cpp-7, source: apt, version: 7.4.0-1ubuntu1~18.04.1}
-cpu-checker:
-- {arch: amd64, name: cpu-checker, source: apt, version: 0.7-0ubuntu7}
 cron:
 - {arch: amd64, name: cron, source: apt, version: 3.0pl1-128.1ubuntu1}
 cryptsetup:
@@ -105,19 +91,11 @@ cryptsetup:
 cryptsetup-bin:
 - {arch: amd64, name: cryptsetup-bin, source: apt, version: '2:2.0.2-1ubuntu1.1'}
 curl:
-- {arch: amd64, name: curl, source: apt, version: 7.58.0-2ubuntu3.7}
+- {arch: amd64, name: curl, source: apt, version: 7.58.0-2ubuntu3.6}
 dash:
 - {arch: amd64, name: dash, source: apt, version: 0.5.8-2.10}
-db-util:
-- {arch: all, name: db-util, source: apt, version: '1:5.3.21~exp1ubuntu2'}
-db5.3-util:
-- {arch: amd64, name: db5.3-util, source: apt, version: 5.3.28-13.1ubuntu1.1}
 dbus:
-- {arch: amd64, name: dbus, source: apt, version: 1.12.2-1ubuntu1.1}
-dconf-gsettings-backend:
-- {arch: amd64, name: dconf-gsettings-backend, source: apt, version: 0.26.0-2ubuntu3}
-dconf-service:
-- {arch: amd64, name: dconf-service, source: apt, version: 0.26.0-2ubuntu3}
+- {arch: amd64, name: dbus, source: apt, version: 1.12.2-1ubuntu1}
 debconf:
 - {arch: all, name: debconf, source: apt, version: 1.5.66ubuntu1}
 debconf-i18n:
@@ -143,11 +121,7 @@ dns-root-data:
 dnsmasq-base:
 - {arch: amd64, name: dnsmasq-base, source: apt, version: 2.79-1}
 dnsutils:
-- {arch: amd64, name: dnsutils, source: apt, version: '1:9.11.3+dfsg-1ubuntu1.8'}
-docker:
-- {arch: amd64, name: docker, source: apt, version: 1.5-1build1}
-docker.io:
-- {arch: amd64, name: docker.io, source: apt, version: 18.09.7-0ubuntu1~18.04.1}
+- {arch: amd64, name: dnsutils, source: apt, version: '1:9.11.3+dfsg-1ubuntu1.7'}
 dosfstools:
 - {arch: amd64, name: dosfstools, source: apt, version: 4.1-1}
 dpkg:
@@ -166,12 +140,6 @@ eject:
 - {arch: amd64, name: eject, source: apt, version: 2.1.5+deb1+cvs20081104-13.2}
 ethtool:
 - {arch: amd64, name: ethtool, source: apt, version: '1:4.15-0ubuntu1'}
-exfat-fuse:
-- {arch: amd64, name: exfat-fuse, source: apt, version: 1.2.8-1}
-exfat-utils:
-- {arch: amd64, name: exfat-utils, source: apt, version: 1.2.8-1}
-extlinux:
-- {arch: amd64, name: extlinux, source: apt, version: '3:6.03+dfsg1-2'}
 fakeroot:
 - {arch: amd64, name: fakeroot, source: apt, version: 1.22-2ubuntu1}
 fdisk:
@@ -220,8 +188,6 @@ gcc-8-base:
 - {arch: amd64, name: gcc-8-base, source: apt, version: 8.3.0-6ubuntu1~18.04.1}
 gdisk:
 - {arch: amd64, name: gdisk, source: apt, version: 1.0.3-1}
-genisoimage:
-- {arch: amd64, name: genisoimage, source: apt, version: '9:1.1.11-3ubuntu2'}
 geoip-database:
 - {arch: all, name: geoip-database, source: apt, version: 20180315-1}
 gettext-base:
@@ -234,44 +200,18 @@ git:
 - {arch: amd64, name: git, source: apt, version: '1:2.17.1-1ubuntu0.4'}
 git-man:
 - {arch: all, name: git-man, source: apt, version: '1:2.17.1-1ubuntu0.4'}
-glib-networking:
-- {arch: amd64, name: glib-networking, source: apt, version: 2.56.0-1}
-glib-networking-common:
-- {arch: all, name: glib-networking-common, source: apt, version: 2.56.0-1}
-glib-networking-services:
-- {arch: amd64, name: glib-networking-services, source: apt, version: 2.56.0-1}
 gnupg:
 - {arch: amd64, name: gnupg, source: apt, version: 2.2.4-1ubuntu1.2}
 gnupg-l10n:
 - {arch: all, name: gnupg-l10n, source: apt, version: 2.2.4-1ubuntu1.2}
 gnupg-utils:
 - {arch: amd64, name: gnupg-utils, source: apt, version: 2.2.4-1ubuntu1.2}
-golang:
-- {arch: amd64, name: golang, source: apt, version: '2:1.10~4ubuntu1'}
-golang-1.10:
-- {arch: all, name: golang-1.10, source: apt, version: 1.10.4-2ubuntu1~18.04.1}
-golang-1.10-doc:
-- {arch: all, name: golang-1.10-doc, source: apt, version: 1.10.4-2ubuntu1~18.04.1}
-golang-1.10-go:
-- {arch: amd64, name: golang-1.10-go, source: apt, version: 1.10.4-2ubuntu1~18.04.1}
-golang-1.10-race-detector-runtime:
-- {arch: amd64, name: golang-1.10-race-detector-runtime, source: apt, version: 0.0+svn285455-0ubuntu1}
-golang-1.10-src:
-- {arch: amd64, name: golang-1.10-src, source: apt, version: 1.10.4-2ubuntu1~18.04.1}
-golang-1.11-go:
-- {arch: amd64, name: golang-1.11-go, source: apt, version: 1.11.5+ppa-0ubuntu1~ppa1~ubuntu18.04.1}
-golang-1.11-src:
-- {arch: amd64, name: golang-1.11-src, source: apt, version: 1.11.5+ppa-0ubuntu1~ppa1~ubuntu18.04.1}
 golang-1.12-go:
 - {arch: amd64, name: golang-1.12-go, source: apt, version: 1.12.7-1longsleep2+xenial}
 golang-1.12-src:
 - {arch: amd64, name: golang-1.12-src, source: apt, version: 1.12.7-1longsleep2+xenial}
-golang-doc:
-- {arch: all, name: golang-doc, source: apt, version: '2:1.10~4ubuntu1'}
 golang-go:
 - {arch: amd64, name: golang-go, source: apt, version: '2:1.12~1longsleep1+xenial'}
-golang-race-detector-runtime:
-- {arch: amd64, name: golang-race-detector-runtime, source: apt, version: '2:1.10~4ubuntu1'}
 golang-src:
 - {arch: amd64, name: golang-src, source: apt, version: '2:1.12~1longsleep1+xenial'}
 gpg:
@@ -292,32 +232,18 @@ grep:
 - {arch: amd64, name: grep, source: apt, version: 3.1-2}
 groff-base:
 - {arch: amd64, name: groff-base, source: apt, version: 1.22.3-10}
-gsettings-desktop-schemas:
-- {arch: all, name: gsettings-desktop-schemas, source: apt, version: 3.28.0-1ubuntu1}
 gsfonts:
 - {arch: all, name: gsfonts, source: apt, version: '1:8.11+urwcyr1.0.7~pre44-4.4'}
-gstreamer1.0-plugins-base:
-- {arch: amd64, name: gstreamer1.0-plugins-base, source: apt, version: 1.14.4-1ubuntu1.1~ubuntu18.04.1}
-gstreamer1.0-plugins-good:
-- {arch: amd64, name: gstreamer1.0-plugins-good, source: apt, version: 1.14.4-1ubuntu1~ubuntu18.04.1}
-gstreamer1.0-x:
-- {arch: amd64, name: gstreamer1.0-x, source: apt, version: 1.14.4-1ubuntu1.1~ubuntu18.04.1}
 gzip:
 - {arch: amd64, name: gzip, source: apt, version: 1.6-5ubuntu1}
 hdparm:
 - {arch: amd64, name: hdparm, source: apt, version: 9.54+ds-1}
-hfsplus:
-- {arch: amd64, name: hfsplus, source: apt, version: 1.0.4-15}
 hicolor-icon-theme:
 - {arch: all, name: hicolor-icon-theme, source: apt, version: 0.17-2}
 hostname:
 - {arch: amd64, name: hostname, source: apt, version: '3.20'}
 htop:
 - {arch: amd64, name: htop, source: apt, version: 2.1.0-3}
-ibverbs-providers:
-- {arch: amd64, name: ibverbs-providers, source: apt, version: 17.1-1ubuntu0.1}
-icoutils:
-- {arch: amd64, name: icoutils, source: apt, version: 0.32.3-1}
 ieee-data:
 - {arch: all, name: ieee-data, source: apt, version: '20180204.1'}
 imagemagick:
@@ -333,11 +259,11 @@ init:
 init-system-helpers:
 - {arch: all, name: init-system-helpers, source: apt, version: '1.51'}
 initramfs-tools:
-- {arch: all, name: initramfs-tools, source: apt, version: 0.130ubuntu3.8}
+- {arch: all, name: initramfs-tools, source: apt, version: 0.130ubuntu3.7}
 initramfs-tools-bin:
-- {arch: amd64, name: initramfs-tools-bin, source: apt, version: 0.130ubuntu3.8}
+- {arch: amd64, name: initramfs-tools-bin, source: apt, version: 0.130ubuntu3.7}
 initramfs-tools-core:
-- {arch: all, name: initramfs-tools-core, source: apt, version: 0.130ubuntu3.8}
+- {arch: all, name: initramfs-tools-core, source: apt, version: 0.130ubuntu3.7}
 install-info:
 - {arch: amd64, name: install-info, source: apt, version: 6.5.0.dfsg.1-2}
 iproute2:
@@ -348,10 +274,6 @@ iputils-ping:
 - {arch: amd64, name: iputils-ping, source: apt, version: '3:20161105-1ubuntu2'}
 iputils-tracepath:
 - {arch: amd64, name: iputils-tracepath, source: apt, version: '3:20161105-1ubuntu2'}
-ipxe-qemu:
-- {arch: all, name: ipxe-qemu, source: apt, version: 1.0.0+git-20180124.fbe8c52d-0ubuntu2.2}
-ipxe-qemu-256k-compat-efi-roms:
-- {arch: all, name: ipxe-qemu-256k-compat-efi-roms, source: apt, version: 1.0.0+git-20150424.a25a16d-0ubuntu2}
 irqbalance:
 - {arch: amd64, name: irqbalance, source: apt, version: 1.3.0-0.1ubuntu0.18.04.1}
 isc-dhcp-client:
@@ -368,8 +290,6 @@ kbd:
 - {arch: amd64, name: kbd, source: apt, version: 2.0.4-2ubuntu1}
 keyboard-configuration:
 - {arch: all, name: keyboard-configuration, source: apt, version: 1.178ubuntu2.9}
-keyutils:
-- {arch: amd64, name: keyutils, source: apt, version: 1.5.9-9.2ubuntu2}
 klibc-utils:
 - {arch: amd64, name: klibc-utils, source: apt, version: 2.0.4-9ubuntu2}
 kmod:
@@ -380,20 +300,12 @@ landscape-common:
 - {arch: amd64, name: landscape-common, source: apt, version: 18.01-0ubuntu3.3}
 language-selector-common:
 - {arch: all, name: language-selector-common, source: apt, version: 0.188.2}
-ldmtool:
-- {arch: amd64, name: ldmtool, source: apt, version: 0.2.3-7}
 less:
 - {arch: amd64, name: less, source: apt, version: 487-0.1}
-libaa1:
-- {arch: amd64, name: libaa1, source: apt, version: 1.4p5-44build2}
 libaccountsservice0:
 - {arch: amd64, name: libaccountsservice0, source: apt, version: 0.6.45-1ubuntu1}
 libacl1:
 - {arch: amd64, name: libacl1, source: apt, version: 2.2.52-3build1}
-libafflib0v5:
-- {arch: amd64, name: libafflib0v5, source: apt, version: 3.7.16-2build2}
-libaio1:
-- {arch: amd64, name: libaio1, source: apt, version: 0.3.110-5ubuntu0.1}
 libalgorithm-diff-perl:
 - {arch: all, name: libalgorithm-diff-perl, source: apt, version: 1.19.03-1}
 libalgorithm-diff-xs-perl:
@@ -403,27 +315,17 @@ libalgorithm-merge-perl:
 libapparmor1:
 - {arch: amd64, name: libapparmor1, source: apt, version: 2.12-4ubuntu5.1}
 libapt-inst2.0:
-- {arch: amd64, name: libapt-inst2.0, source: apt, version: 1.6.11}
+- {arch: amd64, name: libapt-inst2.0, source: apt, version: 1.6.10}
 libapt-pkg5.0:
-- {arch: amd64, name: libapt-pkg5.0, source: apt, version: 1.6.11}
-libarchive-tools:
-- {arch: amd64, name: libarchive-tools, source: apt, version: 3.2.2-3.1ubuntu0.3}
-libarchive13:
-- {arch: amd64, name: libarchive13, source: apt, version: 3.2.2-3.1ubuntu0.3}
+- {arch: amd64, name: libapt-pkg5.0, source: apt, version: 1.6.10}
 libargon2-0:
 - {arch: amd64, name: libargon2-0, source: apt, version: 0~20161029-1.1}
 libasan4:
 - {arch: amd64, name: libasan4, source: apt, version: 7.4.0-1ubuntu1~18.04.1}
 libasn1-8-heimdal:
 - {arch: amd64, name: libasn1-8-heimdal, source: apt, version: 7.5.0+dfsg-1}
-libasound2:
-- {arch: amd64, name: libasound2, source: apt, version: 1.1.3-5ubuntu0.2}
-libasound2-data:
-- {arch: all, name: libasound2-data, source: apt, version: 1.1.3-5ubuntu0.2}
 libassuan0:
 - {arch: amd64, name: libassuan0, source: apt, version: 2.5.1-2}
-libasyncns0:
-- {arch: amd64, name: libasyncns0, source: apt, version: 0.8-6}
 libatm1:
 - {arch: amd64, name: libatm1, source: apt, version: '1:2.5.1-2build1'}
 libatomic1:
@@ -434,36 +336,22 @@ libaudit-common:
 - {arch: all, name: libaudit-common, source: apt, version: '1:2.8.2-1ubuntu1'}
 libaudit1:
 - {arch: amd64, name: libaudit1, source: apt, version: '1:2.8.2-1ubuntu1'}
-libaugeas0:
-- {arch: amd64, name: libaugeas0, source: apt, version: 1.10.1-2}
-libauthen-sasl-perl:
-- {arch: all, name: libauthen-sasl-perl, source: apt, version: 2.1600-1}
 libavahi-client3:
 - {arch: amd64, name: libavahi-client3, source: apt, version: 0.7-3.1ubuntu1.2}
 libavahi-common-data:
 - {arch: amd64, name: libavahi-common-data, source: apt, version: 0.7-3.1ubuntu1.2}
 libavahi-common3:
 - {arch: amd64, name: libavahi-common3, source: apt, version: 0.7-3.1ubuntu1.2}
-libavc1394-0:
-- {arch: amd64, name: libavc1394-0, source: apt, version: 0.5.4-4build1}
-libbfio1:
-- {arch: amd64, name: libbfio1, source: apt, version: 20170123-4}
 libbind9-160:
-- {arch: amd64, name: libbind9-160, source: apt, version: '1:9.11.3+dfsg-1ubuntu1.8'}
+- {arch: amd64, name: libbind9-160, source: apt, version: '1:9.11.3+dfsg-1ubuntu1.7'}
 libbinutils:
 - {arch: amd64, name: libbinutils, source: apt, version: 2.30-21ubuntu1~18.04.2}
 libblkid1:
 - {arch: amd64, name: libblkid1, source: apt, version: 2.31.1-0.4ubuntu3.3}
-libbluetooth3:
-- {arch: amd64, name: libbluetooth3, source: apt, version: 5.48-0ubuntu3.1}
-libbrlapi0.6:
-- {arch: amd64, name: libbrlapi0.6, source: apt, version: 5.5-4ubuntu2.0.1}
 libbsd0:
 - {arch: amd64, name: libbsd0, source: apt, version: 0.8.7-1}
 libbz2-1.0:
-- {arch: amd64, name: libbz2-1.0, source: apt, version: 1.0.6-8.1ubuntu0.2}
-libc-ares2:
-- {arch: amd64, name: libc-ares2, source: apt, version: 1.14.0-1}
+- {arch: amd64, name: libbz2-1.0, source: apt, version: 1.0.6-8.1}
 libc-bin:
 - {arch: amd64, name: libc-bin, source: apt, version: 2.27-3ubuntu1}
 libc-dev-bin:
@@ -472,12 +360,6 @@ libc6:
 - {arch: amd64, name: libc6, source: apt, version: 2.27-3ubuntu1}
 libc6-dev:
 - {arch: amd64, name: libc6-dev, source: apt, version: 2.27-3ubuntu1}
-libcaca0:
-- {arch: amd64, name: libcaca0, source: apt, version: 0.99.beta19-2ubuntu0.18.04.1}
-libcacard0:
-- {arch: amd64, name: libcacard0, source: apt, version: '1:2.5.0-3'}
-libcairo-gobject2:
-- {arch: amd64, name: libcairo-gobject2, source: apt, version: 1.15.10-2ubuntu0.1}
 libcairo2:
 - {arch: amd64, name: libcairo2, source: apt, version: 1.15.10-2ubuntu0.1}
 libcap-ng0:
@@ -488,14 +370,10 @@ libcap2-bin:
 - {arch: amd64, name: libcap2-bin, source: apt, version: '1:2.25-1.2'}
 libcc1-0:
 - {arch: amd64, name: libcc1-0, source: apt, version: 8.3.0-6ubuntu1~18.04.1}
-libcdparanoia0:
-- {arch: amd64, name: libcdparanoia0, source: apt, version: 3.10.2+debian-13}
 libcilkrts5:
 - {arch: amd64, name: libcilkrts5, source: apt, version: 7.4.0-1ubuntu1~18.04.1}
 libcom-err2:
 - {arch: amd64, name: libcom-err2, source: apt, version: 1.44.1-1ubuntu1.1}
-libconfig9:
-- {arch: amd64, name: libconfig9, source: apt, version: 1.5-0.4}
 libcryptsetup12:
 - {arch: amd64, name: libcryptsetup12, source: apt, version: '2:2.0.2-1ubuntu1.1'}
 libcups2:
@@ -505,21 +383,15 @@ libcupsfilters1:
 libcupsimage2:
 - {arch: amd64, name: libcupsimage2, source: apt, version: 2.2.7-1ubuntu2.6}
 libcurl3-gnutls:
-- {arch: amd64, name: libcurl3-gnutls, source: apt, version: 7.58.0-2ubuntu3.7}
+- {arch: amd64, name: libcurl3-gnutls, source: apt, version: 7.58.0-2ubuntu3.6}
 libcurl4:
-- {arch: amd64, name: libcurl4, source: apt, version: 7.58.0-2ubuntu3.7}
-libdata-dump-perl:
-- {arch: all, name: libdata-dump-perl, source: apt, version: 1.23-1}
-libdate-manip-perl:
-- {arch: all, name: libdate-manip-perl, source: apt, version: 6.60-1}
+- {arch: amd64, name: libcurl4, source: apt, version: 7.58.0-2ubuntu3.6}
 libdatrie1:
 - {arch: amd64, name: libdatrie1, source: apt, version: 0.2.10-7}
 libdb5.3:
-- {arch: amd64, name: libdb5.3, source: apt, version: 5.3.28-13.1ubuntu1.1}
+- {arch: amd64, name: libdb5.3, source: apt, version: 5.3.28-13.1ubuntu1}
 libdbus-1-3:
-- {arch: amd64, name: libdbus-1-3, source: apt, version: 1.12.2-1ubuntu1.1}
-libdconf1:
-- {arch: amd64, name: libdconf1, source: apt, version: 0.26.0-2ubuntu3}
+- {arch: amd64, name: libdbus-1-3, source: apt, version: 1.12.2-1ubuntu1}
 libdebconfclient0:
 - {arch: amd64, name: libdebconfclient0, source: apt, version: 0.213ubuntu1}
 libdevmapper-event1.02.1:
@@ -531,37 +403,31 @@ libdjvulibre-text:
 libdjvulibre21:
 - {arch: amd64, name: libdjvulibre21, source: apt, version: 3.5.27.1-8}
 libdns-export1100:
-- {arch: amd64, name: libdns-export1100, source: apt, version: '1:9.11.3+dfsg-1ubuntu1.8'}
+- {arch: amd64, name: libdns-export1100, source: apt, version: '1:9.11.3+dfsg-1ubuntu1.7'}
 libdns1100:
-- {arch: amd64, name: libdns1100, source: apt, version: '1:9.11.3+dfsg-1ubuntu1.8'}
+- {arch: amd64, name: libdns1100, source: apt, version: '1:9.11.3+dfsg-1ubuntu1.7'}
 libdpkg-perl:
 - {arch: all, name: libdpkg-perl, source: apt, version: 1.19.0.5ubuntu2.1}
 libdrm-common:
-- {arch: all, name: libdrm-common, source: apt, version: 2.4.97-1ubuntu1~18.04.1}
+- {arch: all, name: libdrm-common, source: apt, version: 2.4.95-1~18.04.1}
 libdrm2:
-- {arch: amd64, name: libdrm2, source: apt, version: 2.4.97-1ubuntu1~18.04.1}
+- {arch: amd64, name: libdrm2, source: apt, version: 2.4.95-1~18.04.1}
 libdumbnet1:
 - {arch: amd64, name: libdumbnet1, source: apt, version: 1.12-7build1}
-libdv4:
-- {arch: amd64, name: libdv4, source: apt, version: 1.0.0-11}
 libeatmydata1:
 - {arch: amd64, name: libeatmydata1, source: apt, version: 105-6}
 libedit2:
 - {arch: amd64, name: libedit2, source: apt, version: 3.1-20170329-1}
 libelf1:
-- {arch: amd64, name: libelf1, source: apt, version: 0.170-0.4ubuntu0.1}
-libencode-locale-perl:
-- {arch: all, name: libencode-locale-perl, source: apt, version: 1.05-1}
+- {arch: amd64, name: libelf1, source: apt, version: 0.170-0.4}
 liberror-perl:
 - {arch: all, name: liberror-perl, source: apt, version: 0.17025-1}
 libestr0:
 - {arch: amd64, name: libestr0, source: apt, version: 0.1.10-2.1}
 libevent-2.1-6:
 - {arch: amd64, name: libevent-2.1-6, source: apt, version: 2.1.8-stable-4build1}
-libewf2:
-- {arch: amd64, name: libewf2, source: apt, version: 20140608-6.1build1}
 libexpat1:
-- {arch: amd64, name: libexpat1, source: apt, version: 2.2.5-3ubuntu0.1}
+- {arch: amd64, name: libexpat1, source: apt, version: 2.2.5-3}
 libext2fs2:
 - {arch: amd64, name: libext2fs2, source: apt, version: 1.44.1-1ubuntu1.1}
 libfakeroot:
@@ -570,20 +436,12 @@ libfastjson4:
 - {arch: amd64, name: libfastjson4, source: apt, version: 0.99.8-2}
 libfdisk1:
 - {arch: amd64, name: libfdisk1, source: apt, version: 2.31.1-0.4ubuntu3.3}
-libfdt1:
-- {arch: amd64, name: libfdt1, source: apt, version: 1.4.5-3}
 libffi6:
 - {arch: amd64, name: libffi6, source: apt, version: 3.2.1-8}
 libfftw3-double3:
 - {arch: amd64, name: libfftw3-double3, source: apt, version: 3.3.7-1}
 libfile-fcntllock-perl:
 - {arch: amd64, name: libfile-fcntllock-perl, source: apt, version: 0.22-3build2}
-libfile-listing-perl:
-- {arch: all, name: libfile-listing-perl, source: apt, version: 6.04-1}
-libflac8:
-- {arch: amd64, name: libflac8, source: apt, version: 1.3.2-1}
-libfont-afm-perl:
-- {arch: all, name: libfont-afm-perl, source: apt, version: 1.20-2}
 libfontconfig1:
 - {arch: amd64, name: libfontconfig1, source: apt, version: 2.12.6-0ubuntu2}
 libfreetype6:
@@ -602,24 +460,18 @@ libgdbm-compat4:
 - {arch: amd64, name: libgdbm-compat4, source: apt, version: 1.14.1-6}
 libgdbm5:
 - {arch: amd64, name: libgdbm5, source: apt, version: 1.14.1-6}
-libgdk-pixbuf2.0-0:
-- {arch: amd64, name: libgdk-pixbuf2.0-0, source: apt, version: 2.36.11-2}
-libgdk-pixbuf2.0-bin:
-- {arch: amd64, name: libgdk-pixbuf2.0-bin, source: apt, version: 2.36.11-2}
-libgdk-pixbuf2.0-common:
-- {arch: all, name: libgdk-pixbuf2.0-common, source: apt, version: 2.36.11-2}
 libgeoip1:
 - {arch: amd64, name: libgeoip1, source: apt, version: 1.6.12-1}
 libgirepository-1.0-1:
 - {arch: amd64, name: libgirepository-1.0-1, source: apt, version: 1.56.1-1}
 libglib2.0-0:
-- {arch: amd64, name: libglib2.0-0, source: apt, version: 2.56.4-0ubuntu0.18.04.3}
+- {arch: amd64, name: libglib2.0-0, source: apt, version: 2.56.4-0ubuntu0.18.04.2}
 libglib2.0-data:
-- {arch: all, name: libglib2.0-data, source: apt, version: 2.56.4-0ubuntu0.18.04.3}
+- {arch: all, name: libglib2.0-data, source: apt, version: 2.56.4-0ubuntu0.18.04.2}
 libgmp10:
 - {arch: amd64, name: libgmp10, source: apt, version: '2:6.1.2+dfsg-2'}
 libgnutls30:
-- {arch: amd64, name: libgnutls30, source: apt, version: 3.5.18-1ubuntu1.1}
+- {arch: amd64, name: libgnutls30, source: apt, version: 3.5.18-1ubuntu1}
 libgomp1:
 - {arch: amd64, name: libgomp1, source: apt, version: 8.3.0-6ubuntu1~18.04.1}
 libgpg-error0:
@@ -636,26 +488,6 @@ libgssapi-krb5-2:
 - {arch: amd64, name: libgssapi-krb5-2, source: apt, version: 1.16-2ubuntu0.1}
 libgssapi3-heimdal:
 - {arch: amd64, name: libgssapi3-heimdal, source: apt, version: 7.5.0+dfsg-1}
-libgstreamer-plugins-base1.0-0:
-- {arch: amd64, name: libgstreamer-plugins-base1.0-0, source: apt, version: 1.14.4-1ubuntu1.1~ubuntu18.04.1}
-libgstreamer-plugins-good1.0-0:
-- {arch: amd64, name: libgstreamer-plugins-good1.0-0, source: apt, version: 1.14.4-1ubuntu1~ubuntu18.04.1}
-libgstreamer1.0-0:
-- {arch: amd64, name: libgstreamer1.0-0, source: apt, version: 1.14.4-1~ubuntu18.04.1}
-libgudev-1.0-0:
-- {arch: amd64, name: libgudev-1.0-0, source: apt, version: '1:232-2'}
-libguestfs-hfsplus:
-- {arch: amd64, name: libguestfs-hfsplus, source: apt, version: '1:1.36.13-1ubuntu3.3'}
-libguestfs-perl:
-- {arch: amd64, name: libguestfs-perl, source: apt, version: '1:1.36.13-1ubuntu3.3'}
-libguestfs-reiserfs:
-- {arch: amd64, name: libguestfs-reiserfs, source: apt, version: '1:1.36.13-1ubuntu3.3'}
-libguestfs-tools:
-- {arch: amd64, name: libguestfs-tools, source: apt, version: '1:1.36.13-1ubuntu3.3'}
-libguestfs-xfs:
-- {arch: amd64, name: libguestfs-xfs, source: apt, version: '1:1.36.13-1ubuntu3.3'}
-libguestfs0:
-- {arch: amd64, name: libguestfs0, source: apt, version: '1:1.36.13-1ubuntu3.3'}
 libharfbuzz0b:
 - {arch: amd64, name: libharfbuzz0b, source: apt, version: 1.7.2-1ubuntu1}
 libhcrypto4-heimdal:
@@ -664,58 +496,20 @@ libheimbase1-heimdal:
 - {arch: amd64, name: libheimbase1-heimdal, source: apt, version: 7.5.0+dfsg-1}
 libheimntlm0-heimdal:
 - {arch: amd64, name: libheimntlm0-heimdal, source: apt, version: 7.5.0+dfsg-1}
-libhfsp0:
-- {arch: amd64, name: libhfsp0, source: apt, version: 1.0.4-15}
-libhivex0:
-- {arch: amd64, name: libhivex0, source: apt, version: 1.3.15-1}
 libhogweed4:
 - {arch: amd64, name: libhogweed4, source: apt, version: 3.4-1}
-libhtml-form-perl:
-- {arch: all, name: libhtml-form-perl, source: apt, version: 6.03-1}
-libhtml-format-perl:
-- {arch: all, name: libhtml-format-perl, source: apt, version: 2.12-1}
-libhtml-parser-perl:
-- {arch: amd64, name: libhtml-parser-perl, source: apt, version: 3.72-3build1}
-libhtml-tagset-perl:
-- {arch: all, name: libhtml-tagset-perl, source: apt, version: 3.20-3}
-libhtml-tree-perl:
-- {arch: all, name: libhtml-tree-perl, source: apt, version: 5.07-1}
-libhttp-cookies-perl:
-- {arch: all, name: libhttp-cookies-perl, source: apt, version: 6.04-1}
-libhttp-daemon-perl:
-- {arch: all, name: libhttp-daemon-perl, source: apt, version: 6.01-1}
-libhttp-date-perl:
-- {arch: all, name: libhttp-date-perl, source: apt, version: 6.02-1}
-libhttp-message-perl:
-- {arch: all, name: libhttp-message-perl, source: apt, version: 6.14-1}
-libhttp-negotiate-perl:
-- {arch: all, name: libhttp-negotiate-perl, source: apt, version: 6.00-2}
-libhttp-parser2.7.1:
-- {arch: amd64, name: libhttp-parser2.7.1, source: apt, version: 2.7.1-2}
 libhx509-5-heimdal:
 - {arch: amd64, name: libhx509-5-heimdal, source: apt, version: 7.5.0+dfsg-1}
-libibverbs1:
-- {arch: amd64, name: libibverbs1, source: apt, version: 17.1-1ubuntu0.1}
 libicu60:
 - {arch: amd64, name: libicu60, source: apt, version: 60.2-3ubuntu3}
 libidn11:
 - {arch: amd64, name: libidn11, source: apt, version: 1.33-2.1ubuntu1.2}
 libidn2-0:
 - {arch: amd64, name: libidn2-0, source: apt, version: 2.0.4-1.1build2}
-libiec61883-0:
-- {arch: amd64, name: libiec61883-0, source: apt, version: 1.2.0-2}
 libijs-0.35:
 - {arch: amd64, name: libijs-0.35, source: apt, version: 0.35-13}
 libilmbase12:
 - {arch: amd64, name: libilmbase12, source: apt, version: 2.2.0-11ubuntu2}
-libintl-perl:
-- {arch: all, name: libintl-perl, source: apt, version: 1.26-2build2}
-libintl-xs-perl:
-- {arch: amd64, name: libintl-xs-perl, source: apt, version: 1.26-2build2}
-libio-html-perl:
-- {arch: all, name: libio-html-perl, source: apt, version: 1.001-1}
-libio-socket-ssl-perl:
-- {arch: all, name: libio-socket-ssl-perl, source: apt, version: 2.060-3~ubuntu18.04.1}
 libip4tc0:
 - {arch: amd64, name: libip4tc0, source: apt, version: 1.6.1-2ubuntu2}
 libip6tc0:
@@ -723,31 +517,25 @@ libip6tc0:
 libiptc0:
 - {arch: amd64, name: libiptc0, source: apt, version: 1.6.1-2ubuntu2}
 libirs160:
-- {arch: amd64, name: libirs160, source: apt, version: '1:9.11.3+dfsg-1ubuntu1.8'}
+- {arch: amd64, name: libirs160, source: apt, version: '1:9.11.3+dfsg-1ubuntu1.7'}
 libisc-export169:
-- {arch: amd64, name: libisc-export169, source: apt, version: '1:9.11.3+dfsg-1ubuntu1.8'}
+- {arch: amd64, name: libisc-export169, source: apt, version: '1:9.11.3+dfsg-1ubuntu1.7'}
 libisc169:
-- {arch: amd64, name: libisc169, source: apt, version: '1:9.11.3+dfsg-1ubuntu1.8'}
+- {arch: amd64, name: libisc169, source: apt, version: '1:9.11.3+dfsg-1ubuntu1.7'}
 libisccc160:
-- {arch: amd64, name: libisccc160, source: apt, version: '1:9.11.3+dfsg-1ubuntu1.8'}
+- {arch: amd64, name: libisccc160, source: apt, version: '1:9.11.3+dfsg-1ubuntu1.7'}
 libisccfg160:
-- {arch: amd64, name: libisccfg160, source: apt, version: '1:9.11.3+dfsg-1ubuntu1.8'}
-libiscsi7:
-- {arch: amd64, name: libiscsi7, source: apt, version: 1.17.0-1.1}
+- {arch: amd64, name: libisccfg160, source: apt, version: '1:9.11.3+dfsg-1ubuntu1.7'}
 libisl19:
 - {arch: amd64, name: libisl19, source: apt, version: 0.19-1}
 libisns0:
 - {arch: amd64, name: libisns0, source: apt, version: 0.97-2build1}
 libitm1:
 - {arch: amd64, name: libitm1, source: apt, version: 8.3.0-6ubuntu1~18.04.1}
-libjack-jackd2-0:
-- {arch: amd64, name: libjack-jackd2-0, source: apt, version: 1.9.12~dfsg-2}
 libjbig0:
 - {arch: amd64, name: libjbig0, source: apt, version: 2.1-3.1build1}
 libjbig2dec0:
 - {arch: amd64, name: libjbig2dec0, source: apt, version: 0.13-6}
-libjemalloc1:
-- {arch: amd64, name: libjemalloc1, source: apt, version: 3.6.0-11}
 libjpeg-turbo8:
 - {arch: amd64, name: libjpeg-turbo8, source: apt, version: 1.5.2-0ubuntu5.18.04.1}
 libjpeg8:
@@ -762,10 +550,6 @@ libjs-underscore:
 - {arch: all, name: libjs-underscore, source: apt, version: 1.8.3~dfsg-1}
 libjson-c3:
 - {arch: amd64, name: libjson-c3, source: apt, version: 0.12.1-1.3}
-libjson-glib-1.0-0:
-- {arch: amd64, name: libjson-glib-1.0-0, source: apt, version: 1.4.2-3}
-libjson-glib-1.0-common:
-- {arch: all, name: libjson-glib-1.0-common, source: apt, version: 1.4.2-3}
 libk5crypto3:
 - {arch: amd64, name: libk5crypto3, source: apt, version: 1.16-2ubuntu0.1}
 libkeyutils1:
@@ -788,8 +572,6 @@ libldap-2.4-2:
 - {arch: amd64, name: libldap-2.4-2, source: apt, version: 2.4.45+dfsg-1ubuntu1.2}
 libldap-common:
 - {arch: all, name: libldap-common, source: apt, version: 2.4.45+dfsg-1ubuntu1.2}
-libldm-1.0-0:
-- {arch: amd64, name: libldm-1.0-0, source: apt, version: 0.2.3-7}
 liblocale-gettext-perl:
 - {arch: amd64, name: liblocale-gettext-perl, source: apt, version: 1.07-3build2}
 liblqr-1-0:
@@ -806,12 +588,8 @@ liblvm2app2.2:
 - {arch: amd64, name: liblvm2app2.2, source: apt, version: 2.02.176-4.1ubuntu3}
 liblvm2cmd2.02:
 - {arch: amd64, name: liblvm2cmd2.02, source: apt, version: 2.02.176-4.1ubuntu3}
-liblwp-mediatypes-perl:
-- {arch: all, name: liblwp-mediatypes-perl, source: apt, version: 6.02-1}
-liblwp-protocol-https-perl:
-- {arch: all, name: liblwp-protocol-https-perl, source: apt, version: 6.07-2}
 liblwres160:
-- {arch: amd64, name: liblwres160, source: apt, version: '1:9.11.3+dfsg-1ubuntu1.8'}
+- {arch: amd64, name: liblwres160, source: apt, version: '1:9.11.3+dfsg-1ubuntu1.7'}
 liblxc-common:
 - {arch: amd64, name: liblxc-common, source: apt, version: 3.0.3-0ubuntu1~18.04.1}
 liblxc1:
@@ -832,22 +610,16 @@ libmagickcore-6.q16-3-extra:
 - {arch: amd64, name: libmagickcore-6.q16-3-extra, source: apt, version: '8:6.9.7.4+dfsg-16ubuntu6.7'}
 libmagickwand-6.q16-3:
 - {arch: amd64, name: libmagickwand-6.q16-3, source: apt, version: '8:6.9.7.4+dfsg-16ubuntu6.7'}
-libmailtools-perl:
-- {arch: all, name: libmailtools-perl, source: apt, version: 2.18-1}
 libmnl0:
 - {arch: amd64, name: libmnl0, source: apt, version: 1.0.4-2}
 libmount1:
 - {arch: amd64, name: libmount1, source: apt, version: 2.31.1-0.4ubuntu3.3}
-libmp3lame0:
-- {arch: amd64, name: libmp3lame0, source: apt, version: 3.100-2}
 libmpc3:
 - {arch: amd64, name: libmpc3, source: apt, version: 1.1.0-1}
 libmpdec2:
 - {arch: amd64, name: libmpdec2, source: apt, version: 2.4.2-1ubuntu1}
 libmpfr6:
 - {arch: amd64, name: libmpfr6, source: apt, version: 4.0.1-1}
-libmpg123-0:
-- {arch: amd64, name: libmpg123-0, source: apt, version: 1.25.10-1}
 libmpx2:
 - {arch: amd64, name: libmpx2, source: apt, version: 8.3.0-6ubuntu1~18.04.1}
 libmsgpackc2:
@@ -858,12 +630,6 @@ libncurses5:
 - {arch: amd64, name: libncurses5, source: apt, version: 6.1-1ubuntu1.18.04}
 libncursesw5:
 - {arch: amd64, name: libncursesw5, source: apt, version: 6.1-1ubuntu1.18.04}
-libnet-http-perl:
-- {arch: all, name: libnet-http-perl, source: apt, version: 6.17-1}
-libnet-smtp-ssl-perl:
-- {arch: all, name: libnet-smtp-ssl-perl, source: apt, version: 1.04-1}
-libnet-ssleay-perl:
-- {arch: amd64, name: libnet-ssleay-perl, source: apt, version: 1.84-1ubuntu0.1}
 libnetfilter-conntrack3:
 - {arch: amd64, name: libnetfilter-conntrack3, source: apt, version: 1.0.6-2}
 libnetpbm10:
@@ -874,38 +640,22 @@ libnewt0.52:
 - {arch: amd64, name: libnewt0.52, source: apt, version: 0.52.20-1ubuntu1}
 libnfnetlink0:
 - {arch: amd64, name: libnfnetlink0, source: apt, version: 1.0.1-3}
-libnfsidmap2:
-- {arch: amd64, name: libnfsidmap2, source: apt, version: 0.25-5.1}
 libnghttp2-14:
 - {arch: amd64, name: libnghttp2-14, source: apt, version: 1.30.0-1ubuntu1}
 libnih1:
 - {arch: amd64, name: libnih1, source: apt, version: 1.0.3-6ubuntu2}
-libnl-3-200:
-- {arch: amd64, name: libnl-3-200, source: apt, version: 3.2.29-0ubuntu3}
-libnl-route-3-200:
-- {arch: amd64, name: libnl-route-3-200, source: apt, version: 3.2.29-0ubuntu3}
 libnpth0:
 - {arch: amd64, name: libnpth0, source: apt, version: 1.5-3}
-libnspr4:
-- {arch: amd64, name: libnspr4, source: apt, version: '2:4.18-1ubuntu1'}
 libnss-systemd:
-- {arch: amd64, name: libnss-systemd, source: apt, version: 237-3ubuntu10.24}
-libnss3:
-- {arch: amd64, name: libnss3, source: apt, version: '2:3.35-2ubuntu2.2'}
+- {arch: amd64, name: libnss-systemd, source: apt, version: 237-3ubuntu10.21}
 libntfs-3g88:
 - {arch: amd64, name: libntfs-3g88, source: apt, version: '1:2017.3.23-2ubuntu0.18.04.2'}
 libnuma1:
 - {arch: amd64, name: libnuma1, source: apt, version: 2.0.11-2.1ubuntu0.1}
-libogg0:
-- {arch: amd64, name: libogg0, source: apt, version: 1.3.2-1}
 libonig4:
 - {arch: amd64, name: libonig4, source: apt, version: 6.7.0-1}
 libopenexr22:
 - {arch: amd64, name: libopenexr22, source: apt, version: 2.2.0-11.1ubuntu1}
-libopus0:
-- {arch: amd64, name: libopus0, source: apt, version: 1.1.2-1ubuntu1}
-liborc-0.4-0:
-- {arch: amd64, name: liborc-0.4-0, source: apt, version: '1:0.4.28-1'}
 libp11-kit0:
 - {arch: amd64, name: libp11-kit0, source: apt, version: 0.23.9-2}
 libpam-cap:
@@ -917,7 +667,7 @@ libpam-modules-bin:
 libpam-runtime:
 - {arch: all, name: libpam-runtime, source: apt, version: 1.1.8-3.6ubuntu2.18.04.1}
 libpam-systemd:
-- {arch: amd64, name: libpam-systemd, source: apt, version: 237-3ubuntu10.24}
+- {arch: amd64, name: libpam-systemd, source: apt, version: 237-3ubuntu10.21}
 libpam0g:
 - {arch: amd64, name: libpam0g, source: apt, version: 1.1.8-3.6ubuntu2.18.04.1}
 libpango-1.0-0:
@@ -936,8 +686,6 @@ libpcap0.8:
 - {arch: amd64, name: libpcap0.8, source: apt, version: 1.8.1-6ubuntu1}
 libpci3:
 - {arch: amd64, name: libpci3, source: apt, version: '1:3.5.2-1ubuntu1.1'}
-libpcre2-32-0:
-- {arch: amd64, name: libpcre2-32-0, source: apt, version: 10.31-2}
 libpcre3:
 - {arch: amd64, name: libpcre3, source: apt, version: '2:8.39-9'}
 libperl5.26:
@@ -960,12 +708,8 @@ libpopt0:
 - {arch: amd64, name: libpopt0, source: apt, version: 1.16-11}
 libprocps6:
 - {arch: amd64, name: libprocps6, source: apt, version: '2:3.3.12-3ubuntu1.1'}
-libproxy1v5:
-- {arch: amd64, name: libproxy1v5, source: apt, version: 0.4.15-1}
 libpsl5:
 - {arch: amd64, name: libpsl5, source: apt, version: 0.19.1-5build1}
-libpulse0:
-- {arch: amd64, name: libpulse0, source: apt, version: '1:11.1-1ubuntu7.2'}
 libpython-stdlib:
 - {arch: amd64, name: libpython-stdlib, source: apt, version: 2.7.15~rc1-1}
 libpython2.7-minimal:
@@ -975,21 +719,13 @@ libpython2.7-stdlib:
 libpython3-stdlib:
 - {arch: amd64, name: libpython3-stdlib, source: apt, version: 3.6.7-1~18.04}
 libpython3.6:
-- {arch: amd64, name: libpython3.6, source: apt, version: 3.6.8-1~18.04.1}
+- {arch: amd64, name: libpython3.6, source: apt, version: 3.6.7-1~18.04}
 libpython3.6-minimal:
-- {arch: amd64, name: libpython3.6-minimal, source: apt, version: 3.6.8-1~18.04.1}
+- {arch: amd64, name: libpython3.6-minimal, source: apt, version: 3.6.7-1~18.04}
 libpython3.6-stdlib:
-- {arch: amd64, name: libpython3.6-stdlib, source: apt, version: 3.6.8-1~18.04.1}
+- {arch: amd64, name: libpython3.6-stdlib, source: apt, version: 3.6.7-1~18.04}
 libquadmath0:
 - {arch: amd64, name: libquadmath0, source: apt, version: 8.3.0-6ubuntu1~18.04.1}
-librados2:
-- {arch: amd64, name: librados2, source: apt, version: 12.2.11-0ubuntu0.18.04.2}
-libraw1394-11:
-- {arch: amd64, name: libraw1394-11, source: apt, version: 2.1.2-1}
-librbd1:
-- {arch: amd64, name: librbd1, source: apt, version: 12.2.11-0ubuntu0.18.04.2}
-librdmacm1:
-- {arch: amd64, name: librdmacm1, source: apt, version: 17.1-1ubuntu0.1}
 libreadline5:
 - {arch: amd64, name: libreadline5, source: apt, version: 5.2+dfsg-3build1}
 libreadline7:
@@ -1000,18 +736,14 @@ librtmp1:
 - {arch: amd64, name: librtmp1, source: apt, version: 2.4+20151223.gitfa8646d.1-1}
 libruby2.5:
 - {arch: amd64, name: libruby2.5, source: apt, version: 2.5.1-1ubuntu1.4}
-libsamplerate0:
-- {arch: amd64, name: libsamplerate0, source: apt, version: 0.1.9-1}
 libsasl2-2:
 - {arch: amd64, name: libsasl2-2, source: apt, version: 2.1.27~101-g0780600+dfsg-3ubuntu2}
 libsasl2-modules:
 - {arch: amd64, name: libsasl2-modules, source: apt, version: 2.1.27~101-g0780600+dfsg-3ubuntu2}
 libsasl2-modules-db:
 - {arch: amd64, name: libsasl2-modules-db, source: apt, version: 2.1.27~101-g0780600+dfsg-3ubuntu2}
-libsdl1.2debian:
-- {arch: amd64, name: libsdl1.2debian, source: apt, version: 1.2.15+dfsg2-0.1}
 libseccomp2:
-- {arch: amd64, name: libseccomp2, source: apt, version: 2.4.1-0ubuntu0.18.04.2}
+- {arch: amd64, name: libseccomp2, source: apt, version: 2.3.1-2.1ubuntu4.1}
 libselinux1:
 - {arch: amd64, name: libselinux1, source: apt, version: 2.7-2build2}
 libsemanage-common:
@@ -1020,48 +752,26 @@ libsemanage1:
 - {arch: amd64, name: libsemanage1, source: apt, version: 2.7-2build2}
 libsepol1:
 - {arch: amd64, name: libsepol1, source: apt, version: 2.7-1}
-libshout3:
-- {arch: amd64, name: libshout3, source: apt, version: 2.4.1-2build1}
 libsigsegv2:
 - {arch: amd64, name: libsigsegv2, source: apt, version: 2.12-1}
 libslang2:
 - {arch: amd64, name: libslang2, source: apt, version: 2.3.1a-3ubuntu1}
 libsmartcols1:
 - {arch: amd64, name: libsmartcols1, source: apt, version: 2.31.1-0.4ubuntu3.3}
-libsndfile1:
-- {arch: amd64, name: libsndfile1, source: apt, version: 1.0.28-4ubuntu0.18.04.1}
-libsodium-dev:
-- {arch: amd64, name: libsodium-dev, source: apt, version: 1.0.16-2}
-libsodium23:
-- {arch: amd64, name: libsodium23, source: apt, version: 1.0.16-2}
-libsoup2.4-1:
-- {arch: amd64, name: libsoup2.4-1, source: apt, version: 2.62.1-1ubuntu0.1}
-libspeex1:
-- {arch: amd64, name: libspeex1, source: apt, version: 1.2~rc1.2-1ubuntu2}
-libspice-server1:
-- {arch: amd64, name: libspice-server1, source: apt, version: 0.14.0-1ubuntu2.4}
 libsqlite3-0:
-- {arch: amd64, name: libsqlite3-0, source: apt, version: 3.22.0-1ubuntu0.1}
+- {arch: amd64, name: libsqlite3-0, source: apt, version: 3.22.0-1}
 libss2:
 - {arch: amd64, name: libss2, source: apt, version: 1.44.1-1ubuntu1.1}
 libssl1.0.0:
 - {arch: amd64, name: libssl1.0.0, source: apt, version: 1.0.2n-1ubuntu5.3}
 libssl1.1:
-- {arch: amd64, name: libssl1.1, source: apt, version: 1.1.1-1ubuntu2.1~18.04.3}
+- {arch: amd64, name: libssl1.1, source: apt, version: 1.1.1-1ubuntu2.1~18.04.4}
 libstdc++-7-dev:
 - {arch: amd64, name: libstdc++-7-dev, source: apt, version: 7.4.0-1ubuntu1~18.04.1}
 libstdc++6:
 - {arch: amd64, name: libstdc++6, source: apt, version: 8.3.0-6ubuntu1~18.04.1}
-libstring-shellquote-perl:
-- {arch: all, name: libstring-shellquote-perl, source: apt, version: 1.04-1}
-libsys-virt-perl:
-- {arch: amd64, name: libsys-virt-perl, source: apt, version: 4.0.0-1}
 libsystemd0:
-- {arch: amd64, name: libsystemd0, source: apt, version: 237-3ubuntu10.24}
-libtag1v5:
-- {arch: amd64, name: libtag1v5, source: apt, version: 1.11.1+dfsg.1-0.2build2}
-libtag1v5-vanilla:
-- {arch: amd64, name: libtag1v5-vanilla, source: apt, version: 1.11.1+dfsg.1-0.2build2}
+- {arch: amd64, name: libsystemd0, source: apt, version: 237-3ubuntu10.21}
 libtasn1-6:
 - {arch: amd64, name: libtasn1-6, source: apt, version: 4.13-2}
 libtermkey1:
@@ -1076,76 +786,38 @@ libthai-data:
 - {arch: all, name: libthai-data, source: apt, version: 0.1.27-2}
 libthai0:
 - {arch: amd64, name: libthai0, source: apt, version: 0.1.27-2}
-libtheora0:
-- {arch: amd64, name: libtheora0, source: apt, version: 1.1.1+dfsg.1-14}
 libtiff5:
 - {arch: amd64, name: libtiff5, source: apt, version: 4.0.9-5ubuntu0.2}
-libtimedate-perl:
-- {arch: all, name: libtimedate-perl, source: apt, version: 2.3000-2}
 libtinfo5:
 - {arch: amd64, name: libtinfo5, source: apt, version: 6.1-1ubuntu1.18.04}
-libtirpc1:
-- {arch: amd64, name: libtirpc1, source: apt, version: 0.2.5-1.2ubuntu0.1}
-libtry-tiny-perl:
-- {arch: all, name: libtry-tiny-perl, source: apt, version: 0.30-1}
 libtsan0:
 - {arch: amd64, name: libtsan0, source: apt, version: 8.3.0-6ubuntu1~18.04.1}
-libtsk13:
-- {arch: amd64, name: libtsk13, source: apt, version: 4.4.2-3}
-libtwolame0:
-- {arch: amd64, name: libtwolame0, source: apt, version: 0.3.13-3}
 libubsan0:
 - {arch: amd64, name: libubsan0, source: apt, version: 7.4.0-1ubuntu1~18.04.1}
 libudev1:
-- {arch: amd64, name: libudev1, source: apt, version: 237-3ubuntu10.24}
+- {arch: amd64, name: libudev1, source: apt, version: 237-3ubuntu10.21}
 libunibilium4:
 - {arch: amd64, name: libunibilium4, source: apt, version: 2.0.0-2}
 libunistring2:
 - {arch: amd64, name: libunistring2, source: apt, version: 0.9.9-0ubuntu2}
 libunwind8:
 - {arch: amd64, name: libunwind8, source: apt, version: 1.2.1-8}
-liburi-perl:
-- {arch: all, name: liburi-perl, source: apt, version: 1.73-1}
 libusb-1.0-0:
 - {arch: amd64, name: libusb-1.0-0, source: apt, version: '2:1.0.21-2'}
-libusbredirparser1:
-- {arch: amd64, name: libusbredirparser1, source: apt, version: 0.7.1-1}
 libutempter0:
 - {arch: amd64, name: libutempter0, source: apt, version: 1.1.6-3}
 libuuid1:
 - {arch: amd64, name: libuuid1, source: apt, version: 2.31.1-0.4ubuntu3.3}
 libuv1:
 - {arch: amd64, name: libuv1, source: apt, version: 1.18.0-3}
-libv4l-0:
-- {arch: amd64, name: libv4l-0, source: apt, version: 1.14.2-1}
-libv4lconvert0:
-- {arch: amd64, name: libv4lconvert0, source: apt, version: 1.14.2-1}
-libvirt0:
-- {arch: amd64, name: libvirt0, source: apt, version: 4.0.0-1ubuntu8.12}
-libvisual-0.4-0:
-- {arch: amd64, name: libvisual-0.4-0, source: apt, version: 0.4.0-11}
-libvorbis0a:
-- {arch: amd64, name: libvorbis0a, source: apt, version: 1.3.5-4.2}
-libvorbisenc2:
-- {arch: amd64, name: libvorbisenc2, source: apt, version: 1.3.5-4.2}
-libvpx5:
-- {arch: amd64, name: libvpx5, source: apt, version: 1.7.0-3}
 libvterm0:
 - {arch: amd64, name: libvterm0, source: apt, version: 0~bzr715-1}
-libwavpack1:
-- {arch: amd64, name: libwavpack1, source: apt, version: 5.1.0-2ubuntu1.3}
-libwin-hivex-perl:
-- {arch: amd64, name: libwin-hivex-perl, source: apt, version: 1.3.15-1}
 libwind0-heimdal:
 - {arch: amd64, name: libwind0-heimdal, source: apt, version: 7.5.0+dfsg-1}
 libwmf0.2-7:
 - {arch: amd64, name: libwmf0.2-7, source: apt, version: 0.2.8.4-12}
 libwrap0:
 - {arch: amd64, name: libwrap0, source: apt, version: 7.6.q-27}
-libwww-perl:
-- {arch: all, name: libwww-perl, source: apt, version: 6.31-1ubuntu0.1}
-libwww-robotrules-perl:
-- {arch: all, name: libwww-robotrules-perl, source: apt, version: 6.01-1}
 libx11-6:
 - {arch: amd64, name: libx11-6, source: apt, version: '2:1.6.4-3ubuntu0.2'}
 libx11-data:
@@ -1158,22 +830,10 @@ libxcb-shm0:
 - {arch: amd64, name: libxcb-shm0, source: apt, version: 1.13-2~ubuntu18.04}
 libxcb1:
 - {arch: amd64, name: libxcb1, source: apt, version: 1.13-2~ubuntu18.04}
-libxdamage1:
-- {arch: amd64, name: libxdamage1, source: apt, version: '1:1.1.4-3'}
 libxdmcp6:
 - {arch: amd64, name: libxdmcp6, source: apt, version: '1:1.1.2-3'}
-libxen-4.9:
-- {arch: amd64, name: libxen-4.9, source: apt, version: 4.9.2-0ubuntu1}
-libxenstore3.0:
-- {arch: amd64, name: libxenstore3.0, source: apt, version: 4.9.2-0ubuntu1}
 libxext6:
 - {arch: amd64, name: libxext6, source: apt, version: '2:1.3.3-1'}
-libxfixes3:
-- {arch: amd64, name: libxfixes3, source: apt, version: '1:5.0.3-1'}
-libxml-parser-perl:
-- {arch: amd64, name: libxml-parser-perl, source: apt, version: 2.44-2build3}
-libxml-xpath-perl:
-- {arch: all, name: libxml-xpath-perl, source: apt, version: 1.42-1}
 libxml2:
 - {arch: amd64, name: libxml2, source: apt, version: 2.9.4+dfsg1-6.1ubuntu1.2}
 libxmlsec1:
@@ -1188,10 +848,6 @@ libxslt1.1:
 - {arch: amd64, name: libxslt1.1, source: apt, version: 1.1.29-5ubuntu0.1}
 libxtables12:
 - {arch: amd64, name: libxtables12, source: apt, version: 1.6.1-2ubuntu2}
-libxv1:
-- {arch: amd64, name: libxv1, source: apt, version: '2:1.0.11-1'}
-libyajl2:
-- {arch: amd64, name: libyajl2, source: apt, version: 2.1.0-2build1}
 libyaml-0-2:
 - {arch: amd64, name: libyaml-0-2, source: apt, version: 0.1.7-2ubuntu3}
 libzstd1:
@@ -1214,8 +870,6 @@ lshw:
 - {arch: amd64, name: lshw, source: apt, version: 02.18-0.1ubuntu6.18.04.1}
 lsof:
 - {arch: amd64, name: lsof, source: apt, version: 4.89+dfsg-0.1}
-lsscsi:
-- {arch: amd64, name: lsscsi, source: apt, version: 0.28-0.1}
 ltrace:
 - {arch: amd64, name: ltrace, source: apt, version: 0.7.3-6ubuntu1}
 lvm2:
@@ -1226,8 +880,6 @@ lxd:
 - {arch: amd64, name: lxd, source: apt, version: 3.0.3-0ubuntu1~18.04.1}
 lxd-client:
 - {arch: amd64, name: lxd-client, source: apt, version: 3.0.3-0ubuntu1~18.04.1}
-lzop:
-- {arch: amd64, name: lzop, source: apt, version: 1.03-4}
 make:
 - {arch: amd64, name: make, source: apt, version: 4.1-9.1ubuntu1}
 man-db:
@@ -1246,10 +898,6 @@ mlocate:
 - {arch: amd64, name: mlocate, source: apt, version: 0.26-2ubuntu3.1}
 mount:
 - {arch: amd64, name: mount, source: apt, version: 2.31.1-0.4ubuntu3.3}
-msr-tools:
-- {arch: amd64, name: msr-tools, source: apt, version: 1.3-2build1}
-mtools:
-- {arch: amd64, name: mtools, source: apt, version: 4.0.18-2ubuntu1}
 mtr-tiny:
 - {arch: amd64, name: mtr-tiny, source: apt, version: 0.92-1}
 multiarch-support:
@@ -1278,14 +926,8 @@ netplan.io:
 - {arch: amd64, name: netplan.io, source: apt, version: 0.97-0ubuntu1~18.04.1}
 networkd-dispatcher:
 - {arch: all, name: networkd-dispatcher, source: apt, version: 1.7-0ubuntu3.3}
-nfs-common:
-- {arch: amd64, name: nfs-common, source: apt, version: '1:1.3.4-2.1ubuntu5.2'}
-nfs-kernel-server:
-- {arch: amd64, name: nfs-kernel-server, source: apt, version: '1:1.3.4-2.1ubuntu5.2'}
 nodejs:
 - {arch: amd64, name: nodejs, source: apt, version: 10.16.0-1nodesource1}
-nodejs-doc:
-- {arch: all, name: nodejs-doc, source: apt, version: 8.10.0~dfsg-2ubuntu0.4}
 nplan:
 - {arch: all, name: nplan, source: apt, version: 0.97-0ubuntu1~18.04.1}
 ntfs-3g:
@@ -1293,7 +935,7 @@ ntfs-3g:
 open-iscsi:
 - {arch: amd64, name: open-iscsi, source: apt, version: 2.0.874-5ubuntu2.7}
 open-vm-tools:
-- {arch: amd64, name: open-vm-tools, source: apt, version: '2:10.3.10-1~ubuntu0.18.04.1'}
+- {arch: amd64, name: open-vm-tools, source: apt, version: '2:10.3.5-7~ubuntu0.18.04.1'}
 openssh-client:
 - {arch: amd64, name: openssh-client, source: apt, version: '1:7.6p1-4ubuntu0.3'}
 openssh-server:
@@ -1301,9 +943,7 @@ openssh-server:
 openssh-sftp-server:
 - {arch: amd64, name: openssh-sftp-server, source: apt, version: '1:7.6p1-4ubuntu0.3'}
 openssl:
-- {arch: amd64, name: openssl, source: apt, version: 1.1.1-1ubuntu2.1~18.04.3}
-osinfo-db:
-- {arch: all, name: osinfo-db, source: apt, version: 0.20180929-1ubuntu0.1}
+- {arch: amd64, name: openssl, source: apt, version: 1.1.0g-2ubuntu4.3}
 overlayroot:
 - {arch: all, name: overlayroot, source: apt, version: 0.40ubuntu1.1}
 parted:
@@ -1324,10 +964,6 @@ perl-base:
 - {arch: amd64, name: perl-base, source: apt, version: 5.26.1-6ubuntu0.3}
 perl-modules-5.26:
 - {arch: all, name: perl-modules-5.26, source: apt, version: 5.26.1-6ubuntu0.3}
-perl-openssl-defaults:
-- {arch: amd64, name: perl-openssl-defaults, source: apt, version: 3build1}
-pigz:
-- {arch: amd64, name: pigz, source: apt, version: 2.4-1}
 pinentry-curses:
 - {arch: amd64, name: pinentry-curses, source: apt, version: 1.1.0-1}
 pkg-config:
@@ -1399,7 +1035,7 @@ python-minimal:
 python-msgpack:
 - {arch: amd64, name: python-msgpack, source: apt, version: 0.5.6-1}
 python-neovim:
-- {arch: all, name: python-neovim, source: apt, version: 0.2.0-1}
+- {arch: all, name: python-neovim, source: apt, version: 0.2.6-3ppa1~ubuntu18.04.2}
 python-netaddr:
 - {arch: all, name: python-netaddr, source: apt, version: 0.7.19-1}
 python-openssl:
@@ -1461,7 +1097,7 @@ python3-configobj:
 python3-constantly:
 - {arch: all, name: python3-constantly, source: apt, version: 15.1.0-1}
 python3-cryptography:
-- {arch: amd64, name: python3-cryptography, source: apt, version: 2.1.4-1ubuntu1.3}
+- {arch: amd64, name: python3-cryptography, source: apt, version: 2.1.4-1ubuntu1.2}
 python3-dbus:
 - {arch: amd64, name: python3-dbus, source: apt, version: 1.2.6-1}
 python3-debconf:
@@ -1471,9 +1107,9 @@ python3-debian:
 python3-distro-info:
 - {arch: all, name: python3-distro-info, source: apt, version: 0.18ubuntu0.18.04.1}
 python3-distupgrade:
-- {arch: all, name: python3-distupgrade, source: apt, version: '1:18.04.34'}
+- {arch: all, name: python3-distupgrade, source: apt, version: '1:18.04.32'}
 python3-gdbm:
-- {arch: amd64, name: python3-gdbm, source: apt, version: 3.6.8-1~18.04}
+- {arch: amd64, name: python3-gdbm, source: apt, version: 3.6.7-1~18.04}
 python3-gi:
 - {arch: amd64, name: python3-gi, source: apt, version: 3.26.1-2ubuntu1}
 python3-greenlet:
@@ -1487,7 +1123,7 @@ python3-idna:
 python3-incremental:
 - {arch: all, name: python3-incremental, source: apt, version: 16.10.1-3}
 python3-jinja2:
-- {arch: all, name: python3-jinja2, source: apt, version: 2.10-1ubuntu0.18.04.1}
+- {arch: all, name: python3-jinja2, source: apt, version: 2.10-1}
 python3-json-pointer:
 - {arch: all, name: python3-json-pointer, source: apt, version: 1.10-1}
 python3-jsonpatch:
@@ -1503,7 +1139,7 @@ python3-minimal:
 python3-msgpack:
 - {arch: amd64, name: python3-msgpack, source: apt, version: 0.5.6-1}
 python3-neovim:
-- {arch: all, name: python3-neovim, source: apt, version: 0.2.0-1}
+- {arch: all, name: python3-neovim, source: apt, version: 0.2.6-3ppa1~ubuntu18.04.2}
 python3-netifaces:
 - {arch: amd64, name: python3-netifaces, source: apt, version: 0.10.4-0.1build4}
 python3-newt:
@@ -1533,7 +1169,7 @@ python3-service-identity:
 python3-six:
 - {arch: all, name: python3-six, source: apt, version: 1.11.0-2}
 python3-software-properties:
-- {arch: all, name: python3-software-properties, source: apt, version: 0.96.24.32.9}
+- {arch: all, name: python3-software-properties, source: apt, version: 0.96.24.32.7}
 python3-systemd:
 - {arch: amd64, name: python3-systemd, source: apt, version: 234-1build1}
 python3-twisted:
@@ -1549,145 +1185,49 @@ python3-yaml:
 python3-zope.interface:
 - {arch: amd64, name: python3-zope.interface, source: apt, version: 4.3.2-1build2}
 python3.6:
-- {arch: amd64, name: python3.6, source: apt, version: 3.6.8-1~18.04.1}
+- {arch: amd64, name: python3.6, source: apt, version: 3.6.7-1~18.04}
 python3.6-minimal:
-- {arch: amd64, name: python3.6-minimal, source: apt, version: 3.6.8-1~18.04.1}
-qemu-block-extra:
-- {arch: amd64, name: qemu-block-extra, source: apt, version: '1:2.11+dfsg-1ubuntu7.15'}
-qemu-system-common:
-- {arch: amd64, name: qemu-system-common, source: apt, version: '1:2.11+dfsg-1ubuntu7.15'}
-qemu-system-x86:
-- {arch: amd64, name: qemu-system-x86, source: apt, version: '1:2.11+dfsg-1ubuntu7.15'}
-qemu-utils:
-- {arch: amd64, name: qemu-utils, source: apt, version: '1:2.11+dfsg-1ubuntu7.15'}
+- {arch: amd64, name: python3.6-minimal, source: apt, version: 3.6.7-1~18.04}
 rake:
 - {arch: all, name: rake, source: apt, version: 12.3.1-1}
 readline-common:
 - {arch: all, name: readline-common, source: apt, version: 7.0-3}
-reiserfsprogs:
-- {arch: amd64, name: reiserfsprogs, source: apt, version: '1:3.6.27-2'}
-rpcbind:
-- {arch: amd64, name: rpcbind, source: apt, version: 0.2.3-0.6}
 rsync:
 - {arch: amd64, name: rsync, source: apt, version: 3.1.2-2.1ubuntu1}
 rsyslog:
 - {arch: amd64, name: rsyslog, source: apt, version: 8.32.0-1ubuntu4}
 ruby:
 - {arch: amd64, name: ruby, source: apt, version: '1:2.5.1'}
-ruby-bcrypt-pbkdf:
-- {arch: amd64, name: ruby-bcrypt-pbkdf, source: apt, version: 1.0.0-1build2}
-ruby-blankslate:
-- {arch: all, name: ruby-blankslate, source: apt, version: 3.1.3-1}
-ruby-builder:
-- {arch: all, name: ruby-builder, source: apt, version: 3.2.2-4}
-ruby-childprocess:
-- {arch: all, name: ruby-childprocess, source: apt, version: 0.5.9-1ubuntu1}
 ruby-did-you-mean:
 - {arch: all, name: ruby-did-you-mean, source: apt, version: 1.2.0-2}
-ruby-domain-name:
-- {arch: all, name: ruby-domain-name, source: apt, version: 0.5.20160216-2}
-ruby-erubis:
-- {arch: all, name: ruby-erubis, source: apt, version: 2.7.0-3}
-ruby-excon:
-- {arch: all, name: ruby-excon, source: apt, version: 0.60.0-1}
-ruby-ffi:
-- {arch: amd64, name: ruby-ffi, source: apt, version: 1.9.10debian-1build4}
-ruby-fog-core:
-- {arch: all, name: ruby-fog-core, source: apt, version: 1.45.0-1}
-ruby-fog-json:
-- {arch: all, name: ruby-fog-json, source: apt, version: 1.0.0-1}
-ruby-fog-libvirt:
-- {arch: all, name: ruby-fog-libvirt, source: apt, version: 0.3.0-1}
-ruby-fog-xml:
-- {arch: all, name: ruby-fog-xml, source: apt, version: 0.1.1-5}
-ruby-formatador:
-- {arch: all, name: ruby-formatador, source: apt, version: 0.2.5-1}
-ruby-http-cookie:
-- {arch: all, name: ruby-http-cookie, source: apt, version: 1.0.2-1}
-ruby-i18n:
-- {arch: all, name: ruby-i18n, source: apt, version: 0.7.0-2}
-ruby-json:
-- {arch: amd64, name: ruby-json, source: apt, version: 2.1.0+dfsg-2}
-ruby-libvirt:
-- {arch: amd64, name: ruby-libvirt, source: apt, version: 0.7.0-1build2}
-ruby-listen:
-- {arch: all, name: ruby-listen, source: apt, version: 3.1.5-1}
-ruby-log4r:
-- {arch: all, name: ruby-log4r, source: apt, version: 1.1.10-4}
-ruby-mime-types:
-- {arch: all, name: ruby-mime-types, source: apt, version: 3.1-1}
-ruby-mime-types-data:
-- {arch: all, name: ruby-mime-types-data, source: apt, version: 3.2015.1120-1}
 ruby-minitest:
 - {arch: all, name: ruby-minitest, source: apt, version: 5.10.3-1}
-ruby-multi-json:
-- {arch: all, name: ruby-multi-json, source: apt, version: 1.12.1-1}
-ruby-net-scp:
-- {arch: all, name: ruby-net-scp, source: apt, version: 1.2.1-5}
-ruby-net-sftp:
-- {arch: all, name: ruby-net-sftp, source: apt, version: '1:2.1.2-4'}
-ruby-net-ssh:
-- {arch: all, name: ruby-net-ssh, source: apt, version: '1:4.2.0-2ubuntu1'}
 ruby-net-telnet:
 - {arch: all, name: ruby-net-telnet, source: apt, version: 0.1.1-2}
-ruby-netrc:
-- {arch: all, name: ruby-netrc, source: apt, version: 0.11.0-1}
-ruby-nokogiri:
-- {arch: amd64, name: ruby-nokogiri, source: apt, version: 1.8.2-1build1}
-ruby-oj:
-- {arch: amd64, name: ruby-oj, source: apt, version: 3.4.0-1build1}
-ruby-pkg-config:
-- {arch: all, name: ruby-pkg-config, source: apt, version: 1.2.9-1}
 ruby-power-assert:
 - {arch: all, name: ruby-power-assert, source: apt, version: 0.3.0-1}
-ruby-rb-inotify:
-- {arch: all, name: ruby-rb-inotify, source: apt, version: 0.9.7-1}
-ruby-rbnacl:
-- {arch: all, name: ruby-rbnacl, source: apt, version: 5.0.0-3}
-ruby-rest-client:
-- {arch: all, name: ruby-rest-client, source: apt, version: 2.0.2-3}
-ruby-sqlite3:
-- {arch: amd64, name: ruby-sqlite3, source: apt, version: 1.3.13-1build2}
 ruby-test-unit:
 - {arch: all, name: ruby-test-unit, source: apt, version: 3.2.5-1}
-ruby-unf:
-- {arch: all, name: ruby-unf, source: apt, version: 0.1.4-2}
-ruby-unf-ext:
-- {arch: amd64, name: ruby-unf-ext, source: apt, version: 0.0.7.4-1build2}
 ruby2.5:
 - {arch: amd64, name: ruby2.5, source: apt, version: 2.5.1-1ubuntu1.4}
 rubygems-integration:
 - {arch: all, name: rubygems-integration, source: apt, version: '1.11'}
 run-one:
 - {arch: all, name: run-one, source: apt, version: 1.17-0ubuntu1}
-runc:
-- {arch: amd64, name: runc, source: apt, version: 1.0.0~rc7+git20190403.029124da-0ubuntu1~18.04.1}
 screen:
 - {arch: amd64, name: screen, source: apt, version: 4.6.2-1ubuntu1}
-scrub:
-- {arch: amd64, name: scrub, source: apt, version: 2.6.1-1build1}
-seabios:
-- {arch: all, name: seabios, source: apt, version: 1.10.2-1ubuntu1}
 sed:
 - {arch: amd64, name: sed, source: apt, version: 4.4-2}
 sensible-utils:
 - {arch: all, name: sensible-utils, source: apt, version: 0.0.12}
-sgabios:
-- {arch: all, name: sgabios, source: apt, version: 0.0~svn8-4}
 shared-mime-info:
 - {arch: amd64, name: shared-mime-info, source: apt, version: 1.9-2}
-sharutils:
-- {arch: amd64, name: sharutils, source: apt, version: '1:4.15.2-3'}
-sleuthkit:
-- {arch: amd64, name: sleuthkit, source: apt, version: 4.4.2-3}
 snapd:
-- {arch: amd64, name: snapd, source: apt, version: 2.39.2+18.04}
+- {arch: amd64, name: snapd, source: apt, version: 2.38+18.04}
 software-properties-common:
-- {arch: all, name: software-properties-common, source: apt, version: 0.96.24.32.9}
+- {arch: all, name: software-properties-common, source: apt, version: 0.96.24.32.7}
 sosreport:
 - {arch: amd64, name: sosreport, source: apt, version: 3.6-1ubuntu0.18.04.2}
-sqlite3:
-- {arch: amd64, name: sqlite3, source: apt, version: 3.22.0-1ubuntu0.1}
 squashfs-tools:
 - {arch: amd64, name: squashfs-tools, source: apt, version: '1:4.3-6ubuntu0.18.04.1'}
 ssh-import-id:
@@ -1696,16 +1236,10 @@ strace:
 - {arch: amd64, name: strace, source: apt, version: 4.21-1ubuntu1}
 sudo:
 - {arch: amd64, name: sudo, source: apt, version: 1.8.21p2-3ubuntu1}
-supermin:
-- {arch: amd64, name: supermin, source: apt, version: 5.1.19-2ubuntu1}
-syslinux:
-- {arch: amd64, name: syslinux, source: apt, version: '3:6.03+dfsg1-2'}
-syslinux-common:
-- {arch: all, name: syslinux-common, source: apt, version: '3:6.03+dfsg1-2'}
 systemd:
-- {arch: amd64, name: systemd, source: apt, version: 237-3ubuntu10.24}
+- {arch: amd64, name: systemd, source: apt, version: 237-3ubuntu10.21}
 systemd-sysv:
-- {arch: amd64, name: systemd-sysv, source: apt, version: 237-3ubuntu10.24}
+- {arch: amd64, name: systemd-sysv, source: apt, version: 237-3ubuntu10.21}
 sysvinit-utils:
 - {arch: amd64, name: sysvinit-utils, source: apt, version: 2.88dsf-59.10ubuntu1}
 tar:
@@ -1719,21 +1253,19 @@ tig:
 time:
 - {arch: amd64, name: time, source: apt, version: 1.7-25.1build1}
 tmux:
-- {arch: amd64, name: tmux, source: apt, version: 2.6-3ubuntu0.1}
+- {arch: amd64, name: tmux, source: apt, version: 2.6-3ubuntu0.2}
 tree:
 - {arch: amd64, name: tree, source: apt, version: 1.7.0-5}
 tzdata:
-- {arch: all, name: tzdata, source: apt, version: 2019b-0ubuntu0.18.04}
+- {arch: all, name: tzdata, source: apt, version: 2019a-0ubuntu0.18.04}
 ubuntu-advantage-tools:
 - {arch: all, name: ubuntu-advantage-tools, source: apt, version: '17'}
-ubuntu-fan:
-- {arch: all, name: ubuntu-fan, source: apt, version: 0.12.10}
 ubuntu-keyring:
 - {arch: all, name: ubuntu-keyring, source: apt, version: 2018.09.18.1~18.04.0}
 ubuntu-minimal:
 - {arch: amd64, name: ubuntu-minimal, source: apt, version: 1.417.1}
 ubuntu-release-upgrader-core:
-- {arch: all, name: ubuntu-release-upgrader-core, source: apt, version: '1:18.04.34'}
+- {arch: all, name: ubuntu-release-upgrader-core, source: apt, version: '1:18.04.32'}
 ubuntu-server:
 - {arch: amd64, name: ubuntu-server, source: apt, version: 1.417.1}
 ubuntu-standard:
@@ -1743,7 +1275,7 @@ ubuntu-wsl:
 ucf:
 - {arch: all, name: ucf, source: apt, version: '3.0038'}
 udev:
-- {arch: amd64, name: udev, source: apt, version: 237-3ubuntu10.24}
+- {arch: amd64, name: udev, source: apt, version: 237-3ubuntu10.21}
 ufw:
 - {arch: all, name: ufw, source: apt, version: 0.36-0ubuntu0.18.04.1}
 uidmap:
@@ -1755,7 +1287,7 @@ unzip:
 update-manager-core:
 - {arch: all, name: update-manager-core, source: apt, version: '1:18.04.11.10'}
 update-notifier-common:
-- {arch: all, name: update-notifier-common, source: apt, version: 3.192.1.7}
+- {arch: all, name: update-notifier-common, source: apt, version: 3.192.1.5}
 ureadahead:
 - {arch: amd64, name: ureadahead, source: apt, version: 0.100.0-21}
 usbutils:
@@ -1764,18 +1296,14 @@ util-linux:
 - {arch: amd64, name: util-linux, source: apt, version: 2.31.1-0.4ubuntu3.3}
 uuid-runtime:
 - {arch: amd64, name: uuid-runtime, source: apt, version: 2.31.1-0.4ubuntu3.3}
-vagrant:
-- {arch: all, name: vagrant, source: apt, version: 2.0.2+dfsg-2ubuntu8}
-vagrant-libvirt:
-- {arch: all, name: vagrant-libvirt, source: apt, version: 0.0.43-2}
 vim:
-- {arch: amd64, name: vim, source: apt, version: '2:8.0.1453-1ubuntu1.1'}
+- {arch: amd64, name: vim, source: apt, version: '2:8.0.1453-1ubuntu1'}
 vim-common:
-- {arch: all, name: vim-common, source: apt, version: '2:8.0.1453-1ubuntu1.1'}
+- {arch: all, name: vim-common, source: apt, version: '2:8.0.1453-1ubuntu1'}
 vim-runtime:
-- {arch: all, name: vim-runtime, source: apt, version: '2:8.0.1453-1ubuntu1.1'}
+- {arch: all, name: vim-runtime, source: apt, version: '2:8.0.1453-1ubuntu1'}
 vim-tiny:
-- {arch: amd64, name: vim-tiny, source: apt, version: '2:8.0.1453-1ubuntu1.1'}
+- {arch: amd64, name: vim-tiny, source: apt, version: '2:8.0.1453-1ubuntu1'}
 wget:
 - {arch: amd64, name: wget, source: apt, version: 1.19.4-1ubuntu2.2}
 whiptail:
@@ -1795,7 +1323,7 @@ xkb-data:
 xsel:
 - {arch: amd64, name: xsel, source: apt, version: 1.2.0-4}
 xxd:
-- {arch: amd64, name: xxd, source: apt, version: '2:8.0.1453-1ubuntu1.1'}
+- {arch: amd64, name: xxd, source: apt, version: '2:8.0.1453-1ubuntu1'}
 xz-utils:
 - {arch: amd64, name: xz-utils, source: apt, version: 5.2.2-1.3}
 zerofree:
