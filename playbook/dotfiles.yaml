@@ -39,11 +39,6 @@
     src: /mnt/c/Users/medalhkr/Documents
     dest: "{{ ansible_env.HOME }}/Documents"
     state: link
-- name: symlink fish_history
-  file:
-    src: "{{ ansible_env.HOME }}/Documents/fish_history"
-    dest: "{{ ansible_env.HOME }}/.local/share/fish/fish_history"
-    state: link
 - name: ignore gitconfig change
   shell: |
     cd /opt/var/ghq/src/github.com/cumet04/dotfiles

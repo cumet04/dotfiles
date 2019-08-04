@@ -1,6 +1,7 @@
 #!/bin/bash
 
 BRANCH=${BRANCH:-master}
+umask 022
 
 mkdir /tmp/dotfiles-install; cd /tmp/dotfiles-install
 

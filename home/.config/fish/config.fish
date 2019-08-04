@@ -25,4 +25,9 @@ set -x GOPATH /opt/var/go:/opt/var/ghq
 set -x GO111MODULE on
 set -x ANSIBLE_RETRY_FILES_ENABLED false
 
+# direnv hook fish
+function __direnv_export_eval --on-event fish_prompt;
+	eval (direnv export fish);
+end
+
 test -z "$TMUX"; and tmux
