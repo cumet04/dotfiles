@@ -31,6 +31,7 @@
       loop:
         - ansible
         - direnv
+        - docker.io
         - fish
         - git
         - golang-go
@@ -40,7 +41,9 @@
         - nodejs
         - peco
         - python
+        - python-pip
         - python3
+        - python3-pip
         - ruby
         - tig
         - tmux
@@ -52,6 +55,7 @@
     - include: dotfiles.yaml
     - include: diff-highlight.yaml
     - include: go-commands.yaml
+    - include: awscli.yaml
 
 - hosts: all
   user: medalhkr
