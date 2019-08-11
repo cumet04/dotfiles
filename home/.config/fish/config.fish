@@ -16,6 +16,9 @@ alias cdg="cd (git rev-parse --show-toplevel)"
 alias ssh='colored_ssh'
 alias tmux='tmux -f ~/.config/tmux.conf'
 
+# [wsl hack] clean windows PATHs
+set -x PATH /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
+
 set -x PATH /opt/bin $PATH
 set -x PATH /opt/bin/shell_commands $PATH
 set -x PATH /opt/var/go/bin $PATH

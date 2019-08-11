@@ -3,4 +3,6 @@
   shell: |
     fish -c 'go install -v github.com/motemen/ghq'
     fish -c 'go install -v github.com/monochromegane/the_platinum_searcher/cmd/pt'
+    fish -c 'go install -v github.com/lemonade-command/lemonade'
     fish -c 'go install -v github.com/mattn/memo'
+    fish -c 'go install -v github.com/mattn/twty'

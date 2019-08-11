@@ -36,9 +36,6 @@ endif
 inoremap {<Enter> {<Enter>}<ESC><S-o>
 set formatoptions=q
 
-" fix windows paste
-inoremap <CR><LF> <Enter>
-
 hi IndentGuidesOdd  ctermbg=233
 hi IndentGuidesEven ctermbg=234
 let g:indent_guides_enable_on_vim_startup=1
