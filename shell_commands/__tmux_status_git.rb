@@ -22,21 +22,25 @@ p = {
 }
 
 def fgc(text, color)
-    "#[fg=colour#{color}]#{text}#[default]"
+    if color.is_a?(Integer)
+        "#[fg=colour#{color}]#{text}#[default]"
+    else
+        "#[fg=#{color}]#{text}#[default]"
+    end
 end
 
 status_view =
     if p[:status].nil?; '(local)'
     elsif p[:status] == 0; ''
-    elsif p[:status].positive?; fgc("#{0x2B06.chr('UTF-8')} #{p[:status].to_s}", 21)
-    elsif p[:status].negative?; fgc("#{0x2B07.chr('UTF-8')} #{(-p[:status]).to_s}", 21)
+    elsif p[:status].positive?; fgc(" +#{p[:status].to_s}", :yellow)
+    elsif p[:status].negative?; fgc(" -#{(-p[:status]).to_s}", :red)
     end
 
 puts "On #{p[:branch]}#{status_view}, " +
     if p[:staged] + p[:changed] + p[:untracked] == 0
         "workspace is clear"
     else
-        (p[:staged] == 0 ?    "no staged, "    : fgc("#{p[:staged]} staged", 40) + ", ") +
-        (p[:changed] == 0 ?   "no changed, "   : fgc("#{p[:changed]} changed", 124) + ", ") +
-        (p[:untracked] == 0 ? "no untracked, " : fgc("#{p[:untracked]} untracked", 88))
+        (p[:staged] == 0 ?    "no staged, "    : fgc("#{p[:staged]} staged", :green) + ", ") +
+        (p[:changed] == 0 ?   "no changed, "   : fgc("#{p[:changed]} changed", :red) + ", ") +
+        (p[:untracked] == 0 ? "no untracked, " : fgc("#{p[:untracked]} untracked", :magenta))
     end
