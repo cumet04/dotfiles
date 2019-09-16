@@ -11,6 +11,7 @@
     d = diff
     s = status
     co = checkout
+    pfetch = fetch origin --prune
     difw = diff --word-diff
     difc = diff --cached
     difwc = diff --word-diff --cached
