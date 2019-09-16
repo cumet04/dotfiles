@@ -1,7 +1,9 @@
 home/.config/memo/_*
+home/.config/gist
 home/.config/fish/fish_variables
 home/.config/nvim/.netrwhist
 home/.config/direnv/allow
-home/.config/gcloud
+home/.config/configstore
+home/.config/yarn
 home/.config/twty
 .vagrant

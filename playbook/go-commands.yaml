@@ -6,3 +6,4 @@
     fish -c 'go install -v github.com/lemonade-command/lemonade'
     fish -c 'go install -v github.com/mattn/memo'
     fish -c 'go install -v github.com/mattn/twty'
+    fish -c 'go install -v github.com/b4b4r07/gist'
