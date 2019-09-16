@@ -1,6 +1,9 @@
 set fish_greeting
 
+### [wsl hack]
 umask 022
+# clean windows PATHs
+set -x PATH /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
 
 alias history "history --show-time='%Y-%m-%d %T '"
 alias ls='ls --color=auto'
@@ -15,9 +18,6 @@ alias diff='colordiff'
 alias cdg="cd (git rev-parse --show-toplevel)"
 alias ssh='colored_ssh'
 alias tmux='tmux -f ~/.config/tmux.conf'
-
-# [wsl hack] clean windows PATHs
-set -x PATH /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
 
 set -x PATH /opt/bin $PATH
 set -x PATH /opt/bin/shell_commands $PATH
