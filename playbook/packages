@@ -42,12 +42,12 @@ apt:
 - arch: amd64
   name: apt
   source: apt
-  version: 1.6.11
+  version: 1.6.12
 apt-utils:
 - arch: amd64
   name: apt-utils
   source: apt
-  version: 1.6.11
+  version: 1.6.12
 at:
 - arch: amd64
   name: at
@@ -57,7 +57,7 @@ base-files:
 - arch: amd64
   name: base-files
   source: apt
-  version: 10.1ubuntu2.5
+  version: 10.1ubuntu2.6
 base-passwd:
 - arch: amd64
   name: base-passwd
@@ -87,7 +87,7 @@ bind9-host:
 - arch: amd64
   name: bind9-host
   source: apt
-  version: 1:9.11.3+dfsg-1ubuntu1.8
+  version: 1:9.11.3+dfsg-1ubuntu1.9
 binutils:
 - arch: amd64
   name: binutils
@@ -117,7 +117,7 @@ bsdutils:
 - arch: amd64
   name: bsdutils
   source: apt
-  version: 1:2.31.1-0.4ubuntu3.3
+  version: 1:2.31.1-0.4ubuntu3.4
 btrfs-progs:
 - arch: amd64
   name: btrfs-progs
@@ -172,7 +172,7 @@ cloud-init:
 - arch: all
   name: cloud-init
   source: apt
-  version: 19.1-1-gbaa47854-0ubuntu1~18.04.1
+  version: 19.2-36-g059d049c-0ubuntu1~18.04.1
 cloud-initramfs-copymods:
 - arch: all
   name: cloud-initramfs-copymods
@@ -252,7 +252,7 @@ curl:
 - arch: amd64
   name: curl
   source: apt
-  version: 7.58.0-2ubuntu3.7
+  version: 7.58.0-2ubuntu3.8
 dash:
 - arch: amd64
   name: dash
@@ -261,6 +261,11 @@ dash:
 dbus:
 - arch: amd64
   name: dbus
+  source: apt
+  version: 1.12.2-1ubuntu1.1
+dbus-x11:
+- arch: amd64
+  name: dbus-x11
   source: apt
   version: 1.12.2-1ubuntu1.1
 debconf:
@@ -332,7 +337,7 @@ dnsutils:
 - arch: amd64
   name: dnsutils
   source: apt
-  version: 1:9.11.3+dfsg-1ubuntu1.8
+  version: 1:9.11.3+dfsg-1ubuntu1.9
 docker.io:
 - arch: amd64
   name: docker.io
@@ -347,17 +352,17 @@ dpkg:
 - arch: amd64
   name: dpkg
   source: apt
-  version: 1.19.0.5ubuntu2.1
+  version: 1.19.0.5ubuntu2.3
 dpkg-dev:
 - arch: all
   name: dpkg-dev
   source: apt
-  version: 1.19.0.5ubuntu2.1
+  version: 1.19.0.5ubuntu2.3
 e2fsprogs:
 - arch: amd64
   name: e2fsprogs
   source: apt
-  version: 1.44.1-1ubuntu1.1
+  version: 1.44.1-1ubuntu1.2
 eatmydata:
 - arch: all
   name: eatmydata
@@ -392,7 +397,7 @@ fdisk:
 - arch: amd64
   name: fdisk
   source: apt
-  version: 2.31.1-0.4ubuntu3.3
+  version: 2.31.1-0.4ubuntu3.4
 file:
 - arch: amd64
   name: file
@@ -517,7 +522,7 @@ ghostscript:
 - arch: amd64
   name: ghostscript
   source: apt
-  version: 9.26~dfsg+0-0ubuntu0.18.04.9
+  version: 9.26~dfsg+0-0ubuntu0.18.04.11
 gir1.2-glib-2.0:
 - arch: amd64
   name: gir1.2-glib-2.0
@@ -548,16 +553,6 @@ gnupg-utils:
   name: gnupg-utils
   source: apt
   version: 2.2.4-1ubuntu1.2
-golang-1.12-go:
-- arch: amd64
-  name: golang-1.12-go
-  source: apt
-  version: 1.12.7-1longsleep2+xenial
-golang-1.12-src:
-- arch: amd64
-  name: golang-1.12-src
-  source: apt
-  version: 1.12.7-1longsleep2+xenial
 golang-1.13-go:
 - arch: amd64
   name: golang-1.13-go
@@ -617,7 +612,7 @@ grep:
 - arch: amd64
   name: grep
   source: apt
-  version: 3.1-2
+  version: 3.1-2build1
 groff-base:
 - arch: amd64
   name: groff-base
@@ -787,7 +782,7 @@ landscape-common:
 - arch: amd64
   name: landscape-common
   source: apt
-  version: 18.01-0ubuntu3.3
+  version: 18.01-0ubuntu3.4
 language-selector-common:
 - arch: all
   name: language-selector-common
@@ -832,12 +827,12 @@ libapt-inst2.0:
 - arch: amd64
   name: libapt-inst2.0
   source: apt
-  version: 1.6.11
+  version: 1.6.12
 libapt-pkg5.0:
 - arch: amd64
   name: libapt-pkg5.0
   source: apt
-  version: 1.6.11
+  version: 1.6.12
 libargon2-0:
 - arch: amd64
   name: libargon2-0
@@ -907,7 +902,7 @@ libbind9-160:
 - arch: amd64
   name: libbind9-160
   source: apt
-  version: 1:9.11.3+dfsg-1ubuntu1.8
+  version: 1:9.11.3+dfsg-1ubuntu1.9
 libbinutils:
 - arch: amd64
   name: libbinutils
@@ -917,7 +912,7 @@ libblkid1:
 - arch: amd64
   name: libblkid1
   source: apt
-  version: 2.31.1-0.4ubuntu3.3
+  version: 2.31.1-0.4ubuntu3.4
 libbsd0:
 - arch: amd64
   name: libbsd0
@@ -982,7 +977,7 @@ libcom-err2:
 - arch: amd64
   name: libcom-err2
   source: apt
-  version: 1.44.1-1ubuntu1.1
+  version: 1.44.1-1ubuntu1.2
 libcryptsetup12:
 - arch: amd64
   name: libcryptsetup12
@@ -992,7 +987,7 @@ libcups2:
 - arch: amd64
   name: libcups2
   source: apt
-  version: 2.2.7-1ubuntu2.6
+  version: 2.2.7-1ubuntu2.7
 libcupsfilters1:
 - arch: amd64
   name: libcupsfilters1
@@ -1002,17 +997,17 @@ libcupsimage2:
 - arch: amd64
   name: libcupsimage2
   source: apt
-  version: 2.2.7-1ubuntu2.6
+  version: 2.2.7-1ubuntu2.7
 libcurl3-gnutls:
 - arch: amd64
   name: libcurl3-gnutls
   source: apt
-  version: 7.58.0-2ubuntu3.7
+  version: 7.58.0-2ubuntu3.8
 libcurl4:
 - arch: amd64
   name: libcurl4
   source: apt
-  version: 7.58.0-2ubuntu3.7
+  version: 7.58.0-2ubuntu3.8
 libdatrie1:
 - arch: amd64
   name: libdatrie1
@@ -1057,17 +1052,17 @@ libdns-export1100:
 - arch: amd64
   name: libdns-export1100
   source: apt
-  version: 1:9.11.3+dfsg-1ubuntu1.8
+  version: 1:9.11.3+dfsg-1ubuntu1.9
 libdns1100:
 - arch: amd64
   name: libdns1100
   source: apt
-  version: 1:9.11.3+dfsg-1ubuntu1.8
+  version: 1:9.11.3+dfsg-1ubuntu1.9
 libdpkg-perl:
 - arch: all
   name: libdpkg-perl
   source: apt
-  version: 1.19.0.5ubuntu2.1
+  version: 1.19.0.5ubuntu2.3
 libdrm-amdgpu1:
 - arch: amd64
   name: libdrm-amdgpu1
@@ -1137,17 +1132,17 @@ libexpat1:
 - arch: amd64
   name: libexpat1
   source: apt
-  version: 2.2.5-3ubuntu0.1
+  version: 2.2.5-3ubuntu0.2
 libexpat1-dev:
 - arch: amd64
   name: libexpat1-dev
   source: apt
-  version: 2.2.5-3ubuntu0.1
+  version: 2.2.5-3ubuntu0.2
 libext2fs2:
 - arch: amd64
   name: libext2fs2
   source: apt
-  version: 1.44.1-1ubuntu1.1
+  version: 1.44.1-1ubuntu1.2
 libfakeroot:
 - arch: amd64
   name: libfakeroot
@@ -1162,7 +1157,7 @@ libfdisk1:
 - arch: amd64
   name: libfdisk1
   source: apt
-  version: 2.31.1-0.4ubuntu3.3
+  version: 2.31.1-0.4ubuntu3.4
 libffi6:
 - arch: amd64
   name: libffi6
@@ -1252,17 +1247,17 @@ libgl1-mesa-dri:
 - arch: amd64
   name: libgl1-mesa-dri
   source: apt
-  version: 19.0.2-1ubuntu1.1~18.04.2
+  version: 19.0.8-0ubuntu0~18.04.2
 libgl1-mesa-glx:
 - arch: amd64
   name: libgl1-mesa-glx
   source: apt
-  version: 19.0.2-1ubuntu1.1~18.04.2
+  version: 19.0.8-0ubuntu0~18.04.2
 libglapi-mesa:
 - arch: amd64
   name: libglapi-mesa
   source: apt
-  version: 19.0.2-1ubuntu1.1~18.04.2
+  version: 19.0.8-0ubuntu0~18.04.2
 libglib2.0-0:
 - arch: amd64
   name: libglib2.0-0
@@ -1282,7 +1277,7 @@ libglx-mesa0:
 - arch: amd64
   name: libglx-mesa0
   source: apt
-  version: 19.0.2-1ubuntu1.1~18.04.2
+  version: 19.0.8-0ubuntu0~18.04.2
 libglx0:
 - arch: amd64
   name: libglx0
@@ -1322,12 +1317,12 @@ libgs9:
 - arch: amd64
   name: libgs9
   source: apt
-  version: 9.26~dfsg+0-0ubuntu0.18.04.9
+  version: 9.26~dfsg+0-0ubuntu0.18.04.11
 libgs9-common:
 - arch: all
   name: libgs9-common
   source: apt
-  version: 9.26~dfsg+0-0ubuntu0.18.04.9
+  version: 9.26~dfsg+0-0ubuntu0.18.04.11
 libgssapi-krb5-2:
 - arch: amd64
   name: libgssapi-krb5-2
@@ -1417,27 +1412,27 @@ libirs160:
 - arch: amd64
   name: libirs160
   source: apt
-  version: 1:9.11.3+dfsg-1ubuntu1.8
+  version: 1:9.11.3+dfsg-1ubuntu1.9
 libisc-export169:
 - arch: amd64
   name: libisc-export169
   source: apt
-  version: 1:9.11.3+dfsg-1ubuntu1.8
+  version: 1:9.11.3+dfsg-1ubuntu1.9
 libisc169:
 - arch: amd64
   name: libisc169
   source: apt
-  version: 1:9.11.3+dfsg-1ubuntu1.8
+  version: 1:9.11.3+dfsg-1ubuntu1.9
 libisccc160:
 - arch: amd64
   name: libisccc160
   source: apt
-  version: 1:9.11.3+dfsg-1ubuntu1.8
+  version: 1:9.11.3+dfsg-1ubuntu1.9
 libisccfg160:
 - arch: amd64
   name: libisccfg160
   source: apt
-  version: 1:9.11.3+dfsg-1ubuntu1.8
+  version: 1:9.11.3+dfsg-1ubuntu1.9
 libisl19:
 - arch: amd64
   name: libisl19
@@ -1547,12 +1542,12 @@ libldap-2.4-2:
 - arch: amd64
   name: libldap-2.4-2
   source: apt
-  version: 2.4.45+dfsg-1ubuntu1.2
+  version: 2.4.45+dfsg-1ubuntu1.4
 libldap-common:
 - arch: all
   name: libldap-common
   source: apt
-  version: 2.4.45+dfsg-1ubuntu1.2
+  version: 2.4.45+dfsg-1ubuntu1.4
 libllvm8:
 - arch: amd64
   name: libllvm8
@@ -1602,7 +1597,7 @@ liblwres160:
 - arch: amd64
   name: liblwres160
   source: apt
-  version: 1:9.11.3+dfsg-1ubuntu1.8
+  version: 1:9.11.3+dfsg-1ubuntu1.9
 liblxc-common:
 - arch: amd64
   name: liblxc-common
@@ -1662,7 +1657,7 @@ libmount1:
 - arch: amd64
   name: libmount1
   source: apt
-  version: 2.31.1-0.4ubuntu3.3
+  version: 2.31.1-0.4ubuntu3.4
 libmpc3:
 - arch: amd64
   name: libmpc3
@@ -1747,7 +1742,7 @@ libnss-systemd:
 - arch: amd64
   name: libnss-systemd
   source: apt
-  version: 237-3ubuntu10.24
+  version: 237-3ubuntu10.29
 libntfs-3g88:
 - arch: amd64
   name: libntfs-3g88
@@ -1802,7 +1797,7 @@ libpam-systemd:
 - arch: amd64
   name: libpam-systemd
   source: apt
-  version: 237-3ubuntu10.24
+  version: 237-3ubuntu10.29
 libpam0g:
 - arch: amd64
   name: libpam0g
@@ -1907,7 +1902,7 @@ libprocps6:
 - arch: amd64
   name: libprocps6
   source: apt
-  version: 2:3.3.12-3ubuntu1.1
+  version: 2:3.3.12-3ubuntu1.2
 libpsl5:
 - arch: amd64
   name: libpsl5
@@ -1942,22 +1937,22 @@ libpython2.7:
 - arch: amd64
   name: libpython2.7
   source: apt
-  version: 2.7.15-4ubuntu4~18.04
+  version: 2.7.15-4ubuntu4~18.04.1
 libpython2.7-dev:
 - arch: amd64
   name: libpython2.7-dev
   source: apt
-  version: 2.7.15-4ubuntu4~18.04
+  version: 2.7.15-4ubuntu4~18.04.1
 libpython2.7-minimal:
 - arch: amd64
   name: libpython2.7-minimal
   source: apt
-  version: 2.7.15-4ubuntu4~18.04
+  version: 2.7.15-4ubuntu4~18.04.1
 libpython2.7-stdlib:
 - arch: amd64
   name: libpython2.7-stdlib
   source: apt
-  version: 2.7.15-4ubuntu4~18.04
+  version: 2.7.15-4ubuntu4~18.04.1
 libpython3-dev:
 - arch: amd64
   name: libpython3-dev
@@ -1972,22 +1967,22 @@ libpython3.6:
 - arch: amd64
   name: libpython3.6
   source: apt
-  version: 3.6.8-1~18.04.1
+  version: 3.6.8-1~18.04.2
 libpython3.6-dev:
 - arch: amd64
   name: libpython3.6-dev
   source: apt
-  version: 3.6.8-1~18.04.1
+  version: 3.6.8-1~18.04.2
 libpython3.6-minimal:
 - arch: amd64
   name: libpython3.6-minimal
   source: apt
-  version: 3.6.8-1~18.04.1
+  version: 3.6.8-1~18.04.2
 libpython3.6-stdlib:
 - arch: amd64
   name: libpython3.6-stdlib
   source: apt
-  version: 3.6.8-1~18.04.1
+  version: 3.6.8-1~18.04.2
 libquadmath0:
 - arch: amd64
   name: libquadmath0
@@ -2017,7 +2012,7 @@ libruby2.5:
 - arch: amd64
   name: libruby2.5
   source: apt
-  version: 2.5.1-1ubuntu1.4
+  version: 2.5.1-1ubuntu1.5
 libsasl2-2:
 - arch: amd64
   name: libsasl2-2
@@ -2082,12 +2077,17 @@ libsmartcols1:
 - arch: amd64
   name: libsmartcols1
   source: apt
-  version: 2.31.1-0.4ubuntu3.3
+  version: 2.31.1-0.4ubuntu3.4
 libsndfile1:
 - arch: amd64
   name: libsndfile1
   source: apt
   version: 1.0.28-4ubuntu0.18.04.1
+libsqlite0:
+- arch: amd64
+  name: libsqlite0
+  source: apt
+  version: 2.8.17-14fakesync1
 libsqlite3-0:
 - arch: amd64
   name: libsqlite3-0
@@ -2097,7 +2097,7 @@ libss2:
 - arch: amd64
   name: libss2
   source: apt
-  version: 1.44.1-1ubuntu1.1
+  version: 1.44.1-1ubuntu1.2
 libssl1.0.0:
 - arch: amd64
   name: libssl1.0.0
@@ -2122,7 +2122,7 @@ libsystemd0:
 - arch: amd64
   name: libsystemd0
   source: apt
-  version: 237-3ubuntu10.24
+  version: 237-3ubuntu10.29
 libtasn1-6:
 - arch: amd64
   name: libtasn1-6
@@ -2182,7 +2182,7 @@ libudev1:
 - arch: amd64
   name: libudev1
   source: apt
-  version: 237-3ubuntu10.24
+  version: 237-3ubuntu10.29
 libunibilium4:
 - arch: amd64
   name: libunibilium4
@@ -2212,7 +2212,7 @@ libuuid1:
 - arch: amd64
   name: libuuid1
   source: apt
-  version: 2.31.1-0.4ubuntu3.3
+  version: 2.31.1-0.4ubuntu3.4
 libuv1:
 - arch: amd64
   name: libuv1
@@ -2447,7 +2447,7 @@ libzstd1:
 - arch: amd64
   name: libzstd1
   source: apt
-  version: 1.3.3+dfsg-2ubuntu1
+  version: 1.3.3+dfsg-2ubuntu1.1
 linux-base:
 - arch: all
   name: linux-base
@@ -2457,7 +2457,7 @@ linux-libc-dev:
 - arch: amd64
   name: linux-libc-dev
   source: apt
-  version: 4.15.0-55.60
+  version: 4.15.0-65.74
 locales:
 - arch: all
   name: locales
@@ -2562,7 +2562,7 @@ mount:
 - arch: amd64
   name: mount
   source: apt
-  version: 2.31.1-0.4ubuntu3.3
+  version: 2.31.1-0.4ubuntu3.4
 mtr-tiny:
 - arch: amd64
   name: mtr-tiny
@@ -2627,7 +2627,7 @@ netplan.io:
 - arch: amd64
   name: netplan.io
   source: apt
-  version: 0.97-0ubuntu1~18.04.1
+  version: 0.98-0ubuntu1~18.04.1
 networkd-dispatcher:
 - arch: all
   name: networkd-dispatcher
@@ -2642,7 +2642,7 @@ nplan:
 - arch: all
   name: nplan
   source: apt
-  version: 0.97-0ubuntu1~18.04.1
+  version: 0.98-0ubuntu1~18.04.1
 ntfs-3g:
 - arch: amd64
   name: ntfs-3g
@@ -2782,7 +2782,7 @@ procps:
 - arch: amd64
   name: procps
   source: apt
-  version: 2:3.3.12-3ubuntu1.1
+  version: 2:3.3.12-3ubuntu1.2
 psmisc:
 - arch: amd64
   name: psmisc
@@ -3052,17 +3052,17 @@ python2.7:
 - arch: amd64
   name: python2.7
   source: apt
-  version: 2.7.15-4ubuntu4~18.04
+  version: 2.7.15-4ubuntu4~18.04.1
 python2.7-dev:
 - arch: amd64
   name: python2.7-dev
   source: apt
-  version: 2.7.15-4ubuntu4~18.04
+  version: 2.7.15-4ubuntu4~18.04.1
 python2.7-minimal:
 - arch: amd64
   name: python2.7-minimal
   source: apt
-  version: 2.7.15-4ubuntu4~18.04
+  version: 2.7.15-4ubuntu4~18.04.1
 python3:
 - arch: amd64
   name: python3
@@ -3367,7 +3367,7 @@ python3-software-properties:
 - arch: all
   name: python3-software-properties
   source: apt
-  version: 0.96.24.32.9
+  version: 0.96.24.32.11
 python3-systemd:
 - arch: amd64
   name: python3-systemd
@@ -3417,17 +3417,17 @@ python3.6:
 - arch: amd64
   name: python3.6
   source: apt
-  version: 3.6.8-1~18.04.1
+  version: 3.6.8-1~18.04.2
 python3.6-dev:
 - arch: amd64
   name: python3.6-dev
   source: apt
-  version: 3.6.8-1~18.04.1
+  version: 3.6.8-1~18.04.2
 python3.6-minimal:
 - arch: amd64
   name: python3.6-minimal
   source: apt
-  version: 3.6.8-1~18.04.1
+  version: 3.6.8-1~18.04.2
 rake:
 - arch: all
   name: rake
@@ -3482,7 +3482,7 @@ ruby2.5:
 - arch: amd64
   name: ruby2.5
   source: apt
-  version: 2.5.1-1ubuntu1.4
+  version: 2.5.1-1ubuntu1.5
 rubygems-integration:
 - arch: all
   name: rubygems-integration
@@ -3527,17 +3527,22 @@ snapd:
 - arch: amd64
   name: snapd
   source: apt
-  version: 2.39.2+18.04
+  version: 2.40+18.04
 software-properties-common:
 - arch: all
   name: software-properties-common
   source: apt
-  version: 0.96.24.32.9
+  version: 0.96.24.32.11
 sosreport:
 - arch: amd64
   name: sosreport
   source: apt
-  version: 3.6-1ubuntu0.18.04.2
+  version: 3.6-1ubuntu0.18.04.3
+sqlite:
+- arch: amd64
+  name: sqlite
+  source: apt
+  version: 2.8.17-14fakesync1
 sqlite3:
 - arch: amd64
   name: sqlite3
@@ -3567,12 +3572,12 @@ systemd:
 - arch: amd64
   name: systemd
   source: apt
-  version: 237-3ubuntu10.24
+  version: 237-3ubuntu10.29
 systemd-sysv:
 - arch: amd64
   name: systemd-sysv
   source: apt
-  version: 237-3ubuntu10.24
+  version: 237-3ubuntu10.29
 sysvinit-utils:
 - arch: amd64
   name: sysvinit-utils
@@ -3617,7 +3622,7 @@ tzdata:
 - arch: all
   name: tzdata
   source: apt
-  version: 2019b-0ubuntu0.18.04
+  version: 2019c-0ubuntu0.18.04
 ubuntu-advantage-tools:
 - arch: all
   name: ubuntu-advantage-tools
@@ -3637,7 +3642,7 @@ ubuntu-minimal:
 - arch: amd64
   name: ubuntu-minimal
   source: apt
-  version: 1.417.2
+  version: 1.417.3
 ubuntu-release-upgrader-core:
 - arch: all
   name: ubuntu-release-upgrader-core
@@ -3647,17 +3652,17 @@ ubuntu-server:
 - arch: amd64
   name: ubuntu-server
   source: apt
-  version: 1.417.2
+  version: 1.417.3
 ubuntu-standard:
 - arch: amd64
   name: ubuntu-standard
   source: apt
-  version: 1.417.2
+  version: 1.417.3
 ubuntu-wsl:
 - arch: amd64
   name: ubuntu-wsl
   source: apt
-  version: 1.417.2
+  version: 1.417.3
 ucf:
 - arch: all
   name: ucf
@@ -3667,7 +3672,7 @@ udev:
 - arch: amd64
   name: udev
   source: apt
-  version: 237-3ubuntu10.24
+  version: 237-3ubuntu10.29
 ufw:
 - arch: all
   name: ufw
@@ -3712,12 +3717,12 @@ util-linux:
 - arch: amd64
   name: util-linux
   source: apt
-  version: 2.31.1-0.4ubuntu3.3
+  version: 2.31.1-0.4ubuntu3.4
 uuid-runtime:
 - arch: amd64
   name: uuid-runtime
   source: apt
-  version: 2.31.1-0.4ubuntu3.3
+  version: 2.31.1-0.4ubuntu3.4
 vim:
 - arch: amd64
   name: vim
@@ -3787,7 +3792,7 @@ xkb-data:
 - arch: all
   name: xkb-data
   source: apt
-  version: 2.23.1-1ubuntu1
+  version: 2.23.1-1ubuntu1.18.04.1
 xsel:
 - arch: amd64
   name: xsel
