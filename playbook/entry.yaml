@@ -52,6 +52,8 @@
 
 - hosts: all
   user: medalhkr
+  vars_files:
+    - variables
   tasks:
     - include: dotfiles.yaml
     - include: diff-highlight.yaml

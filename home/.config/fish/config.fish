@@ -24,7 +24,8 @@ set -x PATH /opt/bin/shell_commands $PATH
 set -x PATH /opt/var/go/bin $PATH
 
 set -x EDITOR nano
-set -x GOPATH /opt/var/go:/opt/var/ghq
+set -x GOPATH ~/.cache/go
+set -x GOBIN /opt/bin
 set -x GO111MODULE on
 set -x ANSIBLE_RETRY_FILES_ENABLED false
 set -x LESSHISTFILE - # disable .lesshst
