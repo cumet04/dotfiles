@@ -16,12 +16,6 @@ set smartindent
 set textwidth=80
 set nowrap
 
-" spell check
-set spell
-set spelllang=en,cjk
-hi clear SpellBad
-hi SpellBad cterm=underline
-
 set cursorline
 highlight clear CursorLine
 
