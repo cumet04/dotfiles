@@ -1,7 +1,0 @@
-set vertical-split = yes
-set diff-highlight = true
-
-bind generic G none
-bind generic g move-first-line
-bind generic G move-last-line
-bind status C <git commit

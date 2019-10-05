@@ -28,7 +28,6 @@
   loop:
     - .config
     - .gitconfig
-    - .tigrc
 - name: symlink shell_commands
   file:
     src: "{{ ansible_env.HOME }}/.dotfiles/shell_commands"

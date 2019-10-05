@@ -20,3 +20,12 @@
 	insteadOf = https://bitbucket.org/
 [ghq]
     root = /opt/var/ghq/src
+[tig]
+  vertical-split = yes
+  diff-highlight = true
+  history-size = 0
+[tig "bind"]
+   generic = G none
+   generic = g move-first-line
+   generic = G move-last-line
+   status = C <git commit

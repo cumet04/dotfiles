@@ -183,6 +183,11 @@ cloud-initramfs-dyn-netconf:
   name: cloud-initramfs-dyn-netconf
   source: apt
   version: 0.40ubuntu1.1
+colordiff:
+- arch: all
+  name: colordiff
+  source: apt
+  version: 1.0.18-1
 command-not-found:
 - arch: all
   name: command-not-found
@@ -332,7 +337,7 @@ docker.io:
 - arch: amd64
   name: docker.io
   source: apt
-  version: 18.09.7-0ubuntu1~18.04.3
+  version: 18.09.7-0ubuntu1~18.04.4
 dosfstools:
 - arch: amd64
   name: dosfstools
@@ -553,16 +558,26 @@ golang-1.12-src:
   name: golang-1.12-src
   source: apt
   version: 1.12.7-1longsleep2+xenial
+golang-1.13-go:
+- arch: amd64
+  name: golang-1.13-go
+  source: apt
+  version: 1.13.1-1longsleep1+xenial
+golang-1.13-src:
+- arch: amd64
+  name: golang-1.13-src
+  source: apt
+  version: 1.13.1-1longsleep1+xenial
 golang-go:
 - arch: amd64
   name: golang-go
   source: apt
-  version: 2:1.12~1longsleep1+xenial
+  version: 2:1.13~1longsleep1+xenial
 golang-src:
 - arch: amd64
   name: golang-src
   source: apt
-  version: 2:1.12~1longsleep1+xenial
+  version: 2:1.13~1longsleep1+xenial
 gpg:
 - arch: amd64
   name: gpg
@@ -2622,7 +2637,7 @@ nodejs:
 - arch: amd64
   name: nodejs
   source: apt
-  version: 10.16.1-1nodesource1
+  version: 10.16.3-1nodesource1
 nplan:
 - arch: all
   name: nplan
@@ -3502,7 +3517,7 @@ session-manager-plugin:
 - arch: amd64
   name: session-manager-plugin
   source: apt
-  version: 1.1.26.0-1
+  version: 1.1.33.0-1
 shared-mime-info:
 - arch: amd64
   name: shared-mime-info
