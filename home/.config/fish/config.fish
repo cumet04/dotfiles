@@ -31,6 +31,8 @@ set -x ANSIBLE_RETRY_FILES_ENABLED false
 set -x LESSHISTFILE - # disable .lesshst
 set -x npm_config_cache ~/.cache/npm
 
+source ~/.config/fish/secret_env
+
 # direnv hook fish
 function __direnv_export_eval --on-event fish_prompt;
 	eval (direnv export fish);
