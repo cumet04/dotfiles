@@ -7,15 +7,17 @@ syntax enable
 let g:clipboard = {'copy': {'+': 'pbcopy', '*': 'pbcopy'}, 'paste': {'+': 'pbpaste', '*': 'pbpaste'}, 'name': 'pbcopy', 'cache_enabled': 0} " hack for mac; refs https://github.com/neovim/neovim/issues/8631
 let g:ruby_path = "/opt/anyenv/envs/rbenv/shims/ruby"
 "let g:ruby_default_path = "/opt/anyenv/envs/rbenv/shims/ruby"
+let g:python_host_prog = expand('/opt/anyenv/envs/pyenv/shims/python2')
+let g:python3_host_prog = expand('/opt/anyenv/envs/pyenv/shims/python3')
 
 set clipboard=unnamedplus
 set backspace=indent,eol,start
 set expandtab
 set nobackup
 set noswapfile
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 set autoindent
 set smartindent
 set textwidth=80

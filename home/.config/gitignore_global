@@ -3,7 +3,6 @@
 .vscode/
 .envrc
 __pycache__/
-node_modules/
 *wiki.git/
 venv/
 *.iml
@@ -13,3 +12,4 @@ venv/
 better_errors_for_vscode.rb
 *.local
 yarn-error.log
+.vagrant
