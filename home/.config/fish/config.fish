@@ -38,4 +38,4 @@ function __direnv_export_eval --on-event fish_prompt;
 	eval (direnv export fish);
 end
 
-test -z "$TMUX"; and tmux
+test -z "$TMUX"; and test -z "$VSCODE_IPC_HOOK_CLI"; and tmux
