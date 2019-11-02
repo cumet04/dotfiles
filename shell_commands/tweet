@@ -1,0 +1,7 @@
+#!/bin/bash
+
+out=$(mktemp)
+$EDITOR $out
+test -s $out && twty -ff $out
+rm $out
+
