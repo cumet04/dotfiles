@@ -6,7 +6,7 @@
             "acrylicOpacity": 0.5,
             "closeOnExit": true,
             "colorScheme": "Argonaut",
-            "commandline": "ubuntu",
+            "commandline": "ssh -R 2489:localhost:2489 192.168.100.10",
             "cursorColor": "#FFFFFF",
             "cursorShape": "bar",
             "fontFace": "Cica",
