@@ -1,10 +1,5 @@
 set fish_greeting
 
-### [wsl hack]
-umask 022
-# clean windows PATHs
-set -x PATH /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
-
 alias history "history --show-time='%Y-%m-%d %T '"
 alias ls='ls --color=auto'
 alias ll='ls -alh'
@@ -26,7 +21,6 @@ set -x PATH /opt/var/go/bin $PATH
 set -x EDITOR nano
 set -x GOPATH ~/.cache/go
 set -x GOBIN /opt/bin
-set -x GO111MODULE on
 set -x ANSIBLE_RETRY_FILES_ENABLED false
 set -x LESSHISTFILE - # disable .lesshst
 set -x npm_config_cache ~/.cache/npm

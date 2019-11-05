@@ -31,8 +31,3 @@
   shell: |
     cd {{ dotfiles_root}}
     git update-index --skip-worktree home/.gitconfig
-- name: symlink Documets (sync-workdir)
-  file:
-    src: /mnt/c/Users/medalhkr/Documents
-    dest: "{{ ansible_env.HOME }}/Documents"
-    state: link
