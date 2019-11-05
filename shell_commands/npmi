@@ -1,0 +1,14 @@
+#!/bin/bash
+
+basedir=$HOME/.cache/node_modules$PWD
+
+mkdir -p $basedir/node_modules
+ln -sfn $PWD/package.json $basedir/
+test -f $PWD/package-lock.json && ln -sfn $PWD/package-lock.json $basedir/
+
+if [[ $1 == "ci" ]]; then
+  npm ci --prefix $basedir
+else
+  npm install --prefix $basedir $@
+fi
+ln -sfn $basedir/node_modules
