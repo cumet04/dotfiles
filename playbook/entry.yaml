@@ -16,6 +16,7 @@
         - ppa:fish-shell/release-3
         - ppa:neovim-ppa/stable
         - ppa:longsleep/golang-backports
+        - ppa:alessandro-strada/ppa
     - name: apt add nodejs repository
       shell: |
         curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
@@ -36,6 +37,7 @@
         - fish
         - git
         - golang-go
+        - google-drive-ocamlfuse
         - imagemagick
         - jq
         - neovim
