@@ -14,6 +14,7 @@ alias cdg="cd (git rev-parse --show-toplevel)"
 alias ssh='colored_ssh'
 alias tmux='tmux -f ~/.config/tmux.conf'
 
+set -x PATH ~/.local/bin $PATH
 set -x PATH /opt/bin $PATH
 set -x PATH /opt/bin/shell_commands $PATH
 set -x PATH /opt/var/go/bin $PATH
