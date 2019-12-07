@@ -12,6 +12,7 @@
     repo: ssh://git@github.com/cumet04/dotfiles.git
     dest: "{{ dotfiles_root }}"
     version: "{{ ansible_env.BRANCH | default('master') }}"
+    depth: 1
     update: no
     accept_hostkey: yes
 - name: install dotfiles symlinks
