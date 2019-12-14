@@ -1,6 +1,0 @@
-# use 'fish -c' to execute go get with go-env variables in config.fish
-- name: install go commands
-  shell: |
-    fish -c 'cd /tmp; go install -v github.com/motemen/ghq'
-    fish -c 'cd /tmp; go install -v github.com/monochromegane/the_platinum_searcher/cmd/pt'
-    fish -c 'cd /tmp; go install -v github.com/lemonade-command/lemonade'

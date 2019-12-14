@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: localhost
   user: medalhkr
   become: true
   tasks:
@@ -46,18 +46,20 @@
         - tig
         - tmux
         - tree
+    - name: chsh fish
+      user:
+        name: medalhkr
+        shell: /usr/bin/fish
 
-- hosts: all
+- hosts: localhost
   user: medalhkr
   vars_files:
     - variables
   tasks:
     - include: dotfiles.yaml
-    - include: diff-highlight.yaml
-    - include: go-commands.yaml
-    - include: python-commands.yaml
+    - include: commands.yaml
 
-- hosts: all
+- hosts: localhost
   user: medalhkr
   tasks:
     - name: Gather the apt package facts
