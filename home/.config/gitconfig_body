@@ -1,6 +1,8 @@
 [core]
 	excludesfile = ~/.config/gitignore_global
 	editor = "nano"
+[branch]
+	autosetupmerge = false
 [pager]
 	log = diff-highlight | less -x4
 	show = diff-highlight | less -x4
