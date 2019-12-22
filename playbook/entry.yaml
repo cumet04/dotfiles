@@ -18,8 +18,8 @@
     - name: apt add nodejs repository
       shell: |
         curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
-        echo 'deb https://deb.nodesource.com/node_10.x bionic main' > /etc/apt/sources.list.d/nodesource.list
-        echo 'deb-src https://deb.nodesource.com/node_10.x bionic main' >> /etc/apt/sources.list.d/nodesource.list
+        echo 'deb https://deb.nodesource.com/node_12.x bionic main' > /etc/apt/sources.list.d/nodesource.list
+        echo 'deb-src https://deb.nodesource.com/node_12.x bionic main' >> /etc/apt/sources.list.d/nodesource.list
     - name: apt-get update
       apt:
         update_cache: true

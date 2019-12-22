@@ -1280,7 +1280,7 @@ networkd-dispatcher:
 - {arch: all, category: utils, name: networkd-dispatcher, origin: Ubuntu, source: apt,
   version: 2.0.1-1}
 nodejs:
-- {arch: amd64, category: web, name: nodejs, origin: Node Source, source: apt, version: 10.17.0-1nodesource1}
+- {arch: amd64, category: web, name: nodejs, origin: Node Source, source: apt, version: 12.14.0-1nodesource1}
 ntfs-3g:
 - {arch: amd64, category: otherosfs, name: ntfs-3g, origin: Ubuntu, source: apt, version: '1:2017.3.23AR.3-3ubuntu1'}
 open-iscsi:
