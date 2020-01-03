@@ -1,0 +1,2 @@
+ghq_root: "{{ ansible_env.HOME }}/repos"
+dotfiles_root: "{{ ghq_root }}/github.com/cumet04/dotfiles"

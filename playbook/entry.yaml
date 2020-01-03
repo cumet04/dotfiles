@@ -1,109 +1,69 @@
-- hosts: all
+- hosts: localhost
+  user: medalhkr
+  become: true
+  tasks:
+    - name: use japan apt mirror
+      replace:
+        path: /etc/apt/sources.list
+        regexp: 'http://archive.ubuntu.com/ubuntu'
+        replace: 'http://linux.yz.yamagata-u.ac.jp/ubuntu/'
+        backup: yes
+    - name: apt add repositories
+      apt_repository:
+        repo: "{{ item }}"
+        state: present
+      loop:
+        - ppa:fish-shell/release-3
+        - ppa:longsleep/golang-backports
+    - name: apt add nodejs repository
+      shell: |
+        curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
+        echo 'deb https://deb.nodesource.com/node_12.x bionic main' > /etc/apt/sources.list.d/nodesource.list
+        echo 'deb-src https://deb.nodesource.com/node_12.x bionic main' >> /etc/apt/sources.list.d/nodesource.list
+    - name: apt-get update
+      apt:
+        update_cache: true
+    - name: install packages
+      apt:
+        name: "{{ item }}"
+        state: latest
+      loop:
+        - colordiff
+        - direnv
+        - docker.io
+        - fish
+        - git
+        - golang-go
+        - imagemagick
+        - jq
+        - neovim
+        - nodejs
+        - peco
+        - python3
+        - python3-pip
+        - ruby
+        - sqlite
+        - tig
+        - tmux
+        - tree
+    - name: chsh fish
+      user:
+        name: medalhkr
+        shell: /usr/bin/fish
+
+- hosts: localhost
+  user: medalhkr
+  vars_files:
+    - variables
+  tasks:
+    - include: dotfiles.yaml
+    - include: commands.yaml
+
+- hosts: localhost
   user: medalhkr
   tasks:
-    - name: homebrew taps
-      homebrew_tap:
-        name: "{{ item }}"
-        state: present
-      with_items:
-        - crisidev/homebrew-chunkwm
-    - name: install packages
-      homebrew:
-        name: "{{ item.name }}"
-        state: "{{ item.state | default('present') }}"
-        install_options: "{{ item.install_options | default('latest') }}"
-      with_items:
-        - { name: ansible }
-        - { name: colordiff }
-        - { name: coreutils }
-        - { name: direnv }
-        - { name: fish }
-        - { name: fzf }
-        - { name: ghq }
-        - { name: git }
-        - { name: golang }
-        - { name: gopass }
-        - { name: imagemagick }
-        - { name: jq }
-        - { name: lftp }
-        - { name: mysql }
-        - { name: nano }
-        - { name: neovim }
-        - { name: nmap }
-        - { name: peco }
-        - { name: ruby }
-        - { name: sqlite }
-        - { name: subversion }
-        - { name: the_platinum_searcher }
-        - { name: tig }
-        - { name: tmux }
-        - { name: tree }
-        - { name: tree }
-        - { name: unrar }
-        - { name: watch }
-        - { name: yarn, install_options: without-node }
-    - name: install cask packages
-      homebrew_cask:
-        name: "{{ item.name }}"
-        state: "{{ item.state | default('present') }}"
-      environment:
-        HOMEBREW_CASK_OPTS: "--appdir=/Applications"
-      with_items:
-        - { name: docker }
-        - { name: virtualbox }
-        - { name: visual-studio-code }
-        - { name: clipy }
-        - { name: iterm2 }
-        - { name: google-backup-and-sync }
-        - { name: google-chrome }
-        - { name: google-cloud-sdk }
-        - { name: google-japanese-ime }
-        - { name: karabiner-elements }
-        - { name: chunkwm }
-        # google-drive
-    - name: install yarn globals
-      yarn:
-        name: "{{ item.name }}"
-        global: "{{ item.global | default('yes') }}"
-      with_items:
-        - { name: "@vue/cli" }
-
-    # TODO: install vscode extensions
-
-    - name: disable DS_Store
-      osx_defaults:
-        domain: com.apple.desktopservices
-        key: DSDontWriteNetworkStores
-        type: bool
-        value: true
-        state: present
-
-    - osx_defaults:
-        domain: com.microsoft.VSCode
-        key: ApplePressAndHoldEnabled
-        type: bool
-        value: false
-        state: present
-
-    - include: tasks/dotfiles.yaml
-    - include: tasks/anyenv.yaml
-
-    #- name: get latest Cica release
-    #  uri:
-    #    url: https://api.github.com/repos/miiton/Cica/releases/latest
-    #    return_content: true
-    #  register: cica_json_response
-    #- name: get latest Cica
-    #  unarchive:
-    #    # TODO: not work on mac
-    #    src: "{{ cica_json_response.json.assets[0].browser_download_url }}"
-    #    dest: ~/Downloads
-    #    remote_src: yes
-
-    #- name: put diff-highlight
-    #  become: true
-    #  file:
-    #    # TODO: for mac
-    #    src: /usr/share/git-core/contrib/diff-highlight
-    #    dest: /usr/local/bin/diff-highlight
-    #    state: link
+    - name: Gather the apt package facts
+      package_facts:
+        manager: auto
+    - name: Print the package facts to a file
+      local_action: copy content={{ ansible_facts.packages | to_yaml }} dest=packages

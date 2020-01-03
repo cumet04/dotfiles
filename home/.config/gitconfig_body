@@ -1,11 +1,3 @@
-### for $HOME/.gitconfig
-# [user]
-#     name = {name}
-#     email = {email}
-# [include]
-#     path = ~/.config/gitconfig_body
-###
-
 [core]
 	excludesfile = ~/.config/gitignore_global
 	editor = "nano"
@@ -19,6 +11,7 @@
     d = diff
     s = status
     co = checkout
+    pfetch = fetch origin --prune
     difw = diff --word-diff
     difc = diff --cached
     difwc = diff --word-diff --cached
@@ -26,5 +19,13 @@
 [url "git@bitbucket.org:"]
 	insteadOf = https://bitbucket.org/
 [ghq]
-    root = /opt/var/ghq/src
-    root = /opt/var/go/src
+    root = ~/repos
+[tig]
+  vertical-split = yes
+  diff-highlight = true
+  history-size = 0
+[tig "bind"]
+   generic = G none
+   generic = g move-first-line
+   generic = G move-last-line
+   status = C <git commit

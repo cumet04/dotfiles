@@ -1,0 +1,50 @@
+- name: install github-release commands
+  shell: |
+    mkdir /tmp/ansible_install_github_release_tmp; cd $_
+    if [ ! -f /opt/bin/{{ item.name }} ]; then
+      curl https://api.github.com/repos/{{ item.repo }}/releases/latest | \
+        jq -r '.assets[] | select(.name | test("linux_amd64")).browser_download_url' | \
+        xargs curl -OL
+      tar xzvf *.tar.gz || true
+      unzip *.zip || true
+      rm *.tar.gz *.zip || true
+      mv {{ item.path }} /opt/bin/
+    fi
+  loop:
+    - { name: 'ghq', repo: 'motemen/ghq', path: 'ghq_linux_amd64/ghq' }
+    - { name: 'pt', repo: 'monochromegane/the_platinum_searcher', path: 'pt_linux_amd64/pt' }
+    - { name: 'lemonade', repo: 'lemonade-command/lemonade', path: 'lemonade' }
+
+
+### python-tools
+# python依存CLI群は標準パッケージだと何かとpython2/3やpipなどの兼ね合いでバグりがちなため
+# python3のpipからインストールに統一しておく
+- name: install python commands
+  become: true
+  pip:
+    name: "{{ item }}"
+    state: latest
+    executable: pip3
+  loop:
+    - ansible
+    - awscli
+    - docker-compose
+- name: install awscli session manager plugin
+  become: true
+  apt:
+    deb: https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb
+
+
+### diff-highlight
+- name: check diff-highlight
+  stat:
+    path: /opt/bin/diff-highlight
+  register: diff_highlight
+- name: make diff-highlight
+  become: true
+  shell: |
+    cd /usr/share/doc/git/contrib/diff-highlight/
+    make
+    chmod +x diff-highlight
+    ln -s /usr/share/doc/git/contrib/diff-highlight/diff-highlight /opt/bin/
+  when: not diff_highlight.stat.exists

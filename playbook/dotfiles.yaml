@@ -1,0 +1,34 @@
+- name: setup direcrories
+  become: true
+  file:
+    path: '{{ item }}'
+    state: directory
+    owner: "{{ ansible_user }}"
+  loop:
+    - "{{ ghq_root }}"
+    - /opt/bin
+- name: git clone dotfiles
+  git:
+    repo: ssh://git@github.com/cumet04/dotfiles.git
+    dest: "{{ dotfiles_root }}"
+    version: "{{ ansible_env.BRANCH | default('master') }}"
+    depth: 1
+    update: no
+    accept_hostkey: yes
+- name: install dotfiles symlinks
+  file:
+    src: "{{ dotfiles_root }}/home/{{ item }}"
+    dest: "{{ ansible_env.HOME }}/{{ item }}"
+    state: link
+  loop:
+    - .config
+    - .gitconfig
+- name: symlink shell_commands
+  file:
+    src: "{{ dotfiles_root }}/shell_commands"
+    dest: /opt/bin/shell_commands
+    state: link
+- name: ignore gitconfig change
+  shell: |
+    cd {{ dotfiles_root}}
+    git update-index --skip-worktree home/.gitconfig

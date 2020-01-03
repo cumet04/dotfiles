@@ -14,7 +14,24 @@ alias cdg="cd (git rev-parse --show-toplevel)"
 alias ssh='colored_ssh'
 alias tmux='tmux -f ~/.config/tmux.conf'
 
-set -x GOPATH /opt/var/go:/opt/var/ghq
-set -x EDITOR nano
+set -x PATH ~/.local/bin $PATH
+set -x PATH /opt/bin $PATH
+set -x PATH /opt/bin/shell_commands $PATH
+set -x PATH /opt/var/go/bin $PATH
 
-test -z "$TMUX"; and tmux
+set -x EDITOR nano
+set -x GOPATH ~/.cache/go
+set -x GOBIN /opt/bin
+set -x GO111MODULE on
+set -x ANSIBLE_RETRY_FILES_ENABLED false
+set -x LESSHISTFILE - # disable .lesshst
+set -x npm_config_cache ~/.cache/npm
+
+test -f ~/.config/fish/secret_env && source ~/.config/fish/secret_env
+
+# direnv hook fish
+function __direnv_export_eval --on-event fish_prompt;
+	eval (direnv export fish);
+end
+
+test -z "$TMUX"; and test -z "$VSCODE_IPC_HOOK_CLI"; and tmux

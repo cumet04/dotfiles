@@ -1,0 +1,59 @@
+{
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+    "profiles": [
+        {
+            "acrylicOpacity": 0.5,
+            "closeOnExit": true,
+            "colorScheme": "Argonaut",
+            "commandline": "ssh -R 2489:localhost:2489 192.168.100.10",
+            "cursorColor": "#FFFFFF",
+            "cursorShape": "bar",
+            "fontFace": "Cica",
+            "fontSize": 14,
+            "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+            "historySize": 9001,
+            "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
+            "name": "Ubuntu",
+            "padding": "4, 0, -11, -3",
+            "snapOnInput": true,
+            "useAcrylic": false
+        },
+        {
+            "guid": "{c6eaf9f4-32a7-5fdc-b5cf-066e8a4b1e40}",
+            "hidden": false,
+            "name": "Ubuntu-18.04",
+            "source": "Windows.Terminal.Wsl"
+        },
+        {
+            "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+            "hidden": false,
+            "name": "Azure Cloud Shell",
+            "source": "Windows.Terminal.Azure"
+        }
+    ],
+    "schemes": [
+        {
+            "background": "#0E1019",
+            "black": "#232323",
+            "blue": "#008DF8",
+            "brightBlack": "#444444",
+            "brightBlue": "#0092FF",
+            "brightCyan": "#67FFF0",
+            "brightGreen": "#ABE15B",
+            "brightPurple": "#9A5FEB",
+            "brightRed": "#FF2740",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#FFD242",
+            "cyan": "#00D8EB",
+            "foreground": "#FFFAF4",
+            "green": "#8CE10B",
+            "name": "Argonaut",
+            "purple": "#6D43A6",
+            "red": "#FF000F",
+            "white": "#FFFFFF",
+            "yellow": "#FFB900"
+        }
+    ],
+    "keybindings": []
+}

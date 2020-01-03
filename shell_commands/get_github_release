@@ -1,7 +1,0 @@
-#!/bin/bash
-
-set -e
-
-raw_json=$(curl https://api.github.com/repos/$1/releases/latest 2> /dev/null)
-name=$(echo $raw_json | jq -r '.assets[].name' | fzf -1 -q "$2")
-echo $raw_json | jq -r ".assets[] | select(.name | test(\"${name}\")) | .browser_download_url" | xargs curl -L -o $name

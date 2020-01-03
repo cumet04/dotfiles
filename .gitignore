@@ -1,9 +1,7 @@
-home/.config/memo/_*
-home/.config/fish/fishd.*
-home/.config/fish/conf.d/load_anyenv.fish
+home/.config/fish/fish_variables
+home/.config/fish/secret_env
 home/.config/nvim/.netrwhist
-home/.config/nvim/preview
 home/.config/direnv/allow
-home/.config/gcloud
-playbook/entry.retry
+home/.config/configstore
+home/.config/twty
 .vagrant
