@@ -36,13 +36,13 @@ bcache-tools:
 bind9-host:
 - {arch: amd64, category: net, name: bind9-host, origin: Ubuntu, source: apt, version: '1:9.11.5.P4+dfsg-5.1ubuntu2.1'}
 binutils:
-- {arch: amd64, category: devel, name: binutils, origin: Ubuntu, source: apt, version: 2.33-2ubuntu1}
+- {arch: amd64, category: devel, name: binutils, origin: Ubuntu, source: apt, version: 2.33-2ubuntu1.2}
 binutils-common:
 - {arch: amd64, category: devel, name: binutils-common, origin: Ubuntu, source: apt,
-  version: 2.33-2ubuntu1}
+  version: 2.33-2ubuntu1.2}
 binutils-x86-64-linux-gnu:
 - {arch: amd64, category: devel, name: binutils-x86-64-linux-gnu, origin: Ubuntu,
-  source: apt, version: 2.33-2ubuntu1}
+  source: apt, version: 2.33-2ubuntu1.2}
 bolt:
 - {arch: amd64, category: admin, name: bolt, origin: Ubuntu, source: apt, version: 0.8-4}
 bridge-utils:
@@ -178,7 +178,7 @@ dpkg:
 dpkg-dev:
 - {arch: all, category: utils, name: dpkg-dev, origin: Ubuntu, source: apt, version: 1.19.7ubuntu2}
 e2fsprogs:
-- {arch: amd64, category: admin, name: e2fsprogs, origin: Ubuntu, source: apt, version: 1.45.3-4ubuntu2}
+- {arch: amd64, category: admin, name: e2fsprogs, origin: Ubuntu, source: apt, version: 1.45.3-4ubuntu2.1}
 eatmydata:
 - {arch: all, category: utils, name: eatmydata, origin: Ubuntu, source: apt, version: 105-7}
 ed:
@@ -200,11 +200,11 @@ finalrd:
 findutils:
 - {arch: amd64, category: utils, name: findutils, origin: Ubuntu, source: apt, version: 4.6.0+git+20190209-2ubuntu1}
 fish:
-- {arch: amd64, category: universe/shells, name: fish, origin: Ubuntu, source: apt,
-  version: 3.0.2-2}
+- {arch: amd64, category: shells, name: fish, origin: LP-PPA-fish-shell-release-3,
+  source: apt, version: 3.1.0-1~eoan}
 fish-common:
-- {arch: all, category: universe/shells, name: fish-common, origin: Ubuntu, source: apt,
-  version: 3.0.2-2}
+- {arch: all, category: shells, name: fish-common, origin: LP-PPA-fish-shell-release-3,
+  source: apt, version: 3.1.0-1~eoan}
 fontconfig:
 - {arch: amd64, category: utils, name: fontconfig, origin: Ubuntu, source: apt, version: 2.13.1-2ubuntu2}
 fontconfig-config:
@@ -486,7 +486,7 @@ libavahi-common3:
 libbind9-161:
 - {arch: amd64, category: libs, name: libbind9-161, origin: Ubuntu, source: apt, version: '1:9.11.5.P4+dfsg-5.1ubuntu2.1'}
 libbinutils:
-- {arch: amd64, category: devel, name: libbinutils, origin: Ubuntu, source: apt, version: 2.33-2ubuntu1}
+- {arch: amd64, category: devel, name: libbinutils, origin: Ubuntu, source: apt, version: 2.33-2ubuntu1.2}
 libblkid1:
 - {arch: amd64, category: libs, name: libblkid1, origin: Ubuntu, source: apt, version: 2.34-0.1ubuntu2}
 libbrotli1:
@@ -516,7 +516,7 @@ libcap2-bin:
 libcc1-0:
 - {arch: amd64, category: libs, name: libcc1-0, origin: Ubuntu, source: apt, version: 9.2.1-9ubuntu2}
 libcom-err2:
-- {arch: amd64, category: libs, name: libcom-err2, origin: Ubuntu, source: apt, version: 1.45.3-4ubuntu2}
+- {arch: amd64, category: libs, name: libcom-err2, origin: Ubuntu, source: apt, version: 1.45.3-4ubuntu2.1}
 libcryptsetup12:
 - {arch: amd64, category: libs, name: libcryptsetup12, origin: Ubuntu, source: apt,
   version: '2:2.2.0-3ubuntu1'}
@@ -596,7 +596,7 @@ libexpat1-dev:
 - {arch: amd64, category: libdevel, name: libexpat1-dev, origin: Ubuntu, source: apt,
   version: 2.2.7-2}
 libext2fs2:
-- {arch: amd64, category: libs, name: libext2fs2, origin: Ubuntu, source: apt, version: 1.45.3-4ubuntu2}
+- {arch: amd64, category: libs, name: libext2fs2, origin: Ubuntu, source: apt, version: 1.45.3-4ubuntu2.1}
 libfakeroot:
 - {arch: amd64, category: utils, name: libfakeroot, origin: Ubuntu, source: apt, version: 1.24-1}
 libfastjson4:
@@ -633,7 +633,7 @@ libgcc-9-dev:
 libgcc1:
 - {arch: amd64, category: libs, name: libgcc1, origin: Ubuntu, source: apt, version: '1:9.2.1-9ubuntu2'}
 libgcrypt20:
-- {arch: amd64, category: libs, name: libgcrypt20, origin: Ubuntu, source: apt, version: 1.8.4-5ubuntu2}
+- {arch: amd64, category: libs, name: libgcrypt20, origin: Ubuntu, source: apt, version: 1.8.4-5ubuntu2.1}
 libgdbm-compat4:
 - {arch: amd64, category: libs, name: libgdbm-compat4, origin: Ubuntu, source: apt,
   version: 1.18.1-5}
@@ -875,7 +875,7 @@ libnpth0:
 - {arch: amd64, category: libs, name: libnpth0, origin: Ubuntu, source: apt, version: 1.6-1}
 libnss-systemd:
 - {arch: amd64, category: admin, name: libnss-systemd, origin: Ubuntu, source: apt,
-  version: 242-7ubuntu3}
+  version: 242-7ubuntu3.6}
 libntfs-3g883:
 - {arch: amd64, category: libs, name: libntfs-3g883, origin: Ubuntu, source: apt,
   version: '1:2017.3.23AR.3-3ubuntu1'}
@@ -904,7 +904,7 @@ libpam-runtime:
   version: 1.3.1-5ubuntu1}
 libpam-systemd:
 - {arch: amd64, category: admin, name: libpam-systemd, origin: Ubuntu, source: apt,
-  version: 242-7ubuntu3}
+  version: 242-7ubuntu3.6}
 libpam0g:
 - {arch: amd64, category: libs, name: libpam0g, origin: Ubuntu, source: apt, version: 1.3.1-5ubuntu1}
 libpango-1.0-0:
@@ -1002,13 +1002,13 @@ librtmp1:
 libruby2.5:
 - {arch: amd64, category: libs, name: libruby2.5, origin: Ubuntu, source: apt, version: 2.5.5-4ubuntu2.1}
 libsasl2-2:
-- {arch: amd64, category: libs, name: libsasl2-2, origin: Ubuntu, source: apt, version: 2.1.27+dfsg-1build3}
+- {arch: amd64, category: libs, name: libsasl2-2, origin: Ubuntu, source: apt, version: 2.1.27+dfsg-1ubuntu0.1}
 libsasl2-modules:
 - {arch: amd64, category: devel, name: libsasl2-modules, origin: Ubuntu, source: apt,
-  version: 2.1.27+dfsg-1build3}
+  version: 2.1.27+dfsg-1ubuntu0.1}
 libsasl2-modules-db:
 - {arch: amd64, category: libs, name: libsasl2-modules-db, origin: Ubuntu, source: apt,
-  version: 2.1.27+dfsg-1build3}
+  version: 2.1.27+dfsg-1ubuntu0.1}
 libseccomp2:
 - {arch: amd64, category: libs, name: libseccomp2, origin: Ubuntu, source: apt, version: 2.4.1-0ubuntu0.19.10.3}
 libselinux1:
@@ -1042,7 +1042,7 @@ libsqlite0:
 libsqlite3-0:
 - {arch: amd64, category: libs, name: libsqlite3-0, origin: Ubuntu, source: apt, version: 3.29.0-2ubuntu0.1}
 libss2:
-- {arch: amd64, category: libs, name: libss2, origin: Ubuntu, source: apt, version: 1.45.3-4ubuntu2}
+- {arch: amd64, category: libs, name: libss2, origin: Ubuntu, source: apt, version: 1.45.3-4ubuntu2.1}
 libssh-4:
 - {arch: amd64, category: libs, name: libssh-4, origin: Ubuntu, source: apt, version: 0.9.0-1ubuntu1.3}
 libssl1.1:
@@ -1055,7 +1055,7 @@ libstdc++6:
 libstemmer0d:
 - {arch: amd64, category: libs, name: libstemmer0d, origin: Ubuntu, source: apt, version: 0+svn585-1build1}
 libsystemd0:
-- {arch: amd64, category: libs, name: libsystemd0, origin: Ubuntu, source: apt, version: 242-7ubuntu3}
+- {arch: amd64, category: libs, name: libsystemd0, origin: Ubuntu, source: apt, version: 242-7ubuntu3.6}
 libtasn1-6:
 - {arch: amd64, category: libs, name: libtasn1-6, origin: Ubuntu, source: apt, version: 4.14-3}
 libtermkey1:
@@ -1085,7 +1085,7 @@ libubsan1:
 libuchardet0:
 - {arch: amd64, category: libs, name: libuchardet0, origin: Ubuntu, source: apt, version: 0.0.6-3}
 libudev1:
-- {arch: amd64, category: libs, name: libudev1, origin: Ubuntu, source: apt, version: 242-7ubuntu3}
+- {arch: amd64, category: libs, name: libudev1, origin: Ubuntu, source: apt, version: 242-7ubuntu3.6}
 libunibilium4:
 - {arch: amd64, category: universe/libs, name: libunibilium4, origin: Ubuntu, source: apt,
   version: 2.0.0-4}
@@ -1136,7 +1136,7 @@ libxdmcp6:
 libxext6:
 - {arch: amd64, category: libs, name: libxext6, origin: Ubuntu, source: apt, version: '2:1.3.4-0ubuntu1'}
 libxml2:
-- {arch: amd64, category: libs, name: libxml2, origin: Ubuntu, source: apt, version: 2.9.4+dfsg1-7ubuntu3}
+- {arch: amd64, category: libs, name: libxml2, origin: Ubuntu, source: apt, version: 2.9.4+dfsg1-7ubuntu3.1}
 libxmlb1:
 - {arch: amd64, category: libs, name: libxmlb1, origin: Ubuntu, source: apt, version: 0.1.8-1}
 libxmlsec1:
@@ -1162,46 +1162,61 @@ linux-firmware:
 - {arch: all, category: misc, name: linux-firmware, origin: Ubuntu, source: apt, version: 1.183.2}
 linux-generic:
 - {arch: amd64, category: kernel, name: linux-generic, origin: Ubuntu, source: apt,
-  version: 5.3.0.24.28}
-linux-headers-5.3.0-18:
-- {arch: all, category: devel, name: linux-headers-5.3.0-18, origin: Ubuntu, source: apt,
-  version: 5.3.0-18.19}
-linux-headers-5.3.0-18-generic:
-- {arch: amd64, category: devel, name: linux-headers-5.3.0-18-generic, origin: Ubuntu,
-  source: apt, version: 5.3.0-18.19}
+  version: 5.3.0.29.33}
 linux-headers-5.3.0-24:
 - {arch: all, category: devel, name: linux-headers-5.3.0-24, origin: Ubuntu, source: apt,
   version: 5.3.0-24.26}
 linux-headers-5.3.0-24-generic:
 - {arch: amd64, category: devel, name: linux-headers-5.3.0-24-generic, origin: Ubuntu,
   source: apt, version: 5.3.0-24.26}
+linux-headers-5.3.0-26:
+- {arch: all, category: devel, name: linux-headers-5.3.0-26, origin: Ubuntu, source: apt,
+  version: 5.3.0-26.28}
+linux-headers-5.3.0-26-generic:
+- {arch: amd64, category: devel, name: linux-headers-5.3.0-26-generic, origin: Ubuntu,
+  source: apt, version: 5.3.0-26.28}
+linux-headers-5.3.0-29:
+- {arch: all, category: devel, name: linux-headers-5.3.0-29, origin: Ubuntu, source: apt,
+  version: 5.3.0-29.31}
+linux-headers-5.3.0-29-generic:
+- {arch: amd64, category: devel, name: linux-headers-5.3.0-29-generic, origin: Ubuntu,
+  source: apt, version: 5.3.0-29.31}
 linux-headers-generic:
 - {arch: amd64, category: devel, name: linux-headers-generic, origin: Ubuntu, source: apt,
-  version: 5.3.0.24.28}
-linux-image-5.3.0-18-generic:
-- {arch: amd64, category: kernel, name: linux-image-5.3.0-18-generic, origin: Ubuntu,
-  source: apt, version: 5.3.0-18.19+1}
+  version: 5.3.0.29.33}
 linux-image-5.3.0-24-generic:
 - {arch: amd64, category: kernel, name: linux-image-5.3.0-24-generic, origin: Ubuntu,
   source: apt, version: 5.3.0-24.26}
+linux-image-5.3.0-26-generic:
+- {arch: amd64, category: kernel, name: linux-image-5.3.0-26-generic, origin: Ubuntu,
+  source: apt, version: 5.3.0-26.28}
+linux-image-5.3.0-29-generic:
+- {arch: amd64, category: kernel, name: linux-image-5.3.0-29-generic, origin: Ubuntu,
+  source: apt, version: 5.3.0-29.31}
 linux-image-generic:
 - {arch: amd64, category: kernel, name: linux-image-generic, origin: Ubuntu, source: apt,
-  version: 5.3.0.24.28}
+  version: 5.3.0.29.33}
 linux-libc-dev:
 - {arch: amd64, category: devel, name: linux-libc-dev, origin: Ubuntu, source: apt,
-  version: 5.3.0-24.26}
-linux-modules-5.3.0-18-generic:
-- {arch: amd64, category: kernel, name: linux-modules-5.3.0-18-generic, origin: Ubuntu,
-  source: apt, version: 5.3.0-18.19}
+  version: 5.3.0-29.31}
 linux-modules-5.3.0-24-generic:
 - {arch: amd64, category: kernel, name: linux-modules-5.3.0-24-generic, origin: Ubuntu,
   source: apt, version: 5.3.0-24.26}
-linux-modules-extra-5.3.0-18-generic:
-- {arch: amd64, category: kernel, name: linux-modules-extra-5.3.0-18-generic, origin: Ubuntu,
-  source: apt, version: 5.3.0-18.19}
+linux-modules-5.3.0-26-generic:
+- {arch: amd64, category: kernel, name: linux-modules-5.3.0-26-generic, origin: Ubuntu,
+  source: apt, version: 5.3.0-26.28}
+linux-modules-5.3.0-29-generic:
+- {arch: amd64, category: kernel, name: linux-modules-5.3.0-29-generic, origin: Ubuntu,
+  source: apt, version: 5.3.0-29.31}
 linux-modules-extra-5.3.0-24-generic:
 - {arch: amd64, category: kernel, name: linux-modules-extra-5.3.0-24-generic, origin: Ubuntu,
   source: apt, version: 5.3.0-24.26}
+linux-modules-extra-5.3.0-26-generic:
+- {arch: amd64, category: kernel, name: linux-modules-extra-5.3.0-26-generic, origin: Ubuntu,
+  source: apt, version: 5.3.0-26.28}
+linux-modules-extra-5.3.0-29-generic:
+- {arch: amd64, category: kernel, name: linux-modules-extra-5.3.0-29-generic, origin: Ubuntu,
+  source: apt, version: 5.3.0-29.31}
 locales:
 - {arch: all, category: libs, name: locales, origin: Ubuntu, source: apt, version: 2.30-0ubuntu2}
 login:
@@ -1209,7 +1224,7 @@ login:
 logrotate:
 - {arch: amd64, category: admin, name: logrotate, origin: Ubuntu, source: apt, version: 3.14.0-4ubuntu3}
 logsave:
-- {arch: amd64, category: admin, name: logsave, origin: Ubuntu, source: apt, version: 1.45.3-4ubuntu2}
+- {arch: amd64, category: admin, name: logsave, origin: Ubuntu, source: apt, version: 1.45.3-4ubuntu2.1}
 lsb-base:
 - {arch: all, category: misc, name: lsb-base, origin: Ubuntu, source: apt, version: 11.0.1ubuntu1}
 lsb-release:
@@ -1280,7 +1295,7 @@ networkd-dispatcher:
 - {arch: all, category: utils, name: networkd-dispatcher, origin: Ubuntu, source: apt,
   version: 2.0.1-1}
 nodejs:
-- {arch: amd64, category: web, name: nodejs, origin: Node Source, source: apt, version: 12.14.0-1nodesource1}
+- {arch: amd64, category: web, name: nodejs, origin: Node Source, source: apt, version: 12.15.0-1nodesource1}
 ntfs-3g:
 - {arch: amd64, category: otherosfs, name: ntfs-3g, origin: Ubuntu, source: apt, version: '1:2017.3.23AR.3-3ubuntu1'}
 open-iscsi:
@@ -1364,7 +1379,7 @@ python:
   version: 2.7.17-1}
 python-apt-common:
 - {arch: all, category: python, name: python-apt-common, origin: Ubuntu, source: apt,
-  version: 1.9.0ubuntu1}
+  version: 1.9.0ubuntu1.3}
 python-concurrent.futures:
 - {arch: all, category: universe/python, name: python-concurrent.futures, origin: Ubuntu,
   source: apt, version: 3.3.0-1}
@@ -1408,7 +1423,7 @@ python3-apport:
   version: 2.20.11-0ubuntu8.2}
 python3-apt:
 - {arch: amd64, category: python, name: python3-apt, origin: Ubuntu, source: apt,
-  version: 1.9.0ubuntu1}
+  version: 1.9.0ubuntu1.3}
 python3-asn1crypto:
 - {arch: all, category: python, name: python3-asn1crypto, origin: Ubuntu, source: apt,
   version: 0.24.0-1}
@@ -1686,7 +1701,7 @@ sensible-utils:
   version: 0.0.12}
 session-manager-plugin:
 - {arch: amd64, category: admin, name: session-manager-plugin, origin: '', source: apt,
-  version: 1.1.50.0-1}
+  version: 1.1.54.0-1}
 sg3-utils:
 - {arch: amd64, category: admin, name: sg3-utils, origin: Ubuntu, source: apt, version: 1.44-1ubuntu1}
 sg3-utils-udev:
@@ -1719,12 +1734,12 @@ ssh-import-id:
 strace:
 - {arch: amd64, category: utils, name: strace, origin: Ubuntu, source: apt, version: 4.26-0.2ubuntu3}
 sudo:
-- {arch: amd64, category: admin, name: sudo, origin: Ubuntu, source: apt, version: 1.8.27-1ubuntu4}
+- {arch: amd64, category: admin, name: sudo, origin: Ubuntu, source: apt, version: 1.8.27-1ubuntu4.1}
 systemd:
-- {arch: amd64, category: admin, name: systemd, origin: Ubuntu, source: apt, version: 242-7ubuntu3}
+- {arch: amd64, category: admin, name: systemd, origin: Ubuntu, source: apt, version: 242-7ubuntu3.6}
 systemd-sysv:
 - {arch: amd64, category: admin, name: systemd-sysv, origin: Ubuntu, source: apt,
-  version: 242-7ubuntu3}
+  version: 242-7ubuntu3.6}
 sysvinit-utils:
 - {arch: amd64, category: admin, name: sysvinit-utils, origin: Ubuntu, source: apt,
   version: 2.95-5ubuntu2}
@@ -1773,7 +1788,7 @@ ubuntu-standard:
 ucf:
 - {arch: all, category: utils, name: ucf, origin: Ubuntu, source: apt, version: 3.0038+nmu1}
 udev:
-- {arch: amd64, category: admin, name: udev, origin: Ubuntu, source: apt, version: 242-7ubuntu3}
+- {arch: amd64, category: admin, name: udev, origin: Ubuntu, source: apt, version: 242-7ubuntu3.6}
 ufw:
 - {arch: all, category: admin, name: ufw, origin: Ubuntu, source: apt, version: 0.36-1ubuntu3}
 unattended-upgrades:
