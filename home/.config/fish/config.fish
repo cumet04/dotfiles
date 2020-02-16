@@ -14,18 +14,21 @@ alias cdg="cd (git rev-parse --show-toplevel)"
 alias ssh='colored_ssh'
 alias tmux='tmux -f ~/.config/tmux.conf'
 
+# path
 set -x PATH ~/.local/bin $PATH
 set -x PATH /opt/bin $PATH
 set -x PATH /opt/bin/shell_commands $PATH
 set -x PATH /opt/var/go/bin $PATH
 
 set -x EDITOR nano
-set -x GOPATH ~/.cache/go
 set -x GOBIN /opt/bin
 set -x GO111MODULE on
-set -x ANSIBLE_RETRY_FILES_ENABLED false
+
+set -x GOPATH ~/.cache/go
 set -x LESSHISTFILE - # disable .lesshst
+set -x NODE_REPL_HISTORY ~/.cache/node_repl_history
 set -x npm_config_cache ~/.cache/npm
+set -x ANSIBLE_RETRY_FILES_ENABLED false
 
 test -f ~/.config/fish/secret_env && source ~/.config/fish/secret_env
 
