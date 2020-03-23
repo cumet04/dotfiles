@@ -20,10 +20,20 @@ set -x PATH /opt/bin $PATH
 set -x PATH /opt/bin/shell_commands $PATH
 set -x PATH /opt/var/go/bin $PATH
 
+# anyenv variables
+set -x ANYENV_ROOT /opt/anyenv
+set -x RBENV_ROOT /opt/anyenv/envs/rbenv
+set -x NODENV_ROOT /opt/anyenv/envs/nodenv
+set -gx PATH '/opt/anyenv/envs/rbenv/shims' $PATH
+set -gx PATH '/opt/anyenv/envs/nodenv/shims' $PATH
+set -gx RBENV_SHELL fish
+set -gx NODENV_SHELL fish
+
 set -x EDITOR nano
 set -x GOBIN /opt/bin
 set -x GO111MODULE on
 
+# clean $HOME
 set -x GOPATH ~/.cache/go
 set -x LESSHISTFILE - # disable .lesshst
 set -x NODE_REPL_HISTORY ~/.cache/node_repl_history

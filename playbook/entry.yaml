@@ -5,8 +5,8 @@
     - name: use japan apt mirror
       replace:
         path: /etc/apt/sources.list
-        regexp: 'http://archive.ubuntu.com/ubuntu'
-        replace: 'http://linux.yz.yamagata-u.ac.jp/ubuntu/'
+        regexp: "http://archive.ubuntu.com/ubuntu"
+        replace: "http://linux.yz.yamagata-u.ac.jp/ubuntu/"
         backup: yes
     - name: set fs max_user_watches
       sysctl:
@@ -21,14 +21,10 @@
       loop:
         - ppa:fish-shell/release-3
         - ppa:longsleep/golang-backports
-    - name: apt add nodejs repository
-      shell: |
-        curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
-        echo 'deb https://deb.nodesource.com/node_12.x bionic main' > /etc/apt/sources.list.d/nodesource.list
-        echo 'deb-src https://deb.nodesource.com/node_12.x bionic main' >> /etc/apt/sources.list.d/nodesource.list
-    - name: apt-get update
+    - name: apt-get update/upgrade
       apt:
         update_cache: true
+        upgrade: true
     - name: install packages
       apt:
         name: "{{ item }}"
@@ -43,11 +39,9 @@
         - imagemagick
         - jq
         - neovim
-        - nodejs
         - peco
         - python3
         - python3-pip
-        - ruby
         - sqlite
         - tig
         - tmux
@@ -63,6 +57,7 @@
     - variables
   tasks:
     - include: dotfiles.yaml
+    - include: anyenv.yaml
     - include: commands.yaml
 
 - hosts: localhost
