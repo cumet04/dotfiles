@@ -1,5 +1,17 @@
 #!/bin/bash
 
+set -eu
+
+### personal files
+aws s3 cp s3://${PERSONAL_BUCKET}/personal.tar.gz $HOME/
+cd $HOME
+tar xzvf ./personal.tar.gz
+find .personal/ -type d | tail -n +2 | sed 's|\.personal/||g' | xargs mkdir -p
+cd .personal
+find . -type f | sed 's|^\./||g' | xargs -ISRC ln $PWD/SRC $HOME/SRC
+
+### ansible
+
 BRANCH=${BRANCH:-master}
 
 cd /tmp
