@@ -7,7 +7,7 @@ sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y python3 python3-pip u
 pip3 install ansible awscli
 
 ### personal files
-aws s3 cp s3://${PERSONAL_BUCKET}/personal.tar.gz $HOME/
+~/.local/bin/aws s3 cp s3://${PERSONAL_BUCKET}/personal.tar.gz $HOME/
 cd $HOME
 tar xzvf ./personal.tar.gz
 find .personal/ -type d | tail -n +2 | sed 's|\.personal/||g' | xargs mkdir -p
