@@ -23,4 +23,5 @@ cd /tmp
 curl -L https://github.com/cumet04/dotfiles/archive/$BRANCH.zip -o dotfiles.zip
 unzip dotfiles.zip
 cd dotfiles-$BRANCH/playbook
+rm -rf ~/.config
 ~/.local/bin/ansible-playbook -K -e ansible_python_interpreter=/usr/bin/python3 entry.yaml
