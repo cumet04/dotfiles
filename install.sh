@@ -2,7 +2,7 @@
 
 set -eu
 
-umask 002
+umask 022
 
 sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y python3 python3-pip unzip
 pip3 install ansible awscli
