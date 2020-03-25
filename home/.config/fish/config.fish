@@ -1,5 +1,7 @@
 set fish_greeting
 
+umask 002
+
 alias history "history --show-time='%Y-%m-%d %T '"
 alias ls='ls --color=auto'
 alias ll='ls -alh'
