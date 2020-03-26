@@ -9,16 +9,19 @@
 [core]
 	excludesfile = ~/.config/gitignore_global
 	editor = "nano"
+[branch]
+	autosetupmerge = false
 [pager]
-	log = diff-highlight | less -x4
-	show = diff-highlight | less -x4
-	diff = diff-highlight | less -x4
+	#log = diff-highlight | less -x4
+	#show = diff-highlight | less -x4
+	#diff = diff-highlight | less -x4
 [diff]
 	compactionHeuristic = true
 [alias]
     d = diff
     s = status
     co = checkout
+    pfetch = fetch origin --prune
     difw = diff --word-diff
     difc = diff --cached
     difwc = diff --word-diff --cached

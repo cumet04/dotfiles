@@ -13,6 +13,7 @@ alias diff='colordiff'
 alias cdg="cd (git rev-parse --show-toplevel)"
 alias ssh='colored_ssh'
 alias tmux='tmux -f ~/.config/tmux.conf'
+alias sqlf='sqlformat -a -'
 
 set -x GOPATH /opt/var/go:/opt/var/ghq
 set -x EDITOR nvim

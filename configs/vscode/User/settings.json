@@ -1,41 +1,66 @@
-// Place your settings in this file to overwrite the default settings
 {
-  "editor.fontSize": 16,
-  "editor.fontFamily": "Cica",
-  "editor.renderIndentGuides": true,
-  "editor.minimap.enabled": false,
-  "editor.rulers": [80, 100],
-  "editor.formatOnSave": true,
-  "window.zoomLevel": 0,
-  "vim.useSystemClipboard": true,
-  "vim.handleKeys": {
-    "<C-d>": true,
-    "<C-u>": true
-  },
-  "extensions.ignoreRecommendations": false,
-  "css.validate": false,
-  "files.insertFinalNewline": true,
-  "workbench.startupEditor": "newUntitledFile",
-  "gitlens.codeLens.enabled": false,
-  "search.useIgnoreFiles": true,
-  "gitlens.advanced.messages": {
-    "suppressShowKeyBindingsNotice": true,
-    "suppressWelcomeNotice": true
-  },
-  "gitlens.currentLine.enabled": false,
-  "gitlens.hovers.currentLine.enabled": false,
-  "gitlens.keymap": "alternate",
-  "workbench.sideBar.location": "left",
-  "python.formatting.provider": "black",
-  "python.formatting.blackArgs": ["--line-length", "100"],
-  "explorer.confirmDragAndDrop": false,
-  "terminal.integrated.fontSize": 18,
-  "terminal.integrated.fontFamily": "Cica",
-  "terminal.integrated.macOptionIsMeta": true,
-  "javascript.format.enable": false,
-  "prettier.disableLanguages": ["markdown", "yaml"],
-  "prettier.printWidth": 100,
-  "workbench.tree.indent": 16,
-  "editor.tabSize": 2,
-  "solargraph.checkGemVersion": false
+    "editor.fontSize": 16,
+    "editor.fontFamily": "Cica",
+    "editor.renderIndentGuides": true,
+    "editor.rulers": [
+        80,
+        100
+    ],
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "explorer.confirmDragAndDrop": false,
+    "extensions.ignoreRecommendations": true,
+    "files.insertFinalNewline": true,
+    "files.eol": "\n",
+    "files.exclude": {
+        "**/.vscode": true,
+        "**/.envrc": true,
+        "**/.node-version": true,
+        "**/.ruby-version": true,
+        "**/tmp": true,
+        "**/.bundle": true,
+        "**/config.ru": true,
+        "**/node_modules": true,
+        "**/.editorconfig": true,
+        "**/.nuxt": true,
+        "**/jsconfig.json": true
+    },
+    "gist.defaultPrivate": true,
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true,
+        "suppressWelcomeNotice": true
+    },
+    "gitlens.codeLens.enabled": false,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.enabled": false,
+    "gitlens.keymap": "alternate",
+    "css.validate": false,
+    "scss.validate": false,
+    "javascript.format.enable": false,
+    "prettier.disableLanguages": [
+        "markdown",
+        "yaml"
+    ],
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "100"
+    ],
+    "search.useIgnoreFiles": true,
+    "solargraph.checkGemVersion": false,
+    "terminal.integrated.fontSize": 18,
+    "terminal.integrated.fontFamily": "Cica",
+    "terminal.integrated.macOptionIsMeta": true,
+    "vim.useSystemClipboard": true,
+    "vim.handleKeys": {
+        "<C-d>": true,
+        "<C-u>": true
+    },
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.tree.indent": 16,
+    "sync.gist": "87627ba7584457ae88cc4a42507e50ab",
+    "window.zoomLevel": 0,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "sync.autoUpload": true,
+    "sync.autoDownload": true,
 }
