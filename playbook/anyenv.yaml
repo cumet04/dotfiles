@@ -58,6 +58,7 @@
 - name: install latest ruby
   shell: |
     export RBENV_ROOT=/opt/anyenv/envs/rbenv
+    cd $RBENV_ROOT/plugins/ruby-build; git pull
     export RUBY_VERSION=$($RBENV_ROOT/bin/rbenv install -l | grep "^\s*2[0-9\.]*$" | tail -n 1)
     $RBENV_ROOT/bin/rbenv install $RUBY_VERSION
     $RBENV_ROOT/bin/rbenv global $RUBY_VERSION
@@ -66,6 +67,7 @@
 - name: install latest nodejs
   shell: |
     export NODENV_ROOT=/opt/anyenv/envs/nodenv
+    cd $NODENV_ROOT/plugins/node-build; git pull
     export NODE_VERSION=$($NODENV_ROOT/bin/nodenv install -l | grep "^\s*1[02468].*[0-9]$" | tail -n 1)
     $NODENV_ROOT/bin/nodenv install $NODE_VERSION
     $NODENV_ROOT/bin/nodenv global $NODE_VERSION
