@@ -1,0 +1,74 @@
+- name: check anyenv exists
+  stat:
+    path: /opt/anyenv
+  register: anyenv_dir
+- name: setup anyenvs
+  when: not anyenv_dir.stat.exists
+  block:
+    - name: ensure ruby-build dependencies
+      become: true
+      apt:
+        name: "{{ item }}"
+        state: latest
+      loop:
+        - autoconf
+        - bison
+        - build-essential
+        - libssl-dev
+        - libyaml-dev
+        - libreadline6-dev
+        - zlib1g-dev
+        - libncurses5-dev
+        - libffi-dev
+        - libgdbm5
+        - libgdbm-dev
+    - name: mkdir rbenv
+      become: true
+      file:
+        path: /opt/anyenv
+        state: directory
+        owner: medalhkr
+        group: medalhkr
+    - name: install anyenv
+      git:
+        repo: https://github.com/anyenv/anyenv.git
+        dest: /opt/anyenv
+        accept_hostkey: yes
+    - name: symlink anyenv
+      file:
+        src: /opt/anyenv/bin/anyenv
+        dest: /opt/bin/anyenv
+        state: link
+    - name: run anyenv install
+      shell: |
+        export ANYENV_ROOT=/opt/anyenv
+        export ANYENV_DEFINITION_ROOT=/opt/anyenv/anyenv-install-config
+        /opt/bin/anyenv install --force-init
+        /opt/bin/anyenv install rbenv
+        /opt/bin/anyenv install nodenv
+    - name: symlink envs
+      file:
+        src: "/opt/anyenv/envs/{{ item }}/bin/{{ item }}"
+        dest: /opt/bin/{{ item }}
+        state: link
+      loop:
+        - rbenv
+        - nodenv
+
+- name: install latest ruby
+  shell: |
+    export RBENV_ROOT=/opt/anyenv/envs/rbenv
+    cd $RBENV_ROOT/plugins/ruby-build; git pull
+    export RUBY_VERSION=$($RBENV_ROOT/bin/rbenv install -l | grep "^\s*2[0-9\.]*$" | tail -n 1)
+    $RBENV_ROOT/bin/rbenv install $RUBY_VERSION
+    $RBENV_ROOT/bin/rbenv global $RUBY_VERSION
+    $RBENV_ROOT/bin/rbenv rehash
+
+- name: install latest nodejs
+  shell: |
+    export NODENV_ROOT=/opt/anyenv/envs/nodenv
+    cd $NODENV_ROOT/plugins/node-build; git pull
+    export NODE_VERSION=$($NODENV_ROOT/bin/nodenv install -l | grep "^\s*1[02468].*[0-9]$" | tail -n 1)
+    $NODENV_ROOT/bin/nodenv install $NODE_VERSION
+    $NODENV_ROOT/bin/nodenv global $NODE_VERSION
+    $NODENV_ROOT/bin/nodenv rehash

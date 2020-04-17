@@ -1,0 +1,4 @@
+#!/bin/bash
+
+tar cvzf /tmp/personal.tar.gz -C ~ .personal
+aws s3 cp /tmp/personal.tar.gz s3://${PERSONAL_BUCKET}/

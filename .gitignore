@@ -1,7 +1,6 @@
 home/.config/fish/fish_variables
 home/.config/fish/secret_env
+home/.config/htop
 home/.config/nvim/.netrwhist
 home/.config/direnv/allow
 home/.config/configstore
-home/.config/twty
-.vagrant
