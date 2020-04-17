@@ -18,7 +18,6 @@ alias tmux='tmux -f ~/.config/tmux.conf'
 set -x PATH ~/.local/bin $PATH
 set -x PATH /opt/bin $PATH
 set -x PATH /opt/bin/shell_commands $PATH
-set -x PATH /opt/var/go/bin $PATH
 
 # anyenv variables
 set -x ANYENV_ROOT /opt/anyenv
