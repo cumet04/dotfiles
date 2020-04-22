@@ -15,32 +15,32 @@ alias ssh='colored_ssh'
 alias tmux='tmux -f ~/.config/tmux.conf'
 
 # path
-set -x PATH ~/.local/bin $PATH
-set -x PATH /opt/bin $PATH
-set -x PATH /opt/bin/shell_commands $PATH
-set -x PATH /opt/cargo/bin $PATH
+set PATH ~/.local/bin $PATH
+set PATH /opt/bin $PATH
+set PATH /opt/bin/shell_commands $PATH
+set PATH /opt/cargo/bin $PATH
 
 # anyenv variables
-set -x ANYENV_ROOT /opt/anyenv
-set -x RBENV_ROOT /opt/anyenv/envs/rbenv
-set -x NODENV_ROOT /opt/anyenv/envs/nodenv
-set -gx PATH '/opt/anyenv/envs/rbenv/shims' $PATH
-set -gx PATH '/opt/anyenv/envs/nodenv/shims' $PATH
-set -gx RBENV_SHELL fish
-set -gx NODENV_SHELL fish
+set ANYENV_ROOT /opt/anyenv
+set RBENV_ROOT /opt/anyenv/envs/rbenv
+set NODENV_ROOT /opt/anyenv/envs/nodenv
+set PATH '/opt/anyenv/envs/rbenv/shims' $PATH
+set PATH '/opt/anyenv/envs/nodenv/shims' $PATH
+set RBENV_SHELL fish
+set NODENV_SHELL fish
 
-set -x EDITOR nano
-set -x GOBIN /opt/bin
-set -x GO111MODULE on
-set -x CARGO_HOME /opt/cargo
-set -x RUSTUP_HOME /opt/rustup
+set EDITOR nano
+set GOBIN /opt/bin
+set GO111MODULE on
+set CARGO_HOME /opt/cargo
+set RUSTUP_HOME /opt/rustup
 
 # clean $HOME
-set -x GOPATH ~/.cache/go
-set -x LESSHISTFILE - # disable .lesshst
-set -x NODE_REPL_HISTORY ~/.cache/node_repl_history
-set -x npm_config_cache ~/.cache/npm
-set -x ANSIBLE_RETRY_FILES_ENABLED false
+set GOPATH ~/.cache/go
+set LESSHISTFILE - # disable .lesshst
+set NODE_REPL_HISTORY ~/.cache/node_repl_history
+set npm_config_cache ~/.cache/npm
+set ANSIBLE_RETRY_FILES_ENABLED false
 
 # ---
 
