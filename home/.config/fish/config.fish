@@ -14,18 +14,20 @@ alias cdg="cd (git rev-parse --show-toplevel)"
 alias ssh='colored_ssh'
 alias tmux='tmux -f ~/.config/tmux.conf'
 
-# path
-set PATH ~/.local/bin $PATH
-set PATH /opt/bin $PATH
-set PATH /opt/bin/shell_commands $PATH
-set PATH /opt/cargo/bin $PATH
+# path; prevent double add to path
+echo $PATH | grep /opt > /dev/null; or set PATH \
+  /opt/bin \
+  /opt/bin/shell_commands \
+  /opt/cargo/bin \
+  /opt/anyenv/envs/rbenv/shims \
+  /opt/anyenv/envs/nodenv/shims \
+  ~/.local/bin \
+  $PATH
 
 # anyenv variables
 set ANYENV_ROOT /opt/anyenv
 set RBENV_ROOT /opt/anyenv/envs/rbenv
 set NODENV_ROOT /opt/anyenv/envs/nodenv
-set PATH '/opt/anyenv/envs/rbenv/shims' $PATH
-set PATH '/opt/anyenv/envs/nodenv/shims' $PATH
 set RBENV_SHELL fish
 set NODENV_SHELL fish
 
