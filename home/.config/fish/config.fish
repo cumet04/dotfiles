@@ -18,6 +18,7 @@ alias tmux='tmux -f ~/.config/tmux.conf'
 set -x PATH ~/.local/bin $PATH
 set -x PATH /opt/bin $PATH
 set -x PATH /opt/bin/shell_commands $PATH
+set -x PATH /opt/cargo/bin $PATH
 
 # anyenv variables
 set -x ANYENV_ROOT /opt/anyenv
@@ -31,6 +32,8 @@ set -gx NODENV_SHELL fish
 set -x EDITOR nano
 set -x GOBIN /opt/bin
 set -x GO111MODULE on
+set -x CARGO_HOME /opt/cargo
+set -x RUSTUP_HOME /opt/rustup
 
 # clean $HOME
 set -x GOPATH ~/.cache/go
