@@ -39,10 +39,6 @@ set -x NODE_REPL_HISTORY ~/.cache/node_repl_history
 set -x npm_config_cache ~/.cache/npm
 set -x ANSIBLE_RETRY_FILES_ENABLED false
 
-# for wsl
-umask 022
-set -x DOCKER_HOST tcp://localhost:2375
-
 # ---
 
 test -f ~/.config/fish/secret_env && source ~/.config/fish/secret_env

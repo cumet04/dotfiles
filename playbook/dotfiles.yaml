@@ -28,6 +28,11 @@
     src: "{{ dotfiles_root }}/shell_commands"
     dest: /opt/bin/shell_commands
     state: link
+- name: symlink wsl.conf
+  file:
+    src: "{{ dotfiles_root }}/configs/wsl.conf"
+    dest: /etc/wsl.conf
+    state: link
 - name: ignore gitconfig change
   shell: |
     cd {{ dotfiles_root}}
