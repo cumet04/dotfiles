@@ -25,24 +25,24 @@ echo $PATH | grep /opt > /dev/null; or set PATH \
   $PATH
 
 # anyenv variables
-set ANYENV_ROOT /opt/anyenv
-set RBENV_ROOT /opt/anyenv/envs/rbenv
-set NODENV_ROOT /opt/anyenv/envs/nodenv
-set RBENV_SHELL fish
-set NODENV_SHELL fish
+set -x ANYENV_ROOT /opt/anyenv
+set -x RBENV_ROOT /opt/anyenv/envs/rbenv
+set -x NODENV_ROOT /opt/anyenv/envs/nodenv
+set -x RBENV_SHELL fish
+set -x NODENV_SHELL fish
 
-set EDITOR nano
-set GOBIN /opt/bin
-set GO111MODULE on
-set CARGO_HOME /opt/cargo
-set RUSTUP_HOME /opt/rustup
+set -x EDITOR nano
+set -x GOBIN /opt/bin
+set -x GO111MODULE on
+set -x CARGO_HOME /opt/cargo
+set -x RUSTUP_HOME /opt/rustup
 
 # clean $HOME
-set GOPATH ~/.cache/go
-set LESSHISTFILE - # disable .lesshst
-set NODE_REPL_HISTORY ~/.cache/node_repl_history
-set npm_config_cache ~/.cache/npm
-set ANSIBLE_RETRY_FILES_ENABLED false
+set -x GOPATH ~/.cache/go
+set -x LESSHISTFILE - # disable .lesshst
+set -x NODE_REPL_HISTORY ~/.cache/node_repl_history
+set -x npm_config_cache ~/.cache/npm
+set -x ANSIBLE_RETRY_FILES_ENABLED false
 
 # ---
 
