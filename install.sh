@@ -2,6 +2,7 @@
 
 set -eu
 
+sudo apt-get update
 sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y ansible unzip
 
 ### install awscli v2

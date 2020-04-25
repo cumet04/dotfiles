@@ -1,9 +1,6 @@
 ubuntu
 ----
 ```
-sudo apt-get update
-rm -rf ~/.config
-
 export PERSONAL_BUCKET=xxxx
 export BRANCH=master
 export (AWS tokens)
