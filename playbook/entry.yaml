@@ -32,6 +32,7 @@
       loop:
         - colordiff
         - direnv
+        - docker.io
         - fish
         - git
         - golang-go
@@ -64,4 +65,3 @@
     - include: dotfiles.yaml
     - include: anyenv.yaml
     - include: commands.yaml
-    - include: docker-ce.yaml
