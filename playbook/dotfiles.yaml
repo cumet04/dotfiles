@@ -29,6 +29,7 @@
     dest: /opt/bin/shell_commands
     state: link
 - name: symlink wsl.conf
+  become: true
   file:
     src: "{{ dotfiles_root }}/configs/wsl.conf"
     dest: /etc/wsl.conf
