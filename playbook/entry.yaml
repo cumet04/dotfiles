@@ -25,7 +25,7 @@
       apt:
         update_cache: true
         upgrade: true
-    - name: install packages
+    - name: install tool packages
       apt:
         name: "{{ item }}"
         state: present
@@ -45,6 +45,12 @@
         - tig
         - tmux
         - tree
+    - name: install dev packages
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - libsqlite3-dev
     - name: chsh fish
       user:
         name: medalhkr
