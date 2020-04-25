@@ -17,9 +17,11 @@
         name: "{{ item }}"
         state: present
       loop:
+        - ansible
         - colordiff
         - direnv
         - docker.io
+        - docker-compose
         - fish
         - git
         - golang
