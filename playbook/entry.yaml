@@ -8,12 +8,6 @@
         regexp: "http://archive.ubuntu.com/ubuntu"
         replace: "http://linux.yz.yamagata-u.ac.jp/ubuntu/"
         backup: yes
-    - name: set fs max_user_watches
-      sysctl:
-        name: fs.inotify.max_user_watches
-        value: 65535
-        state: present
-        reload: yes
     - name: apt-get update/upgrade
       apt:
         update_cache: true
