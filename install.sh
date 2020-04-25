@@ -5,6 +5,7 @@ set -eu
 sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y ansible unzip
 
 ### install awscli v2
+cd /tmp
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
