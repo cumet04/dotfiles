@@ -14,13 +14,6 @@
         value: 65535
         state: present
         reload: yes
-    - name: apt add repositories
-      apt_repository:
-        repo: "{{ item }}"
-        state: present
-      loop:
-        - ppa:fish-shell/release-3
-        - ppa:longsleep/golang-backports
     - name: apt-get update/upgrade
       apt:
         update_cache: true
@@ -35,7 +28,7 @@
         - docker.io
         - fish
         - git
-        - golang-go
+        - golang
         - imagemagick
         - jq
         - neovim
