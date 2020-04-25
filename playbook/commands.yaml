@@ -36,15 +36,12 @@
 
 
 ### diff-highlight
-- name: check diff-highlight
-  stat:
-    path: /opt/bin/diff-highlight
-  register: diff_highlight
-- name: make diff-highlight
-  become: true
-  shell: |
-    cd /usr/share/doc/git/contrib/diff-highlight/
-    make
-    chmod +x diff-highlight
-    ln -s /usr/share/doc/git/contrib/diff-highlight/diff-highlight /opt/bin/
-  when: not diff_highlight.stat.exists
+- name: link diff-highlight
+  file:
+    src: /usr/share/doc/git/contrib/diff-highlight/diff-highlight
+    dest: /opt/bin/diff-highlight
+    state: link
+- name: executable diff-highliht
+  file:
+    path: /usr/share/doc/git/contrib/diff-highlight/diff-highlight
+    mode: a+x
