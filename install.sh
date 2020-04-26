@@ -23,3 +23,6 @@ curl -L https://github.com/cumet04/dotfiles/archive/$BRANCH.zip -o dotfiles.zip
 unzip dotfiles.zip
 cd dotfiles-$BRANCH/playbook
 ansible-playbook -K entry.yaml
+
+### clean home
+rm -rf .profile .bash* .landscape .motd_shown
