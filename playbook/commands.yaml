@@ -15,6 +15,21 @@
     - { name: 'pt', repo: 'monochromegane/the_platinum_searcher', path: 'pt_linux_amd64/pt' }
     - { name: 'lemonade', repo: 'lemonade-command/lemonade', path: 'lemonade' }
 
+- name: install awscli-v2
+  become: true
+  block:
+    - unarchive:
+        src: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+        dest: /opt
+        remote_src: true
+    - file:
+        src: /opt/aws/dist/{{ item }}
+        dest: /opt/bin/{{ item }}
+        state: link
+      loop:
+        - aws
+        - aws_completer
+
 - name: install awscli session manager plugin
   become: true
   apt:

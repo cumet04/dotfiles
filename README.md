@@ -1,9 +1,8 @@
 ubuntu
 ----
+In advance, put personal.tar.gz on $HOME
 ```
-export PERSONAL_BUCKET=xxxx
 export BRANCH=master
-export (AWS tokens)
 curl -s https://raw.githubusercontent.com/cumet04/dotfiles/$BRANCH/install.sh | bash
 ```
 
