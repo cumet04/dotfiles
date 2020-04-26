@@ -10,7 +10,7 @@ cd $HOME
 tar xzvf ./personal.tar.gz
 find .personal/ -type d | tail -n +2 | sed 's|\.personal/||g' | xargs mkdir -p
 cd .personal
-find . -type f | sed 's|^\./||g' | xargs -ISRC ln $PWD/SRC $HOME/SRC
+find . -type f | sed 's|^\./||g' | xargs -ISRC ln -f $PWD/SRC $HOME/SRC
 rm $HOME/personal.tar.gz
 
 ### ansible
