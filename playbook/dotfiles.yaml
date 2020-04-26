@@ -15,6 +15,19 @@
     depth: 1
     update: no
     accept_hostkey: yes
+
+# remove ~/.config if exists as directory (instead of link)
+# linking of next step is failed if it exists.
+- name: clean ~/.config
+  block:
+    - stat:
+        path: "{{ ansible_env.HOME }}/.config"
+      register: config
+    - file:
+        path: "{{ ansible_env.HOME }}/.config"
+        state: absent
+      when: config.stat.isdir is defined and config.stat.isdir
+
 - name: install dotfiles symlinks
   file:
     src: "{{ dotfiles_root }}/home/{{ item }}"
@@ -23,12 +36,14 @@
   loop:
     - .config
     - .gitconfig
+
 - name: symlink shell_commands
   file:
     src: "{{ dotfiles_root }}/shell_commands"
     dest: /opt/bin/shell_commands
     state: link
 - name: symlink wsl.conf
+  become: true
   file:
     src: "{{ dotfiles_root }}/configs/wsl.conf"
     dest: /etc/wsl.conf

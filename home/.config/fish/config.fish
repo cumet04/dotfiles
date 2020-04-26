@@ -21,7 +21,6 @@ echo $PATH | grep /opt > /dev/null; or set PATH \
   /opt/cargo/bin \
   /opt/anyenv/envs/rbenv/shims \
   /opt/anyenv/envs/nodenv/shims \
-  ~/.local/bin \
   $PATH
 
 # anyenv variables

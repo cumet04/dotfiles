@@ -20,7 +20,7 @@
         - zlib1g-dev
         - libncurses5-dev
         - libffi-dev
-        - libgdbm5
+        - libgdbm6
         - libgdbm-dev
     - name: mkdir rbenv
       become: true
@@ -59,7 +59,7 @@
   shell: |
     export RBENV_ROOT=/opt/anyenv/envs/rbenv
     cd $RBENV_ROOT/plugins/ruby-build; git pull
-    export RUBY_VERSION=$($RBENV_ROOT/bin/rbenv install -l | grep "^\s*2[0-9\.]*$" | tail -n 1)
+    export RUBY_VERSION=$($RBENV_ROOT/bin/rbenv install -l | grep "^\s*2\.6[0-9\.]*$" | tail -n 1)
     $RBENV_ROOT/bin/rbenv install $RUBY_VERSION
     $RBENV_ROOT/bin/rbenv global $RUBY_VERSION
     $RBENV_ROOT/bin/rbenv rehash
@@ -68,7 +68,7 @@
   shell: |
     export NODENV_ROOT=/opt/anyenv/envs/nodenv
     cd $NODENV_ROOT/plugins/node-build; git pull
-    export NODE_VERSION=$($NODENV_ROOT/bin/nodenv install -l | grep "^\s*1[02468].*[0-9]$" | tail -n 1)
+    export NODE_VERSION=$($NODENV_ROOT/bin/nodenv install -l | grep "^\s*12.*[0-9]$" | tail -n 1)
     $NODENV_ROOT/bin/nodenv install $NODE_VERSION
     $NODENV_ROOT/bin/nodenv global $NODE_VERSION
     $NODENV_ROOT/bin/nodenv rehash
