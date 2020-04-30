@@ -8,9 +8,9 @@
       "source": "Windows.Terminal.Wsl",
       "commandline": "wsl.exe ~",
       "colorScheme": "Argonaut",
-      "fontFace": "Consolas",
-      "fontSize": 14,
-      "padding": "4, 0, -11, -3"
+      "fontFace": "Cascadia Code",
+      "fontSize": 13,
+      "padding": "4, -6, -13, -3"
     },
     {
       "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
@@ -19,10 +19,10 @@
       "source": "Windows.Terminal.Wsl"
     },
     {
-        "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-        "hidden": false,
-        "name": "Azure Cloud Shell",
-        "source": "Windows.Terminal.Azure"
+      "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+      "hidden": false,
+      "name": "Azure Cloud Shell",
+      "source": "Windows.Terminal.Azure"
     }
   ],
   "schemes": [
