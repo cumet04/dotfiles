@@ -17,6 +17,7 @@ alias tmux='tmux -f ~/.config/tmux.conf'
 # path; prevent double add to path
 echo $PATH | grep /opt > /dev/null; or set PATH \
   /opt/bin \
+  /opt/bin/go \
   /opt/bin/shell_commands \
   /opt/cargo/bin \
   /opt/anyenv/envs/rbenv/shims \
@@ -31,7 +32,7 @@ set -x RBENV_SHELL fish
 set -x NODENV_SHELL fish
 
 set -x EDITOR nano
-set -x GOBIN /opt/bin
+set -x GOBIN /opt/bin/go
 set -x GO111MODULE on
 set -x CARGO_HOME /opt/cargo
 set -x RUSTUP_HOME /opt/rustup

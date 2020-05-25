@@ -7,6 +7,7 @@
   loop:
     - "{{ ghq_root }}"
     - /opt/bin
+    - /opt/bin/go
 - name: git clone dotfiles
   git:
     repo: ssh://git@github.com/cumet04/dotfiles.git
