@@ -36,6 +36,7 @@
         - tig
         - tmux
         - tree
+        - whois
     - name: install dev packages
       apt:
         name: "{{ item }}"

@@ -3,7 +3,15 @@ colorscheme molokai
 set t_Co=256
 syntax enable
 
-set clipboard=unnamedplus
+" 明示的に指定することで'+'レジスタをlemonade対象外にする; クリップボード履歴汚染対策
+let g:clipboard = {
+  \ 'copy': {
+  \   '*': 'lemonade copy',
+  \ },
+  \ 'paste': {
+  \   '*': 'lemonade paste',
+  \ },
+  \}
 set backspace=indent,eol,start
 set expandtab
 set nobackup
