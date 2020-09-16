@@ -17,7 +17,7 @@
     update: no
     accept_hostkey: yes
 
-# remove ~/.config if exists as directory (instead of link)
+# remove ~/.config if exists as directory (not link)
 # linking of next step is failed if it exists.
 - name: clean ~/.config
   block:
