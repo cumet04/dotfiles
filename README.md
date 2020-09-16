@@ -13,3 +13,15 @@ in `HKEY_CURRENT_USER/Control Panel/Accessibility/Keyboard Response`
 * AutoRepeatDelay 250
 * AutoRepeatRate 20
 * Flags 59 (magic number)
+
+memo
+----
+
+#### clean $HOME
+* `.npm`: can move/remove, but can't for part of them
+  - This is created there by some package that has BAD install script (ex. esbuild)
+* `.irb_history`: can remove, but can't move
+  - Its location can be set by `.irbrc`, but `.irbrc` location can't be change
+* `.vscode-server`: can't move/remove
+* `.sudo_as_admin_successful`: can remove, but can't prevent creation
+  - It is created every time by sudo
