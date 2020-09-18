@@ -2,12 +2,14 @@
 
 set -eu
 
+test -f ./personal.tar*
+
 sudo apt-get update
 sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y ansible unzip
 
 ### personal files
 cd $HOME
-tar xzvf ./personal.tar.gz
+tar xf ./personal.tar* # S3 web console omits `.gz`
 find .personal/ -type d | tail -n +2 | sed 's|\.personal/||g' | xargs mkdir -p
 cd .personal
 find . -type f | sed 's|^\./||g' | xargs -ISRC ln -f $PWD/SRC $HOME/SRC
