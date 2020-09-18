@@ -6,6 +6,12 @@ export BRANCH=master
 curl -s https://raw.githubusercontent.com/cumet04/dotfiles/$BRANCH/install.sh | bash
 ```
 
+#### docker
+1. Do install above
+2. In Docker Desktop, add integration for distro
+3. `wsl -t XXX`
+4. (Optional?) In Docker Desktop, remove/add integration for distro
+
 windows
 ----
 #### key repeat
