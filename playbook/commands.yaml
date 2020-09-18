@@ -1,6 +1,6 @@
 - name: install github-release commands
   shell: |
-    mkdir -p /tmp/ansible_install_github_release_tmp; cd $_
+    mkdir -p /tmp/ansible_install_github_release_tmp; cd /tmp/ansible_install_github_release_tmp
     if [ ! -f /opt/bin/{{ item.name }} ]; then
       curl https://api.github.com/repos/{{ item.repo }}/releases/latest | \
         jq -r '.assets[] | select(.name | test("linux_amd64")).browser_download_url' | \
@@ -14,7 +14,7 @@
     - { name: 'ghq', repo: 'x-motemen/ghq', path: 'ghq_linux_amd64/ghq' }
     - { name: 'pt', repo: 'monochromegane/the_platinum_searcher', path: 'pt_linux_amd64/pt' }
     - { name: 'lemonade', repo: 'lemonade-command/lemonade', path: 'lemonade' }
-    - { name: 'atcoder-gli', repo: 'cumet04/atcoder-gli', path: 'atcoder-gli*/acg' }
+    - { name: 'atcoder-gli', repo: 'cumet04/atcoder-gli', path: 'atcoder-gli_linux_amd64/acg' }
 
 - name: install awscli-v2
   become: true
