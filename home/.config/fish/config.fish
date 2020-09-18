@@ -39,7 +39,6 @@ set -x CARGO_HOME /opt/cargo
 set -x RUSTUP_HOME /opt/rustup
 
 # clean $HOME
-set -x DOCKER_CONFIG ~/.config/.docker
 set -x GOPATH ~/.cache/go
 set -x npm_config_cache ~/.cache/npm
 set -x CDK_HOME ~/.cache/cdk

@@ -31,3 +31,5 @@ memo
 * `.vscode-server`: can't move/remove
 * `.sudo_as_admin_successful`: can remove, but can't prevent creation
   - It is created every time by sudo
+* `.docker`: can't move/remove
+  - It is created by Docker Desktop and the directory has symlink to windows dir
