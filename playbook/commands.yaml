@@ -14,6 +14,7 @@
     - { name: 'ghq', repo: 'x-motemen/ghq', path: 'ghq_linux_amd64/ghq' }
     - { name: 'pt', repo: 'monochromegane/the_platinum_searcher', path: 'pt_linux_amd64/pt' }
     - { name: 'lemonade', repo: 'lemonade-command/lemonade', path: 'lemonade' }
+    - { name: 'atcoder-gli', repo: 'cumet04/atcoder-gli', path: 'atcoder-gli*/acg' }
 
 - name: install awscli-v2
   become: true
