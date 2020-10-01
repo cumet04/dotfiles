@@ -19,6 +19,18 @@ curl -s https://raw.githubusercontent.com/cumet04/dotfiles/$BRANCH/install.sh | 
 
 Windows
 ----
+#### Enable WSL2
+In Admin Powershell,
+
+```
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
+
+and reboot
+
+https://docs.microsoft.com/ja-jp/windows/wsl/install-win10
+
 #### Docker Desktop
 1. Do install above
 2. In Docker Desktop, add integration for distro
