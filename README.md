@@ -20,14 +20,18 @@ curl -s https://raw.githubusercontent.com/cumet04/dotfiles/$BRANCH/install.sh | 
 Windows
 ----
 #### Enable WSL2
-In Admin Powershell,
-
+1. In Admin Powershell,
 ```
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
-
 and reboot
+
+2. Install kernel update package; https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
+3. In Admin Powershell,
+```
+wsl --set-default-version 2
+```
 
 https://docs.microsoft.com/ja-jp/windows/wsl/install-win10
 
