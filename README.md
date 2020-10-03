@@ -9,8 +9,6 @@ curl -s https://raw.githubusercontent.com/cumet04/dotfiles/$BRANCH/install.sh | 
 #### <memo> clean $HOME
 * `.npm`: can move/remove, but can't for part of them
   - This is created there by some package that has BAD install script (ex. esbuild)
-* `.irb_history`: can remove, but can't move
-  - Its location can be set by `.irbrc`, but `.irbrc` location can't be change
 * `.vscode-server`: can't move/remove
 * `.sudo_as_admin_successful`: can remove, but can't prevent creation
   - It is created every time by sudo

@@ -53,6 +53,8 @@ set -x ANSIBLE_RETRY_FILES_ENABLED false
 if not grep windows.localdomain /etc/hosts > /dev/null
   echo 'Clean /tmp'
   find /tmp/ -mindepth 1 | xargs rm -rf ^/dev/null
+  echo 'Clean $HOME'
+  clean_home
   echo 'Add windows ip to hosts:'
   set winip (ip route show to default | cut -d' ' -f 3)
   echo "$winip windows.localdomain" | sudo tee -a /etc/hosts

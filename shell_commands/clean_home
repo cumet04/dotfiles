@@ -1,0 +1,15 @@
+#!/bin/bash
+
+cd $HOME
+
+# .irb_history; Its location can be set by `.irbrc`, but `.irbrc` location can't be change
+# .python_history; refs https://stackoverflow.com/questions/62063414/how-to-disable-python-history-saving
+
+rm -r \
+  .irb_history \
+  .python_history \
+  .degit \
+  .wget-hsts \
+  .serverless \
+  .serverlessrc \
+  2>/dev/null
