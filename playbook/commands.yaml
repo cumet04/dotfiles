@@ -14,7 +14,7 @@
     - { name: 'ghq', repo: 'x-motemen/ghq', path: 'ghq_linux_amd64/ghq' }
     - { name: 'pt', repo: 'monochromegane/the_platinum_searcher', path: 'pt_linux_amd64/pt' }
     - { name: 'lemonade', repo: 'lemonade-command/lemonade', path: 'lemonade' }
-    - { name: 'atcoder-gli', repo: 'cumet04/atcoder-gli', path: 'atcoder-gli_linux_amd64/acg' }
+    - { name: 'acg', repo: 'cumet04/atcoder-gli', path: 'atcoder-gli_linux_amd64/acg' }
 
 - name: install awscli-v2
   become: true
@@ -47,3 +47,10 @@
   file:
     path: /usr/share/doc/git/contrib/diff-highlight/diff-highlight
     mode: a+x
+
+- name: link vscode
+  become: true
+  file:
+    src: "/mnt/c/Users/medal/AppData/Local/Programs/Microsoft VS Code/bin/code"
+    dest: /opt/bin/code
+    state: link
