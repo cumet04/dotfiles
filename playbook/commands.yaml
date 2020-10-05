@@ -47,10 +47,3 @@
   file:
     path: /usr/share/doc/git/contrib/diff-highlight/diff-highlight
     mode: a+x
-
-- name: link vscode
-  become: true
-  file:
-    src: "/mnt/c/Users/medal/AppData/Local/Programs/Microsoft VS Code/bin/code"
-    dest: /opt/bin/code
-    state: link
