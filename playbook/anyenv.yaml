@@ -27,8 +27,8 @@
       file:
         path: /opt/anyenv
         state: directory
-        owner: medalhkr
-        group: medalhkr
+        owner: "{{ ansible_user }}"
+        group: "{{ ansible_user }}"
     - name: install anyenv
       git:
         repo: https://github.com/anyenv/anyenv.git

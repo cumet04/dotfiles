@@ -1,5 +1,4 @@
 - hosts: localhost
-  user: medalhkr
   become: true
   tasks:
     - name: use japan apt mirror
@@ -45,11 +44,10 @@
         - libsqlite3-dev
     - name: chsh fish
       user:
-        name: medalhkr
+        name: "{{ ansible_user }}"
         shell: /usr/bin/fish
 
 - hosts: localhost
-  user: medalhkr
   vars_files:
     - variables
   tasks:
