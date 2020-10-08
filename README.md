@@ -44,6 +44,17 @@ https://docs.microsoft.com/ja-jp/windows/wsl/install-win10
 3. `wsl -t XXX`
 4. (Optional?) In Docker Desktop, remove/add integration for distro
 
+#### Override Caps -> Ctrl
+in `HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Control/KeyboardLayout/Scancode Map` (Binary)
+
+```
+00 00 00 00 00 00 00 00
+02 00 00 00 1D 00 3A 00
+00 00 00 00
+```
+
+refs https://ascii.jp/elem/000/000/927/927191/ 
+
 #### Key repeat
 in `HKEY_CURRENT_USER/Control Panel/Accessibility/Keyboard Response`
 * AutoRepeatDelay 250
