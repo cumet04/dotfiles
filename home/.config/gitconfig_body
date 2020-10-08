@@ -3,6 +3,8 @@
 	editor = "nano"
 [branch]
 	autosetupmerge = false
+[init]
+	defaultBranch = main
 [pager]
 	log = diff-highlight | less -x4
 	show = diff-highlight | less -x4
@@ -19,8 +21,6 @@
     difc = diff --cached
     difwc = diff --word-diff --cached
     difcw = diff --word-diff --cached
-[url "git@bitbucket.org:"]
-	insteadOf = https://bitbucket.org/
 [ghq]
     root = ~/repos
 [tig]
