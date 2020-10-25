@@ -21,6 +21,7 @@
         - direnv
         - docker.io
         - docker-compose
+        - fd-find
         - fish
         - git
         - golang
@@ -31,6 +32,7 @@
         - peco
         - python3
         - python3-pip
+        - ripgrep
         - sqlite
         - tig
         - tmux

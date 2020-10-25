@@ -12,7 +12,6 @@
     fi
   loop:
     - { name: 'ghq', repo: 'x-motemen/ghq', path: 'ghq_linux_amd64/ghq' }
-    - { name: 'pt', repo: 'monochromegane/the_platinum_searcher', path: 'pt_linux_amd64/pt' }
     - { name: 'lemonade', repo: 'lemonade-command/lemonade', path: 'lemonade' }
     - { name: 'acg', repo: 'cumet04/atcoder-gli', path: 'atcoder-gli_linux_amd64/acg' }
 
