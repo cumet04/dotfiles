@@ -3,8 +3,6 @@
 	editor = "nano"
 [branch]
 	autosetupmerge = false
-[init]
-	defaultBranch = main
 [pager]
 	log = diff-highlight | less -x4
 	show = diff-highlight | less -x4
