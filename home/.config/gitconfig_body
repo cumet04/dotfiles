@@ -13,7 +13,7 @@
     d = diff
     s = status
     co = checkout
-    pfetch = fetch origin --prune
+    pfetch = fetch origin --prune --no-tags
     pushf = push --force-with-lease
     difw = diff --word-diff
     difc = diff --cached
