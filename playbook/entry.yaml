@@ -27,6 +27,7 @@
         - golang
         - imagemagick
         - jq
+        - libmariadb-dev
         - mariadb-client
         - neovim
         - peco
