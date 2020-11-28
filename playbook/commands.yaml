@@ -1,19 +1,11 @@
 - name: install github-release commands
-  shell: |
-    mkdir -p /tmp/ansible_install_github_release_tmp; cd /tmp/ansible_install_github_release_tmp
-    if [ ! -f /opt/bin/{{ item.name }} ]; then
-      curl https://api.github.com/repos/{{ item.repo }}/releases/latest | \
-        jq -r '.assets[] | select(.name | test("linux_amd64")).browser_download_url' | \
-        xargs curl -OL
-      tar xzvf *.tar.gz || true
-      unzip *.zip || true
-      rm *.tar.gz *.zip || true
-      mv {{ item.path }} /opt/bin/
-    fi
+  ghcommand:
+    name: "{{ item }}"
   loop:
-    - { name: 'ghq', repo: 'x-motemen/ghq', path: 'ghq_linux_amd64/ghq' }
-    - { name: 'lemonade', repo: 'lemonade-command/lemonade', path: 'lemonade' }
-    - { name: 'acg', repo: 'cumet04/atcoder-gli', path: 'atcoder-gli_linux_amd64/acg' }
+    - 'x-motemen/ghq'
+    - 'lemonade-command/lemonade'
+    - 'mattn/cho'
+    - 'cumet04/atcoder-gli'
 
 - name: install awscli-v2
   become: true
