@@ -1,12 +1,7 @@
-.DS_Store
-.idea/
 .vscode/
 .envrc
 __pycache__/
 node_modules/
-*wiki.git/
-venv/
-*.iml
 .alias_local
 .pylintrc
 *.db
@@ -14,3 +9,4 @@ better_errors_for_vscode.rb
 *.local
 yarn-error.log
 *.code-workspace
+.local-files

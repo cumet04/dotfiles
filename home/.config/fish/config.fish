@@ -13,6 +13,10 @@ alias diff='colordiff'
 alias cdg="cd (git rev-parse --show-toplevel)"
 alias ssh='colored_ssh'
 alias tmux='tmux -f ~/.config/tmux.conf'
+alias gitco="git branch | grep -v '*' | cho | xargs git checkout"
+
+alias sl-command='command sl'
+alias sl='ls'
 
 # path; prevent double add to path
 echo $PATH | grep /opt > /dev/null; or set PATH \
