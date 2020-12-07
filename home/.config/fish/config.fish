@@ -9,6 +9,7 @@ alias mv='mv -i'
 alias vim='nvim'
 alias cal3='cal -C3'
 alias fd='fdfind --hidden'
+alias rg='rg --hidden'
 alias diff='colordiff'
 alias cdg="cd (git rev-parse --show-toplevel)"
 alias ssh='colored_ssh'
