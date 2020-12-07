@@ -1,12 +1,10 @@
 - name: setup direcrories
-  become: true
   file:
     path: '{{ item }}'
     state: directory
     owner: "{{ ansible_user }}"
   loop:
     - "{{ ghq_root }}"
-    - /opt/bin
     - /opt/bin/go
 - name: git clone dotfiles
   git:

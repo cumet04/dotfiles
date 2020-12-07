@@ -9,8 +9,8 @@
         backup: yes
     - name: apt-get update/upgrade
       apt:
-        update_cache: true
-        upgrade: true
+        update_cache: yes
+        upgrade: 'yes'
     - name: install tool packages
       apt:
         name: "{{ item }}"
@@ -27,7 +27,6 @@
         - golang
         - imagemagick
         - jq
-        - libmariadb-dev
         - mariadb-client
         - neovim
         - peco
@@ -44,16 +43,25 @@
         name: "{{ item }}"
         state: present
       loop:
+        - libmariadb-dev
         - libsqlite3-dev
     - name: chsh fish
       user:
         name: "{{ ansible_user }}"
         shell: /usr/bin/fish
+    - name: setup directories
+      file:
+        path: '{{ item }}'
+        state: directory
+        owner: "{{ ansible_user }}"
+      loop:
+        - /opt/bin
 
 - hosts: localhost
   vars_files:
     - variables
   tasks:
+    - include: winfiles.yaml
     - include: dotfiles.yaml
     - include: anyenv.yaml
     - include: commands.yaml

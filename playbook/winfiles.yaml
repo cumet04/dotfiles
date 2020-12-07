@@ -1,0 +1,22 @@
+- name: link winhome directories
+  file:
+    src: "/opt/winhome/{{ item.src }}"
+    dest: "{{ ansible_env.HOME }}/{{ item.dest}}"
+    state: link
+  loop:
+    - src: Desktop
+      dest: Desktop
+    - src: AppData/Local/Packages/Microsoft.ScreenSketch_8wekyb3d8bbwe/TempState
+      dest: Captures
+
+- name: link win commands
+  file:
+    src: "{{ item.src }}"
+    dest: "/opt/bin/{{ item.dest }}"
+    state: link
+  loop:
+    - src: "/opt/winhome/AppData/Local/Programs/Microsoft VS Code/bin/code"
+      dest: code
+    - src: "/mnt/c/Program Files/Docker/Docker/resources/bin/docker-credential-desktop.exe"
+      dest: docker-credential-desktop.exe
+

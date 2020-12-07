@@ -7,6 +7,10 @@ test -f ./personal.tar*
 sudo apt-get update
 sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y ansible unzip
 
+### setup home
+sudo ln -s (wslpath (wslvar USERPROFILE)) /opt/winhome
+rm -rf .profile .bash* .landscape .motd_shown
+
 ### personal files
 cd $HOME
 tar xf ./personal.tar* # S3 web console omits `.gz`
@@ -16,7 +20,6 @@ find . -type f | sed 's|^\./||g' | xargs -ISRC ln -f $PWD/SRC $HOME/SRC
 rm $HOME/personal.tar.gz
 
 ### ansible
-
 BRANCH=${BRANCH:-master}
 
 cd /tmp
@@ -26,5 +29,3 @@ unzip dotfiles.zip
 cd dotfiles-$BRANCH/playbook
 ansible-playbook -K entry.yaml
 
-### clean home
-rm -rf .profile .bash* .landscape .motd_shown

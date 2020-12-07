@@ -6,11 +6,6 @@ export BRANCH=master
 curl -s https://raw.githubusercontent.com/cumet04/dotfiles/$BRANCH/install.sh | bash
 ```
 
-#### link `code` command
-```
-ln -s "/mnt/c/Users/$WINDOWS_USERNAME/AppData/Local/Programs/Microsoft VS Code/bin/code" /opt/bin/code
-```
-
 #### <memo> clean $HOME
 * `.npm`: can move/remove, but can't for part of them
   - This is created there by some package that has BAD install script (ex. esbuild)
