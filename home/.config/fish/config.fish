@@ -47,6 +47,7 @@ set -x RUSTUP_HOME /opt/rustup
 set -x GOPATH ~/.cache/go
 set -x npm_config_cache ~/.cache/npm
 set -x CDK_HOME ~/.cache/cdk
+set -x BUNDLE_USER_HOME ~/.cache/bundle
 set -x HISTFILE ~/.cache/history
 set -x NODE_REPL_HISTORY ~/.cache/node_repl_history
 set -x SQLITE_HISTORY ~/.cache/sqlite_history
