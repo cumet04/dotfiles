@@ -59,7 +59,7 @@
   shell: |
     export RBENV_ROOT=/opt/anyenv/envs/rbenv
     cd $RBENV_ROOT/plugins/ruby-build; git pull
-    export RUBY_VERSION=$($RBENV_ROOT/bin/rbenv install -l | grep "^\s*2\.6[0-9\.]*$" | tail -n 1)
+    export RUBY_VERSION=$($RBENV_ROOT/bin/rbenv install -l | grep "^\s*2\.7[0-9\.]*$" | tail -n 1)
     $RBENV_ROOT/bin/rbenv install $RUBY_VERSION
     $RBENV_ROOT/bin/rbenv global $RUBY_VERSION
     $RBENV_ROOT/bin/rbenv rehash
