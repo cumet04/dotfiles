@@ -1,3 +1,0 @@
-#!/bin/sh
-
-printf "\x3${1}\xe2\x83\xa3\x0a"
