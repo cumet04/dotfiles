@@ -20,6 +20,8 @@ cd $HOME
 #    refs https://stackoverflow.com/questions/62063414/how-to-disable-python-history-saving
 
 rm -rf \
+  .landscape \
+  .motd_shown \
   .azure \
   .irb_history \
   .python_history \
@@ -30,5 +32,7 @@ rm -rf \
   .pylint.d \
   .viminfo \
   .npm \
+  .yarn \
+  .yarnrc \
   2>/dev/null
 

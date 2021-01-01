@@ -38,6 +38,7 @@
         - tmux
         - tree
         - whois
+        - zip
     - name: install dev packages
       apt:
         name: "{{ item }}"
