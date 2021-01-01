@@ -2,7 +2,6 @@
   ghcommand:
     name: "{{ item }}"
   loop:
-    - 'x-motemen/ghq'
     - 'lemonade-command/lemonade'
     - 'mattn/cho'
     - 'cumet04/atcoder-gli'

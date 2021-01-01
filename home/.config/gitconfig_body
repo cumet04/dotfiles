@@ -19,8 +19,6 @@
     difc = diff --cached
     difwc = diff --word-diff --cached
     difcw = diff --word-diff --cached
-[ghq]
-    root = ~/repos
 [tig]
   vertical-split = yes
   diff-highlight = true
