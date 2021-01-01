@@ -8,7 +8,7 @@
     - /opt/bin/go
 - name: git clone dotfiles
   git:
-    repo: ssh://git@github.com/cumet04/dotfiles.git
+    repo: https://github.com/cumet04/dotfiles.git
     dest: "{{ dotfiles_root }}"
     version: "{{ ansible_env.BRANCH | default('master') }}"
     depth: 1
