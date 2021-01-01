@@ -2,10 +2,24 @@
   ghcommand:
     name: "{{ item }}"
   loop:
-    - 'x-motemen/ghq'
     - 'lemonade-command/lemonade'
     - 'mattn/cho'
     - 'cumet04/atcoder-gli'
+
+- name: install gh command
+  become: true
+  block:
+    # refs https://github.com/cli/cli/blob/trunk/docs/install_linux.md
+    - apt_key:
+        keyserver: keyserver.ubuntu.com
+        id: C99B11DEB97541F0
+        state: present
+    - apt_repository:
+        repo: deb https://cli.github.com/packages focal main
+        state: present
+    - apt:
+        name: gh
+        state: present
 
 - name: install awscli-v2
   become: true

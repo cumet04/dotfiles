@@ -69,8 +69,6 @@ def main():
 
 
 def extract(name, filename):
-    if name == "x-motemen/ghq":
-        return extract_ghq(filename)
     if name == "lemonade-command/lemonade":
         return extract_lemonade(filename)
     if name == "cumet04/atcoder-gli":
@@ -86,17 +84,6 @@ def extract_lemonade(filename):
 
     tarfile.open(filename).extractall()
     return "lemonade", None
-
-
-def extract_ghq(filename):
-    import zipfile
-
-    with zipfile.ZipFile(filename) as zip:
-        zip.extractall()
-        for file in zip.namelist():
-            if file.endswith("/ghq"):
-                return file, None
-    return None, "target binary is not found"
 
 
 def extract_cho(filename):
