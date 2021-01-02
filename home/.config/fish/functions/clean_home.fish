@@ -1,7 +1,3 @@
-#!/bin/bash
-
-cd $HOME
-
 # .vscode-server: can't move/remove
 # .sudo_as_admin_successful: can remove, but can't prevent creation
 #   It is created every time by sudo
@@ -19,20 +15,22 @@ cd $HOME
 # .python_history
 #    refs https://stackoverflow.com/questions/62063414/how-to-disable-python-history-saving
 
-rm -rf \
-  .landscape \
-  .motd_shown \
-  .azure \
-  .irb_history \
-  .python_history \
-  .degit \
-  .wget-hsts \
-  .serverless \
-  .serverlessrc \
-  .pylint.d \
-  .viminfo \
-  .npm \
-  .yarn \
-  .yarnrc \
-  2>/dev/null
-
+function clean_home
+  cd $HOME
+  rm -rf \
+    .landscape \
+    .motd_shown \
+    .azure \
+    .irb_history \
+    .python_history \
+    .degit \
+    .wget-hsts \
+    .serverless \
+    .serverlessrc \
+    .pylint.d \
+    .viminfo \
+    .npm \
+    .yarn \
+    .yarnrc \
+    2>/dev/null
+end
