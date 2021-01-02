@@ -18,7 +18,9 @@
 function clean_home
   cd $HOME
   rm -rf \
-    .bash* \
+    .bashrc \
+    .bash_history \
+    .bash_profile \
     .landscape \
     .motd_shown \
     .azure \
