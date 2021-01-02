@@ -18,6 +18,7 @@
 function clean_home
   cd $HOME
   rm -rf \
+    .bash* \
     .landscape \
     .motd_shown \
     .azure \
@@ -27,6 +28,7 @@ function clean_home
     .wget-hsts \
     .serverless \
     .serverlessrc \
+    .profile \
     .pylint.d \
     .viminfo \
     .npm \

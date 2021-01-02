@@ -4,38 +4,24 @@
     state: directory
     owner: "{{ ansible_user }}"
   loop:
-    - "{{ ghq_root }}"
-    - /opt/bin/go
-- name: git clone dotfiles
-  git:
-    repo: https://github.com/cumet04/dotfiles.git
-    dest: "{{ dotfiles_root }}"
-    version: "{{ ansible_env.BRANCH | default('main') }}"
-    depth: 1
-    update: no
-    accept_hostkey: yes
+    - "{{ ghq_root }}/github.com/cumet04"
 
-# remove ~/.config if exists as directory (not link)
-# linking of next step is failed if it exists.
-- name: clean ~/.config
+- name: symlink dotfiles to repos dir, for repo_look
+  file:
+    src: "{{ dotfiles_root }}"
+    dest: "{{ ghq_root }}/github.com/cumet04/dotfiles"
+    state: link
+- name: symlink configs
   block:
-    - stat:
-        path: "{{ ansible_env.HOME }}/.config"
+    - find:
+        paths: "{{ dotfiles_root }}/home/.config"
+        file_type: any
       register: config
     - file:
-        path: "{{ ansible_env.HOME }}/.config"
-        state: absent
-      when: config.stat.isdir is defined and config.stat.isdir
-
-- name: install dotfiles symlinks
-  file:
-    src: "{{ dotfiles_root }}/home/{{ item }}"
-    dest: "{{ ansible_env.HOME }}/{{ item }}"
-    state: link
-  loop:
-    - .config
-    - .gitconfig
-
+        src: "{{ item.path }}"
+        dest: "{{ ansible_env.HOME }}/{{ item.path | replace(dotfiles_root + '/home/', '') }}"
+        state: link
+      loop: "{{ config.files }}"
 - name: symlink shell_commands
   file:
     src: "{{ dotfiles_root }}/shell_commands"
@@ -47,7 +33,3 @@
     src: "{{ dotfiles_root }}/configs/wsl.conf"
     dest: /etc/wsl.conf
     state: link
-- name: ignore gitconfig change
-  shell: |
-    cd {{ dotfiles_root}}
-    git update-index --skip-worktree home/.gitconfig

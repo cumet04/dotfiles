@@ -1,31 +1,31 @@
 #!/bin/bash
 
-set -eu
-
-test -f ./personal.tar*
+cd $(dirname $0)
 
 sudo apt-get update
-sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y ansible unzip
+sudo apt-get install -y colordiff direnv fish jq neovim peco tig
 
-### setup home
-sudo ln -s (wslpath (wslvar USERPROFILE)) /opt/winhome
-rm -rf .profile .bash* .landscape .motd_shown
+# devcontainer create .config AFTER this script run.
+# So 'ln -s $PWD/home/.config $HOME/.config' doesn't work.
+mkdir -p $HOME/.config
+CONF_ROOT=$PWD/home/.config
+ls -1 $CONF_ROOT | xargs -ISRC ln -s $CONF_ROOT/SRC $HOME/.config/
 
-### personal files
-cd $HOME
-tar xf ./personal.tar* # S3 web console omits `.gz`
-find .personal/ -type d | tail -n +2 | sed 's|\.personal/||g' | xargs mkdir -p
-cd .personal
-find . -type f | sed 's|^\./||g' | xargs -ISRC ln -f $PWD/SRC $HOME/SRC
-rm $HOME/personal.tar.gz
 
-### ansible
-BRANCH=${BRANCH:-main}
+### WSL setup
+test -z "$WSL_DISTRO_NAME" && exit
 
-cd /tmp
+sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y ansible
 
-curl -L https://github.com/cumet04/dotfiles/archive/$BRANCH.zip -o dotfiles.zip
-unzip dotfiles.zip
-cd dotfiles-$BRANCH/playbook
-ansible-playbook -K entry.yaml
+# wslvar clean tty, so confine it to 'bash -c'
+# MEMO: `$(wslvar USERPROFILE | xargs wslpath)` doesn't work somehow
+bash -c 'wslpath $(wslvar USERPROFILE) | xargs -ISRC sudo ln -s SRC /opt/winhome'
 
+cd $PWD/playbook
+ansible-playbook -K -c local -i localhost, entry.yaml
+
+echo '##### setup done #####'
+echo 'ToDo:'
+echo '  - put $HOME/.gitconfig'
+echo '  - gh auth login'
+echo '  - put aws config/credentials; https://zenn.dev/cumet04/scraps/1a9861bc18bea7#comment-c67e8908869d49'
