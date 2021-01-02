@@ -19,6 +19,15 @@ alias gitco="git branch | grep -v '*' | cho | xargs git checkout"
 alias sl-command='command sl'
 alias sl='ls'
 
+tty >/dev/null || exit # return unless tty, ex. DockerDesktop -----
+
+# direnv hook fish
+function __direnv_export_eval --on-event fish_prompt;
+  eval (direnv export fish);
+end
+
+test -n "$REMOTE_CONTAINERS" && exit # return if in devcontainer -----
+
 # path; prevent double add to path
 echo $PATH | grep /opt > /dev/null; or set PATH \
   /opt/bin \
@@ -57,7 +66,11 @@ set -x ANSIBLE_RETRY_FILES_ENABLED false
 
 test -f ~/.config/fish/secret_env && source ~/.config/fish/secret_env
 
-if tty >/dev/null
-  source ~/.config/fish/tty-config.fish
-  test -z "$TMUX"; and test -z "$VSCODE_IPC_HOOK_CLI"; and tmux
-end 
+# WSL2 hack; add windows ip to hosts. mainly for lemonade
+if not grep windows.localdomain /etc/hosts > /dev/null
+  echo 'Add windows ip to hosts:'
+  set winip (ip route show to default | cut -d' ' -f 3)
+  echo "$winip windows.localdomain" | sudo tee -a /etc/hosts
+end
+
+test -z "$TMUX$VSCODE_IPC_HOOK_CLI" && tmux

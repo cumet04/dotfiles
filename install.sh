@@ -1,31 +1,28 @@
 #!/bin/bash
 
-set -eu
-
-test -f ./personal.tar*
-
 sudo apt-get update
-sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y ansible unzip
+sudo apt-get install -y colordiff direnv fish git jq neovim peco tig
 
-### setup home
-sudo ln -s (wslpath (wslvar USERPROFILE)) /opt/winhome
-rm -rf .profile .bash* .landscape .motd_shown
+# devcontainer create .config AFTER this script run.
+# So 'ln -s $PWD/home/.config $HOME/.config' doesn't work.
+mkdir -p $HOME/.config
+CONF_ROOT=$(pwd -P)/home/.config
+ls -1 $CONF_ROOT | xargs -ISRC ln -s $CONF_ROOT/SRC $HOME/.config/
 
-### personal files
-cd $HOME
-tar xf ./personal.tar* # S3 web console omits `.gz`
-find .personal/ -type d | tail -n +2 | sed 's|\.personal/||g' | xargs mkdir -p
-cd .personal
-find . -type f | sed 's|^\./||g' | xargs -ISRC ln -f $PWD/SRC $HOME/SRC
-rm $HOME/personal.tar.gz
 
-### ansible
-BRANCH=${BRANCH:-main}
+### WSL setup
+test -z "$WSLENV" && exit
 
-cd /tmp
+sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y ansible
 
-curl -L https://github.com/cumet04/dotfiles/archive/$BRANCH.zip -o dotfiles.zip
-unzip dotfiles.zip
-cd dotfiles-$BRANCH/playbook
-ansible-playbook -K entry.yaml
+sudo ln -s (wslpath (wslvar USERPROFILE)) /opt/winhome # install windows home
 
+BRANCH=${BRANCH:-master}
+git clone -b $BRANCH https://github.com/cumet04/dotfiles $HOME/dotfiles
+
+cd $HOME/dotfiles/playbook
+ansible-playbook -K -c local -i localhost, entry.yaml
+
+echo '##### setup done #####'
+echo 'ToDo:'
+echo '  - put $HOME/.gitconfig'

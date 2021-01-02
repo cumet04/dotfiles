@@ -16,27 +16,19 @@
         name: "{{ item }}"
         state: present
       loop:
-        - ansible
-        - colordiff
-        - direnv
         - docker.io
         - docker-compose
         - fd-find
-        - fish
-        - git
         - golang
         - imagemagick
-        - jq
         - mariadb-client
-        - neovim
-        - peco
         - python3
         - python3-pip
         - ripgrep
         - sqlite
-        - tig
         - tmux
         - tree
+        - unzip
         - whois
         - zip
     - name: install dev packages
@@ -57,6 +49,7 @@
         owner: "{{ ansible_user }}"
       loop:
         - /opt/bin
+        - /opt/bin/go
 
 - hosts: localhost
   vars_files:
