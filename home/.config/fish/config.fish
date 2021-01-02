@@ -9,7 +9,7 @@ alias mv='mv -i'
 alias vim='nvim'
 alias cal3='cal -C3'
 alias fd='fdfind --hidden'
-alias rg='rg --hidden'
+alias rg='rg --hidden --ignore --glob "!**/.git/**"'
 alias diff='colordiff'
 alias cdg="cd (git rev-parse --show-toplevel)"
 alias ssh='colored_ssh'
@@ -54,7 +54,6 @@ set -x SQLITE_HISTORY ~/.cache/sqlite_history
 set -x MYSQL_HISTFILE ~/.cache/mysql_history
 set -x LESSHISTFILE - # disable .lesshst
 set -x ANSIBLE_RETRY_FILES_ENABLED false
-
 
 test -f ~/.config/fish/secret_env && source ~/.config/fish/secret_env
 

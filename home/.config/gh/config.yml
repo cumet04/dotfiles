@@ -6,3 +6,4 @@ aliases:
     co: pr checkout
     clone: "!gh repo clone \"$1\" $HOME/repos/github.com/\"$1\""
     get: "!gh repo clone \"$1\" $HOME/repos/github.com/\"$1\" -- --depth 1"
+    repov: repo view -w
