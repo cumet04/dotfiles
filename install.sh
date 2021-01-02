@@ -1,26 +1,27 @@
 #!/bin/bash
 
+cd $(dirname $0)
+
 sudo apt-get update
-sudo apt-get install -y colordiff direnv fish git jq neovim peco tig
+sudo apt-get install -y colordiff direnv fish jq neovim peco tig
 
 # devcontainer create .config AFTER this script run.
 # So 'ln -s $PWD/home/.config $HOME/.config' doesn't work.
 mkdir -p $HOME/.config
-CONF_ROOT=$(pwd -P)/home/.config
+CONF_ROOT=$PWD/home/.config
 ls -1 $CONF_ROOT | xargs -ISRC ln -s $CONF_ROOT/SRC $HOME/.config/
 
 
 ### WSL setup
-test -z "$WSLENV" && exit
+test -z "$WSL_DISTRO_NAME" && exit
 
 sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y ansible
 
-sudo ln -s (wslpath (wslvar USERPROFILE)) /opt/winhome # install windows home
+# wslvar clean tty, so confine it to 'bash -c'
+# MEMO: `$(wslvar USERPROFILE | xargs wslpath)` doesn't work somehow
+bash -c 'wslpath $(wslvar USERPROFILE) | xargs -ISRC sudo ln -s SRC /opt/winhome'
 
-BRANCH=${BRANCH:-master}
-git clone -b $BRANCH https://github.com/cumet04/dotfiles $HOME/dotfiles
-
-cd $HOME/dotfiles/playbook
+cd $PWD/playbook
 ansible-playbook -K -c local -i localhost, entry.yaml
 
 echo '##### setup done #####'

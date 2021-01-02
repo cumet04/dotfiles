@@ -1,9 +1,8 @@
 ubuntu
 ----
-In advance, put personal.tar.gz on $HOME
 ```
-export BRANCH=master
-curl -s https://raw.githubusercontent.com/cumet04/dotfiles/$BRANCH/install.sh | bash
+git clone -b main https://github.com/cumet04/dotfiles $HOME/dotfiles
+$HOME/dotfiles/install.sh
 ```
 
 Windows

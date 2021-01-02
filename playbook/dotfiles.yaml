@@ -4,7 +4,7 @@
     state: directory
     owner: "{{ ansible_user }}"
   loop:
-    - "{{ ghq_root }}"
+    - "{{ ghq_root }}/github.com/cumet04"
 
 - name: symlink dotfiles to repos dir, for repo_look
   file:
