@@ -10,7 +10,7 @@
   git:
     repo: https://github.com/cumet04/dotfiles.git
     dest: "{{ dotfiles_root }}"
-    version: "{{ ansible_env.BRANCH | default('master') }}"
+    version: "{{ ansible_env.BRANCH | default('main') }}"
     depth: 1
     update: no
     accept_hostkey: yes

@@ -20,7 +20,7 @@ find . -type f | sed 's|^\./||g' | xargs -ISRC ln -f $PWD/SRC $HOME/SRC
 rm $HOME/personal.tar.gz
 
 ### ansible
-BRANCH=${BRANCH:-master}
+BRANCH=${BRANCH:-main}
 
 cd /tmp
 
