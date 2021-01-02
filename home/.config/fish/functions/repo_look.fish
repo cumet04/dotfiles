@@ -1,7 +1,7 @@
 function repo_look
   set root $HOME/repos
   set selected (
-    find $root -maxdepth 3 -mindepth 3 -type d |
+    find $root -maxdepth 3 -mindepth 3 -type d,l |
     sed "s|$root/||g" |
     sort |
     peco --on-cancel error

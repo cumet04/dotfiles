@@ -27,3 +27,5 @@ ansible-playbook -K -c local -i localhost, entry.yaml
 echo '##### setup done #####'
 echo 'ToDo:'
 echo '  - put $HOME/.gitconfig'
+echo '  - gh auth login'
+echo '  - put aws config/credentials; https://zenn.dev/cumet04/scraps/1a9861bc18bea7#comment-c67e8908869d49'
