@@ -17,6 +17,8 @@
   loop:
     - src: "/opt/winhome/AppData/Local/Programs/Microsoft VS Code/bin/code"
       dest: code
+    - src: "/mnt/c/ProgramData/DockerDesktop/version-bin/docker"
+      dest: docker
     - src: "/mnt/c/Program Files/Docker/Docker/resources/bin/docker-credential-desktop.exe"
       dest: docker-credential-desktop.exe
 

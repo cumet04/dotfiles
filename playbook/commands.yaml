@@ -4,6 +4,7 @@
   loop:
     - 'lemonade-command/lemonade'
     - 'mattn/cho'
+    - 'docker/compose'
     - 'cumet04/atcoder-gli'
 
 - name: install gh command

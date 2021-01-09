@@ -2,6 +2,7 @@
 
 import os
 import os.path
+import re
 import stat
 import json
 import urllib.request
@@ -13,15 +14,12 @@ def main():
     module = AnsibleModule(
         argument_spec={
             "name": {"required": True},
-            "resource_dir": {"default": "/opt/bin/command_resources"},
-            "bin_dir": {"default": "/opt/bin"},
-            "arch": {"default": "linux_amd64"},
         }
     )
     name = module.params["name"]
-    resource_dir = module.params["resource_dir"]
-    bin_dir = module.params["bin_dir"]
-    arch = module.params["arch"]
+    resource_dir = "/opt/bin/command_resources"
+    bin_dir = "/opt/bin"
+    arch = re.compile(r'.*linux[-_]x86_64.*', re.IGNORECASE)
 
     os.makedirs(resource_dir, exist_ok=True)
     os.makedirs(bin_dir, exist_ok=True)
@@ -43,11 +41,11 @@ def main():
     # download asset
     asset_url = None
     for a in resp["assets"]:
-        if arch in a["name"]:
+        if re.match(arch, a["name"]):
             asset_url = a["browser_download_url"]
             break
     if asset_url is None:
-        module.exit_json(failed=True, msg=f"asset not found for '{arch}'")
+        module.exit_json(failed=True, msg=f"asset not found for the arch")
         return
     asset_filename = asset_url.split("/")[-1]
     urllib.request.urlretrieve(asset_url, asset_filename)
@@ -75,6 +73,8 @@ def extract(name, filename):
         return extract_acg(filename)
     if name == "mattn/cho":
         return extract_cho(filename)
+    if name == "docker/compose":
+        return extract_compose(filename)
     else:
         return None, "extract way is not defined"
 
@@ -96,6 +96,10 @@ def extract_cho(filename):
                 return file.name, None
     return None, "target binary is not found"
 
+
+def extract_compose(filename):
+    os.rename(filename, "docker-compose")
+    return "docker-compose", None
 
 def extract_acg(filename):
     import tarfile

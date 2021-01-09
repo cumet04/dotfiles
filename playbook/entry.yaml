@@ -16,8 +16,6 @@
         name: "{{ item }}"
         state: present
       loop:
-        - docker.io
-        - docker-compose
         - fd-find
         - golang
         - imagemagick
