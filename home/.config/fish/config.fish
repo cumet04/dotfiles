@@ -19,15 +19,6 @@ alias gitco="git branch | grep -v '*' | cho | xargs git checkout"
 alias sl-command='command sl'
 alias sl='ls'
 
-tty >/dev/null || exit # return unless tty, ex. DockerDesktop -----
-
-# direnv hook fish
-function __direnv_export_eval --on-event fish_prompt;
-  eval (direnv export fish);
-end
-
-test -n "$REMOTE_CONTAINERS" && exit # return if in devcontainer -----
-
 # path; prevent double add to path
 echo $PATH | grep /opt > /dev/null; or set PATH \
   /opt/bin \
@@ -38,6 +29,15 @@ echo $PATH | grep /opt > /dev/null; or set PATH \
   /opt/anyenv/envs/nodenv/shims \
   $HOME/.local/bin \
   $PATH
+
+tty >/dev/null || exit # return unless tty, ex. DockerDesktop -----
+
+# direnv hook fish
+function __direnv_export_eval --on-event fish_prompt;
+  eval (direnv export fish);
+end
+
+test -n "$REMOTE_CONTAINERS" && exit # return if in devcontainer -----
 
 # anyenv variables
 set -x ANYENV_ROOT /opt/anyenv
