@@ -19,7 +19,7 @@ def main():
     name = module.params["name"]
     resource_dir = "/opt/bin/command_resources"
     bin_dir = "/opt/bin"
-    arch = re.compile(r'.*linux[-_]x86_64.*', re.IGNORECASE)
+    arch = re.compile(r'.*linux[-_](x86_|amd)64.*', re.IGNORECASE)
 
     os.makedirs(resource_dir, exist_ok=True)
     os.makedirs(bin_dir, exist_ok=True)

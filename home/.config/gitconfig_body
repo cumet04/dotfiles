@@ -20,8 +20,9 @@
     pushf = push --force-with-lease
     difw = diff --word-diff
     difc = diff --cached
-    difwc = diff --word-diff --cached
-    difcw = diff --word-diff --cached
+    commita = commit --amend
+    rebasec = rebase --continue
+    pop = stash pop
 [tig]
   vertical-split = yes
   diff-highlight = true
