@@ -1,14 +1,3 @@
-- name: link winhome directories
-  file:
-    src: "/opt/winhome/{{ item.src }}"
-    dest: "{{ ansible_env.HOME }}/{{ item.dest}}"
-    state: link
-  loop:
-    - src: Desktop
-      dest: Desktop
-    - src: AppData/Local/Packages/Microsoft.ScreenSketch_8wekyb3d8bbwe/TempState
-      dest: Captures
-
 - name: link win commands
   file:
     src: "{{ item.src }}"
