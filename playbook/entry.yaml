@@ -37,10 +37,6 @@
       loop:
         - libmariadb-dev
         - libsqlite3-dev
-    - name: chsh fish
-      user:
-        name: "{{ ansible_user }}"
-        shell: /usr/bin/fish
     - name: setup directories
       file:
         path: '{{ item }}'
