@@ -21,9 +21,7 @@ alias sl='ls'
 # path; prevent double add to path
 echo $PATH | grep /opt > /dev/null; or set PATH \
   /opt/bin \
-  /opt/bin/go \
   /opt/bin/shell_commands \
-  /opt/cargo/bin \
   /opt/anyenv/envs/rbenv/shims \
   /opt/anyenv/envs/nodenv/shims \
   $HOME/.local/bin \
@@ -46,13 +44,8 @@ set -x RBENV_SHELL fish
 set -x NODENV_SHELL fish
 
 set -x EDITOR nano
-set -x GOBIN /opt/bin/go
-set -x GO111MODULE on
-set -x CARGO_HOME /opt/cargo
-set -x RUSTUP_HOME /opt/rustup
 
 # clean $HOME
-set -x GOPATH ~/.cache/go
 set -x npm_config_cache ~/.cache/npm
 set -x CDK_HOME ~/.cache/cdk
 set -x BUNDLE_USER_HOME ~/.cache/bundle
