@@ -7,9 +7,9 @@
 [branch]
   autosetupmerge = false
 [pager]
-  log  = diff-highlight | less -x4
-  show = diff-highlight | less -x4
-  diff = diff-highlight | less -x4
+  log  = (diff-highlight 2>/dev/null || cat) | less -x4
+  show = (diff-highlight 2>/dev/null || cat) | less -x4
+  diff = (diff-highlight 2>/dev/null || cat) | less -x4
 [diff]
   compactionHeuristic = true
 [alias]
@@ -18,7 +18,6 @@
   co = checkout
   pfetch = fetch origin --prune --no-tags
   pushf = push --force-with-lease
-  difw = diff --word-diff
   difc = diff --cached
   commita = commit --amend
   rebasec = rebase --continue
