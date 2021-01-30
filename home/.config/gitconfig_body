@@ -1,34 +1,34 @@
 [core]
-	excludesfile = ~/.config/gitignore_global
-	editor = "nano"
+  excludesfile = ~/.config/gitignore_global
+  editor = "nano"
 [credential "https://github.com"]
-	helper = !gh auth git-credential
+  helper = !gh auth git-credential
 
 [branch]
-	autosetupmerge = false
+  autosetupmerge = false
 [pager]
-	log = diff-highlight | less -x4
-	show = diff-highlight | less -x4
-	diff = diff-highlight | less -x4
+  log  = diff-highlight | less -x4
+  show = diff-highlight | less -x4
+  diff = diff-highlight | less -x4
 [diff]
-	compactionHeuristic = true
+  compactionHeuristic = true
 [alias]
-    d = diff
-    s = status
-    co = checkout
-    pfetch = fetch origin --prune --no-tags
-    pushf = push --force-with-lease
-    difw = diff --word-diff
-    difc = diff --cached
-    commita = commit --amend
-    rebasec = rebase --continue
-    pop = stash pop
+  d = diff
+  s = status
+  co = checkout
+  pfetch = fetch origin --prune --no-tags
+  pushf = push --force-with-lease
+  difw = diff --word-diff
+  difc = diff --cached
+  commita = commit --amend
+  rebasec = rebase --continue
+  pop = stash pop
 [tig]
   vertical-split = yes
   diff-highlight = true
   history-size = 0
 [tig "bind"]
-   generic = G none
-   generic = g move-first-line
-   generic = G move-last-line
-   status = C <git commit
+  generic = G none
+  generic = g move-first-line
+  generic = G move-last-line
+  status = C <git commit
