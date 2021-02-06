@@ -21,9 +21,9 @@ alias sl='ls'
 if not echo $PATH | grep /opt >/dev/null
   set PATH \
     /opt/bin \
-    /opt/bin/shell_commands \
     /opt/anyenv/envs/rbenv/shims \
     /opt/anyenv/envs/nodenv/shims \
+    $HOME/dotfiles/shell_commands \
     $PATH
 end
 
