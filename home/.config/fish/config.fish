@@ -19,15 +19,14 @@ alias sl-command='command sl'
 alias sl='ls'
 
 # path; prevent double add to path
-echo $PATH | grep /opt > /dev/null; or set PATH \
-  /opt/bin \
-  /opt/bin/shell_commands \
-  /opt/anyenv/envs/rbenv/shims \
-  /opt/anyenv/envs/nodenv/shims \
-  $HOME/.local/bin \
-  $PATH
-
-tty >/dev/null || exit # return unless tty, ex. DockerDesktop -----
+if not echo $PATH | grep /opt >/dev/null
+  set PATH \
+    /opt/bin \
+    /opt/bin/shell_commands \
+    /opt/anyenv/envs/rbenv/shims \
+    /opt/anyenv/envs/nodenv/shims \
+    $PATH
+end
 
 # direnv hook fish
 function __direnv_export_eval --on-event fish_prompt;
