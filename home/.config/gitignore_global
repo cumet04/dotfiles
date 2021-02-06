@@ -1,6 +1,5 @@
 .envrc
 __pycache__/
-node_modules/
 .alias_local
 .pylintrc
 *.db

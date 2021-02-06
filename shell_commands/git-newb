@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ -z $# ]; then
+  echo "need new branch name"
+  exit 1
+fi
+
+new_branch_name=$1
+
+default_branch=$(git remote -v | head -n 1 | cut -f 2 | \
+  sed 's|https://github.com/\([^. ]*\).*|\1|' | \
+  xargs -I REPO gh api repos/REPO | \
+  jq -r '.default_branch'
+)
+git fetch origin --prune --no-tags
+git branch $new_branch_name origin/$default_branch
+git checkout $new_branch_name 

@@ -13,7 +13,6 @@ alias rg='rg --hidden --ignore --glob "!**/.git/**"'
 alias diff='colordiff'
 alias cdg="cd (git rev-parse --show-toplevel)"
 alias tmux='tmux -f ~/.config/tmux.conf'
-alias gitco="git branch | grep -v '*' | cho | xargs git checkout"
 
 alias sl-command='command sl'
 alias sl='ls'
