@@ -1,3 +1,3 @@
 #!/bin/bash
 
-git branch | grep -v '*' | cho | xargs git checkout
+git branch | grep -v '*' | tr -d ' ' | cho | xargs git checkout

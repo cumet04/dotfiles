@@ -1,0 +1,13 @@
+#!/bin/bash
+
+default_branch=$(git remote -v | head -n 1 | cut -f 2 | \
+  sed 's|https://github.com/\([^. ]*\).*|\1|' | \
+  xargs -I REPO gh api repos/REPO | \
+  jq -r '.default_branch'
+)
+
+git fetch origin --prune --no-tags
+git checkout origin/$default_branch
+git branch --merged | \
+  grep -v '^\*' | \
+  xargs git branch -d
