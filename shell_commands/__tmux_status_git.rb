@@ -33,14 +33,14 @@ status_view =
     if p[:status].nil?; '(local)'
     elsif p[:status] == 0; ''
     elsif p[:status].positive?; fgc(" +#{p[:status].to_s}", :yellow)
-    elsif p[:status].negative?; fgc(" -#{(-p[:status]).to_s}", :red)
+    elsif p[:status].negative?; fgc(" -#{(-p[:status]).to_s}", :brightred)
     end
 
 puts "On #{p[:branch]}#{status_view}, " +
     if p[:staged] + p[:changed] + p[:untracked] == 0
         "workspace is clear"
     else
-        (p[:staged] == 0 ?    "no staged, "    : fgc("#{p[:staged]} staged", :green) + ", ") +
-        (p[:changed] == 0 ?   "no changed, "   : fgc("#{p[:changed]} changed", :red) + ", ") +
-        (p[:untracked] == 0 ? "no untracked, " : fgc("#{p[:untracked]} untracked", :magenta))
+        (p[:staged] == 0 ?    "no staged, "    : fgc("#{p[:staged]} staged", :brightgreen) + ", ") +
+        (p[:changed] == 0 ?   "no changed, "   : fgc("#{p[:changed]} changed", :brightred) + ", ") +
+        (p[:untracked] == 0 ? "no untracked, " : fgc("#{p[:untracked]} untracked", :brightmagenta))
     end

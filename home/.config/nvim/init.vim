@@ -1,5 +1,4 @@
 set number
-colorscheme molokai
 set t_Co=256
 syntax enable
 
@@ -21,19 +20,10 @@ set softtabstop=2
 set tabstop=2
 set autoindent
 set smartindent
-set textwidth=80
 set nowrap
 
 set cursorline
 highlight clear CursorLine
-
-highlight Normal ctermbg=none
-highlight LineNr ctermbg=none
-
-let loaded_matchparen = 1
-if exists('&colorcolumn')
-    set colorcolumn=+1
-endif
 
 inoremap {<Enter> {<Enter>}<ESC><S-o>
 set formatoptions=q
