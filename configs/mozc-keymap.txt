@@ -1,17 +1,12 @@
 status	key	command
 DirectInput	Ctrl Space	IMEOn
-DirectInput	F14	IMEOn
+DirectInput	F13	IMEOn
 Composition	Right	MoveCursorRight
 Composition	Ctrl Right	MoveCursorToEnd
 Composition	Left	MoveCursorLeft
 Composition	Ctrl Left	MoveCursorToBeginning
 Conversion	Backspace	Cancel
 Conversion	Ctrl h	Cancel
-Composition	F13	CancelAndIMEOff
-Conversion	F13	CancelAndIMEOff
-Precomposition	F13	CancelAndIMEOff
-Prediction	F13	CancelAndIMEOff
-Suggestion	F13	CancelAndIMEOff
 Suggestion	Ctrl Space	CancelAndIMEOff
 Prediction	Ctrl Space	CancelAndIMEOff
 Precomposition	Ctrl Space	CancelAndIMEOff
