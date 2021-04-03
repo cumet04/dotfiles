@@ -1,5 +1,0 @@
-#!/bin/bash
-
-target=${1:-"HEAD"}
-
-git diff ${target}~ $target
