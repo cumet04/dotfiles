@@ -67,8 +67,6 @@ def main():
 
 
 def extract(name, filename):
-    if name == "lemonade-command/lemonade":
-        return extract_lemonade(filename)
     if name == "cumet04/atcoder-gli":
         return extract_acg(filename)
     if name == "mattn/cho":
@@ -77,13 +75,6 @@ def extract(name, filename):
         return extract_compose(filename)
     else:
         return None, "extract way is not defined"
-
-
-def extract_lemonade(filename):
-    import tarfile
-
-    tarfile.open(filename).extractall()
-    return "lemonade", None
 
 
 def extract_cho(filename):

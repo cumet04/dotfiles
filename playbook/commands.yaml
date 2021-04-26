@@ -2,7 +2,6 @@
   ghcommand:
     name: "{{ item }}"
   loop:
-    - 'lemonade-command/lemonade'
     - 'mattn/cho'
     - 'docker/compose'
     - 'cumet04/atcoder-gli'
