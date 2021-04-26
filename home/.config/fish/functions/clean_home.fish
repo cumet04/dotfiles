@@ -20,6 +20,7 @@ function clean_home
   rm -rf \
     .bashrc \
     .bash_history \
+    .bash_logout \
     .bash_profile \
     .landscape \
     .motd_shown \
