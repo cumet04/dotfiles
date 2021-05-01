@@ -1,0 +1,32 @@
+## main...origin/main
+
+## main...origin/main
+?? git-status
+
+## main...origin/main
+A  git-status
+
+## main...origin/main
+AM git-status
+?? aaa
+
+## main...origin/main [ahead 1]
+ M git-status
+?? aaa
+
+## main...origin/main [ahead 1]
+A  aaa
+ M git-status
+
+## main...origin/main [behind 1]
+ M home/.config/fish/config.fish
+ M home/.config/nvim/init.vim
+ M home/.config/tmux.conf
+ M playbook/commands.yaml
+ M playbook/library/ghcommand.py
+?? aaa
+?? git-status
+
+## tmux_status_git_perl
+ M shell_commands/__tmux_status_git
+?? shell_commands/git-status

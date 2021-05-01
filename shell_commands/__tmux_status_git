@@ -1,0 +1,4 @@
+#!/usr/bin/perl
+
+my $line = <STDIN>;
+print 'On main, workspace is clear'
