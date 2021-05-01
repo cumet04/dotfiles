@@ -1,4 +1,4 @@
-raw = `git status --branch --porcelain`.split("\n")
+raw = STDIN.read.split("\n") # Supposed input: git status --branch --porcelain
 
 # 'main...origin/main [behind 1]' => ["main", "origin/main", "[behind 1]"]
 branch_params = raw[0][3..-1].split(/\.\.\.| /, 3)
