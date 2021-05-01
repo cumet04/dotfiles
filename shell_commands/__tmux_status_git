@@ -1,4 +1,51 @@
 #!/usr/bin/perl
 
-my $line = <STDIN>;
-print 'On main, workspace is clear'
+# Supposed STDIN input: git status --branch --porcelain
+
+# TODO: rebase, conflict, ...
+
+# '## main...origin/main [behind 1]' => ["##", "main", "origin/main", "[behind 1]"]
+my @branch_params = split(/\.\.\.| /, <STDIN>, 4);
+my $branch = @branch_params[1];
+chomp($branch);
+
+if ($#branch_params == 2) { $remote = 0; }
+elsif ($#branch_params == 3) {
+  my $count = @branch_params[3];
+  $count =~ s/[^\d]*//g;
+  $remote = (@branch_params[3] =~ m/ahead/ ? 1 : -1) * $count;
+}
+
+my $staged = 0;
+my $changed = 0;
+my $untracked = 0;
+while (<STDIN>) {
+  if($_ =~ /^[MADRC]/) { $staged++;}
+  if($_ =~ /^\ [MADRC]/) { $changed++;}
+  if($_ =~ /^\?/) { $untracked++;}
+}
+
+# print:
+#   'On main#[fg=yellow] +1#[default], '
+#   'On tmux_status_git_perl(local), '
+print 'On ' . $branch;
+if (not defined($remote)) { print '(local)'}
+if ($remote > 0) { print &fgc(' +' . $remote, 'yellow')}
+if ($remote < 0) { print &fgc(' ' . $remote, 'brightred')}
+print ', ';
+
+# print:
+#  'workspace is clear'
+#  '#[fg=brightgreen]1 staged#[default], #[fg=brightred]1 changed#[default], no untracked,'
+if ($staged + $changed + $untracked == 0) {
+  print 'workspace is clear';
+} else {
+  print $staged == 0 ?    'no staged, '    : &fgc($staged . ' staged', 'brightgreen') . ", ";
+  print $changed == 0 ?   'no changed, '   : &fgc($changed . ' changed', 'brightred') . ", ";
+  print $untracked == 0 ? 'no untracked, ' : &fgc($untracked . ' untracked', 'brightmagenta');
+}
+
+sub fgc {
+  ($text, $color) = @_;
+  return '#[fg=' . $color .']' . $text . '#[default]';
+}
