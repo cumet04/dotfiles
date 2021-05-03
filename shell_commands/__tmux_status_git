@@ -42,7 +42,7 @@ if ($staged + $changed + $untracked == 0) {
 } else {
   print $staged == 0 ?    'no staged, '    : &fgc($staged . ' staged', 'brightgreen') . ", ";
   print $changed == 0 ?   'no changed, '   : &fgc($changed . ' changed', 'brightred') . ", ";
-  print $untracked == 0 ? 'no untracked, ' : &fgc($untracked . ' untracked', 'brightmagenta');
+  print $untracked == 0 ? 'no untracked' : &fgc($untracked . ' untracked', 'brightmagenta');
 }
 
 sub fgc {
