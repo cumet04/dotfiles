@@ -40,10 +40,12 @@ def run(name, resource_dir, bin_dir, arch):
     os.makedirs(workdir)
     os.chdir(workdir)
 
+    command_name, arch, ex_command = info(name)
+
     # download asset
     asset_url = None
     for a in resp["assets"]:
-        if re.match(arch, a["name"]):
+        if arch in a["name"]:
             asset_url = a["browser_download_url"]
             break
     if asset_url is None:
@@ -52,10 +54,10 @@ def run(name, resource_dir, bin_dir, arch):
     urllib.request.urlretrieve(asset_url, asset_filename)
 
     # extract and get original binary path
-    bin, err = extract(name, asset_filename)
+    bin, err = extract(asset_filename, command_name, ex_command)
     if err is not None:
         return True, err
-    original_path = f"{bin_dir}/{bin.split('/')[-1]}"
+    original_path = f"{bin_dir}/{bin}"
 
     # make link and add exec permission
     if os.path.exists(original_path):
@@ -67,41 +69,22 @@ def run(name, resource_dir, bin_dir, arch):
     return True, None
 
 
-def extract(name, filename):
+def extract(asset, command, ex_command):
+    import subprocess
+    subprocess.run(ex_command.replace("FILE", asset) + f" > {command}", shell=True)
+    return command, None
+
+def info(name):
     if name == "cumet04/atcoder-gli":
-        return extract_acg(filename)
+        return "acg", "linux_amd64", "tar xf FILE -O atcoder-gli_linux_amd64/acg"
     if name == "mattn/cho":
-        return extract_cho(filename)
+        return "cho", "linux_amd64", " | ".join(["tar tf FILE",
+                                          "grep 'cho$'",
+                                          "xargs tar xf FILE -O"])
     if name == "docker/compose":
-        return extract_compose(filename)
-    else:
-        return None, "extract way is not defined"
-
-
-def extract_cho(filename):
-    import tarfile
-
-    with tarfile.open(filename) as tar:
-        tar.extractall()
-        for file in tar.getmembers():
-            if file.name.endswith("/cho"):
-                return file.name, None
-    return None, "target binary is not found"
-
-
-def extract_compose(filename):
-    os.rename(filename, "docker-compose")
-    return "docker-compose", None
-
-def extract_acg(filename):
-    import tarfile
-
-    with tarfile.open(filename) as tar:
-        tar.extractall()
-        for file in tar.getmembers():
-            if file.name.endswith("/acg"):
-                return file.name, None
-    return None, "target binary is not found"
+        return "docker-compose", "Linux-x86_64", "cat FILE"
+    if name == "denoland/deno":
+        return "deno", "x86_64-unknown-linux", "unzip -p FILE deno"
 
 
 if __name__ == "__main__":

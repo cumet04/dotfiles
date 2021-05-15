@@ -5,6 +5,7 @@
     - 'mattn/cho'
     - 'docker/compose'
     - 'cumet04/atcoder-gli'
+    - 'denoland/deno'
 
 - name: install gh command
   become: true
