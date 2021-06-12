@@ -9,11 +9,14 @@ my @branch_params = split(/\.\.\.| /, <STDIN>, 4);
 my $branch = @branch_params[1];
 chomp($branch);
 
-if ($#branch_params == 2) { $remote = 0; }
+if ($#branch_params == 2) { $ahead = 0; $behind = 0; }
 elsif ($#branch_params == 3) {
-  my $count = @branch_params[3];
-  $count =~ s/[^\d]*//g;
-  $remote = (@branch_params[3] =~ m/ahead/ ? 1 : -1) * $count;
+  chomp(@branch_params[3]);
+  $ahead = @branch_params[3];
+  $ahead =~ s/.*ahead (\d+).*/\1/g;
+
+  $behind = @branch_params[3];
+  $behind =~ s/.*behind (\d+).*/\1/g;
 }
 
 my $staged = 0;
@@ -29,9 +32,9 @@ while (<STDIN>) {
 #   'On main#[fg=yellow] +1#[default], '
 #   'On tmux_status_git_perl(local), '
 print 'On ' . $branch;
-if (not defined($remote)) { print '(local)'}
-if ($remote > 0) { print &fgc(' +' . $remote, 'yellow')}
-if ($remote < 0) { print &fgc(' ' . $remote, 'brightred')}
+if (not defined($ahead)) { print '(local)'}
+if ($behind > 0) { print &fgc(' -' . $behind, 'brightred')}
+if ($ahead > 0)  { print &fgc(' +' . $ahead, 'yellow')}
 print ', ';
 
 # print:
