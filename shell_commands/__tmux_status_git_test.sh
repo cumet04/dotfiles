@@ -68,4 +68,10 @@ diff <(./__tmux_status_git << EOS
 EOS
 ) <(echo -n "On tmux_status_git_perl(local), no staged, #[fg=brightred]1 changed#[default], #[fg=brightmagenta]1 untracked#[default]")
 
+echo "case 9"
+diff <(./__tmux_status_git << EOS
+## main...origin/main [ahead 2, behind 1]
+EOS
+) <(echo -n "On main#[fg=brightred] -1#[default]#[fg=yellow] +2#[default], workspace is clear")
+
 echo "all ok"
