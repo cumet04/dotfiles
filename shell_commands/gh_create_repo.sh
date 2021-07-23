@@ -19,6 +19,8 @@ gh api /licenses/$LICENSE --jq '.body' | \
 
 git add LICENSE
 git commit -m "add LICENSE" >/dev/null
+git branch -m main
+git push origin main -u
 
 pwd
 
