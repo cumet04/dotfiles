@@ -18,9 +18,9 @@ gh api /licenses/$LICENSE --jq '.body' | \
   sed "s/\[fullname\]/$USER/" > LICENSE
 
 git add LICENSE
-git commit -m "add LICENSE" >/dev/null
-git branch -m main
-git push origin main -u
+git commit -q -m "add LICENSE"
+git branch -q -m main
+git push -q origin main -u
 
 pwd
 
