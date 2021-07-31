@@ -1,0 +1,9 @@
+#!/bin/bash
+
+input=$(cat - | base64 | tr -d '\n')
+
+if [[ -n $TMUX ]]; then
+  echo -en "\033Ptmux;\033\033]52;;${input}\033\033\\\\\033\\"
+else
+  echo -en "\033]52;;${input}\033\\"
+fi
