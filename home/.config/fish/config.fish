@@ -12,7 +12,6 @@ alias fd='fdfind --hidden'
 alias rg='rg --hidden --ignore --glob "!**/.git/**"'
 alias diff='colordiff'
 alias cdg="cd (git rev-parse --show-toplevel)"
-alias tmux='tmux -f ~/.config/tmux.conf'
 
 alias sl-command='command sl'
 alias sl='ls'
@@ -55,5 +54,3 @@ set -x LESSHISTFILE - # disable .lesshst
 set -x ANSIBLE_RETRY_FILES_ENABLED false
 
 test -f ~/.config/fish/secret_env && source ~/.config/fish/secret_env
-
-test -z "$TMUX$VSCODE_IPC_HOOK_CLI" && tmux

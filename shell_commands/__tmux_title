@@ -1,8 +1,0 @@
-#!/bin/sh
-
-cd $1
-if git rev-parse --is-inside-work-tree >/dev/null 2>&1 ; then
-    echo "[$(git rev-parse --show-toplevel | xargs basename)]"
-else
-    pwd | sed "s|$HOME|\$HOME|" | xargs basename
-fi

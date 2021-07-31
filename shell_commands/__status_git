@@ -33,8 +33,8 @@ while (<STDIN>) {
 #   'On tmux_status_git_perl(local), '
 print 'On ' . $branch;
 if (not defined($ahead)) { print '(local)'}
-if ($behind > 0) { print &fgc(' -' . $behind, 'brightred')}
-if ($ahead > 0)  { print &fgc(' +' . $ahead, 'yellow')}
+if ($behind > 0) { print &fgc(' -' . $behind, '31')}
+if ($ahead > 0)  { print &fgc(' +' . $ahead, '33')}
 print ', ';
 
 # print:
@@ -43,12 +43,12 @@ print ', ';
 if ($staged + $changed + $untracked == 0) {
   print 'workspace is clear';
 } else {
-  print $staged == 0 ?    'no staged, '    : &fgc($staged . ' staged', 'brightgreen') . ", ";
-  print $changed == 0 ?   'no changed, '   : &fgc($changed . ' changed', 'brightred') . ", ";
-  print $untracked == 0 ? 'no untracked' : &fgc($untracked . ' untracked', 'brightmagenta');
+  print $staged == 0 ?    'no staged, '    : &fgc($staged . ' staged', '32') . ", ";
+  print $changed == 0 ?   'no changed, '   : &fgc($changed . ' changed', '31') . ", ";
+  print $untracked == 0 ? 'no untracked' : &fgc($untracked . ' untracked', '35');
 }
 
 sub fgc {
   ($text, $color) = @_;
-  return '#[fg=' . $color .']' . $text . '#[default]';
+  return "\e[" . $color . "m" . $text . "\e[m";
 }

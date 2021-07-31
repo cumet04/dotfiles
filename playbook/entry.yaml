@@ -19,7 +19,6 @@
         - mariadb-client
         - ripgrep
         - sqlite
-        - tmux
         - tree
         - unzip
         - whois

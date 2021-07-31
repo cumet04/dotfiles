@@ -7,21 +7,21 @@ echo "case 1"
 diff <(./__tmux_status_git << EOS
 ## main...origin/main
 EOS
-) <(echo -n "On main, workspace is clear")
+) <(echo -en "On main, workspace is clear")
 
 echo "case 2"
 diff <(./__tmux_status_git << EOS
 ## main...origin/main
 ?? git-status
 EOS
-) <(echo -n "On main, no staged, no changed, #[fg=brightmagenta]1 untracked#[default]")
+) <(echo -en "On main, no staged, no changed, \e[35m1 untracked\e[m")
 
 echo "case 3"
 diff <(./__tmux_status_git << EOS
 ## main...origin/main
 A  git-status
 EOS
-) <(echo -n "On main, #[fg=brightgreen]1 staged#[default], no changed, no untracked")
+) <(echo -en "On main, \e[32m1 staged\e[m, no changed, no untracked")
 
 echo "case 4"
 diff <(./__tmux_status_git << EOS
@@ -29,7 +29,7 @@ diff <(./__tmux_status_git << EOS
 AM git-status
 ?? aaa
 EOS
-) <(echo -n "On main, #[fg=brightgreen]1 staged#[default], no changed, #[fg=brightmagenta]1 untracked#[default]")
+) <(echo -en "On main, \e[32m1 staged\e[m, no changed, \e[35m1 untracked\e[m")
 
 echo "case 5"
 diff <(./__tmux_status_git << EOS
@@ -37,7 +37,7 @@ diff <(./__tmux_status_git << EOS
  M git-status
 ?? aaa
 EOS
-) <(echo -n "On main#[fg=yellow] +1#[default], no staged, #[fg=brightred]1 changed#[default], #[fg=brightmagenta]1 untracked#[default]")
+) <(echo -en "On main\e[33m +1\e[m, no staged, \e[31m1 changed\e[m, \e[35m1 untracked\e[m")
 
 echo "case 6"
 diff <(./__tmux_status_git << EOS
@@ -45,7 +45,7 @@ diff <(./__tmux_status_git << EOS
 A  aaa
  M git-status
 EOS
-) <(echo -n "On main#[fg=yellow] +1#[default], #[fg=brightgreen]1 staged#[default], #[fg=brightred]1 changed#[default], no untracked")
+) <(echo -en "On main\e[33m +1\e[m, \e[32m1 staged\e[m, \e[31m1 changed\e[m, no untracked")
 
 echo "case 7"
 diff <(./__tmux_status_git << EOS
@@ -58,7 +58,7 @@ diff <(./__tmux_status_git << EOS
 ?? aaa
 ?? git-status
 EOS
-) <(echo -n "On main#[fg=brightred] -1#[default], no staged, #[fg=brightred]5 changed#[default], #[fg=brightmagenta]2 untracked#[default]")
+) <(echo -en "On main\e[31m -1\e[m, no staged, \e[31m5 changed\e[m, \e[35m2 untracked\e[m")
 
 echo "case 8"
 diff <(./__tmux_status_git << EOS
@@ -66,12 +66,12 @@ diff <(./__tmux_status_git << EOS
  M shell_commands/__tmux_status_git
 ?? shell_commands/git-status
 EOS
-) <(echo -n "On tmux_status_git_perl(local), no staged, #[fg=brightred]1 changed#[default], #[fg=brightmagenta]1 untracked#[default]")
+) <(echo -en "On tmux_status_git_perl(local), no staged, \e[31m1 changed\e[m, \e[35m1 untracked\e[m")
 
 echo "case 9"
 diff <(./__tmux_status_git << EOS
 ## main...origin/main [ahead 2, behind 1]
 EOS
-) <(echo -n "On main#[fg=brightred] -1#[default]#[fg=yellow] +2#[default], workspace is clear")
+) <(echo -en "On main\e[31m -1\e[m\e[33m +2\e[m, workspace is clear")
 
 echo "all ok"
