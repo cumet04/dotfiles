@@ -37,19 +37,19 @@
     - name: symlink anyenv
       file:
         src: /opt/anyenv/bin/anyenv
-        dest: /opt/bin/anyenv
+        dest: /usr/local/bin/anyenv
         state: link
     - name: run anyenv install
       shell: |
         export ANYENV_ROOT=/opt/anyenv
         export ANYENV_DEFINITION_ROOT=/opt/anyenv/anyenv-install-config
-        /opt/bin/anyenv install --force-init
-        /opt/bin/anyenv install rbenv
-        /opt/bin/anyenv install nodenv
+        anyenv install --force-init
+        anyenv install rbenv
+        anyenv install nodenv
     - name: symlink envs
       file:
         src: "/opt/anyenv/envs/{{ item }}/bin/{{ item }}"
-        dest: /opt/bin/{{ item }}
+        dest: /usr/local/bin/{{ item }}
         state: link
       loop:
         - rbenv

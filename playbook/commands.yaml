@@ -1,4 +1,5 @@
 - name: install github-release commands
+  become: true
   ghcommand:
     name: "{{ item }}"
   loop:
@@ -31,7 +32,7 @@
         remote_src: true
     - file:
         src: /opt/aws/dist/{{ item }}
-        dest: /opt/bin/{{ item }}
+        dest: /usr/local/bin/{{ item }}
         state: link
       loop:
         - aws
@@ -46,7 +47,7 @@
   become: true
   file:
     src: /usr/share/doc/git/contrib/diff-highlight/diff-highlight
-    dest: /opt/bin/diff-highlight
+    dest: /usr/local/bin/diff-highlight
     state: link
 - name: executable diff-highliht
   become: true

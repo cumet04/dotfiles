@@ -34,13 +34,6 @@
       apt:
         update_cache: yes
         upgrade: 'yes'
-    - name: setup directories
-      file:
-        path: '{{ item }}'
-        state: directory
-        owner: "{{ ansible_user }}"
-      loop:
-        - /opt/bin
 
 - hosts: localhost
   vars_files:

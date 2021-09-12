@@ -15,8 +15,8 @@ def main():
         }
     )
     name = module.params["name"]
-    resource_dir = "/opt/bin/command_resources"
-    bin_dir = "/opt/bin"
+    resource_dir = "/opt/command_resources"
+    bin_dir = "/usr/local/bin"
     arch = re.compile(r'.*linux[-_](x86_|amd)64.*', re.IGNORECASE)
 
     changed, msg = run(name,resource_dir,bin_dir,arch)
