@@ -53,4 +53,7 @@ set -x MYSQL_HISTFILE ~/.cache/mysql_history
 set -x LESSHISTFILE - # disable .lesshst
 set -x ANSIBLE_RETRY_FILES_ENABLED false
 
+# {user} ALL=NOPASSWD: /usr/sbin/service docker start
+service docker status >/dev/null || sudo service docker start
+
 test -f ~/.config/fish/secret_env && source ~/.config/fish/secret_env

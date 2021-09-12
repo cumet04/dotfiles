@@ -50,3 +50,4 @@
     - include: dotfiles.yaml
     - include: anyenv.yaml
     - include: commands.yaml
+    - include: docker-ce.yaml
