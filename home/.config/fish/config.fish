@@ -51,6 +51,7 @@ set -x SQLITE_HISTORY ~/.cache/sqlite_history
 set -x MYSQL_HISTFILE ~/.cache/mysql_history
 set -x LESSHISTFILE - # disable .lesshst
 set -x ANSIBLE_RETRY_FILES_ENABLED false
+set -x GOMODCACHE ~/.cache/go/pkg/mod
 
 # {user} ALL=NOPASSWD: /usr/sbin/service docker start
 service docker status >/dev/null || sudo service docker start
