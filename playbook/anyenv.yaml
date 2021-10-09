@@ -35,6 +35,7 @@
         dest: /opt/anyenv
         accept_hostkey: yes
     - name: symlink anyenv
+      become: true
       file:
         src: /opt/anyenv/bin/anyenv
         dest: /usr/local/bin/anyenv
@@ -47,6 +48,7 @@
         anyenv install rbenv
         anyenv install nodenv
     - name: symlink envs
+      become: true
       file:
         src: "/opt/anyenv/envs/{{ item }}/bin/{{ item }}"
         dest: /usr/local/bin/{{ item }}

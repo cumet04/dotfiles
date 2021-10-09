@@ -1,0 +1,12 @@
+# refs https://github.com/golang/go/wiki/Ubuntu
+- name: app repository
+  become: true
+  apt_repository:
+    repo: "ppa:longsleep/golang-backports"
+    state: present
+
+- name: install golang
+  become: true
+  apt:
+    name: golang-go
+    state: present

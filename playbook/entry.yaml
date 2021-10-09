@@ -44,3 +44,4 @@
     - include: anyenv.yaml
     - include: commands.yaml
     - include: docker-ce.yaml
+    - include: golang.yaml
