@@ -82,7 +82,7 @@ def info(name):
                                           "grep 'cho$'",
                                           "xargs tar xf FILE -O"])
     if name == "docker/compose":
-        return "docker-compose", "Linux-x86_64", "cat FILE"
+        return "docker-compose", "linux-x86_64", "cat FILE"
     if name == "denoland/deno":
         return "deno", "x86_64-unknown-linux", "unzip -p FILE deno"
 
