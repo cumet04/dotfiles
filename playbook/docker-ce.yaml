@@ -30,3 +30,10 @@
     - docker-ce
     - docker-ce-cli
     - containerd.io
+
+- name: add permission
+  become: true
+  user:
+    name: "{{ ansible_user }}"
+    append: yes
+    groups: docker
