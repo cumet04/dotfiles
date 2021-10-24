@@ -1,20 +1,10 @@
 #!/bin/bash
 
 # usage: aws_set_token | source
-#        aws_set_token bash | source
-
-set -e AWS_ACCESS_KEY_ID
-set -e AWS_SECRET_ACCESS_KEY
-set -e AWS_SESSION_TOKEN
 
 role_arn=$(aws configure get role_arn)
 raw=$(aws sts assume-role --role-arn $role_arn --role-session-name $(hostname))
-if [ "$1" = "bash" ]; then
-  echo "set -x AWS_ACCESS_KEY_ID $(echo $raw | jq -r '.Credentials.AccessKeyId')"
-  echo "set -x AWS_SECRET_ACCESS_KEY $(echo $raw | jq -r '.Credentials.SecretAccessKey')"
-  echo "set -x AWS_SESSION_TOKEN $(echo $raw | jq -r '.Credentials.SessionToken')"
-else
-  echo "export AWS_ACCESS_KEY_ID=$(echo $raw | jq -r '.Credentials.AccessKeyId')"
-  echo "export AWS_SECRET_ACCESS_KEY=$(echo $raw | jq -r '.Credentials.SecretAccessKey')"
-  echo "export AWS_SESSION_TOKEN=$(echo $raw | jq -r '.Credentials.SessionToken')"
-fi
+
+echo "set -x AWS_ACCESS_KEY_ID $(echo $raw | jq -r '.Credentials.AccessKeyId')"
+echo "set -x AWS_SECRET_ACCESS_KEY $(echo $raw | jq -r '.Credentials.SecretAccessKey')"
+echo "set -x AWS_SESSION_TOKEN $(echo $raw | jq -r '.Credentials.SessionToken')"

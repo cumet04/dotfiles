@@ -8,6 +8,6 @@ default_branch=$(git remote -v | head -n 1 | cut -f 2 | \
 
 git fetch origin --prune --no-tags
 git checkout origin/$default_branch
-git branch --merged | \
-  grep -v '^\*' | \
+git branch | \
+  tail -n +2 | \
   xargs git branch -d
