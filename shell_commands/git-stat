@@ -5,3 +5,7 @@ if git rev-parse --is-inside-work-tree >/dev/null 2>&1 ; then
 else
     pwd | sed "s|$HOME|\$HOME|"
 fi
+
+echo "\n"
+
+git log --oneline -3
