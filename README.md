@@ -23,6 +23,12 @@ wsl --set-default-version 2
 
 https://docs.microsoft.com/ja-jp/windows/wsl/install-win10
 
+4. Install distribution
+```
+wsl --list --online
+wsl --install -d Ubuntu
+```
+
 #### WindowsTerminal
 commandline:
 `wsl.exe -d Ubuntu-20.04 --cd ~  /usr/bin/fish`
