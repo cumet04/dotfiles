@@ -23,7 +23,7 @@
   rebasec = rebase --continue
   pop = stash pop
 [tig]
-  vertical-split = yes
+  vertical-split = no
   diff-highlight = true
   history-size = 0
 [tig "bind"]

@@ -8,4 +8,8 @@ fi
 
 echo "\n"
 
+git status -s
+
+echo ""
+
 git log --oneline -3
