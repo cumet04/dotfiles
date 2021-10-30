@@ -1,5 +1,7 @@
 [include]
-	path = ~/.config/gitconfig_body
-#[user]
-#	email = EMAIL
-#	name = medalhkr
+  path = ~/.config/gitconfig_body
+[credential "https://github.com"]
+  helper = !/usr/bin/gh auth git-credential
+[user]
+  email = EMAIL
+  name = cumet04
