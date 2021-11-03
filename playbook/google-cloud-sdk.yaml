@@ -1,0 +1,26 @@
+# refs https://cloud.google.com/sdk/docs/install?hl=ja#deb
+- name: install depencencies
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - apt-transport-https
+    - ca-certificates
+    - gnupg
+
+- name: app repository
+  become: true
+  block:
+    - apt_key:
+        url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+        state: present
+    - apt_repository:
+        repo: "deb https://packages.cloud.google.com/apt cloud-sdk main"
+        state: present
+
+- name: install docker
+  become: true
+  apt:
+    name: google-cloud-sdk
+    state: present

@@ -45,3 +45,4 @@
     - include: commands.yaml
     - include: docker-ce.yaml
     - include: golang.yaml
+    - include: google-cloud-sdk.yaml
