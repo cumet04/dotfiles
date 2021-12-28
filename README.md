@@ -54,3 +54,30 @@ actions:
 { "command": { "action": "splitPane", "split": "horizontal" }, "keys": "alt+minus" },
 { "command": { "action": "splitPane", "split": "vertical" }, "keys": "alt+/" }
 ```
+
+colors:
+```
+{
+    "background": "#F5F5F5",
+    "black": "#666666",
+    "blue": "#0451A5",
+    "brightBlack": "#000000",
+    "brightBlue": "#0451A5",
+    "brightCyan": "#0598BC",
+    "brightGreen": "#14CE14",
+    "brightPurple": "#BC05BC",
+    "brightRed": "#CD3131",
+    "brightWhite": "#A5A5A5",
+    "brightYellow": "#B5BA00",
+    "cursorColor": "#FFFFFF",
+    "cyan": "#0598BC",
+    "foreground": "#333333",
+    "green": "#00BC00",
+    "name": "Quiet Light",
+    "purple": "#BC05BC",
+    "red": "#CD3131",
+    "selectionBackground": "#B8B8B8",
+    "white": "#555555",
+    "yellow": "#949800"
+},
+```
