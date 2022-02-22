@@ -9,7 +9,10 @@ function repo_look
   test $status -eq 0; or return $status;
 
   set target $root/$selected
-  test -d $target; and builtin cd $target
+  if test -d $target
+    builtin cd $target
+    git s
+  end
 
   commandline -f execute
 end

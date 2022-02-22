@@ -13,5 +13,6 @@ branch=$(gh pr list --json 'number,title,author,headRefName' \
 
 test -z $branch && exit
 
+git fetch origin $branch
 git checkout $branch
 git branch $branch --set-upstream-to origin/$branch
