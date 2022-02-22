@@ -7,25 +7,35 @@ $HOME/dotfiles/install.sh
 
 Windows
 ----
-#### Enable WSL2
-1. In Admin Powershell,
-```
-dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-```
-and reboot
+#### Key repeat
+Win+R -> `control keyboard`
 
-2. Install kernel update package; https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
-3. In Admin Powershell,
+#### winget
 ```
-wsl --set-default-version 2
+Microsoft.PowerToys
+Microsoft.VisualStudioCode
+Google.Chrome
+Google.JapaneseIME
+SlackTechnologies.Slack
+9NW33J738BL0 (Monitorian)
 ```
 
-https://docs.microsoft.com/ja-jp/windows/wsl/install-win10
+#### Setup WSL2
+In Admin Powershell,
+```
+wsl --install
+```
+and reboot.
+
+Then, in Powershell,
+```
+wsl --list --online
+wsl --install -d Ubuntu
+```
 
 #### WindowsTerminal
 commandline:
-`wsl.exe -d Ubuntu-20.04 --cd ~  /usr/bin/fish`
+`wsl.exe -d Ubuntu --cd ~  /usr/bin/fish`
 
 actions:
 ```
@@ -45,15 +55,29 @@ actions:
 { "command": { "action": "splitPane", "split": "vertical" }, "keys": "alt+/" }
 ```
 
-#### Key repeat
-in `HKEY_CURRENT_USER/Control Panel/Accessibility/Keyboard Response`
-* AutoRepeatDelay 250
-* AutoRepeatRate 20
-* Flags 59 (magic number)
-
-#### Disable web-search in start menu
-1. Run `gpedit.msc` (グループポリシーの編集)
-2. Dig tree view: コンピューターの構成 > 管理用テンプレート > Windowsコンポーネント > 検索
-3. Activate: `Web を検索したり [検索] に Web の検索結果を表示したりしない`
-
-refs https://www.tipsfound.com/windows10/06003
+colors:
+```
+{
+    "background": "#F5F5F5",
+    "black": "#666666",
+    "blue": "#0451A5",
+    "brightBlack": "#000000",
+    "brightBlue": "#0451A5",
+    "brightCyan": "#0598BC",
+    "brightGreen": "#14CE14",
+    "brightPurple": "#BC05BC",
+    "brightRed": "#CD3131",
+    "brightWhite": "#A5A5A5",
+    "brightYellow": "#B5BA00",
+    "cursorColor": "#FFFFFF",
+    "cyan": "#0598BC",
+    "foreground": "#333333",
+    "green": "#00BC00",
+    "name": "Quiet Light",
+    "purple": "#BC05BC",
+    "red": "#CD3131",
+    "selectionBackground": "#B8B8B8",
+    "white": "#555555",
+    "yellow": "#949800"
+},
+```
