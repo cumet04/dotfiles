@@ -7,6 +7,18 @@
     - 'cumet04/atcoder-gli'
     - 'denoland/deno'
 
+- name: install git command
+  # for init.defaultBranch feature
+  become: true
+  block:
+    # refs https://launchpad.net/~git-core/+archive/ubuntu/ppa
+    - apt_repository:
+        repo: deb https://ppa.launchpadcontent.net/git-core/ppa/ubuntu focal main
+        state: present
+    - apt:
+        name: git
+        state: present
+
 - name: install gh command
   become: true
   block:
@@ -41,15 +53,3 @@
   become: true
   apt:
     deb: https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb
-
-- name: link diff-highlight
-  become: true
-  file:
-    src: /usr/share/doc/git/contrib/diff-highlight/diff-highlight
-    dest: /usr/local/bin/diff-highlight
-    state: link
-- name: executable diff-highliht
-  become: true
-  file:
-    path: /usr/share/doc/git/contrib/diff-highlight/diff-highlight
-    mode: a+x

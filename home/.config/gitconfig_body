@@ -4,12 +4,10 @@
 [credential "https://github.com"]
   helper = !gh auth git-credential
 
+[init]
+  defaultBranch = main
 [branch]
   autosetupmerge = false
-[pager]
-  log  = (diff-highlight 2>/dev/null || cat) | less -x4
-  show = (diff-highlight 2>/dev/null || cat) | less -x4
-  diff = (diff-highlight 2>/dev/null || cat) | less -x4
 [diff]
   compactionHeuristic = true
 [alias]
