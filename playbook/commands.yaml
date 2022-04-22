@@ -34,6 +34,20 @@
         name: gh
         state: present
 
+- name: install terraform command
+  become: true
+  block:
+    # refs https://learn.hashicorp.com/tutorials/terraform/install-cli
+    - apt_key:
+        url: https://apt.releases.hashicorp.com/gpg
+        state: present
+    - apt_repository:
+        repo: deb https://apt.releases.hashicorp.com focal main
+        state: present
+    - apt:
+        name: terraform
+        state: present
+
 - name: install awscli-v2
   become: true
   block:
