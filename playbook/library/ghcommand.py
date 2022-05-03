@@ -85,6 +85,8 @@ def info(name):
         return "docker-compose", "linux-x86_64", "cat FILE"
     if name == "denoland/deno":
         return "deno", "x86_64-unknown-linux", "unzip -p FILE deno"
+    if name == "nektos/act":
+        return "act", "Linux_x86_64", "tar xf FILE -O act"
 
 
 if __name__ == "__main__":

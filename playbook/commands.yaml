@@ -6,6 +6,7 @@
     - 'mattn/cho'
     - 'cumet04/atcoder-gli'
     - 'denoland/deno'
+    - 'nektos/act'
 
 - name: install git command
   # for init.defaultBranch feature
