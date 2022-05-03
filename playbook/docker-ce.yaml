@@ -48,3 +48,10 @@
     append: yes
     groups: docker
 
+# workaround for launch error
+# https://qiita.com/tkc_tsuchiya/items/f7f4d502d8e2728f69c5
+- name: use use legacy iptables
+  become: true
+  alternatives:
+    name: iptables
+    path: /usr/sbin/iptables-legacy
