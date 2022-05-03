@@ -25,11 +25,11 @@
   block:
     # refs https://github.com/cli/cli/blob/trunk/docs/install_linux.md
     - apt_key:
-        keyserver: keyserver.ubuntu.com
-        id: C99B11DEB97541F0
+        url: https://cli.github.com/packages/githubcli-archive-keyring.gpg
+        keyring: /etc/apt/trusted.gpg.d/githubcli-archive-keyring.gpg
         state: present
     - apt_repository:
-        repo: deb https://cli.github.com/packages focal main
+        repo: deb [signed-by=/etc/apt/trusted.gpg.d/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main
         state: present
     - apt:
         name: gh
@@ -41,9 +41,10 @@
     # refs https://learn.hashicorp.com/tutorials/terraform/install-cli
     - apt_key:
         url: https://apt.releases.hashicorp.com/gpg
+        keyring: /etc/apt/trusted.gpg.d/hashicorp.gpg
         state: present
     - apt_repository:
-        repo: deb https://apt.releases.hashicorp.com focal main
+        repo: deb [signed-by=/etc/apt/trusted.gpg.d/hashicorp.gpg] https://apt.releases.hashicorp.com focal main
         state: present
     - apt:
         name: terraform
