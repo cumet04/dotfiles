@@ -3,7 +3,7 @@
 cd $(dirname $0)
 
 sudo apt-get update
-sudo apt-get install -y colordiff direnv fish jq neovim peco tig
+sudo apt-get install -y colordiff direnv fish jq neovim peco tig wslu
 
 # devcontainer create .config AFTER this script run.
 # So 'ln -s $PWD/home/.config $HOME/.config' doesn't work.

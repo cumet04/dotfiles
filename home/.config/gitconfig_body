@@ -22,7 +22,6 @@
   pop = stash pop
 [tig]
   vertical-split = no
-  diff-highlight = true
   history-size = 0
 [tig "bind"]
   generic = G none

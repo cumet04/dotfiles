@@ -5,10 +5,9 @@
     name: "{{ item }}"
     state: present
   loop:
-    - apt-transport-https
     - ca-certificates
     - curl
-    - gnupg-agent
+    - gnupg
     - lsb-release
 
 - name: app repository

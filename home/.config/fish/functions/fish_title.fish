@@ -1,5 +1,5 @@
 function fish_title
-  if git rev-parse --is-inside-work-tree >/dev/null ^/dev/null
+  if git rev-parse --is-inside-work-tree >/dev/null 2>/dev/null
     echo "["(git rev-parse --show-toplevel | xargs basename)"]"
   else
     pwd | sed "s|$HOME|\$HOME|" | xargs basename
