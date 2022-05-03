@@ -18,7 +18,7 @@
         keyring: /etc/apt/trusted.gpg.d/docker.gpg
         state: present
     - apt_repository:
-        repo: "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/docker.gpg] https://download.docker.com/linux/ubuntu focal stable"
+        repo: "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/docker.gpg] https://download.docker.com/linux/ubuntu jammy stable"
         state: present
 
 - name: install docker

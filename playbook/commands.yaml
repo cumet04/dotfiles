@@ -8,18 +8,6 @@
     - 'denoland/deno'
     - 'nektos/act'
 
-- name: install git command
-  # for init.defaultBranch feature
-  become: true
-  block:
-    # refs https://launchpad.net/~git-core/+archive/ubuntu/ppa
-    - apt_repository:
-        repo: deb https://ppa.launchpadcontent.net/git-core/ppa/ubuntu focal main
-        state: present
-    - apt:
-        name: git
-        state: present
-
 - name: install gh command
   become: true
   block:
@@ -44,7 +32,7 @@
         keyring: /etc/apt/trusted.gpg.d/hashicorp.gpg
         state: present
     - apt_repository:
-        repo: deb [signed-by=/etc/apt/trusted.gpg.d/hashicorp.gpg] https://apt.releases.hashicorp.com focal main
+        repo: deb [signed-by=/etc/apt/trusted.gpg.d/hashicorp.gpg] https://apt.releases.hashicorp.com jammy main
         state: present
     - apt:
         name: terraform
