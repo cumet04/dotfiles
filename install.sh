@@ -3,7 +3,7 @@
 cd $(dirname $0)
 
 sudo apt-get update
-sudo apt-get install -y colordiff direnv fish jq neovim peco tig wslu
+sudo apt-get install -y colordiff direnv fish jq neovim peco tig
 
 # devcontainer create .config AFTER this script run.
 # So 'ln -s $PWD/home/.config $HOME/.config' doesn't work.
@@ -15,7 +15,7 @@ ls -1 $CONF_ROOT | xargs -ISRC ln -s $CONF_ROOT/SRC $HOME/.config/
 ### WSL setup
 test -z "$WSL_DISTRO_NAME" && exit
 
-sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y ansible
+sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y ansible wslu
 
 # wslvar clean tty, so confine it to 'bash -c'
 # MEMO: `$(wslvar USERPROFILE | xargs wslpath)` doesn't work somehow
