@@ -11,3 +11,11 @@
   apt:
     name: golang-go
     state: present
+
+- name: setup GOPATH directory
+  become: true
+  file:
+    path: "/opt/go"
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
