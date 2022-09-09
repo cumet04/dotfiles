@@ -18,7 +18,7 @@
         keyring: /etc/apt/trusted.gpg.d/docker.gpg
         state: present
     - apt_repository:
-        repo: "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/docker.gpg] https://download.docker.com/linux/ubuntu focal stable"
+        repo: "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/docker.gpg] https://download.docker.com/linux/ubuntu jammy stable"
         state: present
 
 - name: install docker
@@ -48,3 +48,10 @@
     append: yes
     groups: docker
 
+# workaround for launch error
+# https://qiita.com/tkc_tsuchiya/items/f7f4d502d8e2728f69c5
+- name: use legacy iptables
+  become: true
+  alternatives:
+    name: iptables
+    path: /usr/sbin/iptables-legacy

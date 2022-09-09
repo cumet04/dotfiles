@@ -12,12 +12,7 @@ Win+R -> `control keyboard`
 
 #### winget
 ```
-Microsoft.PowerToys
-Microsoft.VisualStudioCode
-Google.Chrome
-Google.JapaneseIME
-SlackTechnologies.Slack
-9NW33J738BL0 (Monitorian)
+"Microsoft.PowerToys", "Microsoft.VisualStudioCode", "Google.Chrome", "Google.JapaneseIME", "SlackTechnologies.Slack", "9NW33J738BL0" | % { winget install $_ }
 ```
 
 #### Setup WSL2
@@ -32,6 +27,14 @@ Then, in Powershell,
 wsl --list --online
 wsl --install -d Ubuntu
 ```
+
+For Ubuntu-22.04, install it from the Store and then,
+```
+wsl --shutdown
+wsl --unregister Ubuntu-22.04
+ubuntu2204.exe --ui=tui
+```
+refs https://github.com/microsoft/WSL/issues/8525#issuecomment-1165632580
 
 #### WindowsTerminal
 commandline:
@@ -54,30 +57,4 @@ actions:
 { "command": { "action": "splitPane", "split": "horizontal" }, "keys": "alt+minus" },
 { "command": { "action": "splitPane", "split": "vertical" }, "keys": "alt+/" }
 ```
-
-colors:
-```
-{
-    "background": "#F5F5F5",
-    "black": "#666666",
-    "blue": "#0451A5",
-    "brightBlack": "#000000",
-    "brightBlue": "#0451A5",
-    "brightCyan": "#0598BC",
-    "brightGreen": "#14CE14",
-    "brightPurple": "#BC05BC",
-    "brightRed": "#CD3131",
-    "brightWhite": "#A5A5A5",
-    "brightYellow": "#B5BA00",
-    "cursorColor": "#FFFFFF",
-    "cyan": "#0598BC",
-    "foreground": "#333333",
-    "green": "#00BC00",
-    "name": "Quiet Light",
-    "purple": "#BC05BC",
-    "red": "#CD3131",
-    "selectionBackground": "#B8B8B8",
-    "white": "#555555",
-    "yellow": "#949800"
-},
 ```

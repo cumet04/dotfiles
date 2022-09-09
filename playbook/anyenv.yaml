@@ -22,7 +22,7 @@
         - libffi-dev
         - libgdbm6
         - libgdbm-dev
-    - name: mkdir rbenv
+    - name: mkdir anyenv
       become: true
       file:
         path: /opt/anyenv
@@ -56,3 +56,24 @@
       loop:
         - rbenv
         - nodenv
+
+- name: check anyenv-update exists
+  stat:
+    path: /opt/anyenv/plugins/anyenv-update
+  register: anyenv_update_dir
+- name: setup anyenv-update
+  when: not anyenv_update_dir.stat.exists
+  block:
+    - name: mkdir anyenv/plugins
+      become: true
+      file:
+        path: /opt/anyenv/plugins
+        state: directory
+        owner: "{{ ansible_user }}"
+        group: "{{ ansible_user }}"
+    - name: install anyenv-update
+      git:
+        repo: https://github.com/znz/anyenv-update.git
+        dest: /opt/anyenv/plugins/anyenv-update
+        accept_hostkey: yes
+
