@@ -1,11 +1,6 @@
 #!/bin/bash
 
-#USER=$(gh api /user --jq '.login')
 USER=$(git config --get user.name)
-
-#gh pr list --json 'number,title,author,headRefName' \
-#  --jq ".[] | select(.author.login == \"$USER\") | [.number, .title, .headRefName] | @csv" | \
-#  tr ',' '\t' | cho | cut -f 3 | tr -d '"' | xargs git checkout
 
 branch=$(gh pr list --json 'number,title,author,headRefName' \
   --jq ".[] | [.number, .author.login, .title, .headRefName] | @csv" | \
@@ -13,6 +8,6 @@ branch=$(gh pr list --json 'number,title,author,headRefName' \
 
 test -z $branch && exit
 
-git fetch origin $branch
-git checkout $branch
-git branch $branch --set-upstream-to origin/$branch
+git fetch --quiet origin $branch
+git switch $branch
+git branch --quiet $branch --set-upstream-to origin/$branch

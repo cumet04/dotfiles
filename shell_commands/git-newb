@@ -13,5 +13,4 @@ default_branch=$(git remote -v | head -n 1 | cut -f 2 | \
   jq -r '.default_branch'
 )
 git fetch origin --prune --no-tags
-git branch $new_branch_name origin/$default_branch
-git checkout $new_branch_name 
+git switch --no-track --create $new_branch_name origin/$default_branch
