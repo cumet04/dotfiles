@@ -2,12 +2,11 @@
 - name: install depencencies
   become: true
   apt:
-    name: "{{ item }}"
     state: present
-  loop:
-    - apt-transport-https
-    - ca-certificates
-    - gnupg
+    pkg:
+      - apt-transport-https
+      - ca-certificates
+      - gnupg
 
 - name: app repository
   become: true
@@ -20,7 +19,7 @@
         repo: "deb [signed-by=/etc/apt/trusted.gpg.d/google-cloud.gpg] https://packages.cloud.google.com/apt cloud-sdk main"
         state: present
 
-- name: install docker
+- name: install google-cloud-sdk
   become: true
   apt:
     name: google-cloud-sdk

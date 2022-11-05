@@ -9,30 +9,28 @@
         backup: yes
     - name: install tool packages
       apt:
-        name: "{{ item }}"
         state: latest
         update_cache: yes
-      loop:
-        - apache2-utils
-        - fd-find
-        - imagemagick
-        - mariadb-client
-        - ripgrep
-        - sqlite
-        - tree
-        - unzip
-        - whois
-        - zip
+        pkg:
+          - apache2-utils
+          - fd-find
+          - imagemagick
+          - mariadb-client
+          - redis-tools
+          - ripgrep
+          - sqlite
+          - tree
+          - unzip
+          - whois
+          - zip
     - name: install dev packages
       apt:
-        name: "{{ item }}"
         state: latest
-      loop:
-        - libmariadb-dev
-        - libsqlite3-dev
+        pkg:
+          - libmariadb-dev
+          - libsqlite3-dev
     - name: apt-get update/upgrade
       apt:
-        update_cache: yes
         upgrade: 'yes'
 
 - hosts: localhost

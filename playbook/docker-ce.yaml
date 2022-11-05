@@ -2,13 +2,12 @@
 - name: install depencencies
   become: true
   apt:
-    name: "{{ item }}"
     state: present
-  loop:
-    - ca-certificates
-    - curl
-    - gnupg
-    - lsb-release
+    pkg:
+      - ca-certificates
+      - curl
+      - gnupg
+      - lsb-release
 
 - name: app repository
   become: true
@@ -24,12 +23,11 @@
 - name: install docker
   become: true
   apt:
-    name: "{{ item }}"
     state: present
-  loop:
-    - docker-ce
-    - docker-ce-cli
-    - containerd.io
+    pkg:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
 
 - name: install docker-compose
   become: true
