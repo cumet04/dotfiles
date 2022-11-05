@@ -38,7 +38,7 @@ refs https://github.com/microsoft/WSL/issues/8525#issuecomment-1165632580
 
 #### WindowsTerminal
 commandline:
-`wsl.exe -d Ubuntu --cd ~  /usr/bin/fish`
+`wsl.exe -d Ubuntu /usr/bin/fish`
 
 actions:
 ```
