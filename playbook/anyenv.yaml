@@ -53,7 +53,9 @@
         dest: /usr/local/bin/{{ item }}
         state: link
       loop:
-        - rbenv
+        # rbenvはsymlinkでは動かなくなったので、ここではlinkしない
+        # refs shell_commands/rbenv
+        #- rbenv
         - nodenv
 
 - name: check anyenv-update exists
