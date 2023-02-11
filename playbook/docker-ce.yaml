@@ -29,16 +29,6 @@
       - docker-ce-cli
       - containerd.io
 
-- name: install docker-compose
-  become: true
-  block:
-    - ghcommand:
-        name: docker/compose
-    - file:
-        src: /usr/local/bin/docker-compose
-        dest: /usr/libexec/docker/cli-plugins/docker-compose
-        state: link
-
 - name: add permission
   become: true
   user:
