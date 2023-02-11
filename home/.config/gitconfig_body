@@ -1,5 +1,4 @@
 [core]
-  excludesfile = ~/.config/gitignore_global
   editor = "nano"
 [credential "https://github.com"]
   helper = !gh auth git-credential
