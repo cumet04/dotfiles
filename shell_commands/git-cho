@@ -3,8 +3,8 @@
 USER=$(git config --get user.name)
 
 branch=$(gh pr list --json 'number,title,author,headRefName' \
-  --jq ".[] | [.number, .author.login, .title, .headRefName] | @csv" | \
-  column -t -s',' | peco --query $USER | sed 's/.*"\([^"]*\)"$/\1/')
+  --jq ".[] | [.number, .author.login, .title, .headRefName] | @tsv" | \
+  peco --query $USER | cut -f 4)
 
 test -z $branch && exit
 
