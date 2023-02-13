@@ -6,10 +6,12 @@ set -eu
 
 echo -n 'MFA: ' >&2; read token
 
+role=$(aws configure get role_arn)
+
 raw=$(
   aws sts assume-role \
     --profile login_user \
-    --role-arn $(aws configure get role_arn) \
+    --role-arn $role \
     --role-session-name $(hostname) \
     --serial-number $(aws configure get mfa_serial) \
     --token-code $token

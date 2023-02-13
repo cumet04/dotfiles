@@ -40,7 +40,7 @@ set -x RBENV_SHELL fish
 set -x NODENV_SHELL fish
 
 set -x EDITOR nano
-set -x NPM_CONFIG_UPDATE_NOTIFIER false
+set -x NPM_CONFIG_UPDATE_NOTIFIER false # npm実行時のnpm新バージョンアップデートnoticeを消す
 
 # clean $HOME
 set -x npm_config_cache ~/.cache/npm
