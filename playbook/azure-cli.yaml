@@ -1,0 +1,31 @@
+# refs https://learn.microsoft.com/ja-jp/cli/azure/install-azure-cli-linux?pivots=apt
+- name: install depencencies
+  become: true
+  apt:
+    state: present
+    pkg:
+      - ca-certificates
+      - curl
+      - apt-transport-https
+      - lsb-release
+      - gnupg
+
+- name: app repository
+  become: true
+  block:
+    - get_url:
+        url: https://packages.microsoft.com/keys/microsoft.asc
+        dest: /etc/apt/trusted.gpg.d/microsoft.asc
+        mode: '0644'
+        force: true
+    - apt_repository:
+        repo: "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/microsoft.asc] https://packages.microsoft.com/repos/azure-cli/ jammy main"
+        state: present
+
+- name: install azure-cli
+  become: true
+  apt:
+    state: present
+    update_cache: true
+    pkg:
+      - azure-cli
