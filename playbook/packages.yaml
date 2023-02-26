@@ -3,7 +3,7 @@
   replace:
     path: /etc/apt/sources.list
     regexp: "http://archive.ubuntu.com/ubuntu"
-    replace: "http://linux.yz.yamagata-u.ac.jp/ubuntu/"
+    replace: "https://linux.yz.yamagata-u.ac.jp/ubuntu"
     backup: yes
 - name: install tool packages
   become: true
