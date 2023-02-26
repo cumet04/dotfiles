@@ -1,42 +1,12 @@
+# 理由は全然わからないが、var_filesを使うには一旦var_filesなしのホストを実行しないと謎のエラーになる
 - hosts: localhost
-  become: true
-  tasks:
-    - name: use japan apt mirror
-      replace:
-        path: /etc/apt/sources.list
-        regexp: "http://archive.ubuntu.com/ubuntu"
-        replace: "http://linux.yz.yamagata-u.ac.jp/ubuntu/"
-        backup: yes
-    - name: install tool packages
-      apt:
-        state: latest
-        update_cache: yes
-        pkg:
-          - apache2-utils
-          - fd-find
-          - imagemagick
-          - mariadb-client
-          - redis-tools
-          - ripgrep
-          - sqlite
-          - tree
-          - unzip
-          - whois
-          - zip
-    - name: install dev packages
-      apt:
-        state: latest
-        pkg:
-          - libmariadb-dev
-          - libsqlite3-dev
-    - name: apt-get update/upgrade
-      apt:
-        upgrade: 'yes'
+  tasks: []
 
 - hosts: localhost
   vars_files:
     - variables
   tasks:
+    - include: packages.yaml
     - include: winfiles.yaml
     - include: dotfiles.yaml
     - include: anyenv.yaml
