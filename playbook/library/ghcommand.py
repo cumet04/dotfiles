@@ -87,6 +87,8 @@ def info(name):
         return "deno", "x86_64-unknown-linux", "unzip -p FILE deno"
     if name == "nektos/act":
         return "act", "Linux_x86_64", "tar xf FILE -O act"
+    if name == "kayac/ecspresso":
+        return "ecspresso", "linux_amd64", "tar xf FILE -O ecspresso"
 
 
 if __name__ == "__main__":
