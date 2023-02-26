@@ -38,7 +38,7 @@ refs https://github.com/microsoft/WSL/issues/8525#issuecomment-1165632580
 
 #### WindowsTerminal
 commandline:
-`wsl.exe -d Ubuntu /usr/bin/fish`
+`wsl.exe -d Ubuntu /bin/bash --login -c fish`; start fish with system-wide bash profile
 
 actions:
 ```

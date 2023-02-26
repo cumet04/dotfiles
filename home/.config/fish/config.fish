@@ -19,6 +19,7 @@ alias sl='ls'
 # path; prevent double add to path
 if not echo $PATH | grep /opt >/dev/null
   set PATH \
+    /opt/go/current/bin \
     /opt/anyenv/envs/rbenv/shims \
     /opt/anyenv/envs/nodenv/shims \
     $HOME/dotfiles/shell_commands \
@@ -54,7 +55,6 @@ set -x LESSHISTFILE - # disable .lesshst
 set -x ANSIBLE_RETRY_FILES_ENABLED false
 set -x GOMODCACHE ~/.cache/go/pkg/mod
 set -x DOCKER_CONFIG ~/.config/docker
-set -x GOPATH /opt/go
 
 # {user} ALL=NOPASSWD: /usr/sbin/service docker start
 service docker status >/dev/null || sudo service docker start
