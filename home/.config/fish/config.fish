@@ -53,6 +53,7 @@ set -x MYSQL_HISTFILE ~/.cache/mysql_history
 set -x LESSHISTFILE - # disable .lesshst
 set -x ANSIBLE_RETRY_FILES_ENABLED false
 set -x GOMODCACHE ~/.cache/go/pkg/mod
+set -x DOCKER_CONFIG ~/.config/docker
 set -x GOPATH /opt/go
 
 # {user} ALL=NOPASSWD: /usr/sbin/service docker start
