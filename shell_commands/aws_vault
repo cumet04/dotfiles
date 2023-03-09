@@ -1,0 +1,6 @@
+#!/bin/bash
+
+env AWS_VAULT_BACKEND=pass \
+    AWS_VAULT_PASS_PREFIX=aws-vault \
+    GPG_TTY=$(tty) \
+    aws-vault $@

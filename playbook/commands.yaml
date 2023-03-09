@@ -8,6 +8,7 @@
     - 'denoland/deno'
     - 'nektos/act'
     - 'kayac/ecspresso'
+    - '99designs/aws-vault'
 
 - name: install gh command
   become: true

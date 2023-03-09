@@ -29,6 +29,13 @@
     pkg:
       - libmariadb-dev
       - libsqlite3-dev
+- name: install aws-vault
+  become: true
+  apt:
+    state: latest
+    pkg:
+      - pass
+      - gnupg
 - name: apt-get update/upgrade
   become: true
   apt:
