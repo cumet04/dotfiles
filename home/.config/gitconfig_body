@@ -14,7 +14,7 @@
   s = stat
   co = checkout
   pfetch = fetch origin --prune --no-tags
-  pushf = push --force-with-lease
+  pushf = push --force-with-lease --force-if-includes
   difc = diff --cached
   commita = commit --amend
   rebasec = rebase --continue

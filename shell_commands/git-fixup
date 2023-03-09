@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -euo pipefail
+
+target_commit=$(git log --oneline | peco | cut -d' ' -f1)
+
+git commit --fixup $target_commit
+
+# 対象commitを出力しておく
+git log --oneline -n 1
+
+# rebase -i をnon-interactiveに実行する仕様は無いらしいので、
+# ダミーエディタとしてtrueコマンドを渡すことでそれっぽく実現する
+# refs https://stackoverflow.com/questions/29094595/git-interactive-rebase-without-opening-the-editor
+env GIT_SEQUENCE_EDITOR=true git rebase -i ${target_commit}~ --autostash --autosquash
