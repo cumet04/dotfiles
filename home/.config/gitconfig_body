@@ -20,6 +20,7 @@
   commita = commit --amend
   rebasec = rebase --continue
   pop = stash pop
+  untracked = ls-files --others --ignored --exclude-standard
 [tig]
   vertical-split = no
   history-size = 0
