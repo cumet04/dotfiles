@@ -1,6 +1,6 @@
 - name: setup direcrories
   file:
-    path: '{{ item }}'
+    path: "{{ item }}"
     state: directory
     owner: "{{ ansible_user }}"
   loop:
@@ -10,6 +10,11 @@
   file:
     src: "{{ dotfiles_root }}"
     dest: "{{ ghq_root }}/github.com/cumet04/dotfiles"
+    state: link
+- name: symlink .profile
+  file:
+    src: "{{ dotfiles_root }}/home/.profile"
+    dest: "{{ ansible_env.HOME }}/.profile"
     state: link
 - name: symlink configs
   block:

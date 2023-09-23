@@ -29,7 +29,6 @@ function clean_home
     .wget-hsts \
     .serverless \
     .serverlessrc \
-    .profile \
     .pylint.d \
     .viminfo \
     .npm \
