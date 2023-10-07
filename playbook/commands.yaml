@@ -9,6 +9,7 @@
     - 'nektos/act'
     - 'kayac/ecspresso'
     - '99designs/aws-vault'
+    - 'equalsraf/win32yank'
 
 - name: install gh command
   become: true

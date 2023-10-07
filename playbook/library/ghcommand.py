@@ -91,6 +91,8 @@ def info(name):
         return "ecspresso", "linux_amd64", "tar xf FILE -O ecspresso"
     if name == "99designs/aws-vault":
         return "aws-vault", "linux-amd64", "cat FILE"
+    if name == "equalsraf/win32yank":
+        return "win32yank", "x64", "unzip -p FILE win32yank.exe"
 
 
 if __name__ == "__main__":
