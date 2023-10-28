@@ -2,6 +2,6 @@
 
 git fetch -q origin --prune --no-tags
 git switch --detach origin/$(git default-branch)
-git branch --merged | \
+git branch | \
   tail -n +2 | \
   xargs --no-run-if-empty git branch -d
