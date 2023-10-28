@@ -15,6 +15,7 @@
       - fd-find
       - imagemagick
       - mariadb-client
+      - pwgen
       - redis-tools
       - ripgrep
       - sqlite

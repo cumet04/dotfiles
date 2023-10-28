@@ -27,3 +27,4 @@ export LESSHISTFILE=- # disable .lesshst
 export ANSIBLE_RETRY_FILES_ENABLED=false
 export GOMODCACHE=~/.cache/go/pkg/mod
 export DOCKER_CONFIG=~/.config/docker
+export SOLARGRAPH_CACHE=~/.cache/solargraph
