@@ -10,7 +10,7 @@ USER=$(gh api /user --jq '.login')
 
 cd $HOME/repos/github.com/$USER
 
-gh repo create $REPO_NAME --public --confirm >/dev/null
+gh repo create $REPO_NAME --public --clone
 cd $REPO_NAME
 
 gh api /licenses/$LICENSE --jq '.body' | \
