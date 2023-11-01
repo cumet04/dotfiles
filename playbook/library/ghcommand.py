@@ -93,6 +93,8 @@ def info(name):
         return "aws-vault", "linux-amd64", "cat FILE"
     if name == "equalsraf/win32yank":
         return "win32yank", "x64", "unzip -p FILE win32yank.exe"
+    if name == "busser/tfautomv":
+        return "tfautomv", "linux_amd64", "tar xf FILE -O tfautomv"
 
 
 if __name__ == "__main__":
