@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -eu
+
+if [[ $# -lt 2 ]]; then
+  echo "Usage: vault profile_name command..."
+  exit 1
+fi
+
+profile=$1
+shift
+
+aws_vault exec $profile -- $@

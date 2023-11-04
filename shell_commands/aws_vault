@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# 初期設定など https://qiita.com/papi_tokei/items/d2db617bd92839d57132
+
 env AWS_VAULT_BACKEND=pass \
     AWS_VAULT_PASS_PREFIX=aws-vault \
     GPG_TTY=$(tty) \
