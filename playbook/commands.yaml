@@ -25,7 +25,6 @@
         state: present
     - apt:
         name: gh
-        state: present
 
 - name: install terraform command
   become: true
@@ -40,7 +39,6 @@
         state: present
     - apt:
         name: terraform
-        state: present
 
 # リモートファイルの取得 & unzipはまぁまぁ時間かかるので、etagを使ってスキップ判定する
 - name: fetch awscli-v2 etag

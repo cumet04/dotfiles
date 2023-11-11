@@ -2,7 +2,6 @@
 - name: install depencencies
   become: true
   apt:
-    state: present
     pkg:
       - ca-certificates
       - curl
@@ -25,7 +24,5 @@
 - name: install azure-cli
   become: true
   apt:
-    state: present
-    update_cache: true
     pkg:
       - azure-cli

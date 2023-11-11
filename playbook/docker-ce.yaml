@@ -2,7 +2,6 @@
 - name: install depencencies
   become: true
   apt:
-    state: present
     pkg:
       - ca-certificates
       - curl
@@ -23,7 +22,6 @@
 - name: install docker
   become: true
   apt:
-    state: present
     pkg:
       - docker-ce
       - docker-ce-cli

@@ -2,7 +2,6 @@
 - name: install depencencies
   become: true
   apt:
-    state: present
     pkg:
       - apt-transport-https
       - ca-certificates
@@ -23,4 +22,3 @@
   become: true
   apt:
     name: google-cloud-sdk
-    state: present

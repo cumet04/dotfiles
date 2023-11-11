@@ -8,8 +8,6 @@
 - name: install tool packages
   become: true
   apt:
-    state: latest
-    update_cache: yes
     pkg:
       - apache2-utils
       - fd-find
@@ -26,14 +24,12 @@
 - name: install dev packages
   become: true
   apt:
-    state: latest
     pkg:
       - libmariadb-dev
       - libsqlite3-dev
 - name: install aws-vault
   become: true
   apt:
-    state: latest
     pkg:
       - pass
       - gnupg
