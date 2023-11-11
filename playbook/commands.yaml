@@ -59,5 +59,8 @@
 
 - name: install awscli session manager plugin
   become: true
-  apt:
-    deb: https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb
+  block:
+    - package_facts:
+    - when: '"session-manager-plugin" not in ansible_facts.packages'
+      apt:
+        deb: https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb
