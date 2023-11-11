@@ -12,8 +12,7 @@
         line: "export GOPATH=/opt/go/gopath"
         create: yes
 
-- name: setup latest go release
-  become: true
+- name: check go latest version
   block:
     - uri:
         url: https://go.dev/VERSION?m=text
@@ -21,7 +20,14 @@
       register: version_raw
     - set_fact:
         version: "{{ version_raw.content.splitlines()[0] }}"
+    - stat:
+        path: "/opt/go/releases/{{ version }}"
+      register: version_exists
 
+- name: setup latest go release
+  become: true
+  when: not version_exists.stat.exists
+  block:
     - file:
         path: /opt/go/releases/{{ version }}
         state: directory
