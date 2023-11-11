@@ -7,7 +7,7 @@
     - variables
   tasks:
     - include: packages.yaml
-    - include: winfiles.yaml
+    - include: wsl.yaml
     - include: dotfiles.yaml
     - include: anyenv.yaml
     - include: commands.yaml
@@ -15,3 +15,10 @@
     - include: golang.yaml
     - include: google-cloud-sdk.yaml
     - include: azure-cli.yaml
+  handlers:
+    - name: restart systemd-timesyncd
+      become: true
+      systemd:
+        name: systemd-timesyncd.service
+        state: restarted
+        daemon_reload: yes

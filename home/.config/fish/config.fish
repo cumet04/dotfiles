@@ -23,8 +23,5 @@ end
 
 test -n "$REMOTE_CONTAINERS" && exit # return if in devcontainer -----
 
-# {user} ALL=NOPASSWD: /usr/sbin/service docker start
-service docker status >/dev/null || sudo service docker start
-
 test -f ~/.config/fish/secret_env && source ~/.config/fish/secret_env
 test -f /tmp/.fish-last-dir && builtin cd (cat /tmp/.fish-last-dir)

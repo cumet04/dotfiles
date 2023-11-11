@@ -1,9 +1,0 @@
-- name: link win commands
-  become: true
-  file:
-    src: "{{ item.src }}"
-    dest: "/usr/local/bin/{{ item.dest }}"
-    state: link
-  loop:
-    - src: "/opt/winhome/AppData/Local/Programs/Microsoft VS Code/bin/code"
-      dest: code
