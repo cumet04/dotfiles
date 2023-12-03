@@ -16,6 +16,7 @@
     src: "{{ dotfiles_root }}/home/.profile"
     dest: "{{ ansible_env.HOME }}/.profile"
     state: link
+    force: yes
 - name: symlink configs
   block:
     - find:

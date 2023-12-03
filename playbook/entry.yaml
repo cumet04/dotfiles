@@ -6,10 +6,18 @@
   vars_files:
     - variables
   tasks:
-    - name: apt update cache
+    - name: use japan apt mirror
+      become: true
+      replace:
+        path: /etc/apt/sources.list
+        regexp: "http://archive.ubuntu.com/ubuntu"
+        replace: "https://linux.yz.yamagata-u.ac.jp/ubuntu"
+        backup: yes
+    - name: apt update/upgrade
       become: true
       apt:
-          update_cache: yes
+        upgrade: 'yes'
+        update_cache: yes
     - include: packages.yaml
     - include: wsl.yaml
     - include: dotfiles.yaml

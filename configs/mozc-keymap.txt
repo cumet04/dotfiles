@@ -54,3 +54,4 @@ Composition	Space	Convert
 Suggestion	Down	PredictAndConvert
 Composition	Tab	PredictAndConvert
 Conversion	Tab	PredictAndConvert
+Precomposition	F13	InputModeHiragana
