@@ -6,27 +6,21 @@
   vars_files:
     - variables
   tasks:
-    - name: use japan apt mirror
-      become: true
-      replace:
-        path: /etc/apt/sources.list
-        regexp: "http://archive.ubuntu.com/ubuntu"
-        replace: "https://linux.yz.yamagata-u.ac.jp/ubuntu"
-        backup: yes
-    - name: apt update/upgrade
-      become: true
-      apt:
-        upgrade: 'yes'
-        update_cache: yes
-    - include: packages.yaml
-    - include: wsl.yaml
-    - include: dotfiles.yaml
-    - include: anyenv.yaml
-    - include: commands.yaml
-    - include: docker-ce.yaml
-    - include: golang.yaml
-    - include: google-cloud-sdk.yaml
-    - include: azure-cli.yaml
+    - include_tasks:
+        file: "{{ task_file }}"
+      loop:
+        - setup-apt.yaml
+        - packages.yaml
+        - wsl.yaml
+        - dotfiles.yaml
+        - anyenv.yaml
+        - commands.yaml
+        - docker-ce.yaml
+        - golang.yaml
+        - google-cloud-sdk.yaml
+        - azure-cli.yaml
+      loop_control:
+        loop_var: task_file
   handlers:
     - name: restart systemd-timesyncd
       become: true

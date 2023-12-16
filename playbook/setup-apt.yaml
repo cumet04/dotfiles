@@ -1,0 +1,12 @@
+- name: use japan apt mirror
+  become: true
+  replace:
+    path: /etc/apt/sources.list
+    regexp: "http://archive.ubuntu.com/ubuntu"
+    replace: "https://linux.yz.yamagata-u.ac.jp/ubuntu"
+    backup: yes
+- name: apt update/upgrade
+  become: true
+  apt:
+    upgrade: 'yes'
+    update_cache: yes
