@@ -2,5 +2,10 @@
 
 cd $(readlink -f $0 | xargs dirname)
 
+# 引数を指定するとそのファイルのみ実行
+if [ $# -eq 1 ]; then
+  export TARGET=$1
+fi
+
 cd playbook
 ansible-playbook -K -c local -i localhost, entry.yaml

@@ -6,21 +6,28 @@
   vars_files:
     - variables
   tasks:
+    # $TARGETが指定されていればそのファイルを実行、そうでなければ全リストを実行
+    - set_fact:
+        default_tasks:
+          - setup-apt.yaml
+          - packages.yaml
+          - wsl.yaml
+          - dotfiles.yaml
+          - anyenv.yaml
+          - commands.yaml
+          - docker-ce.yaml
+          - golang.yaml
+          - google-cloud-sdk.yaml
+          - azure-cli.yaml
+    - set_fact:
+        task_list: "{{ [lookup('env', 'TARGET') + '.yaml'] if lookup('env', 'TARGET') else default_tasks }}"
+
     - include_tasks:
         file: "{{ task_file }}"
-      loop:
-        - setup-apt.yaml
-        - packages.yaml
-        - wsl.yaml
-        - dotfiles.yaml
-        - anyenv.yaml
-        - commands.yaml
-        - docker-ce.yaml
-        - golang.yaml
-        - google-cloud-sdk.yaml
-        - azure-cli.yaml
+      loop: "{{ task_list }}"
       loop_control:
         loop_var: task_file
+
   handlers:
     - name: restart systemd-timesyncd
       become: true
