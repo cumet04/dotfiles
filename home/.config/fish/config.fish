@@ -24,4 +24,4 @@ end
 test -n "$REMOTE_CONTAINERS" && exit # return if in devcontainer -----
 
 test -f ~/.config/fish/secret_env && source ~/.config/fish/secret_env
-test -f /tmp/.fish-last-dir && builtin cd (cat /tmp/.fish-last-dir)
+test "$TERM_PROGRAM" != "vscode" && test -f /tmp/.fish-last-dir && builtin cd (cat /tmp/.fish-last-dir)
