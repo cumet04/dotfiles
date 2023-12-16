@@ -35,3 +35,9 @@
     dest: /etc/wsl.conf
     state: link
     force: yes
+- name: deploy win-wslconfig
+  become: true
+  copy:
+    src: "{{ dotfiles_root }}/configs/.wslconfig"
+    dest: /opt/winhome/.wslconfig
+

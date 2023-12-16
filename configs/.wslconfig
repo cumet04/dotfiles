@@ -1,0 +1,4 @@
+# refs https://zenn.dev/dozo/articles/dd574ffa43d3f7
+[experimental]
+autoMemoryReclaim=gradual
+sparseVhd=true
