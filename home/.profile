@@ -15,6 +15,10 @@ export NODENV_SHELL=fish
 export EDITOR=nano
 export NPM_CONFIG_UPDATE_NOTIFIER=false # npm実行時のnpm新バージョンアップデートnoticeを消す
 
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+
 # clean $HOME
 export npm_config_cache=~/.cache/npm
 export CDK_HOME=~/.cache/cdk
@@ -28,3 +32,5 @@ export ANSIBLE_RETRY_FILES_ENABLED=false
 export GOMODCACHE=~/.cache/go/pkg/mod
 export DOCKER_CONFIG=~/.config/docker
 export SOLARGRAPH_CACHE=~/.cache/solargraph
+export GNUPGHOME=$XDG_DATA_HOME/gnupg
+export PASSWORD_STORE_DIR=$XDG_DATA_HOME/password-store
