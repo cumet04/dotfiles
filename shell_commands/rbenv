@@ -1,8 +1,0 @@
-#!/bin/bash
-
-# rbenvは下記pullreqから$RBENV_ROOT/bin/rbenv のsymlinkでは動作しなくなったため
-# symlinkするのではなくexecするラッパーで起動する。
-# 内部コマンドの実行パスを解決する際の基準パスを$0的なものにしたため
-# $0が$RBENV_ROOT/bin/rbenvな状態でないとlibexecを参照できない。
-# https://github.com/rbenv/rbenv/pull/1428
-exec $RBENV_ROOT/bin/rbenv $@
