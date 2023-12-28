@@ -16,7 +16,6 @@
           - asdf.yaml
           - commands.yaml
           - docker-ce.yaml
-          - golang.yaml
           - google-cloud-sdk.yaml
           - azure-cli.yaml
     - set_fact:

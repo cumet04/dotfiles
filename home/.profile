@@ -1,6 +1,5 @@
 # 環境変数はbash（wslでのデフォルトシェル）で読むようにすることでvscodeなどにも反映させる
 
-export PATH=/opt/go/current/bin:$PATH
 export PATH=$HOME/dotfiles/shell_commands:$PATH
 
 export ASDF_DIR=/opt/asdf
