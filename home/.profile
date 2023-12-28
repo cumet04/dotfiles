@@ -3,6 +3,11 @@
 export PATH=/opt/go/current/bin:$PATH
 export PATH=$HOME/dotfiles/shell_commands:$PATH
 
+export ASDF_DIR=/opt/asdf
+export ASDF_DATA_DIR=$ASDF_DIR
+export ASDF_CONFIG_FILE=~/.config/asdfrc
+export PATH=$ASDF_DIR/bin:$ASDF_DIR/shims:$PATH
+
 export EDITOR=nano
 export NPM_CONFIG_UPDATE_NOTIFIER=false # npm実行時のnpm新バージョンアップデートnoticeを消す
 

@@ -13,6 +13,7 @@
           - packages.yaml
           - wsl.yaml
           - dotfiles.yaml
+          - asdf.yaml
           - commands.yaml
           - docker-ce.yaml
           - golang.yaml

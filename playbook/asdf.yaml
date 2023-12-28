@@ -1,0 +1,42 @@
+- name: ensure ruby-build dependencies
+  become: true
+  apt:
+    pkg:
+      - autoconf
+      - bison
+      - build-essential
+      - libssl-dev
+      - libyaml-dev
+      - libreadline6-dev
+      - zlib1g-dev
+      - libncurses5-dev
+      - libffi-dev
+      - libgdbm6
+      - libgdbm-dev
+
+- name: check asdf exists
+  stat:
+    path: /opt/asdf
+  register: asdf_dir
+- name: setup asdf
+  when: not asdf_dir.stat.exists
+  block:
+    - name: mkdir asdf
+      become: true
+      file:
+        path: /opt/asdf
+        state: directory
+        owner: "{{ ansible_user }}"
+        group: "{{ ansible_user }}"
+    - name: install asdf
+      git:
+        repo: https://github.com/asdf-vm/asdf.git
+        dest: /opt/asdf
+        accept_hostkey: yes
+    - name: install asdf plugins
+      shell: |
+        export ASDF_DIR=/opt/asdf
+        export ASDF_DATA_DIR=$ASDF_DIR
+        export PATH=$ASDF_DIR/bin/:$PATH
+        asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+        asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
