@@ -1,0 +1,4 @@
+[General]
+  snippetfile = "$HOME/.config/pet/snippet.toml"
+  editor = "nvim"
+  selectcmd = "peco"

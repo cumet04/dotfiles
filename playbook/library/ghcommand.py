@@ -95,6 +95,8 @@ def info(name):
         return "win32yank", "x64", "unzip -p FILE win32yank.exe"
     if name == "busser/tfautomv":
         return "tfautomv", "linux_amd64", "tar xf FILE -O tfautomv"
+    if name == "knqyf263/pet":
+        return "pet", "linux_amd64.tar.gz", "tar xf FILE -O pet"
 
 
 if __name__ == "__main__":

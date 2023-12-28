@@ -11,6 +11,7 @@
     - '99designs/aws-vault'
     - 'equalsraf/win32yank'
     - 'busser/tfautomv'
+    - 'knqyf263/pet'
 
 - name: install gh command
   become: true
