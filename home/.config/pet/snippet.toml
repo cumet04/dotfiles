@@ -1,3 +1,14 @@
 [[snippets]]
-  description = "ほげ"
-  command = "echo ほげ"
+  description = "git ignore edited        "
+  command = "git update-index --skip-worktree"
+  output = ""
+
+[[snippets]]
+  description = "git ignore edited restore"
+  command = "git update-index --no-skip-worktree"
+  output = ""
+
+[[snippets]]
+  description = "ecr login                "
+  command = "vault <param> aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin (aws_account <param>).dkr.ecr.ap-northeast-1.amazonaws.com"
+  output = ""
