@@ -51,3 +51,7 @@ gpg --list-keys
 pass init <key-id>
 aws_vault add login_user
 ```
+
+#### 移行時
+* `repo_check_all`
+* `backup_repo_files`
