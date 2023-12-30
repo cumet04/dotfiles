@@ -2,9 +2,9 @@
 
 ROOT=$HOME/repos
 
-find $ROOT -maxdepth 3 -mindepth 3 -type d,l | while read LINE; do
-  echo "### "$(echo $LINE | sed "s|$ROOT||")
-  cd $LINE
+find $ROOT -maxdepth 3 -mindepth 3 -type d,l -printf '%P\n' | while read REPO; do
+  echo "### "$(echo $REPO | sed "s|github\.com/||")
+  cd $ROOT/$REPO
   git status --branch --porcelain | __status_git
   echo ""
 done
