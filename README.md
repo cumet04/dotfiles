@@ -27,7 +27,7 @@ actions:
 ```
 
 #### vscode
-settgin sync
+setting sync
 
 Ubuntu
 -----
