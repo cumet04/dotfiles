@@ -1,0 +1,37 @@
+#!/bin/bash
+
+set -eu
+
+# .vscode-server
+#   RemoteDevelopment(SSH)には指定オプションがあるようだが、 https://stackoverflow.com/questions/62613523/how-to-change-vscode-server-directory
+#   相応のオプションがWSL版には無いので、場所指定はできないと思われる
+# .sudo_as_admin_successful
+#   場所指定はできず、sudo時に都度生成される
+# .netlify
+#   場所はハードコードされており変更不可、かつ認証情報を含むので消せない
+# .terraform.d
+#   場所を変更できるようにするための要求issueは多数あるが、解消されそうにない
+
+cd $HOME
+
+TARGET=(
+ .bashrc 
+ .bash_history 
+ .bash_logout 
+ .bash_profile 
+ .landscape 
+ .motd_shown 
+ .azure
+ .irb_history
+ .python_history
+ .degit 
+ .wget-hsts 
+ .serverless 
+ .serverlessrc 
+ .pylint.d 
+ .viminfo 
+ .npm
+ .yarn 
+ .yarnrc
+)
+rm -r ${TARGET[@]}
