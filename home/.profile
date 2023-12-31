@@ -32,5 +32,7 @@ export ANSIBLE_RETRY_FILES_ENABLED=false
 export GOMODCACHE=~/.cache/go/pkg/mod
 export DOCKER_CONFIG=~/.config/docker
 export SOLARGRAPH_CACHE=~/.cache/solargraph
+
 export GNUPGHOME=$XDG_DATA_HOME/gnupg
 export PASSWORD_STORE_DIR=$XDG_DATA_HOME/password-store
+export AWS_CONFIG_FILE=$XDG_CONFIG_HOME/aws/config
