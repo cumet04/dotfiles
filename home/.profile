@@ -6,6 +6,7 @@ export ASDF_DIR=/opt/asdf
 export ASDF_DATA_DIR=$ASDF_DIR
 export ASDF_CONFIG_FILE=~/.config/asdfrc
 export PATH=$ASDF_DIR/bin:$ASDF_DIR/shims:$PATH
+export ASDF_GOLANG_MOD_VERSION_ENABLED=true # Noticeメッセージ抑制
 
 export EDITOR=nano
 export NPM_CONFIG_UPDATE_NOTIFIER=false # npm実行時のnpm新バージョンアップデートnoticeを消す
