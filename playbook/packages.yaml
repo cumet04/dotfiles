@@ -20,6 +20,8 @@
     pkg:
       - libmariadb-dev
       - libsqlite3-dev
+      - libmagic-dev
+      - libmagickcore-dev
 - name: install aws-vault
   become: true
   apt:
