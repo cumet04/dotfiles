@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -eu
+
+# cdktfのプロジェクトにて、プロジェクトルートから特定stack配下でterraformコマンドを実行するヘルパー
+
+cd cdktf.out/stacks/$1
+shift
+terraform $@
