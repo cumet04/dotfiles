@@ -4,6 +4,11 @@
   output = ""
 
 [[snippets]]
+  description = "self ip address          "
+  command = "curl inet-ip.info"
+  output = ""
+
+[[snippets]]
   description = "git ignore edited        "
   command = "git update-index --skip-worktree"
   output = ""
