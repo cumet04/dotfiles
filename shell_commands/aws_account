@@ -5,5 +5,5 @@ import sys
 import configparser
 
 c = configparser.ConfigParser()
-c.read(os.path.expanduser('~/.aws/config'))
+c.read(os.path.expanduser('~/.config/aws/config'))
 print(c['profile ' + sys.argv[1]]['role_arn'].split(':')[4])
