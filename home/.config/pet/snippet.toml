@@ -1,4 +1,9 @@
 [[snippets]]
+  description = "tee pbcopy               "
+  command = "c | tee /dev/tty | ansi2txt| pbcopy"
+  output = ""
+
+[[snippets]]
   description = "git ignore edited        "
   command = "git update-index --skip-worktree"
   output = ""
