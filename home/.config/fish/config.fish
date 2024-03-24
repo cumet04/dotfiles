@@ -16,6 +16,13 @@ alias cdg="cd (git rev-parse --show-toplevel)"
 alias sl-command='command sl'
 alias sl='ls'
 
+# builtin cd を使うと移動履歴が消えるのでaliasで退避する refs https://github.com/fish-shell/fish-shell/issues/4869
+# またfunctions/ディレクトリに置くと`functions -c cd`時点でそのファイルが旧cdになってしまうため、config.fishに定義する
+functions -c cd builtin_cd
+function cd
+  builtin_cd $argv; and ls
+end
+
 # direnv hook fish
 function __direnv_export_eval --on-event fish_prompt;
   eval (direnv export fish);
