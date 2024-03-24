@@ -9,6 +9,8 @@
   autosetupmerge = false
 [rebase]
   autostash = true
+[merge]
+  autostash = true
 [diff]
   compactionHeuristic = true
 [alias]
