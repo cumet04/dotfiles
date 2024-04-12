@@ -15,6 +15,8 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 
+export WSL_SELF_HOST=$(hostname -I | cut -d' ' -f1)
+
 # clean $HOME
 export npm_config_cache=~/.cache/npm
 export CDK_HOME=~/.cache/cdk
