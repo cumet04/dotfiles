@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USER=$(git config --get user.name)
+USER=$(git config --get user.name || echo $GIT_AUTHOR_NAME)
 
 branch=$(gh pr list --json 'number,title,author,headRefName' \
   --jq ".[] | [.number, .author.login, .title, .headRefName] | @tsv" | \
