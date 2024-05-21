@@ -16,7 +16,10 @@
 
 - name: check asdf exists
   stat:
-    path: /opt/asdf
+    # 本来ASDF_DIRで指定していればどんなパスでも良いと思うが、vscodeのruby-lsp拡張の実装がASDF_DIRなどは読まず
+    # いくつかのパスを決め打ちで捜索するようになっているため、それに合わせたパスにしている。
+    # refs https://github.com/Shopify/ruby-lsp/blob/0d310e19b85ae6f554df3824f4b8439176952dae/vscode/src/ruby/asdf.ts#L53-L73
+    path: /opt/asdf-vm
   register: asdf_dir
 - name: setup asdf
   when: not asdf_dir.stat.exists
@@ -24,18 +27,18 @@
     - name: mkdir asdf
       become: true
       file:
-        path: /opt/asdf
+        path: /opt/asdf-vm
         state: directory
         owner: "{{ ansible_user }}"
         group: "{{ ansible_user }}"
     - name: install asdf
       git:
         repo: https://github.com/asdf-vm/asdf.git
-        dest: /opt/asdf
+        dest: /opt/asdf-vm
         accept_hostkey: yes
     - name: install asdf plugins
       shell: |
-        export ASDF_DIR=/opt/asdf
+        export ASDF_DIR=/opt/asdf-vm
         export ASDF_DATA_DIR=$ASDF_DIR
         export PATH=$ASDF_DIR/bin/:$PATH
         asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git

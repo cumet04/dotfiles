@@ -2,7 +2,7 @@
 
 export PATH=$HOME/dotfiles/shell_commands:$PATH
 
-export ASDF_DIR=/opt/asdf
+export ASDF_DIR=/opt/asdf-vm
 export ASDF_DATA_DIR=$ASDF_DIR
 export ASDF_CONFIG_FILE=~/.config/asdfrc
 export PATH=$ASDF_DIR/bin:$ASDF_DIR/shims:$PATH
