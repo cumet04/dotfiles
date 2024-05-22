@@ -28,6 +28,18 @@
         dest: "{{ ansible_env.HOME }}/{{ item.path | replace(dotfiles_root + '/home/', '') }}"
         state: link
       loop: "{{ config.files }}"
+- name: symlink local/share
+  # ファイルをgit管理するわけではないが、リポジトリディレクトリにいれることでbackup_repo_filesの対象にする
+  block:
+    - find:
+        paths: "{{ dotfiles_root }}/home/.local/share"
+        file_type: any
+      register: localshare
+    - file:
+        src: "{{ item.path }}"
+        dest: "{{ ansible_env.HOME }}/{{ item.path | replace(dotfiles_root + '/home/', '') }}"
+        state: link
+      loop: "{{ localshare.files }}"
 - name: symlink wsl.conf
   become: true
   file:
