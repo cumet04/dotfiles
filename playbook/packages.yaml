@@ -9,7 +9,7 @@
       - pwgen
       - redis-tools
       - ripgrep
-      - sqlite
+      - sqlite3
       - tree
       - unzip
       - whois
