@@ -20,3 +20,6 @@ find $ROOT -maxdepth 3 -mindepth 3 -type d,l -printf '%P\n' | while read REPO; d
       cp $FILE $DEST
     done
 done
+
+cd $HOME
+tar czf repos.bak.tgz repos.bak
