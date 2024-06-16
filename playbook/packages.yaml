@@ -15,6 +15,7 @@
       - whois
       - zip
       - colorized-logs
+      - bind9-dnsutils
 - name: install dev packages
   become: true
   apt:
