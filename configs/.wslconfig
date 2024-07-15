@@ -2,3 +2,7 @@
 [experimental]
 autoMemoryReclaim=gradual
 sparseVhd=true
+
+# refs https://github.com/microsoft/WSL/issues/11022
+[wsl2]
+dnsTunneling=false
