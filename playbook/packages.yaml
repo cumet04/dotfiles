@@ -16,6 +16,7 @@
       - zip
       - colorized-logs
       - bind9-dnsutils
+      - rustup
 - name: install dev packages
   become: true
   apt:
