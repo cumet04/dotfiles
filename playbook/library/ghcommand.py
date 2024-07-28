@@ -89,6 +89,8 @@ def info(name):
         return "act", "Linux_x86_64", "tar xf FILE -O act"
     if name == "kayac/ecspresso":
         return "ecspresso", "linux_amd64", "tar xf FILE -O ecspresso"
+    if name == "fujiwara/lambroll":
+        return "lambroll", "linux_amd64", "tar xf FILE -O lambroll"
     if name == "99designs/aws-vault":
         return "aws-vault", "linux-amd64", "cat FILE"
     if name == "equalsraf/win32yank":

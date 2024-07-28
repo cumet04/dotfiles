@@ -8,6 +8,7 @@
     - 'denoland/deno'
     - 'nektos/act'
     - 'kayac/ecspresso'
+    - 'fujiwara/lambroll'
     - '99designs/aws-vault'
     - 'equalsraf/win32yank'
     - 'busser/tfautomv'
