@@ -4,6 +4,11 @@
   output = ""
 
 [[snippets]]
+  description = "secure random            "
+  command = "cat /dev/random | tr -dc 'a-zA-Z0-9' | head -c <length>"
+  output = ""
+
+[[snippets]]
   description = "self ip address          "
   command = "curl inet-ip.info"
   output = ""
