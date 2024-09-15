@@ -36,12 +36,35 @@
         repo: https://github.com/asdf-vm/asdf.git
         dest: /opt/asdf-vm
         accept_hostkey: yes
-    - name: install asdf plugins
-      shell: |
-        export ASDF_DIR=/opt/asdf-vm
-        export ASDF_DATA_DIR=$ASDF_DIR
-        export PATH=$ASDF_DIR/bin/:$PATH
-        asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-        asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
-        asdf plugin add golang https://github.com/asdf-community/asdf-golang.git
-        asdf plugin add terraform https://github.com/asdf-community/asdf-hashicorp.git
+
+# FIXME: いい感じにchangedにならないようにできるか
+
+- name: ensure asdf plugins
+  shell: |
+    export ASDF_DIR=/opt/asdf-vm
+    export ASDF_DATA_DIR=$ASDF_DIR
+    export PATH=$ASDF_DIR/bin/:$PATH
+    asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+    asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+    asdf plugin add golang https://github.com/asdf-community/asdf-golang.git
+    asdf plugin add terraform https://github.com/asdf-community/asdf-hashicorp.git
+    asdf plugin add deno https://github.com/asdf-community/asdf-deno.git
+
+- name: ensure latest asdf installs
+  shell: |
+    export ASDF_DIR=/opt/asdf-vm
+    export ASDF_DATA_DIR=$ASDF_DIR
+    export PATH=$ASDF_DIR/bin/:$PATH
+
+    asdf plugin update --all > /dev/null
+
+    node=$(asdf nodejs resolve lts --latest-available)
+    asdf install nodejs $node
+    asdf global nodejs $node
+
+    for c in "ruby" "golang" "terraform" "deno"; do
+      # 数字だけに絞ることでjrubyなどの別種やrc版などを取り除く
+      version=$(asdf list all $c | grep "^[0-9\.]*\$" | tail -n 1)
+      asdf install $c $version
+      asdf global $c $version
+    done
