@@ -12,6 +12,7 @@
     - 'equalsraf/win32yank'
     - 'busser/tfautomv'
     - 'knqyf263/pet'
+    - 'peco/peco'
 
 - name: install gh command
   become: true

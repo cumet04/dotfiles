@@ -99,6 +99,8 @@ def info(name):
         return "tfautomv", "linux_amd64", "tar xf FILE -O tfautomv"
     if name == "knqyf263/pet":
         return "pet", "linux_amd64.tar.gz", "tar xf FILE -O pet"
+    if name == "peco/peco":
+        return "peco", "linux_amd64.tar.gz", "tar xf FILE -O peco_linux_amd64/peco"
 
 
 if __name__ == "__main__":
