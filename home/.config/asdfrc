@@ -1,1 +1,3 @@
 legacy_version_file = yes
+# ダウンロードのたびに不適切なwarnが出るのを抑制 https://github.com/asdf-vm/asdf/issues/1711
+always_keep_download = yes
