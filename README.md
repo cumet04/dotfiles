@@ -16,7 +16,8 @@ wsl --install -d Ubuntu
 
 #### WindowsTerminal
 commandline:
-`wsl.exe -d Ubuntu /bin/bash --login -c fish`; start fish with system-wide bash profile
+`wsl.exe -d Ubuntu`
+開始ディレクトリ: ~
 
 actions:
 ```
