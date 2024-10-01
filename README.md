@@ -23,8 +23,8 @@ actions:
 ```
 { "command": { "action": "moveFocus", "direction": "nextInOrder" }, "keys": "alt+]" },
 { "command": { "action": "moveFocus", "direction": "previousInOrder" }, "keys": "alt+[" },
-{ "command": { "action": "splitPane", "split": "horizontal" }, "keys": "alt+minus" },
-{ "command": { "action": "splitPane", "split": "vertical" }, "keys": "alt+/" }
+{ "command": { "action": "splitPane", "split": "horizontal", "splitMode": "duplicate" }, "keys": "alt+minus" },
+{ "command": { "action": "splitPane", "split": "vertical", "splitMode": "duplicate" }, "keys": "alt+/" }
 ```
 
 #### vscode
