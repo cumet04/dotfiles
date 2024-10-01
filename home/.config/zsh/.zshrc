@@ -23,6 +23,8 @@ alias pete='print -z $(pet search)' # pet exec相当だが、実行コマンド�
 alias vim='nvim'
 alias diff='colordiff'
 
+eval "$(direnv hook zsh)"
+
 source $ZDOTDIR/tig_status.zsh
 source $ZDOTDIR/history_search.zsh
 source $ZDOTDIR/repo_look.zsh
