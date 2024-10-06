@@ -17,6 +17,8 @@ test -z "$WSL_DISTRO_NAME" && exit
 
 sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y ansible wslu
 
+git submodule update --init # for zsh plugins
+
 # wslvar clean tty, so confine it to 'bash -c'
 # MEMO: `$(wslvar USERPROFILE | xargs wslpath)` doesn't work somehow
 bash -c 'wslpath $(wslvar USERPROFILE) | xargs -ISRC sudo ln -s SRC /opt/winhome'

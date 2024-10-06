@@ -1,0 +1,13 @@
+- name: chsh to zsh
+  become: yes
+  user:
+    name: "{{ ansible_user }}"
+    shell: /usr/bin/zsh
+
+- name: set ZDOTDIR
+  become: yes
+  lineinfile:
+    path: /etc/zsh/zshenv
+    regexp: 'export ZDOTDIR='
+    line: 'export ZDOTDIR=$HOME/.config/zsh'
+    state: present
