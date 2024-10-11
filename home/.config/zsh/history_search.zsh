@@ -1,5 +1,5 @@
 function history_search() {
-  BUFFER=$(\history -n -r 1 | peco --query "$LBUFFER")
+  BUFFER=$(fc -lnr 1 | uniq | peco --query "$LBUFFER")
   CURSOR=$#BUFFER
 }
 zle -N history_search
