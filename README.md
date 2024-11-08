@@ -16,14 +16,15 @@ wsl --install -d Ubuntu
 
 #### WindowsTerminal
 commandline:
-`wsl.exe -d Ubuntu /bin/bash --login -c fish`; start fish with system-wide bash profile
+`wsl.exe -d Ubuntu`
+開始ディレクトリ: ~
 
 actions:
 ```
 { "command": { "action": "moveFocus", "direction": "nextInOrder" }, "keys": "alt+]" },
 { "command": { "action": "moveFocus", "direction": "previousInOrder" }, "keys": "alt+[" },
-{ "command": { "action": "splitPane", "split": "horizontal" }, "keys": "alt+minus" },
-{ "command": { "action": "splitPane", "split": "vertical" }, "keys": "alt+/" }
+{ "command": { "action": "splitPane", "split": "horizontal", "splitMode": "duplicate" }, "keys": "alt+minus" },
+{ "command": { "action": "splitPane", "split": "vertical", "splitMode": "duplicate" }, "keys": "alt+/" }
 ```
 
 #### vscode
