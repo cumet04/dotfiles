@@ -1,8 +1,11 @@
 autoload -Uz compinit; compinit
 
 # デフォルトではctrl-wで単語区切りも何もなくほぼ全部消えてしまうのを修正
+# word-style bash だとハイフンが入っててコマンドラインオプションを消すときの挙動が謎なので自前でやる
 autoload -Uz select-word-style
-select-word-style bash
+select-word-style default
+zstyle ':zle:*' word-chars ' /=;@:{}[]()<>,|.'
+zstyle ':zle:*' word-style unspecified
 
 # shell操作(補完でtab連打したときなど)にbellが鳴るのを抑制。echo -e "\a" は鳴る
 unsetopt BEEP
