@@ -26,6 +26,7 @@ alias cdg='cd $(git rev-parse --show-toplevel)'
 alias pete='print -z $(pet search)' # pet exec相当だが、実行コマンドをhistoryに残せるようにshell経由実行にするラッパー
 alias vim='nvim'
 alias diff='colordiff'
+alias bell='echo -e "\a"'
 
 eval "$(direnv hook zsh)"
 
