@@ -19,9 +19,6 @@ Conversion	F14	CancelAndIMEOff
 Prediction	F14	CancelAndIMEOff
 Suggestion	F14	CancelAndIMEOff
 
-# 通常時はなるだけ使わないが、vimモードのnormal移行時だけは使えるようにする
-Precomposition	Escape	CancelAndIMEOff
-
 Composition	F2	ConvertWithoutHistory
 Composition	F6	ConvertToHiragana
 Conversion	F6	ConvertToHiragana

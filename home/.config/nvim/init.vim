@@ -18,3 +18,6 @@ highlight clear CursorLine
 
 inoremap {<Enter> {<Enter>}<ESC><S-o>
 set formatoptions=q
+
+autocmd InsertLeave * :call system('/mnt/c/bin/zenhan.exe 0')
+autocmd CmdlineLeave * :call system('/mnt/c/bin/zenhan.exe 0')
