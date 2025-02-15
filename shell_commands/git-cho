@@ -4,7 +4,8 @@ USER=$(git config --get user.name || echo $GIT_AUTHOR_NAME)
 
 branch=$(gh pr list --json 'number,title,author,headRefName' \
   --jq ".[] | [.number, .author.login, .title, .headRefName] | @tsv" | \
-  peco --query $USER | cut -f 4)
+  sed s/$USER/[me]/g | \
+  peco --query '[me]' | cut -f 4)
 
 test -z $branch && exit
 
