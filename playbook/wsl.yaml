@@ -29,3 +29,27 @@
           [Unit]
           ConditionVirtualization=
       notify: restart systemd-timesyncd
+
+- name: keep wsl alive
+  # from https://github.com/microsoft/WSL/issues/8854#issuecomment-1490454734
+  become: true
+  block:
+    - name: put service file
+      blockinfile:
+        path: /etc/systemd/system/keep_wsl_alive.service
+        create: true
+        block: |
+          [Unit]
+          Description=Keep Distro Alive
+
+          [Service]
+          ExecStartPre=/mnt/c/Windows/System32/waitfor.exe /si MakeDistroAlive
+          ExecStart=/mnt/c/Windows/System32/waitfor.exe MakeDistroAlive
+
+          [Install]
+          WantedBy=multi-user.target
+    - name: enable
+      systemd:
+        name: keep_wsl_alive.service
+        enabled: true
+        state: started
