@@ -34,6 +34,7 @@ source $ZDOTDIR/tig_status.zsh
 source $ZDOTDIR/history_search.zsh
 source $ZDOTDIR/repo_look.zsh
 source $ZDOTDIR/prompt.zsh
+source $ZDOTDIR/osc133.zsh
 
 source $ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
