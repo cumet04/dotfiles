@@ -31,7 +31,7 @@
       notify: restart systemd-timesyncd
 
 - name: keep wsl alive
-  # from https://github.com/microsoft/WSL/issues/8854#issuecomment-1490454734
+  # from https://github.com/microsoft/WSL/issues/10138#issuecomment-2380431569
   become: true
   block:
     - name: put service file
@@ -43,8 +43,7 @@
           Description=Keep Distro Alive
 
           [Service]
-          ExecStartPre=/mnt/c/Windows/System32/waitfor.exe /si MakeDistroAlive
-          ExecStart=/mnt/c/Windows/System32/waitfor.exe MakeDistroAlive
+          ExecStart=/mnt/c/Windows/System32/wsl.exe sleep infinity
 
           [Install]
           WantedBy=multi-user.target
