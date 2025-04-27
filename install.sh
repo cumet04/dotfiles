@@ -12,7 +12,7 @@ CONF_ROOT=$PWD/home/.config
 ls -1 $CONF_ROOT | xargs -ISRC ln -s $CONF_ROOT/SRC $HOME/.config/
 
 sudo chsh -s /usr/bin/zsh "$USER"
-if grep -q '^export ZDOTDIR=$HOME/.config/zsh' /etc/zsh/zshenv; then
+if ! grep -q '^export ZDOTDIR=$HOME/.config/zsh' /etc/zsh/zshenv; then
   echo 'export ZDOTDIR=$HOME/.config/zsh' | sudo tee -a /etc/zsh/zshenv
 fi
 
