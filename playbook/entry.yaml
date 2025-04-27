@@ -12,7 +12,6 @@
           - setup-apt.yaml
           - packages.yaml
           - wsl.yaml
-          - zsh.yaml
           - dotfiles.yaml
           - asdf.yaml
           - commands.yaml
