@@ -15,6 +15,8 @@ sudo chsh -s /usr/bin/zsh "$USER"
 if ! grep -q '^export ZDOTDIR=$HOME/.config/zsh' /etc/zsh/zshenv; then
   echo 'export ZDOTDIR=$HOME/.config/zsh' | sudo tee -a /etc/zsh/zshenv
 fi
+git submodule init
+git submodule update
 
 ### WSL setup
 test -z "$WSL_DISTRO_NAME" && exit
