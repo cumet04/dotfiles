@@ -14,20 +14,6 @@
     - 'knqyf263/pet'
     - 'peco/peco'
 
-- name: install gh command
-  become: true
-  block:
-    # refs https://github.com/cli/cli/blob/trunk/docs/install_linux.md
-    - apt_key:
-        url: https://cli.github.com/packages/githubcli-archive-keyring.gpg
-        keyring: /etc/apt/trusted.gpg.d/githubcli-archive-keyring.gpg
-        state: present
-    - apt_repository:
-        repo: deb [signed-by=/etc/apt/trusted.gpg.d/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main
-        state: present
-    - apt:
-        name: gh
-
 # リモートファイルの取得 & unzipはまぁまぁ時間かかるので、etagを使ってスキップ判定する
 - name: fetch awscli-v2 etag
   block:

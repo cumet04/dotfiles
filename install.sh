@@ -2,8 +2,19 @@
 
 cd $(dirname $0)
 
+echo "add gh repo"
+KEYPATH=/etc/apt/keyrings/githubcli-archive-keyring.gpg
+sudo mkdir -p $(dirname $KEYPATH)
+sudo curl https://cli.github.com/packages/githubcli-archive-keyring.gpg -o $KEYPATH
+echo "deb [arch=$(dpkg --print-architecture) signed-by=$KEYPATH] https://cli.github.com/packages stable main" | \
+  sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+
+echo "apt-get update"
 sudo apt-get update
-sudo apt-get install -y colordiff direnv zsh jq neovim tig
+
+echo "apt-get install ..."
+sudo apt-get install -y colordiff direnv zsh jq neovim tig gh
+
 
 # devcontainer create .config AFTER this script run.
 # So 'ln -s $PWD/home/.config $HOME/.config' doesn't work.
