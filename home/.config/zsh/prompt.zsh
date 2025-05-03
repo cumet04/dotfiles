@@ -11,6 +11,7 @@ precmd_functions+=(set_prompt)
 
 function keep_current_path() {
   # refs https://learn.microsoft.com/ja-jp/windows/terminal/tutorials/new-tab-same-directory
-  printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
+  local path=$(command -v wslpath >/dev/null && wslpath -w "$PWD" || echo "$PWD")
+  printf "\e]9;9;%s\e\\" "$path"
 }
 precmd_functions+=(keep_current_path)
