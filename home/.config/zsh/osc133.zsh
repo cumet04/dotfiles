@@ -24,5 +24,8 @@ function __prompt_preexec() {
     printf "\033]133;C;\007"
     _prompt_executing=1
 }
-preexec_functions+=(__prompt_preexec)
-precmd_functions+=(__prompt_precmd)
+
+# vscode copilotのagentモードがこれで動かなくなるので止める
+# cline使いたくなったら考える
+#preexec_functions+=(__prompt_preexec)
+#precmd_functions+=(__prompt_precmd)
