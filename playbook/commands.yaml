@@ -9,7 +9,6 @@
     - 'kayac/ecspresso'
     - 'fujiwara/lambroll'
     - '99designs/aws-vault'
-    - 'equalsraf/win32yank'
     - 'busser/tfautomv'
     - 'knqyf263/pet'
     - 'peco/peco'
@@ -51,3 +50,23 @@
     - when: '"session-manager-plugin" not in ansible_facts.packages'
       apt:
         deb: https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb
+
+# win32yankはWSL側に配置すると起動が遅くなる問題があるので、他のコマンドとは分けてwinhomeに置く
+# https://github.com/equalsraf/win32yank/issues/22
+# バージョンはそうそう変わらないので気付いたら変えるくらいでヨシ
+- name: check win32yank
+  stat:
+    path: /opt/winhome/win32yank.exe
+  register: win32yank_stat
+- name: install win32yank
+  become: true
+  when: not win32yank_stat.stat.exists
+  block:
+    - unarchive:
+        src: https://github.com/equalsraf/win32yank/releases/download/v0.1.1/win32yank-x64.zip
+        dest: /opt/winhome
+        remote_src: true
+    - file:
+        src: /opt/winhome/win32yank.exe
+        dest: /usr/local/bin/win32yank
+        state: link
