@@ -13,8 +13,8 @@
           - packages.yaml
           - wsl.yaml
           - dotfiles.yaml
-          - asdf.yaml
           - commands.yaml
+          - asdf.yaml
           - docker-ce.yaml
           - google-cloud-sdk.yaml
           - azure-cli.yaml

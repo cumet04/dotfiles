@@ -14,28 +14,16 @@
       - libgdbm6
       - libgdbm-dev
 
-- name: check asdf exists
-  stat:
+- name: ensure asdf directory
+  become: true
+  file:
     # 本来ASDF_DIRで指定していればどんなパスでも良いと思うが、vscodeのruby-lsp拡張の実装がASDF_DIRなどは読まず
     # いくつかのパスを決め打ちで捜索するようになっているため、それに合わせたパスにしている。
     # refs https://github.com/Shopify/ruby-lsp/blob/0d310e19b85ae6f554df3824f4b8439176952dae/vscode/src/ruby/asdf.ts#L53-L73
     path: /opt/asdf-vm
-  register: asdf_dir
-- name: setup asdf
-  when: not asdf_dir.stat.exists
-  block:
-    - name: mkdir asdf
-      become: true
-      file:
-        path: /opt/asdf-vm
-        state: directory
-        owner: "{{ ansible_user }}"
-        group: "{{ ansible_user }}"
-    - name: install asdf
-      git:
-        repo: https://github.com/asdf-vm/asdf.git
-        dest: /opt/asdf-vm
-        accept_hostkey: yes
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
 
 # FIXME: いい感じにchangedにならないようにできるか
 
@@ -58,13 +46,13 @@
 
     asdf plugin update --all > /dev/null
 
-    node=$(asdf nodejs resolve lts --latest-available)
+    node=$(asdf cmd nodejs resolve lts)
     asdf install nodejs $node
-    asdf global nodejs $node
+    asdf set --home nodejs $node
 
     for c in "ruby" "golang" "terraform" "deno"; do
       # 数字だけに絞ることでjrubyなどの別種やrc版などを取り除く
-      version=$(asdf list all $c | grep "^[0-9\.]*\$" | tail -n 1)
+      version=$(asdf list all $c | grep "^[0-9\.]\+\$" | tail -n 1)
       asdf install $c $version
-      asdf global $c $version
+      asdf set --home $c $version
     done

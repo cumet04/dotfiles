@@ -101,7 +101,8 @@ def info(name):
         return "pet", "linux_amd64.tar.gz", "tar xf FILE -O pet"
     if name == "peco/peco":
         return "peco", "linux_amd64.tar.gz", "tar xf FILE -O peco_linux_amd64/peco"
-
+    if name == "asdf-vm/asdf":
+        return "asdf", "linux-amd64", "tar xf FILE -O asdf"
 
 if __name__ == "__main__":
     if "TEST_ARG_NAME" in os.environ:
