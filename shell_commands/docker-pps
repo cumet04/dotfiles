@@ -1,0 +1,14 @@
+#!/bin/bash
+
+FORMAT=$(cat <<EOS
+### {{.Names}}
+* Container ID:\t{{.ID}}
+* Image:\t{{.Image}}
+* Status:\t{{.Status}}
+* Ports:\t{{.Ports}}
+* Command:\t{{.Command}}
+* CreatedAt:\t{{.CreatedAt}}
+EOS
+)
+
+docker ps --format "$FORMAT"
