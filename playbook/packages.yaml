@@ -17,6 +17,7 @@
       - colorized-logs
       - bind9-dnsutils
       - rustup
+      - htop
 - name: install dev packages
   become: true
   apt:
