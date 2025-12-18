@@ -1,0 +1,10 @@
+[tools]
+deno = "latest"
+go = "latest"
+node = "lts"
+ruby = "latest"
+terraform = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = ["node", "ruby", "terraform"]
+experimental = true # 主にrubyのPrecompiled Binariesのために有効化

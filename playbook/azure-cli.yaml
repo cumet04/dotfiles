@@ -9,7 +9,7 @@
       - lsb-release
       - gnupg
 
-- name: app repository
+- name: apt repository
   become: true
   block:
     - get_url:
