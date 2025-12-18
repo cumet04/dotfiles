@@ -12,7 +12,6 @@
     - 'busser/tfautomv'
     - 'knqyf263/pet'
     - 'peco/peco'
-    - 'asdf-vm/asdf'
 
 # リモートファイルの取得 & unzipはまぁまぁ時間かかるので、etagを使ってスキップ判定する
 - name: fetch awscli-v2 etag

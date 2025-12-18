@@ -11,13 +11,6 @@ export GNUPGHOME=$XDG_DATA_HOME/gnupg
 export PASSWORD_STORE_DIR=$XDG_DATA_HOME/password-store
 export AWS_CONFIG_FILE=$XDG_CONFIG_HOME/aws/config
 
-# asdf
-export ASDF_DIR=/opt/asdf-vm
-export ASDF_DATA_DIR=$ASDF_DIR
-export ASDF_CONFIG_FILE=~/.config/asdfrc
-export PATH=$ASDF_DIR/bin:$ASDF_DIR/shims:$PATH
-export ASDF_GOLANG_MOD_VERSION_ENABLED=true # Noticeメッセージ抑制
-
 # clean $HOME
 export npm_config_cache=~/.cache/npm
 export CDK_HOME=~/.cache/cdk

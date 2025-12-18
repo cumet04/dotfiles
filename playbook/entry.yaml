@@ -14,7 +14,6 @@
           - wsl.yaml
           - dotfiles.yaml
           - commands.yaml
-          - asdf.yaml
           - docker-ce.yaml
           - google-cloud-sdk.yaml
           - azure-cli.yaml
