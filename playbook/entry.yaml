@@ -13,7 +13,6 @@
           - packages.yaml
           - wsl.yaml
           - dotfiles.yaml
-          - commands.yaml
           - mise.yaml
           - docker-ce.yaml
           - google-cloud-sdk.yaml
