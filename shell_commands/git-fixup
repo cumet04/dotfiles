@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-target_commit=$(git log --oneline | peco | cut -d' ' -f1)
+target_commit=$(git log --oneline -n 200 | peco | cut -d' ' -f1)
 
 git commit --fixup $target_commit
 
