@@ -1,8 +1,9 @@
-# refs https://zenn.dev/dozo/articles/dd574ffa43d3f7
 [experimental]
+# refs https://zenn.dev/dozo/articles/dd574ffa43d3f7
 autoMemoryReclaim=gradual
 sparseVhd=true
 
-# refs https://github.com/microsoft/WSL/issues/11022
 [wsl2]
+# refs https://github.com/microsoft/WSL/issues/11022
 dnsTunneling=false
+swap=0
