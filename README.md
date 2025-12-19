@@ -33,7 +33,7 @@ setting sync
 Ubuntu
 -----
 
-#### Init
+#### Windowsリセット後の初回
 ```
 git clone -b main https://github.com/cumet04/dotfiles $HOME/dotfiles
 $HOME/dotfiles/install.sh
@@ -53,6 +53,19 @@ pass init <key-id>
 aws_vault add login_user
 ```
 
-#### 移行時
-* `repo_check_all`
-* `backup_repo_files`
+#### WSLインスタンス引っ越し時
+```bash
+# 旧マシンから
+cd $HOME
+cp -r repos dotfiles .gitconfig /mnt/wsl/
+
+# 新マシンで
+cd /mnt/wsl
+cp -r repos dotfiles .gitconfig $HOME/
+# 必要ならdotfilesのブランチを更新したり切り替えたりする
+$HOME/dotfiles/install.sh
+```
+
+これでリポジトリの状態もgpgまわりもshell historyも全部いい感じになる。
+
+なお `/mnt/wsl `はtmpfsなので、reposがデカすぎるようなら掃除しておく。 `find . -name "node_modules" -type d -prune -exec rm -rf '{}' +` とか。
