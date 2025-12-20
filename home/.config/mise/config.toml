@@ -1,0 +1,18 @@
+[tools]
+deno = "latest"
+go = "latest"
+node = "lts"
+ruby = "latest"
+terraform = "latest"
+
+ecspresso = "latest"
+aws-vault = "latest"
+peco = "latest"
+aws-cli = { version = "latest", symlink_bins = "true" }
+
+"github:knqyf263/pet" = "latest"
+"github:busser/tfautomv" = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = ["node", "ruby", "terraform"]
+experimental = true # 主にrubyのPrecompiled Binariesのために有効化

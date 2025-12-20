@@ -1,6 +1,6 @@
 export EDITOR=nano
 export WSL_SELF_HOST=$(hostname -I | cut -d' ' -f1)
-export PATH=$HOME/dotfiles/shell_commands:$PATH
+export PATH=$HOME/dotfiles/shell_commands:$HOME/.local/share/mise/shims:$PATH
 
 # xdg
 export XDG_CONFIG_HOME=$HOME/.config
@@ -10,13 +10,6 @@ export XDG_DATA_HOME=$HOME/.local/share
 export GNUPGHOME=$XDG_DATA_HOME/gnupg
 export PASSWORD_STORE_DIR=$XDG_DATA_HOME/password-store
 export AWS_CONFIG_FILE=$XDG_CONFIG_HOME/aws/config
-
-# asdf
-export ASDF_DIR=/opt/asdf-vm
-export ASDF_DATA_DIR=$ASDF_DIR
-export ASDF_CONFIG_FILE=~/.config/asdfrc
-export PATH=$ASDF_DIR/bin:$ASDF_DIR/shims:$PATH
-export ASDF_GOLANG_MOD_VERSION_ENABLED=true # Noticeメッセージ抑制
 
 # clean $HOME
 export npm_config_cache=~/.cache/npm

@@ -8,7 +8,7 @@
       - gnupg
       - lsb-release
 
-- name: app repository
+- name: apt repository
   become: true
   block:
     - apt_key:
