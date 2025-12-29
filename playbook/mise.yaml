@@ -1,0 +1,19 @@
+- name: apt repository
+  become: true
+  block:
+    - apt_key:
+        url: https://mise.jdx.dev/gpg-key.pub
+        keyring: /etc/apt/trusted.gpg.d/mise-archive-keyring.pub
+        state: present
+    - apt_repository:
+        repo: "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/mise-archive-keyring.pub] https://mise.jdx.dev/deb stable main"
+        state: present
+
+- name: install mise
+  become: true
+  apt:
+    pkg:
+      - mise
+
+- name: ensure latest mise installs
+  shell: mise upgrade
