@@ -1,14 +1,11 @@
 #!/bin/bash
 
-USER=$(git config --get user.name || echo $GIT_AUTHOR_NAME)
+set -e
 
-branch=$(gh pr list --json 'number,title,author,headRefName' \
-  --jq ".[] | [.number, .author.login, .title, .headRefName] | @tsv" | \
-  sed s/$USER/[me]/g | \
-  peco --query '[me]' | cut -f 4)
+git branch --merged origin/$(git default-branch) | \
+  sed 's/^[ *]*//' | \
+  xargs --no-run-if-empty git branch -d
 
-test -z $branch && exit
-
-git fetch --quiet origin $branch
-git switch $branch
-git branch --quiet $branch --set-upstream-to origin/$branch
+selected=$(git branch -vv | sed 's/^..//' | cho)
+git switch -q $(echo "$selected" | cut -d' ' -f1)
+git s

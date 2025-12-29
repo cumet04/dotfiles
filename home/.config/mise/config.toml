@@ -12,6 +12,7 @@ aws-cli = { version = "latest", symlink_bins = "true" }
 
 "github:knqyf263/pet" = "latest"
 "github:busser/tfautomv" = "latest"
+"github:mattn/cho" = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node", "ruby", "terraform"]
