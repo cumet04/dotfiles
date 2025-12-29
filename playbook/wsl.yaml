@@ -13,7 +13,7 @@
 # バージョンはそうそう変わらないので気付いたら変えるくらいでヨシ
 - name: check win32yank
   stat:
-    path: /opt/winhome/win32yank.exe
+    path: /usr/local/bin/win32yank
   register: win32yank_stat
 - name: install win32yank
   become: true
