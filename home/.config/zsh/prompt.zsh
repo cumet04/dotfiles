@@ -4,7 +4,7 @@ function set_prompt() {
   else
     local status_color=red
   fi
-  local name=$(pwd | tr -d "\n" | sed "s|$HOME|\$HOME|" | xargs basename)
+  local name=$(pwd | tr -d "\n" | sed "s|$HOME|\$HOME|" | sed "s|\(.*\)|'\1'|" | xargs basename)
   PROMPT="%U%F{green}$name%f%u%F{$status_color}> %f"
 }
 precmd_functions+=(set_prompt)
