@@ -52,4 +52,8 @@ entries += [
   entry("Ctrl Shift Right", "SegmentWidthExpand", "Conversion"),
 ].flatten(1)
 
-File.write('keymap.txt', "status	key	command\n#{entries.join("\n")}")
+File.write(
+  'keymap.txt',
+  # 最終差分がわかりやすくなるようにsortしておく
+  "status	key	command\n#{entries.sort.join("\n")}"
+)

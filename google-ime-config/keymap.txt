@@ -1,58 +1,58 @@
 status	key	command
-DirectInput	F13	IMEOn
-Precomposition	F13	InputModeHiragana
-Composition	F13	Cancel
-Conversion	F13	Cancel
-Prediction	F13	Cancel
-Suggestion	F13	Cancel
-Precomposition	F14	CancelAndIMEOff
-Composition	F14	CancelAndIMEOff
-Conversion	F14	CancelAndIMEOff
-Prediction	F14	CancelAndIMEOff
-Suggestion	F14	CancelAndIMEOff
-DirectInput	Ctrl Space	IMEOn
-Precomposition	Ctrl Space	CancelAndIMEOff
-Suggestion	Ctrl Space	CancelAndIMEOff
-Prediction	Ctrl Space	CancelAndIMEOff
-Conversion	Ctrl Space	CancelAndIMEOff
+Composition	Backspace	Backspace
+Composition	Ctrl Left	MoveCursorToBeginning
+Composition	Ctrl Right	MoveCursorToEnd
 Composition	Ctrl Space	CancelAndIMEOff
-Composition	F2	ConvertWithoutHistory
-Composition	F6	ConvertToHiragana
-Conversion	F6	ConvertToHiragana
-Composition	F7	ConvertToFullKatakana
-Conversion	F7	ConvertToFullKatakana
-Composition	F8	ConvertToHalfWidth
-Conversion	F8	ConvertToHalfWidth
-Composition	F9	ConvertToFullAlphanumeric
-Conversion	F9	ConvertToFullAlphanumeric
-Composition	F10	ConvertToHalfAlphanumeric
-Conversion	F10	ConvertToHalfAlphanumeric
 Composition	Delete	Delete
 Composition	Enter	Commit
-Conversion	Enter	Commit
-Precomposition	Space	InsertSpace
-Conversion	Space	ConvertNext
-Composition	Space	Convert
-Composition	Backspace	Backspace
-Precomposition	Backspace	Revert
-Conversion	Backspace	Cancel
-Composition	Tab	PredictAndConvert
-Conversion	Tab	PredictAndConvert
-Conversion	Shift Tab	ConvertPrev
-Conversion	Up	ConvertPrev
-Prediction	Up	ConvertPrev
-Conversion	Down	CommitOnlyFirstSegment
-Prediction	Down	ConvertNext
-Suggestion	Down	PredictAndConvert
+Composition	F10	ConvertToHalfAlphanumeric
+Composition	F13	Cancel
+Composition	F14	CancelAndIMEOff
+Composition	F2	ConvertWithoutHistory
+Composition	F6	ConvertToHiragana
+Composition	F7	ConvertToFullKatakana
+Composition	F8	ConvertToHalfWidth
+Composition	F9	ConvertToFullAlphanumeric
 Composition	Left	MoveCursorLeft
-Conversion	Left	SegmentWidthShrink
 Composition	Right	MoveCursorRight
-Conversion	Right	SegmentWidthExpand
-Composition	Ctrl Left	MoveCursorToBeginning
+Composition	Space	Convert
+Composition	Tab	PredictAndConvert
+Conversion	Backspace	Cancel
 Conversion	Ctrl Left	SegmentFocusFirst
-Composition	Ctrl Right	MoveCursorToEnd
 Conversion	Ctrl Right	SegmentFocusLast
-Conversion	Shift Right	SegmentFocusRight
-Conversion	Shift Left	SegmentFocusLeft
 Conversion	Ctrl Shift Left	SegmentWidthShrink
 Conversion	Ctrl Shift Right	SegmentWidthExpand
+Conversion	Ctrl Space	CancelAndIMEOff
+Conversion	Down	CommitOnlyFirstSegment
+Conversion	Enter	Commit
+Conversion	F10	ConvertToHalfAlphanumeric
+Conversion	F13	Cancel
+Conversion	F14	CancelAndIMEOff
+Conversion	F6	ConvertToHiragana
+Conversion	F7	ConvertToFullKatakana
+Conversion	F8	ConvertToHalfWidth
+Conversion	F9	ConvertToFullAlphanumeric
+Conversion	Left	SegmentWidthShrink
+Conversion	Right	SegmentWidthExpand
+Conversion	Shift Left	SegmentFocusLeft
+Conversion	Shift Right	SegmentFocusRight
+Conversion	Shift Tab	ConvertPrev
+Conversion	Space	ConvertNext
+Conversion	Tab	PredictAndConvert
+Conversion	Up	ConvertPrev
+DirectInput	Ctrl Space	IMEOn
+DirectInput	F13	IMEOn
+Precomposition	Backspace	Revert
+Precomposition	Ctrl Space	CancelAndIMEOff
+Precomposition	F13	InputModeHiragana
+Precomposition	F14	CancelAndIMEOff
+Precomposition	Space	InsertSpace
+Prediction	Ctrl Space	CancelAndIMEOff
+Prediction	Down	ConvertNext
+Prediction	F13	Cancel
+Prediction	F14	CancelAndIMEOff
+Prediction	Up	ConvertPrev
+Suggestion	Ctrl Space	CancelAndIMEOff
+Suggestion	Down	PredictAndConvert
+Suggestion	F13	Cancel
+Suggestion	F14	CancelAndIMEOff
