@@ -8,7 +8,7 @@ end
 
 entries = [
   m(%w[a i u e o], %w[あ い う え お]),
-  m(%w[xa xi xu xe xo], %w[ぁ ぃ ぅ ぇ ぉ]),
+  # m(%w[xa xi xu xe xo], %w[ぁ ぃ ぅ ぇ ぉ]),
   m(%w[la li lu le lo], %w[ぁ ぃ ぅ ぇ ぉ]),
   m(%w[lyi lye], %w[ぃ ぇ]),
   m(%w[xyi xye], %w[ぃ ぇ]),
@@ -16,7 +16,7 @@ entries = [
   m(%w[vya vyi vyu vye vyo], %w[ゔゃ ゔぃ ゔゅ ゔぇ ゔょ]),
 
   m(%w[ka ki ku ke ko], %w[か き く け こ]),
-  m(%w[ca ci cu ce co], %w[か し く せ こ]),
+  # m(%w[ca ci cu ce co], %w[か し く せ こ]),
   m(%w[kya kyi kyu kye kyo], %w[きゃ きぃ きゅ きぇ きょ]),
   m(%w[qa qi qu qe qo], %w[くぁ くぃ く くぇ くぉ]),
   m(%w[kwa kwi kwu kwe kwo], %w[くぁ くぃ くぅ くぇ くぉ]),
@@ -105,17 +105,76 @@ entries = [
   entry('z/', '・'),
   entry('z.', '…'),
   entry('z,', '‥'),
-  entry('zh', '←'),
-  entry('zj', '↓'),
-  entry('zk', '↑'),
-  entry('zl', '→'),
+  # entry('zh', '←'),
+  # entry('zj', '↓'),
+  # entry('zk', '↑'),
+  # entry('zl', '→'),
   entry('z-', '〜'),
   entry('z[', '『'),
   entry('z]', '』'),
   entry('[', '「'),
   entry(']', '」'),
-].flatten(1)
+]
 
+# AZIK
+# refs http://bibouroku.net/azik
+entries += [
+  entry(';', 'っ'),
+  entry('q', 'ん'),
+  m(%w[xa xu xo], %w[しゃ しゅ しょ]),
+  m(%w[ca cu co], %w[ちゃ ちゅ ちょ]),
+
+  # 撥音
+  m(%w[kz kk kj kd kl], %w[かん きん くん けん こん]).reject { |e| e.start_with?('kk') },
+  m(%w[gz gk gj gd gl], %w[がん ぎん ぐん げん ごん]),
+  m(%w[sz sk sj sd sl], %w[さん しん すん せん そん]),
+  m(%w[zz zk zj zd zl], %w[ざん じん ずん ぜん ぞん]).reject { |e| e.start_with?('zz') },
+  m(%w[tz tk tj td tl], %w[たん ちん つん てん とん]),
+  m(%w[dz dk dj dd dl], %w[だん ぢん づん でん どん]).reject { |e| e.start_with?('dd') },
+  m(%w[nz nk nj nd nl], %w[なん にん ぬん ねん のん]),
+  m(%w[hz hk hj hd hl], %w[はん ひん ふん へん ほん]),
+  m(%w[bz bk bj bd bl], %w[ばん びん ぶん べん ぼん]),
+  m(%w[pz pk pj pd pl], %w[ぱん ぴん ぷん ぺん ぽん]),
+  m(%w[mz mk mj md ml], %w[まん みん むん めん もん]),
+  m(%w[yz yk yj yd yl], %w[やん ゆん よん]),
+  m(%w[rz rk rj rd rl], %w[らん りん るん れん ろん]),
+  m(%w[wz wk wj wd wl], %w[わん うぃん うん うぇん をん]),
+  # きゃん ちゃん とかあたりは一旦作ってない
+
+  # 二重母音
+  # TODO
+
+  # 頻出音
+  entry('km', 'かも'),
+  entry('kr', 'から'),
+  entry('gr', 'がら'),
+  entry('kt', 'こと'),
+  entry('gt', 'ごと'),
+  entry('zr', 'ざる'),
+  entry('st', 'した'),
+  entry('sr', 'する'),
+  # entry('tt', 'たち'),
+  entry('dt', 'だち'),
+  entry('tb', 'たび'),
+  entry('tm', 'ため'),
+  entry('tr', 'たら'),
+  entry('ds', 'です'),
+  entry('dm', 'でも'),
+  entry('nr', 'なる'),
+  entry('nt', 'にち'),
+  entry('nb', 'ねば'),
+  entry('ht', 'ひと'),
+  entry('bt', 'びと'),
+  entry('ms', 'ます'),
+  entry('mt', 'また'),
+  entry('mn', 'もの'),
+  entry('yr', 'よる'),
+  # entry('rr', 'られ'),
+  entry('wt', 'わた'),
+  entry('wr', 'われ'),
+]
+
+entries = entries.flatten(1)
 keys = entries.map { it.split("\t").first }
 dup_keys = keys.group_by { it }.select { |_, v| v.size > 1 }.keys
 if dup_keys.any?

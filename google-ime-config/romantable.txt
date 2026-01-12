@@ -1,31 +1,36 @@
 ,	、
 -	ー
 .	。
+;	っ
 [	「
 ]	」
 a	あ
 ba	ば
 bb	っ	b
+bd	べん
 be	べ
 bi	び
+bj	ぶん
+bk	びん
+bl	ぼん
 bo	ぼ
+bt	びと
 bu	ぶ
 bya	びゃ
 bye	びぇ
 byi	びぃ
 byo	びょ
 byu	びゅ
-ca	か
+bz	ばん
+ca	ちゃ
 cc	っ	c
-ce	せ
 cha	ちゃ
 che	ちぇ
 chi	ち
 cho	ちょ
 chu	ちゅ
-ci	し
-co	こ
-cu	く
+co	ちょ
+cu	ちゅ
 cya	ちゃ
 cye	ちぇ
 cyi	ちぃ
@@ -43,7 +48,13 @@ dhi	でぃ
 dho	でょ
 dhu	でゅ
 di	ぢ
+dj	づん
+dk	ぢん
+dl	どん
+dm	でも
 do	ど
+ds	です
+dt	だち
 du	づ
 dwa	どぁ
 dwe	どぇ
@@ -55,6 +66,7 @@ dye	ぢぇ
 dyi	ぢぃ
 dyo	ぢょ
 dyu	ぢゅ
+dz	だん
 e	え
 fa	ふぁ
 fe	ふぇ
@@ -66,10 +78,16 @@ fya	ふゃ
 fyo	ふょ
 fyu	ふゅ
 ga	が
+gd	げん
 ge	げ
 gg	っ	g
 gi	ぎ
+gj	ぐん
+gk	ぎん
+gl	ごん
 go	ご
+gr	がら
+gt	ごと
 gu	ぐ
 gwa	ぐぁ
 gwe	ぐぇ
@@ -81,11 +99,17 @@ gye	ぎぇ
 gyi	ぎぃ
 gyo	ぎょ
 gyu	ぎゅ
+gz	がん
 ha	は
+hd	へん
 he	へ
 hh	っ	h
 hi	ひ
+hj	ふん
+hk	ひん
+hl	ほん
 ho	ほ
+ht	ひと
 hu	ふ
 hwa	ふぁ
 hwe	ふぇ
@@ -97,6 +121,7 @@ hye	ひぇ
 hyi	ひぃ
 hyo	ひょ
 hyu	ひゅ
+hz	はん
 i	い
 ja	じゃ
 je	じぇ
@@ -110,10 +135,16 @@ jyi	じぃ
 jyo	じょ
 jyu	じゅ
 ka	か
+kd	けん
 ke	け
 ki	き
+kj	くん
 kk	っ	k
+kl	こん
+km	かも
 ko	こ
+kr	から
+kt	こと
 ku	く
 kwa	くぁ
 kwe	くぇ
@@ -125,6 +156,7 @@ kye	きぇ
 kyi	きぃ
 kyo	きょ
 kyu	きゅ
+kz	かん
 la	ぁ
 le	ぇ
 li	ぃ
@@ -142,33 +174,53 @@ lyi	ぃ
 lyo	ょ
 lyu	ゅ
 ma	ま
+md	めん
 me	め
 mi	み
+mj	むん
+mk	みん
+ml	もん
 mm	っ	m
+mn	もの
 mo	も
+ms	ます
+mt	また
 mu	む
 mya	みゃ
 mye	みぇ
 myi	みぃ
 myo	みょ
 myu	みゅ
+mz	まん
 n	ん
 n'	ん
 na	な
+nb	ねば
+nd	ねん
 ne	ね
 ni	に
+nj	ぬん
+nk	にん
+nl	のん
 nn	ん
 no	の
+nr	なる
+nt	にち
 nu	ぬ
 nya	にゃ
 nye	にぇ
 nyi	にぃ
 nyo	にょ
 nyu	にゅ
+nz	なん
 o	お
 pa	ぱ
+pd	ぺん
 pe	ぺ
 pi	ぴ
+pj	ぷん
+pk	ぴん
+pl	ぽん
 po	ぽ
 pp	っ	p
 pu	ぷ
@@ -177,6 +229,8 @@ pye	ぴぇ
 pyi	ぴぃ
 pyo	ぴょ
 pyu	ぴゅ
+pz	ぱん
+q	ん
 qa	くぁ
 qe	くぇ
 qi	くぃ
@@ -184,8 +238,12 @@ qo	くぉ
 qq	っ	q
 qu	く
 ra	ら
+rd	れん
 re	れ
 ri	り
+rj	るん
+rk	りん
+rl	ろん
 ro	ろ
 rr	っ	r
 ru	る
@@ -194,7 +252,9 @@ rye	りぇ
 ryi	りぃ
 ryo	りょ
 ryu	りゅ
+rz	らん
 sa	さ
+sd	せん
 se	せ
 sha	しゃ
 she	しぇ
@@ -202,8 +262,13 @@ shi	し
 sho	しょ
 shu	しゅ
 si	し
+sj	すん
+sk	しん
+sl	そん
 so	そ
+sr	する
 ss	っ	s
+st	した
 su	す
 swa	すぁ
 swe	すぇ
@@ -215,11 +280,14 @@ sye	しぇ
 syi	しぃ
 syo	しょ
 syu	しゅ
+sz	さん
 t'i	てぃ
 t'u	とぅ
 t'yu	てゅ
 ta	た
+tb	たび
 tch	っ	ch
+td	てん
 te	て
 tha	てゃ
 the	てぇ
@@ -227,7 +295,12 @@ thi	てぃ
 tho	てょ
 thu	てゅ
 ti	ち
+tj	つん
+tk	ちん
+tl	とん
+tm	ため
 to	と
+tr	たら
 tsa	つぁ
 tse	つぇ
 tsi	つぃ
@@ -245,6 +318,7 @@ tye	ちぇ
 tyi	ちぃ
 tyo	ちょ
 tyu	ちゅ
+tz	たん
 u	う
 va	ゔぁ
 ve	ゔぇ
@@ -258,6 +332,7 @@ vyi	ゔぃ
 vyo	ゔょ
 vyu	ゔゅ
 wa	わ
+wd	うぇん
 we	うぇ
 wha	うぁ
 whe	うぇ
@@ -265,22 +340,26 @@ whi	うぃ
 who	うぉ
 whu	う
 wi	うぃ
+wj	うん
+wk	うぃん
+wl	をん
 wo	を
+wr	われ
+wt	わた
 wu	う
 ww	っ	w
 www	w	ww
 wye	ゑ
 wyi	ゐ
-xa	ぁ
-xe	ぇ
-xi	ぃ
+wz	わん
+xa	しゃ
 xka	ヵ
 xke	ヶ
 xn	ん
-xo	ぉ
+xo	しょ
 xtsu	っ
 xtu	っ
-xu	ぅ
+xu	しゅ
 xwa	ゎ
 xx	っ	x
 xya	ゃ
@@ -289,10 +368,16 @@ xyi	ぃ
 xyo	ょ
 xyu	ゅ
 ya	や
+yd
 ye	いぇ
+yj	よん
+yk	ゆん
+yl
 yo	よ
+yr	よる
 yu	ゆ
 yy	っ	y
+yz	やん
 z,	‥
 z-	〜
 z.	…
@@ -300,13 +385,14 @@ z/	・
 z[	『
 z]	』
 za	ざ
+zd	ぜん
 ze	ぜ
-zh	←
 zi	じ
-zj	↓
-zk	↑
-zl	→
+zj	ずん
+zk	じん
+zl	ぞん
 zo	ぞ
+zr	ざる
 zu	ず
 zwa	ずぁ
 zwe	ずぇ
