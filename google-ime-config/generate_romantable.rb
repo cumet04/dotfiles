@@ -1,5 +1,17 @@
-def entry(input, output, next_input = nil)
-  [input, output, next_input].compact.join("\t")
+Entry = Struct.new(:key, :word, :next_key) do
+  def to_s
+    [key, word, next_key].compact.join("\t")
+  end
+
+  def eql?(other)
+    return to_s == other.to_s if other.is_a?(Entry) 
+    return key == other if other.is_a?(String) # 除外の表現をシンプルに書く用
+    false
+  end
+end
+
+def entry(key, word, next_key = nil)
+  Entry.new(key, word, next_key)
 end
 
 def m(xs, ys)
@@ -125,12 +137,12 @@ entries += [
   m(%w[ca cu co], %w[ちゃ ちゅ ちょ]),
 
   # 撥音
-  m(%w[kz kk kj kd kl], %w[かん きん くん けん こん]).reject { |e| e.start_with?('kk') },
+  m(%w[kz kk kj kd kl], %w[かん きん くん けん こん]) - ['kk'],
   m(%w[gz gk gj gd gl], %w[がん ぎん ぐん げん ごん]),
   m(%w[sz sk sj sd sl], %w[さん しん すん せん そん]),
-  m(%w[zz zk zj zd zl], %w[ざん じん ずん ぜん ぞん]).reject { |e| e.start_with?('zz') },
+  m(%w[zz zk zj zd zl], %w[ざん じん ずん ぜん ぞん]) - ['zz'],
   m(%w[tz tk tj td tl], %w[たん ちん つん てん とん]),
-  m(%w[dz dk dj dd dl], %w[だん ぢん づん でん どん]).reject { |e| e.start_with?('dd') },
+  m(%w[dz dk dj dd dl], %w[だん ぢん づん でん どん]) - ['dd'],
   m(%w[nz nk nj nd nl], %w[なん にん ぬん ねん のん]),
   m(%w[hz hk hj hd hl], %w[はん ひん ふん へん ほん]),
   m(%w[bz bk bj bd bl], %w[ばん びん ぶん べん ぼん]),
@@ -175,11 +187,10 @@ entries += [
 ]
 
 entries = entries.flatten(1)
-keys = entries.map { it.split("\t").first }
-dup_keys = keys.group_by { it }.select { |_, v| v.size > 1 }.keys
+dup_keys = entries.map(&:key).group_by { it }.select { |_, v| v.size > 1 }.keys
 if dup_keys.any?
   warn "Duplicate keys found: #{dup_keys.join(', ')}"
   exit 1
 end
 
-File.write('romantable.txt', entries.sort.join("\n"))
+File.write('romantable.txt', entries.map(&:to_s).sort.join("\n"))
