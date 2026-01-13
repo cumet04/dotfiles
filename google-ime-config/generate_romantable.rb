@@ -93,7 +93,7 @@ entries = [
   entry('n', 'ん'),
   # entry('xn', 'ん'),
 
-  %w[q v l x k g s z j t d h f b p m y r w c].map { entry(it+it, 'っ', it) },
+  %w[q v l x k g s z j t d h f b p m y r w c].map { entry(it+it, 'っ', it) } - %w[qq ll xx],
   # entry('xtu', 'っ'),
   # entry('xtsu', 'っ'),
   entry('ltu', 'っ'),

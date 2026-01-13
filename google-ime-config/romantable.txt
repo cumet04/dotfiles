@@ -147,7 +147,6 @@ kz	かん
 la	ぁ
 le	ぇ
 li	ぃ
-ll	っ	l
 lo	ぉ
 ltu	っ
 lu	ぅ
@@ -212,7 +211,6 @@ pyo	ぴょ
 pyu	ぴゅ
 pz	ぱん
 q	ん
-qq	っ	q
 ra	ら
 rd	れん
 re	れ
@@ -322,7 +320,6 @@ wz	わん
 xa	しゃ
 xo	しょ
 xu	しゅ
-xx	っ	x
 ya	や
 yd
 ye	いぇ
