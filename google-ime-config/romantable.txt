@@ -297,7 +297,6 @@ vo	ゔぉ
 vu	ゔ
 vv	っ	v
 wa	わ
-wd	うぇん
 we	うぇ
 wha	うぁ
 whe	うぇ
@@ -305,9 +304,6 @@ whi	うぃ
 who	うぉ
 whu	う
 wi	うぃ
-wj	うん
-wk	うぃん
-wl	をん
 wo	を
 wr	われ
 wt	わた

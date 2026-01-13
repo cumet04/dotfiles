@@ -126,32 +126,32 @@ entries = [
   entry('z]', '』'),
   entry('[', '「'),
   entry(']', '」'),
-]
+].flatten
+
 
 # AZIK
 # refs http://bibouroku.net/azik
+
+# 撥音
+entries += %w[k g s z t d n h b p m r].map do |c|
+  [
+    entry(c + 'z', entries.find { |e| e.key == c + 'a' }.word + 'ん'), # 子音 + z = 子音 + ann
+    entry(c + 'k', entries.find { |e| e.key == c + 'i' }.word + 'ん'), # 子音 + k = 子音 + inn
+    entry(c + 'j', entries.find { |e| e.key == c + 'u' }.word + 'ん'), # 子音 + j = 子音 + unn
+    entry(c + 'd', entries.find { |e| e.key == c + 'e' }.word + 'ん'), # 子音 + d = 子音 + enn
+    entry(c + 'l', entries.find { |e| e.key == c + 'o' }.word + 'ん'), # 子音 + l = 子音 + onn
+  ]
+end.flatten - %w[kk zz dd]
+entries += [
+  m(%w[yz yk yj yd yl], %w[やん ゆん よん]),
+  entry('wz', 'わん'),
+].flatten
+
 entries += [
   entry(';', 'っ'),
   entry('q', 'ん'),
   m(%w[xa xu xo], %w[しゃ しゅ しょ]),
   m(%w[ca cu co], %w[ちゃ ちゅ ちょ]),
-
-  # 撥音
-  m(%w[kz kk kj kd kl], %w[かん きん くん けん こん]) - ['kk'],
-  m(%w[gz gk gj gd gl], %w[がん ぎん ぐん げん ごん]),
-  m(%w[sz sk sj sd sl], %w[さん しん すん せん そん]),
-  m(%w[zz zk zj zd zl], %w[ざん じん ずん ぜん ぞん]) - ['zz'],
-  m(%w[tz tk tj td tl], %w[たん ちん つん てん とん]),
-  m(%w[dz dk dj dd dl], %w[だん ぢん づん でん どん]) - ['dd'],
-  m(%w[nz nk nj nd nl], %w[なん にん ぬん ねん のん]),
-  m(%w[hz hk hj hd hl], %w[はん ひん ふん へん ほん]),
-  m(%w[bz bk bj bd bl], %w[ばん びん ぶん べん ぼん]),
-  m(%w[pz pk pj pd pl], %w[ぱん ぴん ぷん ぺん ぽん]),
-  m(%w[mz mk mj md ml], %w[まん みん むん めん もん]),
-  m(%w[yz yk yj yd yl], %w[やん ゆん よん]),
-  m(%w[rz rk rj rd rl], %w[らん りん るん れん ろん]),
-  m(%w[wz wk wj wd wl], %w[わん うぃん うん うぇん をん]),
-  # きゃん ちゃん とかあたりは一旦作ってない
 
   # 二重母音
   # TODO
@@ -184,9 +184,8 @@ entries += [
   # entry('rr', 'られ'),
   entry('wt', 'わた'),
   entry('wr', 'われ'),
-]
+].flatten
 
-entries = entries.flatten(1)
 dup_keys = entries.map(&:key).group_by { it }.select { |_, v| v.size > 1 }.keys
 if dup_keys.any?
   warn "Duplicate keys found: #{dup_keys.join(', ')}"
