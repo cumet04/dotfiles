@@ -132,8 +132,19 @@ entries = [
 # AZIK
 # refs http://bibouroku.net/azik
 
+consonants = %w[
+v
+k ky kw g gw gy
+s sy sh sw zw z j
+t ty ch cy ts th tw d dy dh dw
+n ny
+h hy f b by p py
+m my
+r ry
+]
+
 # 撥音
-entries += %w[k g s z t d n h b p m r].map do |c|
+entries += consonants.map do |c|
   [
     entry(c + 'z', entries.find { |e| e.key == c + 'a' }.word + 'ん'), # 子音 + z = 子音 + ann
     entry(c + 'k', entries.find { |e| e.key == c + 'i' }.word + 'ん'), # 子音 + k = 子音 + inn
@@ -141,8 +152,7 @@ entries += %w[k g s z t d n h b p m r].map do |c|
     entry(c + 'd', entries.find { |e| e.key == c + 'e' }.word + 'ん'), # 子音 + d = 子音 + enn
     entry(c + 'l', entries.find { |e| e.key == c + 'o' }.word + 'ん'), # 子音 + l = 子音 + onn
   ]
-end.flatten - %w[kk zz dd]
-entries += [
+end.flatten - %w[kk zz dd jj] + [
   m(%w[yz yk yj yd yl], %w[やん ゆん よん]),
   entry('wz', 'わん'),
 ].flatten
