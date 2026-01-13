@@ -36,9 +36,6 @@ cye	ちぇ
 cyi	ちぃ
 cyo	ちょ
 cyu	ちゅ
-d'i	でぃ
-d'u	どぅ
-d'yu	でゅ
 da	だ
 dd	っ	d
 de	で
@@ -111,11 +108,6 @@ hl	ほん
 ho	ほ
 ht	ひと
 hu	ふ
-hwa	ふぁ
-hwe	ふぇ
-hwi	ふぃ
-hwo	ふぉ
-hwyu	ふゅ
 hya	ひゃ
 hye	ひぇ
 hyi	ひぃ
@@ -129,11 +121,6 @@ ji	じ
 jj	っ	j
 jo	じょ
 ju	じゅ
-jya	じゃ
-jye	じぇ
-jyi	じぃ
-jyo	じょ
-jyu	じゅ
 ka	か
 kd	けん
 ke	け
@@ -160,17 +147,12 @@ kz	かん
 la	ぁ
 le	ぇ
 li	ぃ
-lka	ヵ
-lke	ヶ
 ll	っ	l
 lo	ぉ
-ltsu	っ
 ltu	っ
 lu	ぅ
 lwa	ゎ
 lya	ゃ
-lye	ぇ
-lyi	ぃ
 lyo	ょ
 lyu	ゅ
 ma	ま
@@ -193,7 +175,6 @@ myo	みょ
 myu	みゅ
 mz	まん
 n	ん
-n'	ん
 na	な
 nb	ねば
 nd	ねん
@@ -231,12 +212,7 @@ pyo	ぴょ
 pyu	ぴゅ
 pz	ぱん
 q	ん
-qa	くぁ
-qe	くぇ
-qi	くぃ
-qo	くぉ
 qq	っ	q
-qu	く
 ra	ら
 rd	れん
 re	れ
@@ -281,12 +257,8 @@ syi	しぃ
 syo	しょ
 syu	しゅ
 sz	さん
-t'i	てぃ
-t'u	とぅ
-t'yu	てゅ
 ta	た
 tb	たび
-tch	っ	ch
 td	てん
 te	て
 tha	てゃ
@@ -326,11 +298,6 @@ vi	ゔぃ
 vo	ゔぉ
 vu	ゔ
 vv	っ	v
-vya	ゔゃ
-vye	ゔぇ
-vyi	ゔぃ
-vyo	ゔょ
-vyu	ゔゅ
 wa	わ
 wd	うぇん
 we	うぇ
@@ -353,20 +320,9 @@ wye	ゑ
 wyi	ゐ
 wz	わん
 xa	しゃ
-xka	ヵ
-xke	ヶ
-xn	ん
 xo	しょ
-xtsu	っ
-xtu	っ
 xu	しゅ
-xwa	ゎ
 xx	っ	x
-xya	ゃ
-xye	ぇ
-xyi	ぃ
-xyo	ょ
-xyu	ゅ
 ya	や
 yd
 ye	いぇ
@@ -399,10 +355,5 @@ zwe	ずぇ
 zwi	ずぃ
 zwo	ずぉ
 zwu	ずぅ
-zya	じゃ
-zye	じぇ
-zyi	じぃ
-zyo	じょ
-zyu	じゅ
 zz	っ	z
 ~	〜
