@@ -157,14 +157,25 @@ end.flatten - %w[kk zz dd jj] + [
   entry('wz', 'わん'),
 ].flatten
 
+# 二重母音
+entries += consonants.map do |c|
+  [
+    entry(c + 'q', entries.find { |e| e.key == c + 'a' }.word + 'い'), # 子音 + q = 子音 + ai
+    entry(c + 'h', entries.find { |e| e.key == c + 'u' }.word + 'う'), # 子音 + h = 子音 + uu
+    entry(c + 'w', entries.find { |e| e.key == c + 'e' }.word + 'い'), # 子音 + w = 子音 + ei
+    entry(c + 'p', entries.find { |e| e.key == c + 'o' }.word + 'う'), # 子音 + p = 子音 + ou
+  ]
+end.flatten - %w[hh pp] + [
+  m(%w[yq yh yp], %w[やい ゆう よう]),
+  entry('wq', 'わい'),
+].flatten
+
+# その他
 entries += [
   entry(';', 'っ'),
   entry('q', 'ん'),
   m(%w[xa xu xo], %w[しゃ しゅ しょ]),
   m(%w[ca cu co], %w[ちゃ ちゅ ちょ]),
-
-  # 二重母音
-  # TODO
 
   # 頻出音
   entry('km', 'かも'),
