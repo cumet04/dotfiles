@@ -15,6 +15,7 @@ def entry(key, word, next_key = nil)
 end
 
 def m(xs, ys)
+  raise "Length mismatch: #{xs.inspect} vs #{ys.inspect}" unless xs.size == ys.size
   xs.zip(ys).map { entry(*it) }
 end
 
@@ -153,7 +154,7 @@ entries += consonants.map do |c|
     entry(c + 'l', entries.find { |e| e.key == c + 'o' }.word + 'ん'), # 子音 + l = 子音 + onn
   ]
 end.flatten - %w[kk zz dd jj] + [
-  m(%w[yz yk yj yd yl], %w[やん ゆん よん]),
+  m(%w[yz yj yl], %w[やん ゆん よん]),
   entry('wz', 'わん'),
 ].flatten
 

@@ -514,12 +514,10 @@ xa	しゃ
 xo	しょ
 xu	しゅ
 ya	や
-yd
 ye	いぇ
 yh	ゆう
-yj	よん
-yk	ゆん
-yl
+yj	ゆん
+yl	よん
 yo	よ
 yp	よう
 yq	やい
