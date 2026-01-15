@@ -137,7 +137,7 @@ gz	がん
 ha	は
 hd	へん
 he	へ
-hh	っ	h
+hh	ふう
 hi	ひ
 hj	ふん
 hk	ひん
@@ -169,7 +169,7 @@ jd	じぇん
 je	じぇ
 jh	じゅう
 ji	じ
-jj	っ	j
+jj	じゅん
 jk	じん
 jl	じょん
 jo	じょ

@@ -94,7 +94,7 @@ entries = [
   entry('n', 'ん'),
   # entry('xn', 'ん'),
 
-  %w[q v l x k g s z j t d h f b p m y r w c].map { entry(it+it, 'っ', it) } - %w[qq ll xx],
+  %w[q v l x k g s z j t d h f b p m y r w c].map { entry(it+it, 'っ', it) } - %w[qq ll xx jj hh],
   # entry('xtu', 'っ'),
   # entry('xtsu', 'っ'),
   entry('ltu', 'っ'),
@@ -152,10 +152,14 @@ entries += consonants.map do |c|
     entry(c + 'd', entries.find { |e| e.key == c + 'e' }.word + 'ん'), # 子音 + d = 子音 + enn
     entry(c + 'l', entries.find { |e| e.key == c + 'o' }.word + 'ん'), # 子音 + l = 子音 + onn
   ]
-end.flatten - %w[kk zz dd jj] + [ # 無効化されているのは きん ざん でん じゅん
+end.flatten - %w[kk zz dd] + [ # 無効化されているのは きん ざん でん。
   m(%w[yz yj yl], %w[やん ゆん よん]),
   entry('wz', 'わん'),
 ].flatten
+# kkは'っ'のユースケースが非常に多いのでそちら優先
+# zzは「ッジ」「ッズ」が英語で多い
+# ddはほぼ「ッド」のみだが、一旦
+# jjは'っ'のユースケースが実質グッジョブしかないので撥音優先
 
 # 二重母音
 entries += consonants.map do |c|
@@ -165,10 +169,11 @@ entries += consonants.map do |c|
     entry(c + 'w', entries.find { |e| e.key == c + 'e' }.word + 'い'), # 子音 + w = 子音 + ei
     entry(c + 'p', entries.find { |e| e.key == c + 'o' }.word + 'う'), # 子音 + p = 子音 + ou
   ]
-end.flatten - %w[hh pp] + [ # 無効化されているのは ふう ぽう
+end.flatten - %w[pp] + [ # 無効化されているのは ぽう
   m(%w[yq yh yp], %w[やい ゆう よう]),
   entry('wq', 'わい'),
 ].flatten
+# hhは'っ'のユースケースが音的にほぼほぼ無いので二重母音優先
 
 # その他
 entries += [
