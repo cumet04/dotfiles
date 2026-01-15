@@ -40,7 +40,7 @@ entries = [
 
   m(%w[sa si su se so], %w[さ し す せ そ]),
   m(%w[sya syi syu sye syo], %w[しゃ しぃ しゅ しぇ しょ]),
-  m(%w[sha shi shu she sho], %w[しゃ し しゅ しぇ しょ]),
+  # m(%w[sha shi shu she sho], %w[しゃ し しゅ しぇ しょ]),
   # m(%w[swa swi swu swe swo], %w[すぁ すぃ すぅ すぇ すぉ]),
   # m(%w[zwa zwi zwu zwe zwo], %w[ずぁ ずぃ ずぅ ずぇ ずぉ]),
   m(%w[za zi zu ze zo], %w[ざ じ ず ぜ ぞ]),
@@ -50,14 +50,14 @@ entries = [
 
   m(%w[ta ti tu te to], %w[た ち つ て と]),
   m(%w[tya tyi tyu tye tyo], %w[ちゃ ちぃ ちゅ ちぇ ちょ]),
-  m(%w[cha chi chu che cho], %w[ちゃ ち ちゅ ちぇ ちょ]),
+  # m(%w[cha chi chu che cho], %w[ちゃ ち ちゅ ちぇ ちょ]),
   m(%w[cya cyi cyu cye cyo], %w[ちゃ ちぃ ちゅ ちぇ ちょ]),
   m(%w[tsa tsi tsu tse tso], %w[つぁ つぃ つ つぇ つぉ]),
-  m(%w[tha thi thu the tho], %w[てゃ てぃ てゅ てぇ てょ]),
+  # m(%w[tha thi thu the tho], %w[てゃ てぃ てゅ てぇ てょ]),
   # m(%w[twa twi twu twe two], %w[とぁ とぃ とぅ とぇ とぉ]),
   m(%w[da di du de do], %w[だ ぢ づ で ど]),
   m(%w[dya dyi dyu dye dyo], %w[ぢゃ ぢぃ ぢゅ ぢぇ ぢょ]),
-  m(%w[dha dhi dhu dhe dho], %w[でゃ でぃ でゅ でぇ でょ]),
+  # m(%w[dha dhi dhu dhe dho], %w[でゃ でぃ でゅ でぇ でょ]),
   # m(%w[dwa dwi dwu dwe dwo], %w[どぁ どぃ どぅ どぇ どぉ]),
 
   m(%w[na ni nu ne no], %w[な に ぬ ね の]),
@@ -86,7 +86,7 @@ entries = [
   m(%w[rya ryi ryu rye ryo], %w[りゃ りぃ りゅ りぇ りょ]),
 
   m(%w[wa wi wu we wo], %w[わ うぃ う うぇ を]),
-  m(%w[wha whi whu whe who], %w[うぁ うぃ う うぇ うぉ]),
+  # m(%w[wha whi whu whe who], %w[うぁ うぃ う うぇ うぉ]),
   # entry('xwa', 'ゎ'),
   entry('lwa', 'ゎ'),
 
@@ -129,15 +129,14 @@ entries = [
   entry(']', '」'),
 ].flatten
 
-
 # AZIK
 # refs http://bibouroku.net/azik
 
 consonants = %w[
 v
 k ky g gy
-s sy sh z j
-t ty ch cy ts th d dy dh
+s sy z j
+t ty cy ts d dy
 n ny
 h hy f b by p py
 m my
@@ -212,6 +211,10 @@ dup_keys = entries.map(&:key).group_by { it }.select { |_, v| v.size > 1 }.keys
 if dup_keys.any?
   warn "Duplicate keys found: #{dup_keys.join(', ')}"
   exit 1
+end
+
+if (matches = entries.select { it.key.match?(/^.h.$/) }).any?
+  warn "WARN: 二重母音 'h' が即時確定しません。該当:\n#{matches.map(&:to_s).join("\n")}" 
 end
 
 File.write('romantable.txt', entries.map(&:to_s).sort.join("\n"))
