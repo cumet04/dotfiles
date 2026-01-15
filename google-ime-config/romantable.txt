@@ -281,7 +281,6 @@ myz	みゃん
 mz	まん
 n	ん
 na	な
-nb	ねば
 nd	ねん
 ne	ね
 nh	ぬう
@@ -293,8 +292,6 @@ nn	ん
 no	の
 np	のう
 nq	ない
-nr	なる
-nt	にち
 nu	ぬ
 nw	ねい
 nya	にゃ

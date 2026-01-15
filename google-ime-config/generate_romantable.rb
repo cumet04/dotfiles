@@ -194,9 +194,9 @@ entries += [
   entry('tr', 'たら'),
   entry('ds', 'です'),
   entry('dm', 'でも'),
-  entry('nr', 'なる'),
-  entry('nt', 'にち'),
-  entry('nb', 'ねば'),
+  # entry('nr', 'なる'), # あまり使わない上に、「n」で「ん」を入れた場合に事故りやすいので無効化
+  # entry('nt', 'にち'),
+  # entry('nb', 'ねば'),
   entry('ht', 'ひと'),
   entry('bt', 'びと'),
   entry('ms', 'ます'),
