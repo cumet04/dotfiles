@@ -21,7 +21,7 @@ end
 
 entries = [
   m(%w[a i u e o], %w[あ い う え お]),
-  # m(%w[xa xi xu xe xo], %w[ぁ ぃ ぅ ぇ ぉ]),
+  m(%w[xa xi xu xe xo], %w[ぁ ぃ ぅ ぇ ぉ]),
   m(%w[la li lu le lo], %w[ぁ ぃ ぅ ぇ ぉ]),
   # m(%w[lyi lye], %w[ぃ ぇ]),
   # m(%w[xyi xye], %w[ぃ ぇ]),
@@ -77,7 +77,7 @@ entries = [
   m(%w[mya myi myu mye myo], %w[みゃ みぃ みゅ みぇ みょ]),
 
   m(%w[ya yu ye yo], %w[や ゆ いぇ よ]), # yi は無いらしい
-  # m(%w[xya xyu xyo], %w[ゃ ゅ ょ]),
+  m(%w[xya xyu xyo], %w[ゃ ゅ ょ]),
   m(%w[lya lyu lyo], %w[ゃ ゅ ょ]),
   entry('wyi', 'ゐ'),
   entry('wye', 'ゑ'),
@@ -174,7 +174,7 @@ end.flatten - %w[hh pp] + [ # 無効化されているのは ふう ぽう
 entries += [
   entry(';', 'っ'),
   entry('q', 'ん'),
-  m(%w[xa xu xo], %w[しゃ しゅ しょ]),
+  # m(%w[xa xu xo], %w[しゃ しゅ しょ]),
   m(%w[ca cu co], %w[ちゃ ちゅ ちょ]),
 
   # 頻出音

@@ -445,9 +445,14 @@ ww	っ	w
 wye	ゑ
 wyi	ゐ
 wz	わん
-xa	しゃ
-xo	しょ
-xu	しゅ
+xa	ぁ
+xe	ぇ
+xi	ぃ
+xo	ぉ
+xu	ぅ
+xya	ゃ
+xyo	ょ
+xyu	ゅ
 ya	や
 ye	いぇ
 yh	ゆう
