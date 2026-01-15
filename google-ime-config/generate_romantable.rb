@@ -101,7 +101,7 @@ entries = [
   # entry('ltsu', 'っ'),
   # entry('tch', 'っ', 'ch'),
 
-  entry('www', 'w', 'ww'),
+  # entry('www', 'w', 'ww'),
 
   # entry('t\'i', 'てぃ'),
   # entry('t\'yu', 'てゅ'),
@@ -215,6 +215,9 @@ end
 
 if (matches = entries.select { it.key.match?(/^.h.$/) }).any?
   warn "WARN: 二重母音 'h' が即時確定しません。該当:\n#{matches.map(&:to_s).join("\n")}" 
+end
+if (matches = entries.select { it.key.match?(/^.w.$/) } - ['lwa']).any? # lwa(ゎ)は許容
+  warn "WARN: 二重母音 'w' が即時確定しません。該当:\n#{matches.map(&:to_s).join("\n")}" 
 end
 
 File.write('romantable.txt', entries.map(&:to_s).sort.join("\n"))

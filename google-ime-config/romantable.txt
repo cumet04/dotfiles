@@ -442,7 +442,6 @@ wr	われ
 wt	わた
 wu	う
 ww	っ	w
-www	w	ww
 wye	ゑ
 wyi	ゐ
 wz	わん
