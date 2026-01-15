@@ -31,17 +31,17 @@ entries = [
   # m(%w[ca ci cu ce co], %w[か し く せ こ]),
   m(%w[kya kyi kyu kye kyo], %w[きゃ きぃ きゅ きぇ きょ]),
   # m(%w[qa qi qu qe qo], %w[くぁ くぃ く くぇ くぉ]),
-  m(%w[kwa kwi kwu kwe kwo], %w[くぁ くぃ くぅ くぇ くぉ]),
+  # m(%w[kwa kwi kwu kwe kwo], %w[くぁ くぃ くぅ くぇ くぉ]),
   m(%w[ga gi gu ge go], %w[が ぎ ぐ げ ご]),
-  m(%w[gwa gwi gwu gwe gwo], %w[ぐぁ ぐぃ ぐぅ ぐぇ ぐぉ]),
+  # m(%w[gwa gwi gwu gwe gwo], %w[ぐぁ ぐぃ ぐぅ ぐぇ ぐぉ]),
   m(%w[gya gyi gyu gye gyo], %w[ぎゃ ぎぃ ぎゅ ぎぇ ぎょ]),
   # m(%w[xka lka xke lke], %w[ヵ ヵ ヶ ヶ]),
 
   m(%w[sa si su se so], %w[さ し す せ そ]),
   m(%w[sya syi syu sye syo], %w[しゃ しぃ しゅ しぇ しょ]),
   m(%w[sha shi shu she sho], %w[しゃ し しゅ しぇ しょ]),
-  m(%w[swa swi swu swe swo], %w[すぁ すぃ すぅ すぇ すぉ]),
-  m(%w[zwa zwi zwu zwe zwo], %w[ずぁ ずぃ ずぅ ずぇ ずぉ]),
+  # m(%w[swa swi swu swe swo], %w[すぁ すぃ すぅ すぇ すぉ]),
+  # m(%w[zwa zwi zwu zwe zwo], %w[ずぁ ずぃ ずぅ ずぇ ずぉ]),
   m(%w[za zi zu ze zo], %w[ざ じ ず ぜ ぞ]),
   m(%w[ja ji ju je jo], %w[じゃ じ じゅ じぇ じょ]),
   # m(%w{jya jyi jyu jye jyo}, %w{じゃ じぃ じゅ じぇ じょ}),
@@ -53,11 +53,11 @@ entries = [
   m(%w[cya cyi cyu cye cyo], %w[ちゃ ちぃ ちゅ ちぇ ちょ]),
   m(%w[tsa tsi tsu tse tso], %w[つぁ つぃ つ つぇ つぉ]),
   m(%w[tha thi thu the tho], %w[てゃ てぃ てゅ てぇ てょ]),
-  m(%w[twa twi twu twe two], %w[とぁ とぃ とぅ とぇ とぉ]),
+  # m(%w[twa twi twu twe two], %w[とぁ とぃ とぅ とぇ とぉ]),
   m(%w[da di du de do], %w[だ ぢ づ で ど]),
   m(%w[dya dyi dyu dye dyo], %w[ぢゃ ぢぃ ぢゅ ぢぇ ぢょ]),
   m(%w[dha dhi dhu dhe dho], %w[でゃ でぃ でゅ でぇ でょ]),
-  m(%w[dwa dwi dwu dwe dwo], %w[どぁ どぃ どぅ どぇ どぉ]),
+  # m(%w[dwa dwi dwu dwe dwo], %w[どぁ どぃ どぅ どぇ どぉ]),
 
   m(%w[na ni nu ne no], %w[な に ぬ ね の]),
   m(%w[nya nyi nyu nye nyo], %w[にゃ にぃ にゅ にぇ にょ]),
@@ -134,9 +134,9 @@ entries = [
 
 consonants = %w[
 v
-k ky kw g gw gy
-s sy sh sw zw z j
-t ty ch cy ts th tw d dy dh dw
+k ky g gy
+s sy sh z j
+t ty ch cy ts th d dy dh
 n ny
 h hy f b by p py
 m my
