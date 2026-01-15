@@ -152,7 +152,7 @@ entries += consonants.map do |c|
     entry(c + 'd', entries.find { |e| e.key == c + 'e' }.word + 'ん'), # 子音 + d = 子音 + enn
     entry(c + 'l', entries.find { |e| e.key == c + 'o' }.word + 'ん'), # 子音 + l = 子音 + onn
   ]
-end.flatten - %w[kk zz dd jj] + [
+end.flatten - %w[kk zz dd jj] + [ # 無効化されているのは きん ざん でん じゅん
   m(%w[yz yj yl], %w[やん ゆん よん]),
   entry('wz', 'わん'),
 ].flatten
@@ -165,7 +165,7 @@ entries += consonants.map do |c|
     entry(c + 'w', entries.find { |e| e.key == c + 'e' }.word + 'い'), # 子音 + w = 子音 + ei
     entry(c + 'p', entries.find { |e| e.key == c + 'o' }.word + 'う'), # 子音 + p = 子音 + ou
   ]
-end.flatten - %w[hh pp] + [
+end.flatten - %w[hh pp] + [ # 無効化されているのは ふう ぽう
   m(%w[yq yh yp], %w[やい ゆう よう]),
   entry('wq', 'わい'),
 ].flatten
