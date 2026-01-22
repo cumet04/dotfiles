@@ -40,7 +40,7 @@ entries = [
 
   m(%w[sa si su se so], %w[さ し す せ そ]),
   m(%w[sya syi syu sye syo], %w[しゃ しぃ しゅ しぇ しょ]),
-  # m(%w[sha shi shu she sho], %w[しゃ し しゅ しぇ しょ]),
+  m(%w[sha shi shu she sho], %w[しゃ し しゅ しぇ しょ]),
   # m(%w[swa swi swu swe swo], %w[すぁ すぃ すぅ すぇ すぉ]),
   # m(%w[zwa zwi zwu zwe zwo], %w[ずぁ ずぃ ずぅ ずぇ ずぉ]),
   m(%w[za zi zu ze zo], %w[ざ じ ず ぜ ぞ]),
@@ -53,11 +53,11 @@ entries = [
   # m(%w[cha chi chu che cho], %w[ちゃ ち ちゅ ちぇ ちょ]),
   m(%w[cya cyi cyu cye cyo], %w[ちゃ ちぃ ちゅ ちぇ ちょ]),
   m(%w[tsa tsi tsu tse tso], %w[つぁ つぃ つ つぇ つぉ]),
-  # m(%w[tha thi thu the tho], %w[てゃ てぃ てゅ てぇ てょ]),
+  m(%w[tha thi thu the tho], %w[てゃ てぃ てゅ てぇ てょ]),
   # m(%w[twa twi twu twe two], %w[とぁ とぃ とぅ とぇ とぉ]),
   m(%w[da di du de do], %w[だ ぢ づ で ど]),
   m(%w[dya dyi dyu dye dyo], %w[ぢゃ ぢぃ ぢゅ ぢぇ ぢょ]),
-  # m(%w[dha dhi dhu dhe dho], %w[でゃ でぃ でゅ でぇ でょ]),
+  m(%w[dha dhi dhu dhe dho], %w[でゃ でぃ でゅ でぇ でょ]),
   # m(%w[dwa dwi dwu dwe dwo], %w[どぁ どぃ どぅ どぇ どぉ]),
 
   m(%w[na ni nu ne no], %w[な に ぬ ね の]),
@@ -135,8 +135,8 @@ entries = [
 consonants = %w[
 v
 k ky g gy
-s sy z j
-t ty cy ts d dy
+s sy sh z j
+t ty cy ts th d dy dh
 n ny
 h hy f b by p py
 m my
@@ -165,11 +165,11 @@ end.flatten - %w[kk zz dd] + [ # 無効化されているのは きん ざん �
 entries += consonants.map do |c|
   [
     entry(c + 'q', entries.find { |e| e.key == c + 'a' }.word + 'い'), # 子音 + q = 子音 + ai
-    entry(c + 'h', entries.find { |e| e.key == c + 'u' }.word + 'う'), # 子音 + h = 子音 + uu
+    entry(c + 'v', entries.find { |e| e.key == c + 'u' }.word + 'う'), # 子音 + v = 子音 + uu; オリジナルはHだが、shaなどで即時確定せずイマイチなので、空いているVで代替
     entry(c + 'w', entries.find { |e| e.key == c + 'e' }.word + 'い'), # 子音 + w = 子音 + ei
     entry(c + 'p', entries.find { |e| e.key == c + 'o' }.word + 'う'), # 子音 + p = 子音 + ou
   ]
-end.flatten - %w[pp] + [ # 無効化されているのは ぽう
+end.flatten - %w[vv pp] + [ # 無効化されているのは ゔぉう ぽう
   m(%w[yq yh yp], %w[やい ゆう よう]),
   entry('wq', 'わい'),
 ].flatten
@@ -218,8 +218,8 @@ if dup_keys.any?
   exit 1
 end
 
-if (matches = entries.select { it.key.match?(/^.h.$/) }).any?
-  warn "WARN: 二重母音 'h' が即時確定しません。該当:\n#{matches.map(&:to_s).join("\n")}" 
+if (matches = entries.select { it.key.match?(/^.v.$/) }).any?
+  warn "WARN: 二重母音 'v' が即時確定しません。該当:\n#{matches.map(&:to_s).join("\n")}" 
 end
 if (matches = entries.select { it.key.match?(/^.w.$/) } - ['lwa']).any? # lwa(ゎ)は許容
   warn "WARN: 二重母音 'w' が即時確定しません。該当:\n#{matches.map(&:to_s).join("\n")}" 
