@@ -22,7 +22,7 @@ end
 entries = [
   m(%w[a i u e o], %w[あ い う え お]),
   m(%w[xa xi xu xe xo], %w[ぁ ぃ ぅ ぇ ぉ]),
-  m(%w[la li lu le lo], %w[ぁ ぃ ぅ ぇ ぉ]),
+  # m(%w[la li lu le lo], %w[ぁ ぃ ぅ ぇ ぉ]),
   # m(%w[lyi lye], %w[ぃ ぇ]),
   # m(%w[xyi xye], %w[ぃ ぇ]),
   m(%w[va vi vu ve vo], %w[ゔぁ ゔぃ ゔ ゔぇ ゔぉ]),
@@ -78,7 +78,7 @@ entries = [
 
   m(%w[ya yu ye yo], %w[や ゆ いぇ よ]), # yi は無いらしい
   m(%w[xya xyu xyo], %w[ゃ ゅ ょ]),
-  m(%w[lya lyu lyo], %w[ゃ ゅ ょ]),
+  # m(%w[lya lyu lyo], %w[ゃ ゅ ょ]),
   entry('wyi', 'ゐ'),
   entry('wye', 'ゑ'),
 
@@ -88,7 +88,7 @@ entries = [
   m(%w[wa wi wu we wo], %w[わ うぃ う うぇ を]),
   # m(%w[wha whi whu whe who], %w[うぁ うぃ う うぇ うぉ]),
   # entry('xwa', 'ゎ'),
-  entry('lwa', 'ゎ'),
+  # entry('lwa', 'ゎ'),
 
   entry('nn', 'ん'),
   entry('n', 'ん'),
@@ -97,7 +97,7 @@ entries = [
   %w[q v l x k g s z j t d h f b p m y r w c].map { entry(it+it, 'っ', it) } - %w[qq ll xx jj hh],
   # entry('xtu', 'っ'),
   # entry('xtsu', 'っ'),
-  entry('ltu', 'っ'),
+  # entry('ltu', 'っ'),
   # entry('ltsu', 'っ'),
   # entry('tch', 'っ', 'ch'),
 
@@ -153,6 +153,7 @@ entries += consonants.map do |c|
     entry(c + 'l', entries.find { |e| e.key == c + 'o' }.word + 'ん'), # 子音 + l = 子音 + onn
   ]
 end.flatten - %w[kk zz dd] + [ # 無効化されているのは きん ざん でん。
+  m(%w[lz lk lj ld ll], %w[あん いん うん えん おん]),
   m(%w[yz yj yl], %w[やん ゆん よん]),
   entry('wz', 'わん'),
 ].flatten
@@ -170,6 +171,7 @@ entries += consonants.map do |c|
     entry(c + 'p', entries.find { |e| e.key == c + 'o' }.word + 'う'), # 子音 + p = 子音 + ou
   ]
 end.flatten - %w[vv pp] + [ # 無効化されているのは ゔぉう ぽう
+  m(%w[lq lv lw lp], %w[あい うう えい おう]),
   m(%w[yq yh yp], %w[やい ゆう よう]),
   entry('wq', 'わい'),
 ].flatten
@@ -221,7 +223,7 @@ end
 if (matches = entries.select { it.key.match?(/^.v.$/) }).any?
   warn "WARN: 二重母音 'v' が即時確定しません。該当:\n#{matches.map(&:to_s).join("\n")}" 
 end
-if (matches = entries.select { it.key.match?(/^.w.$/) } - ['lwa']).any? # lwa(ゎ)は許容
+if (matches = entries.select { it.key.match?(/^.w.$/) }).any?
   warn "WARN: 二重母音 'w' が即時確定しません。該当:\n#{matches.map(&:to_s).join("\n")}" 
 end
 
