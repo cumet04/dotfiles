@@ -19,6 +19,7 @@ def m(xs, ys)
   xs.zip(ys).map { entry(*it) }
 end
 
+# MEMO: 冷静に考えてHashで持つのが妥当な気がする
 entries = [
   m(%w[a i u e o], %w[あ い う え お]),
   m(%w[xa xi xu xe xo], %w[ぁ ぃ ぅ ぇ ぉ]),
