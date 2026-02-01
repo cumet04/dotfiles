@@ -173,7 +173,7 @@ entries += consonants.map do |c|
   ]
 end.flatten - %w[vv pp] + [ # 無効化されているのは ゔぉう ぽう
   m(%w[lq lv lw lp], %w[あい うう えい おう]),
-  m(%w[yq yh yp], %w[やい ゆう よう]),
+  m(%w[yq yv yp], %w[やい ゆう よう]),
   entry('wq', 'わい'),
 ].flatten
 # hhは'っ'のユースケースが音的にほぼほぼ無いので二重母音優先

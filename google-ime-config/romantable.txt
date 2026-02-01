@@ -495,7 +495,6 @@ xyo	ょ
 xyu	ゅ
 ya	や
 ye	いぇ
-yh	ゆう
 yj	ゆん
 yl	よん
 yo	よ
@@ -503,6 +502,7 @@ yp	よう
 yq	やい
 yr	よる
 yu	ゆ
+yv	ゆう
 yy	っ	y
 yz	やん
 z,	‥
