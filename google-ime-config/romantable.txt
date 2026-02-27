@@ -481,7 +481,6 @@ wq	わい
 wr	われ
 wt	わた
 wu	う
-ww	っ	w
 wye	ゑ
 wyi	ゐ
 wz	わん
