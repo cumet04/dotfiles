@@ -1,6 +1,8 @@
 export EDITOR=nano
 export WSL_SELF_HOST=$(hostname -I | cut -d' ' -f1)
-export PATH=$HOME/dotfiles/shell_commands:$HOME/.local/share/mise/shims:$PATH
+export PATH=$HOME/.local/share/mise/shims:$PATH
+export PATH=$HOME/dotfiles/shell_commands:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 # xdg
 export XDG_CONFIG_HOME=$HOME/.config

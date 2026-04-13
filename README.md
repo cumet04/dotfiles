@@ -30,6 +30,7 @@ actions:
 #### vscode
 setting sync
 
+
 Ubuntu
 -----
 
@@ -69,3 +70,24 @@ $HOME/dotfiles/install.sh
 これでリポジトリの状態もgpgまわりもshell historyも全部いい感じになる。
 
 なお `/mnt/wsl `はtmpfsなので、reposがデカすぎるようなら掃除しておく。 `find . -name "node_modules" -type d -prune -exec rm -rf '{}' +` とか。
+
+
+Claude
+-----
+#### claude codeのセットアップ
+自動アップデートなどの兼ね合いでansibleで入れるのはイマイチそうなので、公式手順で入れる
+
+https://code.claude.com/docs/ja/quickstart
+
+#### WSLにSSHで接続するための操作
+PowerShell側で
+```powershell
+ssh-keygen -t ed25519 -C "claude-desktop"
+cat ~/.ssh/id_ed25519.pub
+```
+
+コピーして、WSL側で
+```bash
+pbpaste >> ~/.ssh/authorized_keys
+```
+

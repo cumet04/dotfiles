@@ -1,0 +1,37 @@
+# Claude Desktopからのclaude code利用のためsshを開ける
+
+- name: install openssh-server
+  become: true
+  apt:
+    pkg:
+      - openssh-server
+
+- name: configure sshd
+  become: true
+  blockinfile:
+    path: /etc/ssh/sshd_config.d/local.conf
+    create: true
+    block: |
+      PubkeyAuthentication yes
+      PasswordAuthentication no
+      ListenAddress 127.0.0.1
+  notify: reload sshd
+
+- name: ensure .ssh directory exists
+  file:
+    path: "{{ ansible_env.HOME }}/.ssh"
+    state: directory
+    mode: "0700"
+
+- name: ensure authorized_keys exists with correct permissions
+  file:
+    path: "{{ ansible_env.HOME }}/.ssh/authorized_keys"
+    state: touch
+    mode: "0600"
+
+- name: enable and start sshd
+  become: true
+  systemd:
+    name: ssh.service
+    enabled: true
+    state: started
