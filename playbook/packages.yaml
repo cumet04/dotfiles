@@ -18,6 +18,7 @@
       - bind9-dnsutils
       - rustup
       - htop
+      - stow
 - name: install dev packages
   become: true
   apt:
