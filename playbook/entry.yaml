@@ -18,6 +18,7 @@
           - docker-ce.yaml
           - google-cloud-sdk.yaml
           - azure-cli.yaml
+          - claude.yaml
     - set_fact:
         task_list: "{{ [lookup('env', 'TARGET') + '.yaml'] if lookup('env', 'TARGET') else default_tasks }}"
 
@@ -41,3 +42,10 @@
         name: systemd-timesyncd.service
         state: restarted
         daemon_reload: yes
+
+    - name: restart claude-sync timer
+      systemd:
+        name: claude-sync.timer
+        state: restarted
+        scope: user
+        daemon_reload: true

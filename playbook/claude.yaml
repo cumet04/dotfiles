@@ -1,0 +1,41 @@
+- name: Ensure systemd user directory exists
+  file:
+    path: "{{ ansible_env.HOME }}/.config/systemd/user"
+    state: directory
+    mode: "0755"
+
+- name: Install claude-sync.service
+  copy:
+    dest: "{{ ansible_env.HOME }}/.config/systemd/user/claude-sync.service"
+    mode: "0644"
+    content: |
+      [Unit]
+      Description=Claude session backup
+
+      [Service]
+      Type=oneshot
+      ExecStart={{ dotfiles_root }}/shell_commands/backup-claude-sessions.sh
+  notify: restart claude-sync timer
+
+- name: Install claude-sync.timer
+  copy:
+    dest: "{{ ansible_env.HOME }}/.config/systemd/user/claude-sync.timer"
+    mode: "0644"
+    content: |
+      [Unit]
+      Description=Claude session backup timer
+
+      [Timer]
+      OnCalendar=*-*-* 12:00
+      Persistent=true
+
+      [Install]
+      WantedBy=timers.target
+  notify: restart claude-sync timer
+
+- name: Enable and start claude-sync.timer
+  systemd:
+    name: claude-sync.timer
+    enabled: true
+    state: started
+    scope: user
