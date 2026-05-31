@@ -2,6 +2,8 @@ export EDITOR=nano
 export PATH=$HOME/.local/share/mise/shims:$PATH
 export PATH=$HOME/dotfiles/shell_commands:$PATH
 export PATH=$HOME/.local/bin:$PATH
+export PATH=/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH
+export PATH=/opt/homebrew/opt/findutils/libexec/gnubin:$PATH
 
 # xdg
 export XDG_CONFIG_HOME=$HOME/.config
@@ -18,6 +20,5 @@ export NODE_REPL_HISTORY=~/.cache/node_repl_history
 export SQLITE_HISTORY=~/.cache/sqlite_history
 export MYSQL_HISTFILE=~/.cache/mysql_history
 export LESSHISTFILE=- # disable .lesshst
-export ANSIBLE_RETRY_FILES_ENABLED=false
 export GOMODCACHE=~/.cache/go/pkg/mod
 export DOCKER_CONFIG=~/.config/docker
