@@ -1,9 +1,4 @@
 export EDITOR=nano
-export PATH=$HOME/.local/share/mise/shims:$PATH
-export PATH=$HOME/dotfiles/shell_commands:$PATH
-export PATH=$HOME/.local/bin:$PATH
-export PATH=/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH
-export PATH=/opt/homebrew/opt/findutils/libexec/gnubin:$PATH
 
 # xdg
 export XDG_CONFIG_HOME=$HOME/.config
