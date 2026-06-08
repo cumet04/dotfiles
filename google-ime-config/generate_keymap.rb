@@ -4,10 +4,10 @@ end
 
 entries = [
   # IME切り替え
-  entry("F13", "IMEOn", "DirectInput"),
-  entry("F13", "InputModeHiragana", "Precomposition"),
-  entry("F13", "Cancel", "Composition", "Conversion", "Prediction", "Suggestion"),
-  entry("F14", "CancelAndIMEOff", "Precomposition", "Composition", "Conversion", "Prediction", "Suggestion"),
+  entry("ON", "IMEOn", "DirectInput"),
+  entry("ON", "InputModeHiragana", "Precomposition"),
+  entry("ON", "Cancel", "Composition", "Conversion", "Prediction", "Suggestion"),
+  entry("OFF", "CancelAndIMEOff", "Precomposition", "Composition", "Conversion", "Prediction", "Suggestion"),
   entry("Ctrl Space", "IMEOn", "DirectInput"),
   entry("Ctrl Space", "CancelAndIMEOff", "Precomposition", "Suggestion", "Prediction", "Conversion", "Composition"),
 ].flatten(1)
