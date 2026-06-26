@@ -24,7 +24,9 @@ echo "==> ZDOTDIR (/etc/zshenv)"
 ZDOTDIR_LINE='export ZDOTDIR=$HOME/.config/zsh'
 if ! sudo grep -qsF "$ZDOTDIR_LINE" /etc/zshenv 2>/dev/null; then
   echo "$ZDOTDIR_LINE" | sudo tee -a /etc/zshenv >/dev/null
+  echo "export MACHINE_SETUP_CATEGORY= # personal or work" | sudo tee -a /etc/zshenv >/dev/null
   echo "appended ZDOTDIR to /etc/zshenv"
+  echo "NOTE: /etc/zshenvのMACHINE_SETUP_CATEGORYの値を埋めること"
 fi
 
 echo "==> mise install"

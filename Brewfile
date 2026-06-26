@@ -1,3 +1,5 @@
+type = ENV.fetch("HOMEBREW_MACHINE_SETUP_CATEGORY").to_sym # personal or work
+
 brew "mise"
 brew "stow"
 brew "coreutils"
@@ -15,7 +17,7 @@ cask "gcloud-cli"
 cask "visual-studio-code"
 cask "google-chrome"
 cask "obsidian"
-cask "resilio-sync"
+cask "resilio-sync" if type == :personal
 cask "google-japanese-ime"
 cask "claude"
 cask "ghostty"
@@ -25,4 +27,4 @@ cask "linearmouse"
 brew "ansible"
 
 brew "mas"
-mas "Tailscale", id: 1475387142
+mas "Tailscale", id: 1475387142 if type == :personal

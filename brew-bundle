@@ -1,5 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
+# ちょっと雑パッチだが、この変数の使い道どうなのか含めて検討の余地がある
+export HOMEBREW_MACHINE_SETUP_CATEGORY=$MACHINE_SETUP_CATEGORY
+
 cd "$(dirname "$0")"
 brew bundle
