@@ -24,8 +24,12 @@ cask "ghostty"
 cask "logi-options+"
 cask "karabiner-elements"
 cask "linearmouse"
+cask "google-drive" if type == :work
+cask "slack" if type == :work
 
 brew "ansible"
 
-brew "mas"
-mas "Tailscale", id: 1475387142 if type == :personal
+if type == :personal
+  brew "mas"
+  mas "Tailscale", id: 1475387142
+end

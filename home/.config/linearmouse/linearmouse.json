@@ -4,11 +4,7 @@
     {
       "if" : {
         "device" : {
-          "category" : "mouse",
-          "productID" : "0xb041",
-          "productName" : "ERGO M575SP",
-          "serialNumber" : "0835108F",
-          "vendorID" : "0x46d"
+          "category" : "mouse"
         }
       },
       "scrolling" : {
@@ -29,6 +25,21 @@
         "speed" : {
           "vertical" : 0
         }
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xc548",
+          "productName" : "USB Receiver",
+          "vendorID" : "0x46d"
+        }
+      },
+      "pointer" : {
+        "acceleration" : 1,
+        "disableAcceleration" : false,
+        "speed" : 0.08
       }
     }
   ]

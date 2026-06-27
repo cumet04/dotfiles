@@ -1,8 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
-# ちょっと雑パッチだが、この変数の使い道どうなのか含めて検討の余地がある
-export HOMEBREW_MACHINE_SETUP_CATEGORY=$MACHINE_SETUP_CATEGORY
-
 cd "$(dirname "$0")"
-brew bundle
+
+# brew bundleはデフォルトでcaskのauto_updatesフラグ付きも無条件アップデートしてしまうので
+# bundleはno-upgradeで実施したのち、auto_updatesを除いた更新を別途実行する
+brew bundle --no-upgrade
+brew upgrade
