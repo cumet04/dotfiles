@@ -22,6 +22,7 @@ cask "google-japanese-ime"
 cask "claude"
 cask "ghostty"
 cask "logi-options+"
+cask "karabiner-elements"
 cask "linearmouse"
 
 brew "ansible"
