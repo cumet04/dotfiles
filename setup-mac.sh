@@ -2,7 +2,7 @@
 set -euo pipefail
 
 cd "$(dirname "$0")"
-DOTFILES_ROOT="$PWD"
+DOTFILES_ROOT=$HOME/dotfiles
 
 BREW_ENV_FILE="$HOME/.config/homebrew/brew.env"
 if [[ ! -f "$BREW_ENV_FILE" ]]; then
