@@ -15,6 +15,8 @@ echo "==> ZDOTDIR (/etc/zshenv)"
 ZDOTDIR_LINE='export ZDOTDIR=$HOME/.config/zsh'
 if ! sudo grep -qsF "$ZDOTDIR_LINE" /etc/zshenv 2>/dev/null; then
   echo "$ZDOTDIR_LINE" | sudo tee -a /etc/zshenv >/dev/null
+  # ref https://github.com/ghostty-org/ghostty/blob/main/src/shell-integration/README.md#zsh
+  echo "test -n $GHOSTTY_RESOURCES_DIR && source "$GHOSTTY_RESOURCES_DIR"/shell-integration/zsh/ghostty-integration" | sudo tee -a /etc/zshenv >/dev/null
   echo "appended ZDOTDIR to /etc/zshenv"
 fi
 
