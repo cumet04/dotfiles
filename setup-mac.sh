@@ -20,6 +20,11 @@ if ! sudo grep -qsF "$ZDOTDIR_LINE" /etc/zshenv 2>/dev/null; then
   echo "appended ZDOTDIR to /etc/zshenv"
 fi
 
+echo "==> Touch ID for sudo (/etc/pam.d/sudo_local)"
+if [[ ! -f /etc/pam.d/sudo_local ]]; then
+  cat /etc/pam.d/sudo_local.template | sed 's/^#auth/auth/' | sudo tee /etc/pam.d/sudo_local >/dev/null
+fi
+
 echo "==> macOS defaults"
 # キーリピートを最速化（反映にはログアウト/再起動が必要）。
 defaults write -g KeyRepeat -int 2          # リピート間隔: 1 が最速（GUI最速は 2）
