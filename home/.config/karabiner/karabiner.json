@@ -16,16 +16,16 @@
             "selected": true,
             "simple_modifications": [
                 {
-                    "from": { "key_code": "right_command" },
-                    "to": [{ "key_code": "japanese_eisuu" }]
+                    "from": { "key_code": "caps_lock" },
+                    "to": [{ "key_code": "left_control" }]
                 },
                 {
-                    "from": { "key_code": "right_shift" },
+                    "from": { "key_code": "right_command" },
                     "to": [{ "key_code": "japanese_kana" }]
                 },
                 {
-                    "from": { "key_code": "caps_lock" },
-                    "to": [{ "key_code": "left_control" }]
+                    "from": { "key_code": "right_shift" },
+                    "to": [{ "key_code": "japanese_eisuu" }]
                 }
             ],
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
