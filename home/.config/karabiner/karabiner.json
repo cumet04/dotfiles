@@ -1,6 +1,36 @@
 {
     "profiles": [
         {
+            "complex_modifications": {
+                "parameters": { "basic.simultaneous_threshold_milliseconds": 200 },
+                "rules": [
+                    {
+                        "description": "マウスカーソルを中央に",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "simultaneous": [
+                                        { "key_code": "japanese_eisuu" },
+                                        { "key_code": "japanese_kana" }
+                                    ]
+                                },
+                                "to": [
+                                    {
+                                        "software_function": {
+                                            "set_mouse_cursor_position": {
+                                                "screen": 0,
+                                                "x": "50%",
+                                                "y": "50%"
+                                            }
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
             "devices": [
                 {
                     "identifiers": {
