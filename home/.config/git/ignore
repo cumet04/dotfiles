@@ -7,4 +7,5 @@ better_errors_for_vscode.rb
 *.local
 yarn-error.log
 .local-files
-.claude/settings.local.json
+**/.claude/settings.local.json
+**/.claude/worktrees

@@ -1,0 +1,58 @@
+status	key	command
+Composition	Backspace	Backspace
+Composition	Ctrl Left	MoveCursorToBeginning
+Composition	Ctrl Right	MoveCursorToEnd
+Composition	Ctrl Space	CancelAndIMEOff
+Composition	Delete	Delete
+Composition	Enter	Commit
+Composition	F10	ConvertToHalfAlphanumeric
+Composition	F2	ConvertWithoutHistory
+Composition	F6	ConvertToHiragana
+Composition	F7	ConvertToFullKatakana
+Composition	F8	ConvertToHalfWidth
+Composition	F9	ConvertToFullAlphanumeric
+Composition	Left	MoveCursorLeft
+Composition	OFF	CancelAndIMEOff
+Composition	ON	Cancel
+Composition	Right	MoveCursorRight
+Composition	Space	Convert
+Composition	Tab	PredictAndConvert
+Conversion	Backspace	Cancel
+Conversion	Ctrl Left	SegmentFocusFirst
+Conversion	Ctrl Right	SegmentFocusLast
+Conversion	Ctrl Shift Left	SegmentWidthShrink
+Conversion	Ctrl Shift Right	SegmentWidthExpand
+Conversion	Ctrl Space	CancelAndIMEOff
+Conversion	Down	CommitOnlyFirstSegment
+Conversion	Enter	Commit
+Conversion	F10	ConvertToHalfAlphanumeric
+Conversion	F6	ConvertToHiragana
+Conversion	F7	ConvertToFullKatakana
+Conversion	F8	ConvertToHalfWidth
+Conversion	F9	ConvertToFullAlphanumeric
+Conversion	Left	SegmentWidthShrink
+Conversion	OFF	CancelAndIMEOff
+Conversion	ON	Cancel
+Conversion	Right	SegmentWidthExpand
+Conversion	Shift Left	SegmentFocusLeft
+Conversion	Shift Right	SegmentFocusRight
+Conversion	Shift Tab	ConvertPrev
+Conversion	Space	ConvertNext
+Conversion	Tab	PredictAndConvert
+Conversion	Up	ConvertPrev
+DirectInput	Ctrl Space	IMEOn
+DirectInput	ON	IMEOn
+Precomposition	Backspace	Revert
+Precomposition	Ctrl Space	CancelAndIMEOff
+Precomposition	OFF	CancelAndIMEOff
+Precomposition	ON	InputModeHiragana
+Precomposition	Space	InsertSpace
+Prediction	Ctrl Space	CancelAndIMEOff
+Prediction	Down	ConvertNext
+Prediction	OFF	CancelAndIMEOff
+Prediction	ON	Cancel
+Prediction	Up	ConvertPrev
+Suggestion	Ctrl Space	CancelAndIMEOff
+Suggestion	Down	PredictAndConvert
+Suggestion	OFF	CancelAndIMEOff
+Suggestion	ON	Cancel
