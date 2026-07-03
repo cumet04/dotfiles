@@ -9,3 +9,4 @@ yarn-error.log
 .local-files
 **/.claude/settings.local.json
 **/.claude/worktrees
+.playwright-mcp
