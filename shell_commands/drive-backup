@@ -1,0 +1,46 @@
+#!/bin/bash
+# ローカルの実ファイル群を Google Drive 同期フォルダへミラーリングする
+# 設定: ~/.config/drive-backup/config
+set -euo pipefail
+
+CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/drive-backup/config"
+[[ -f "$CONFIG" ]] || { echo "error: config not found: $CONFIG" >&2; exit 1; }
+
+expand_tilde() { echo "${1/#\~/$HOME}"; }
+
+dest_root=""
+rsync_opts=(-a --delete)
+srcs=()
+names=()
+
+while read -r key v1 v2 _; do
+  case "$key" in
+    "" | \#*) continue ;;
+    dest) dest_root=$(expand_tilde "$v1") ;;
+    exclude) rsync_opts+=(--exclude "$v1") ;;
+    sync) srcs+=("$(expand_tilde "$v1")") && names+=("$v2") ;;
+    *) echo "error: unknown directive in config: $key" >&2 && exit 1 ;;
+  esac
+done <"$CONFIG"
+
+[[ -n "$dest_root" ]] || { echo "error: dest is not set" >&2; exit 1; }
+[[ ${#srcs[@]} -gt 0 ]] || { echo "error: no sync targets" >&2; exit 1; }
+
+# 同期先がないのは Google Drive 側の設定がまだ or マウント異常。勝手に作らずエラーにする
+[[ -d "$dest_root" ]] || { echo "error: dest not found: $dest_root" >&2; exit 1; }
+
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] drive-backup start"
+failed=0
+for i in "${!srcs[@]}"; do
+  src="${srcs[$i]}"
+  name="${names[$i]}"
+  if [[ ! -d "$src" ]]; then
+    echo "warn: source not found, skip: $src" >&2
+    continue
+  fi
+  echo "sync: $src -> $dest_root/$name"
+  # 1ターゲットの失敗(TCC拒否など)で他のターゲットを道連れにしない
+  rsync "${rsync_opts[@]}" "$src/" "$dest_root/$name/" || failed=1
+done
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] drive-backup done"
+exit "$failed"

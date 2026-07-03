@@ -1,0 +1,20 @@
+# drive-backup 設定
+#
+# ローカルの実ファイル群を Google Drive デスクトップアプリの同期対象フォルダへ
+# 定期的にミラーリングするための設定。
+# 実行本体: shell_commands/drive-backup (launchd が30分毎に自動実行、手動実行も可)
+#
+# ディレクティブ:
+#   dest <path>            同期先ルート。Google Drive アプリの同期対象フォルダを指定する
+#   sync <source> <name>   <source>/ を <dest>/<name>/ へミラーする (ソース側の削除も反映)
+#   exclude <pattern>      rsync の --exclude パターン (全ターゲット共通)
+#
+# 注意: パスに空白文字は使えない (~ は展開される)
+
+dest ~/docs/gdrive-backup
+
+exclude .DS_Store
+
+# ~/Documents 配下は TCC 保護によりlaunchdから読めないため、vaultは ~/docs 配下に置く
+sync ~/docs/note note
+sync ~/.claude/projects claude-sessions

@@ -52,7 +52,10 @@ echo "==> repos dir (for repo_look)"
 mkdir -p "$HOME/repos/github.com/cumet04"
 ln -sfn "$DOTFILES_ROOT" "$HOME/repos/github.com/cumet04/dotfiles"
 
-echo "==> done."
+echo "==> drive-backup launchd agent"
+mkdir -p "$HOME/Library/LaunchAgents"
+cp "$DOTFILES_ROOT/launchd/com.cumet04.drive-backup.plist" "$HOME/Library/LaunchAgents/"
+launchctl bootout "gui/$(id -u)/com.cumet04.drive-backup" 2>/dev/null || true
+launchctl bootstrap "gui/$(id -u)" "$HOME/Library/LaunchAgents/com.cumet04.drive-backup.plist"
 
-# TODO:
-# - claude-sync
+echo "==> done."
