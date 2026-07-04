@@ -26,6 +26,8 @@ cask "karabiner-elements"
 cask "linearmouse"
 cask "google-drive" if type == :work
 cask "slack" if type == :work
+cask "zed"
+cask "hiddenbar"
 
 brew "ansible"
 
