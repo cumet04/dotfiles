@@ -1,0 +1,9 @@
+#!/bin/bash
+set -euo pipefail
+
+cd "$(dirname "$0")"
+
+# brew bundleはデフォルトでcaskのauto_updatesフラグ付きも無条件アップデートしてしまうので
+# bundleはno-upgradeで実施したのち、auto_updatesを除いた更新を別途実行する
+brew bundle --no-upgrade
+HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=1 brew upgrade

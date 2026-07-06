@@ -6,7 +6,6 @@ ruby = "latest"
 terraform = "latest"
 
 ecspresso = "latest"
-aws-vault = "latest"
 peco = "latest"
 aws-cli = { version = "latest", symlink_bins = "true" }
 
@@ -16,8 +15,16 @@ aws-cli = { version = "latest", symlink_bins = "true" }
 "github:lusingander/stu" = "latest"
 "github:googleworkspace/cli" = "latest"
 
-lazygit = "latest"
 dyff = "latest"
+
+direnv = "latest"
+"aqua:neovim/neovim" = "latest"  # デフォルトだと vfox が選ばれるため aqua を明示
+ripgrep = "latest"
+fd = "latest"
+jq = "latest"
+gh = "latest"
+
+docker-cli = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node", "ruby", "terraform"]

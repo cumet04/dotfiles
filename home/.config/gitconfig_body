@@ -1,8 +1,5 @@
 [core]
   editor = "nano"
-[credential "https://github.com"]
-  helper = !gh auth git-credential
-
 [init]
   defaultBranch = main
 [branch]

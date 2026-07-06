@@ -1,0 +1,32 @@
+#!/bin/bash
+set -euo pipefail
+
+# brew install のラッパー。インストールと同時に Brewfile へ追記する。
+# 使い方:
+#   ./brew-add <formula>          → brew "formula"
+#   ./brew-add --cask <cask>      → cask "cask"
+#   ./brew-add --mas <name> <id>  → mas "name", id: <id>
+
+cd "$(dirname "$0")"
+
+case "${1:-}" in
+  --cask)
+    shift
+    brew install --cask "$@"
+    for pkg in "$@"; do
+      echo "cask \"$pkg\"" >> Brewfile
+    done
+    ;;
+  --mas)
+    name="$2"
+    id="$3"
+    mas install "$id"
+    echo "mas \"$name\", id: $id" >> Brewfile
+    ;;
+  *)
+    brew install "$@"
+    for pkg in "$@"; do
+      echo "brew \"$pkg\"" >> Brewfile
+    done
+    ;;
+esac

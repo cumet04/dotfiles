@@ -1,3 +1,0 @@
-ghq_root: "{{ ansible_env.HOME }}/repos"
-dotfiles_root: "{{ ansible_env.HOME }}/dotfiles"
-ansible_user: "{{ ansible_env.USER }}"

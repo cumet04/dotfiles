@@ -20,7 +20,7 @@ alias ls='ls --color=auto'
 alias ll='ls -alh'
 alias cp='cp -i'
 alias mv='mv -i'
-alias fd='fdfind --hidden'
+alias fd='fd --hidden'
 alias rg='rg --hidden --ignore --glob "!**/.git/**"'
 alias cdg='cd $(git rev-parse --show-toplevel)'
 alias pete='print -z $(pet search)' # pet exec相当だが、実行コマンドをhistoryに残せるようにshell経由実行にするラッパー
@@ -34,7 +34,6 @@ source $ZDOTDIR/tig_status.zsh
 source $ZDOTDIR/history_search.zsh
 source $ZDOTDIR/repo_look.zsh
 source $ZDOTDIR/prompt.zsh
-source $ZDOTDIR/osc133.zsh
 
 source $ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -1,93 +1,18 @@
-Windows
------
-#### Key repeat
-Win+R -> `control keyboard`
-
-#### winget
-```
-"Microsoft.PowerToys", "Microsoft.VisualStudioCode", "Google.Chrome", "Google.JapaneseIME", "SlackTechnologies.Slack", "9NW33J738BL0" | % { winget install $_ }
-```
-
-#### Setup WSL
-```
-wsl --list --online
-wsl --install -d Ubuntu
-```
-
-#### WindowsTerminal
-commandline:
-`wsl.exe -d Ubuntu`
-開始ディレクトリ: ~
-
-actions:
-```
-{ "command": { "action": "moveFocus", "direction": "nextInOrder" }, "keys": "alt+]" },
-{ "command": { "action": "moveFocus", "direction": "previousInOrder" }, "keys": "alt+[" },
-{ "command": { "action": "splitPane", "split": "horizontal", "splitMode": "duplicate" }, "keys": "alt+minus" },
-{ "command": { "action": "splitPane", "split": "vertical", "splitMode": "duplicate" }, "keys": "alt+/" }
-```
-
-#### vscode
-setting sync
-
-
-Ubuntu
+Mac
 -----
 
-#### Windowsリセット後の初回
-```
-git clone -b main https://github.com/cumet04/dotfiles $HOME/dotfiles
-$HOME/dotfiles/install.sh
+#### 初回セットアップ
+* 事前に https://brew.sh/ よりbrewセットアップを行う
+  - ここにxcode-select installが含まれる
+
+```bash
+git clone -b mac2026 https://github.com/cumet04/dotfiles $HOME/dotfiles
+cd $HOME/dotfiles
+./setup-mac.sh
 ```
 
-others
-* `cp dotfiles/home/.gitconfig ./`
+その後:
+* `cp home/.gitconfig ~/` してemailを書き換える
 * `gh auth login`
-
-aws config
-* https://zenn.dev/cumet04/scraps/1a9861bc18bea7#comment-c67e8908869d49
-
-```
-gpg --gen-key
-gpg --list-keys
-pass init <key-id>
-aws_vault add login_user
-```
-
-#### WSLインスタンス引っ越し時
-```bash
-# 旧マシンから
-cd $HOME
-cp -r repos dotfiles .gitconfig /mnt/wsl/
-
-# 新マシンで
-cd /mnt/wsl
-cp -r repos dotfiles .gitconfig $HOME/
-# 必要ならdotfilesのブランチを更新したり切り替えたりする
-$HOME/dotfiles/install.sh
-```
-
-これでリポジトリの状態もgpgまわりもshell historyも全部いい感じになる。
-
-なお `/mnt/wsl `はtmpfsなので、reposがデカすぎるようなら掃除しておく。 `find . -name "node_modules" -type d -prune -exec rm -rf '{}' +` とか。
-
-
-Claude
------
-#### claude codeのセットアップ
-自動アップデートなどの兼ね合いでansibleで入れるのはイマイチそうなので、公式手順で入れる
-
-https://code.claude.com/docs/ja/quickstart
-
-#### WSLにSSHで接続するための操作
-PowerShell側で
-```powershell
-ssh-keygen -t ed25519 -C "claude-desktop"
-cat ~/.ssh/id_ed25519.pub
-```
-
-コピーして、WSL側で
-```bash
-pbpaste >> ~/.ssh/authorized_keys
-```
-
+* `colima start` の初回手動実行 (VMイメージダウンロード)
+* Claude Code入れる https://code.claude.com/docs/ja/quickstart

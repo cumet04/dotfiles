@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.cumet04.drive-backup</string>
+
+  <!-- plistのkey値では$HOMEが展開されないため、sh -c 経由でログ出力先ともども解決する -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/sh</string>
+    <string>-c</string>
+    <string>exec >>"$HOME/Library/Logs/drive-backup.log" 2>&amp;1; exec "$HOME/dotfiles/shell_commands/drive-backup"</string>
+  </array>
+
+  <key>RunAtLoad</key>
+  <true/>
+  <key>StartInterval</key>
+  <integer>1800</integer>
+</dict>
+</plist>

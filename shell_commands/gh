@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# gh のラッパー。
+#   - `gh pr create` のときは常に --draft を付けて実行する（既に付いていればそのまま）
+#   - それ以外はそのまま本物の gh に委譲する
+# 意図: no-draft での PR 作成を潰す。
+
+set -eu
+
+# このラッパー自身のディレクトリを PATH から除外して、本物の gh を解決する
+self_dir="$(cd "$(dirname "$0")" && pwd)"
+filtered_path=""
+IFS=':' read -ra _dirs <<< "$PATH"
+for _d in "${_dirs[@]}"; do
+  [ "$_d" = "$self_dir" ] && continue
+  filtered_path="${filtered_path:+$filtered_path:}$_d"
+done
+real_gh="$(PATH="$filtered_path" command -v gh)"
+
+# gh pr create 以外はそのまま委譲
+if [ "${1:-}" != "pr" ] || [ "${2:-}" != "create" ]; then
+  exec "$real_gh" "$@"
+fi
+
+shift 2
+
+# 既に --draft / -d があればそのまま実行
+for arg in "$@"; do
+  if [ "$arg" = "--draft" ] || [ "$arg" = "-d" ]; then
+    exec "$real_gh" pr create "$@"
+  fi
+done
+
+# 無ければ --draft を付与
+exec "$real_gh" pr create --draft "$@"
