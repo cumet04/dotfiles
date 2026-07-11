@@ -10,6 +10,7 @@ brew "pwgen"
 brew "htop"
 brew "colima" # colima は brew services による自動起動のため brew でインストール
 brew "ansible"
+brew "python" # gcloud-cliが依存する
 
 brew "cask"
 cask "gcloud-cli"
@@ -24,6 +25,7 @@ cask "karabiner-elements"
 cask "linearmouse"
 cask "zed"
 cask "hiddenbar"
+cask "google-drive"
 
 if type == :personal
   brew "mas"
@@ -33,6 +35,5 @@ if type == :personal
 end
 
 if type == :work
-  cask "google-drive"
   cask "slack"
 end

@@ -27,6 +27,7 @@ alias pete='print -z $(pet search)' # pet exec相当だが、実行コマンド�
 alias vim='nvim'
 alias diff='colordiff'
 alias bell='echo -e "\a"'
+# alias ssh='ghostty +ssh --' # ghostty 1.4以降がリリースされたら有効化
 
 eval "$(direnv hook zsh)"
 
