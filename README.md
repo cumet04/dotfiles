@@ -12,7 +12,6 @@ cd $HOME/dotfiles
 ```
 
 その後:
-* `cp home/.gitconfig ~/` してemailを書き換える
 * `gh auth login`
 * `colima start` の初回手動実行 (VMイメージダウンロード)
 * Claude Code入れる https://code.claude.com/docs/ja/quickstart

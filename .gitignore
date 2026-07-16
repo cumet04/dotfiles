@@ -5,4 +5,5 @@ home/.config/nvim/.netrwhist
 home/.config/direnv/allow
 home/.config/gh/hosts.yml
 home/.config/gh/state.yml
+home/.config/git/locals/
 home/.local
