@@ -3,6 +3,9 @@ set -euo pipefail
 
 cd "$(dirname "$0")"
 
+# 開始冒頭の長いヒントを消す
+export HOMEBREW_NO_ENV_HINTS=1
+
 # brew bundleはデフォルトでcaskのauto_updatesフラグ付きも無条件アップデートしてしまうので
 # bundleはno-upgradeで実施したのち、auto_updatesを除いた更新を別途実行する
 brew bundle --no-upgrade
