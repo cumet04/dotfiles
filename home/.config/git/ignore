@@ -10,3 +10,5 @@ yarn-error.log
 **/.claude/settings.local.json
 **/.claude/worktrees
 .playwright-mcp
+
+**/.claude/.cc-writes/
