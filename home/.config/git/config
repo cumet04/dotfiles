@@ -22,6 +22,7 @@
   compactionHeuristic = true
 [alias]
   d = diff
+  hd = !hunk diff
   s = stat
   co = checkout
   pfetch = fetch origin --prune --no-tags

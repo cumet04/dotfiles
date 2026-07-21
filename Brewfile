@@ -8,6 +8,8 @@ brew "tig"
 brew "tree"
 brew "pwgen"
 brew "htop"
+brew "hunk"
+
 brew "colima" # colima は brew services による自動起動のため brew でインストール
 brew "ansible"
 brew "python" # gcloud-cliが依存する
