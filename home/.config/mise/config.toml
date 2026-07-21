@@ -11,7 +11,7 @@ aws-cli = { version = "latest", symlink_bins = "true" }
 
 "github:knqyf263/pet" = "latest"
 "github:busser/tfautomv" = "latest"
-"github:mattn/cho" = "latest"
+"github:mattn/cho" = "0.0.17"
 "github:lusingander/stu" = "latest"
 "github:googleworkspace/cli" = "latest"
 

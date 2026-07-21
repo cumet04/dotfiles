@@ -34,6 +34,7 @@ eval "$(direnv hook zsh)"
 source $ZDOTDIR/tig_status.zsh
 source $ZDOTDIR/history_search.zsh
 source $ZDOTDIR/repo_look.zsh
+source $ZDOTDIR/git_worktree.zsh
 source $ZDOTDIR/prompt.zsh
 
 source $ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
