@@ -8,6 +8,7 @@ brew "tig"
 brew "tree"
 brew "pwgen"
 brew "htop"
+brew "yusukebe/tap/ax" # リリースしたばっかりだからかmiseが無い。なおts製
 brew "hunk"
 
 brew "colima" # colima は brew services による自動起動のため brew でインストール
