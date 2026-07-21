@@ -1,0 +1,3 @@
+# カーソル行がデフォルトだと見づらいので調整
+color cursor       black yellow bold
+color cursor-blur  black white
