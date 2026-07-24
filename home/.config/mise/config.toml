@@ -25,6 +25,7 @@ jq = "latest"
 gh = "latest"
 
 docker-cli = "latest"
+"aqua:docker/buildx" = "latest"  # docker CLIプラグイン。registry未収載のためaqua明示。setup-mac.shで ~/.docker/cli-plugins/ に symlink する
 
 [settings]
 idiomatic_version_file_enable_tools = ["node", "ruby", "terraform"]

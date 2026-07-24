@@ -45,6 +45,14 @@ stow --dir="$DOTFILES_ROOT/home" --target="$HOME/.config" --restow .config
 echo "==> mise install"
 mise install
 
+echo "==> docker buildx (CLI plugin)"
+# buildxはDocker CLIプラグイン。$DOCKER_CONFIG/cli-plugins/docker-buildx に実体へのsymlinkが必要。
+# miseのshimはmise本体へのsymlink(argv[0]ディスパッチ)なので、shimではなく mise which の実バイナリを貼る。
+# aqua:docker/buildx が提供するbin名は docker-cli-plugin-docker-buildx。
+DOCKER_CLI_PLUGINS="${DOCKER_CONFIG:-$HOME/.docker}/cli-plugins"
+mkdir -p "$DOCKER_CLI_PLUGINS"
+ln -sfn "$(mise which docker-cli-plugin-docker-buildx)" "$DOCKER_CLI_PLUGINS/docker-buildx"
+
 echo "==> colima (docker daemon)"
 brew services restart colima
 
