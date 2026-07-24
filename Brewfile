@@ -32,6 +32,7 @@ cask "claude"
 cask "claude-code"
 cask "codex-app"
 cask "codex"
+cask "shottr"
 
 if type == :personal
   brew "mas"
