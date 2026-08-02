@@ -31,6 +31,9 @@ defaults write -g KeyRepeat -int 2          # リピート間隔: 1 が最速（
 defaults write -g InitialKeyRepeat -int 15  # リピート開始までの時間: 10（GUI最速は 15）
 defaults write -g ApplePressAndHoldEnabled -bool false  # 長押しのアクセント文字メニューを無効化
 
+# '"Google Chrome" がローカルネットワーク上のデバイスを見つけることを許可しますか？' が出続けるバグを抑制
+defaults write com.google.Chrome EnableMediaRouter -bool false
+
 echo "==> brew bundle"
 eval "$(/opt/homebrew/bin/brew shellenv)" # brewコマンドのPATHを通す
 ./brew-bundle
