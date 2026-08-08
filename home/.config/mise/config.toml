@@ -14,6 +14,8 @@ aws-cli = { version = "latest", symlink_bins = "true" }
 "github:mattn/cho" = "0.0.17"
 "github:lusingander/stu" = "latest"
 "github:googleworkspace/cli" = "latest"
+# VSCodeVimのIME自動切り替え用。registry未収載。Apple Silicon前提でasset固定
+"github:laishulu/macism" = { version = "latest", asset_pattern = "macism-arm64" }
 
 dyff = "latest"
 

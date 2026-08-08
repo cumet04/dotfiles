@@ -17,6 +17,15 @@ for _d in "${_dirs[@]}"; do
 done
 real_gh="$(PATH="$filtered_path" command -v gh)"
 
+# ディレクトリに応じてアカウントを自動選択する。
+# git の includeIf で切り替わる credential.username を単一の情報源として使い、
+# そのユーザのトークンを GH_TOKEN で渡す（グローバルな active account は変更しない）。
+# GH_TOKEN が既にある場合(CI等)と gh auth 系コマンドは素通しする。
+if [ "${1:-}" != "auth" ] && [ -z "${GH_TOKEN:-}" ]; then
+  gh_user="$(git config --get 'credential.https://github.com.username')"
+  export GH_TOKEN="$("$real_gh" auth token --user "$gh_user")"
+fi
+
 # gh pr create 以外はそのまま委譲
 if [ "${1:-}" != "pr" ] || [ "${2:-}" != "create" ]; then
   exec "$real_gh" "$@"
